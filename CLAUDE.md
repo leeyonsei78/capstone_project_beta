@@ -1601,9 +1601,43 @@ python paper\eval\harness.py --report
 
 **평가 인프라** (`paper/eval/`):
 - `harness.py`: SSE 스트리밍 호출 + 지상진리 추출(`query-policy.js` subprocess)
-- `queries.json`: E1~E6 + 베이스라인 + 혼합 50개 쿼리
+- `queries.json`: E1~E6 + 베이스라인 + 혼합 **49개** 쿼리 (E1-E6 각 4-5개, MX=10, BL=5, ST=5)
 - `results/{phase}/{query_id}.json`: 개별 결과 저장
 
 **보안 제약 (반드시 유지)**:
 - `capstone_project_alpha`는 절대 수정·변경 금지
 - 모든 문서는 `capstone_project_beta`에만 업로드
+
+### ⑬단계 계속 — 논문 제출 준비 파일 작성 + 초안 오류 수정 (2026-11-14, 커밋 9bcacc1~7054235)
+
+실험 없이 진행할 수 있는 부분 이어서 처리:
+
+**신규 파일** (`paper/submission/`):
+- `cover_letter.md`: Applied Sciences(MDPI) 에디터 대상 커버레터 — 기여 요약, 적합성, Suggested Reviewer(Prof. Khaled Salah, Khalifa Univ) 포함
+- `highlights.md`: MDPI 하이라이트 5개 불릿(≤85자/줄) — TLPE 정의·6종 오류·4종 완화·49쿼리 하네스·일반화 가능성
+- `author_info.md`: ORCID/소속/APC/Data Availability Statement 템플릿(브라켓 항목 직접 채워야 함), Data Availability URL = capstone_project_alpha
+- `submission_checklist.md`: 제출 전 체크리스트 — [TBD] 항목, 참고문헌 검증, 그림 요건, MDPI 포털 단계, 실험 실행 명령, 실험 후 작업
+
+**논문 초안 수정** (`paper/draft/main_draft.md`):
+- §6.1 쿼리 수 "50" → "49", "11 mixed-condition" → "10 MX + 5 ST"
+- Table 2 재설계: Before/After 열 → Group/n/Mitigation 열(queries.json 실제 구조 반영)
+- §7.4 "3–5 queries" → "4–5 queries"
+- §2.1 LangChain [5] 명시; Ref [3] 용도 수정(§1에서 [9,10]으로 교체, §2.1에서 "규제 도메인 신뢰성" 맥락으로 사용)
+- §6.1 평가 모델 버전 표현 수정("API default version at evaluation time")
+- 한국어 예시 문자열에 영어 번역 추가(코드블록 인라인)
+- M2 프롬프트 지시문에 영어 번역 추가
+
+**Figure 소스** (`paper/draft/figures/`):
+- `fig1_architecture.mmd`: Figure 1 아키텍처 다이어그램 Mermaid 소스 — MDPI 제출 전 PNG 변환 필요(`mmdc` 또는 draw.io 사용)
+- `gen_fig2.py`: Figure 2(오류 유형별 Before/After 정확도 막대차트) 생성 스크립트 — `harness.py --phase before/after` 실행 후 돌리면 `fig2_before_after.png` 생성(300 DPI)
+
+**Ref [17] 대체 논문 조사 결과**: LLM 보험 청구 자동화 주제로 SCIE 발표 논문이 아직 없음이 확인됨 — arXiv:2602.16836 "(Preprint)" 레이블 그대로 유지하는 것이 현재 최선, MDPI는 preprint 인용 허용.
+
+**다음에 이어갈 것(실험 준비 완료 후)**:
+1. `blockchain-dental\run.bat` + `start.bat` 으로 스택 기동
+2. `git checkout paper/before-mitigation` → `python paper\eval\harness.py --phase before`
+3. `git checkout main` → `python paper\eval\harness.py --phase after`
+4. `python paper\eval\harness.py --report` → Table 3 / Figure 2 [TBD] 채우기
+5. `python paper\draft\figures\gen_fig2.py` → `fig2_before_after.png` 생성
+6. `fig1_architecture.mmd`를 PNG로 변환 (`mmdc fig1_architecture.mmd -o fig1_architecture.png`)
+7. 최종 PDF 변환 후 제출 (2026-11-27 마감)
