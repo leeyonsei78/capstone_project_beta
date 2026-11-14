@@ -9,15 +9,20 @@ ethers.js 스택을 그대로 재사용하기 위해 blockchain-dental/scripts/q
 
 from __future__ import annotations
 import json
+import os
 import re
 import socket
 import subprocess
 
 import blockchain_bridge
 
-DENTAL_QUERY_SCRIPT = "scripts/query-policy.js"
-ALTINVEST_QUERY_SCRIPT = "scripts/query-altinvest.js"
-PARAMETRIC_QUERY_SCRIPT = "scripts/query-parametric.js"
+# 논문 평가용: BC_QUERY_SCRIPT_DIR=scripts-db 로 두면 같은 출력 스키마를 내는 "기존(중앙 DB)
+# 백엔드" 조회 스크립트(blockchain-dental/scripts-db/)를 대신 호출한다. 도구 계층과
+# LLM 호출은 전혀 바뀌지 않고 데이터 원천만 달라진다. 기본값(scripts)은 기존 동작 그대로.
+_QUERY_DIR = os.environ.get("BC_QUERY_SCRIPT_DIR", "scripts")
+DENTAL_QUERY_SCRIPT = f"{_QUERY_DIR}/query-policy.js"
+ALTINVEST_QUERY_SCRIPT = f"{_QUERY_DIR}/query-altinvest.js"
+PARAMETRIC_QUERY_SCRIPT = f"{_QUERY_DIR}/query-parametric.js"
 WELLNESS_ORACLE_SCRIPT = "scripts/wellness-oracle.js"
 _ADDRESS_RE = re.compile(r"^0x[0-9a-fA-F]{40}$")
 

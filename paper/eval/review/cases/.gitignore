@@ -1,0 +1,10 @@
+# The repository is PUBLIC. These files contain the planted answers (label, anomaly kind) or the rater inputs, so they
+# must not be pushed while raters are still labelling blind. gen_cases.py (fixed seed) regenerates the case files
+# byte-identically; rater exports and authored cases are local experiment data.
+blind_key.json
+cases_claims.json
+cases_apps.json
+review_claims.csv
+review_apps.csv
+rater_results/
+expert_authored.json

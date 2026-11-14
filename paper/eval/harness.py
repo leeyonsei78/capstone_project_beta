@@ -6,6 +6,7 @@ Evaluation harness for:
 Usage:
   python harness.py --phase before           # run before-mitigation queries
   python harness.py --phase after            # run after-mitigation queries
+  python harness.py --phase before --all-queries  # run all 80 queries (paired design)
   python harness.py --phase both             # run all
   python harness.py --error-type E1_array_truncation  # filter by error type
   python harness.py --query-id E1-01        # run single query
@@ -34,6 +35,15 @@ import datetime
 from pathlib import Path
 
 import requests
+
+sys.path.insert(0, str(Path(__file__).parent))  # needed under `python -I`
+import scorers  # noqa: E402
+
+# Windows console (cp949) cannot encode the check/cross marks used in progress output.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 # ── Config ───────────────────────────────────────────────────────────────────
 CHATBOT_URL   = "http://localhost:5000/api/chat"
@@ -67,51 +77,17 @@ def score_response(query: dict, llm_text: str, ground_truth: dict,
     text_lower = llm_text.lower()
 
     correct      = None   # set by error-type-specific logic below
+    notes        = ""
     no_news      = "관련 보험 뉴스" not in llm_text and "최신 보험 뉴스" not in llm_text
     flags_ok     = True   # default pass for baseline
 
-    # ── E1: Array truncation ──────────────────────────────────────────────────
-    if et == "E1_array_truncation":
-        gt_field = query["ground_truth_field"]
-        if "policies" in gt_field and "policies" in ground_truth:
-            n_policies = len(ground_truth.get("policies", []))
-            # Count how many policy IDs appear in the response.
-            # query-policy.js uses "policyId" (not "id"), so try both keys.
-            mentioned = sum(1 for p in ground_truth.get("policies", [])
-                            if str(p.get("policyId", p.get("id", ""))) in llm_text)
-            correct = (n_policies == 0) or (mentioned == n_policies)
+    # ── E1 / E2 / E4: scored by field-aware scorers (see scorers.py) ───────────
+    if et in ("E1_array_truncation", "E2_temporal_reasoning", "E4_timezone_ambiguity"):
+        if not ground_truth or ground_truth.get("ok") is False:
+            correct, notes = None, "unscorable: ground truth unavailable"
         else:
-            correct = True  # heuristic fallback
-
-    # ── E2: Temporal reasoning ────────────────────────────────────────────────
-    elif et == "E2_temporal_reasoning":
-        if "policies" in ground_truth and ground_truth["policies"]:
-            p0  = ground_truth["policies"][0]
-            pre = p0.get("timeUntilMaturity", "")
-            if pre:
-                # After-mitigation path: pre-computed human-readable string is present.
-                # The LLM must use "오늘" / "내일" matching that string.
-                if "오늘" in pre:
-                    correct = "내일" not in llm_text and "오늘" in llm_text
-                elif "내일" in pre:
-                    correct = "오늘" not in llm_text and "내일" in llm_text
-                else:
-                    correct = pre[:10] in llm_text
-            else:
-                # Before-mitigation path: timeUntilMaturity was not injected.
-                # The classic bug: Math.ceil(remainingSec/86400) == 1 even when
-                # the policy expires TODAY (remainingSec < 86400).
-                # daysUntilMaturity == 0 means already expired (not interesting);
-                # == 1 from Math.ceil means "bug candidate" (could be today OR tomorrow).
-                # We score correct=False only when daysUntilMaturity==1 AND the LLM
-                # says "내일", which is the specific error we expect.
-                days = p0.get("daysUntilMaturity", -1)
-                if days == 1 and "내일" in llm_text:
-                    correct = False   # confirmed bug: said "내일" for a today-or-tomorrow case
-                else:
-                    correct = True    # can't determine error without exact chain state
-        else:
-            correct = True
+            correct, notes = scorers.score_content(
+                et, query["ground_truth_field"], llm_text, ground_truth)
 
     # ── E3: Stale tool reuse ──────────────────────────────────────────────────
     elif et == "E3_stale_tool_reuse":
@@ -120,10 +96,6 @@ def score_response(query: dict, llm_text: str, ground_truth: dict,
         if query.get("turn", 1) > 1:
             # In follow-up turns, news section must not appear
             correct = "관련 보험 뉴스" not in llm_text
-
-    # ── E4: Timezone ambiguity ────────────────────────────────────────────────
-    elif et == "E4_timezone_ambiguity":
-        correct = "(KST)" in llm_text or "한국 시간" in llm_text or "KST" in llm_text
 
     # ── E5: Expression variability ────────────────────────────────────────────
     elif et == "E5_expression_variability":
@@ -145,7 +117,8 @@ def score_response(query: dict, llm_text: str, ground_truth: dict,
         flags_ok = True
 
     score_max = 3 if et != "baseline_control" else 1
-    score = sum([
+    # correct is None -> unscorable; excluded from accuracy denominators (never "correct").
+    score = None if correct is None else sum([
         1 if correct else 0,
         1 if no_news else 0,
         1 if flags_ok else 0,
@@ -155,29 +128,63 @@ def score_response(query: dict, llm_text: str, ground_truth: dict,
         "correct": correct,
         "no_news": no_news,
         "flags_ok": flags_ok,
-        "score": min(score, score_max),
+        "score": None if score is None else min(score, score_max),
         "score_max": score_max,
-        "notes": ""
+        "notes": notes,
     }
 
 
 # ── Ground truth extraction ───────────────────────────────────────────────────
-def get_ground_truth(wallet: str) -> dict:
+GT_SCRIPTS = {   # key in merged dict -> script (all take the wallet as argv[1])
+    "policy":     "query-policy.js",       # policies, claims, queriedAt (merged at top level)
+    "altinvest":  "query-altinvest.js",    # -> gt["altinvest"]["positions"]
+    "parametric": "query-parametric.js",   # -> gt["parametric"]["coverages"]
+}
+
+
+def _run_gt_script(script: str, wallet: str) -> dict:
+    path = Path(QUERY_JS).parent / script
     try:
-        result = subprocess.run(
-            ["node", QUERY_JS, wallet],
-            capture_output=True, text=True, encoding="utf-8",
-            errors="replace", timeout=30,
-            cwd=str(Path(QUERY_JS).parent.parent)
-        )
-        if result.returncode == 0 and result.stdout.strip():
-            return json.loads(result.stdout.strip())
+        r = subprocess.run(["node", str(path), wallet], capture_output=True, text=True,
+                           encoding="utf-8", errors="replace", timeout=30,
+                           cwd=str(path.parent.parent))
+        if r.returncode == 0 and r.stdout.strip():
+            return json.loads(r.stdout.strip().splitlines()[-1])
     except Exception as e:
-        print(f"  [warn] Ground truth extraction failed: {e}")
+        print(f"  [warn] ground truth ({script}) failed: {e}")
     return {}
 
 
+def get_ground_truth(wallet: str) -> dict:
+    """Merged on-chain ground truth. Called before EVERY query so relative-time
+    strings reflect the chain clock at question time."""
+    gt = _run_gt_script(GT_SCRIPTS["policy"], wallet)
+    if not gt.get("ok"):
+        return gt
+    gt["altinvest"] = _run_gt_script(GT_SCRIPTS["altinvest"], wallet)
+    gt["parametric"] = _run_gt_script(GT_SCRIPTS["parametric"], wallet)
+    return gt
+
+
 # ── Chatbot call ──────────────────────────────────────────────────────────────
+WALLET_URL = "http://localhost:5000/api/blockchain/wallet"
+
+
+def register_wallet(session_id: str) -> bool:
+    """Register the evaluation wallet for this chatbot session.
+
+    Without this the chatbot answers "no wallet registered" and never calls the
+    on-chain query tool, which would make every blockchain query meaningless.
+    """
+    try:
+        r = requests.post(WALLET_URL, json={"session_id": session_id,
+                                            "wallet_address": WALLET}, timeout=15)
+        return r.ok and not r.json().get("error")
+    except Exception as e:
+        print(f"  [warn] wallet registration failed: {e}")
+        return False
+
+
 def call_chatbot(user_message: str, session_id: str = None) -> tuple[str, dict]:
     """Returns (llm_text, sse_flags)."""
     payload = {
@@ -207,9 +214,13 @@ def call_chatbot_stream(user_message: str, session_id: str = None) -> tuple[str,
     }
     full_text = []
     sse_flags = {}
+    done_text = ""
     try:
         with requests.post(STREAM_URL, json=payload, stream=True, timeout=90) as r:
-            for line in r.iter_lines(decode_unicode=True):
+            # Decode bytes as UTF-8 explicitly: the server sends text/event-stream without
+            # a charset, and requests would otherwise fall back to ISO-8859-1 (mojibake).
+            for raw_line in r.iter_lines():
+                line = raw_line.decode("utf-8", errors="replace") if raw_line else ""
                 if not line or not line.startswith("data:"):
                     continue
                 raw = line[5:].strip()
@@ -217,18 +228,24 @@ def call_chatbot_stream(user_message: str, session_id: str = None) -> tuple[str,
                     ev = json.loads(raw)
                 except json.JSONDecodeError:
                     continue
-                if ev.get("type") == "content":
+                # The server streams body text as {"type": "token"} events and finishes
+                # with {"type": "done", "full_text": ..., "used_crypto_tool": ...}.
+                # ("content" is accepted too for backward compatibility.)
+                if ev.get("type") in ("token", "content"):
                     full_text.append(ev.get("text", ""))
                 elif ev.get("type") == "done":
+                    done_text = ev.get("full_text", "")
                     sse_flags["used_blockchain_tool"] = ev.get("used_blockchain_tool", False)
                     sse_flags["used_crypto_tool"]    = ev.get("used_crypto_tool", False)
     except Exception as e:
         return f"ERROR: {e}", {}
-    return "".join(full_text), sse_flags
+    # Prefer the server's final full_text (it includes any post-processing such as
+    # the appended news section); fall back to the concatenated tokens.
+    return (done_text or "".join(full_text)), sse_flags
 
 
 # ── Run one query ─────────────────────────────────────────────────────────────
-def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
+def run_query(query: dict, ground_truth: dict, phase: str, rep: int = 1) -> dict:
     qid = query["id"]
     turn = query.get("turn", 1)
 
@@ -238,6 +255,8 @@ def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
     # Multi-turn queries share the same session within themselves (turn 1 + turn 2),
     # but different query IDs are always isolated from each other.
     session_id = f"{SESSION_ID_PREFIX}-{qid}"
+    if not register_wallet(session_id):
+        print("    [warn] wallet not registered for this session; results may be invalid")
 
     # For multi-turn queries, run turn 1 silently first (same session)
     if turn == 2:
@@ -255,6 +274,7 @@ def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
         "query_id": qid,
         "error_type": query["error_type"],
         "phase": phase,
+        "rep": rep,
         "model": MODEL,
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "user_query": query["user_query"],
@@ -263,18 +283,31 @@ def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
         "ground_truth_field": query.get("ground_truth_field"),
         "elapsed_sec": round(elapsed, 2),
         "scoring": scoring,
+        "ground_truth_snapshot": {k: ground_truth.get(k) for k in
+                                  ("queriedAt", "policies", "claims", "altinvest", "parametric")},
         "mitigation": query.get("mitigation"),
         "expected_behavior": query.get("expected_behavior"),
         "failure_mode": query.get("failure_mode"),
     }
-    icon = "✓" if scoring["correct"] else "✗"
+    icon = "?" if scoring["correct"] is None else ("✓" if scoring["correct"] else "✗")
     print(f"    {icon} score={scoring['score']}/{scoring['score_max']} "
           f"correct={scoring['correct']} no_news={scoring['no_news']} "
-          f"flags={scoring['flags_ok']} [{elapsed:.1f}s]")
+          f"flags={scoring['flags_ok']} [{elapsed:.1f}s] {scoring['notes']}")
     return result
 
 
 # ── Report generation ─────────────────────────────────────────────────────────
+def _rate(items):
+    """(correct, scorable, unscorable). Unscorable (correct is None) never counts as
+    correct and is excluded from the denominator."""
+    scorable = [x for x in items if x["scoring"]["correct"] is not None]
+    return sum(1 for x in scorable if x["scoring"]["correct"]), len(scorable), len(items) - len(scorable)
+
+
+def _fmt(k, n):
+    return f"{k}/{n} = {k / n:.0%}" if n else "n/a (no scorable trials)"
+
+
 def generate_report(model_filter: str = None):
     """
     Print evaluation report. If model_filter is set, restrict to that model's
@@ -322,17 +355,14 @@ def generate_report(model_filter: str = None):
                        if m == model_key}
 
         for (et, phase), items in sorted(by_et_phase.items()):
-            total = len(items)
-            correct = sum(1 for x in items if x["scoring"]["correct"])
-            no_news = sum(1 for x in items if x["scoring"]["no_news"])
-            flags   = sum(1 for x in items if x["scoring"]["flags_ok"])
-            avg_score = sum(x["scoring"]["score"] for x in items) / total
-            max_score = items[0]["scoring"]["score_max"]
-            print(f"\n{et} [{phase}]  n={total}")
-            print(f"  Correct      : {correct}/{total} = {correct/total:.0%}")
-            print(f"  No news      : {no_news}/{total} = {no_news/total:.0%}")
-            print(f"  Flags ok     : {flags}/{total}  = {flags/total:.0%}")
-            print(f"  Avg score    : {avg_score:.2f}/{max_score}")
+            k, n, unsc = _rate(items)
+            scorable = [x for x in items if x["scoring"]["correct"] is not None]
+            no_news = sum(1 for x in scorable if x["scoring"]["no_news"])
+            flags = sum(1 for x in scorable if x["scoring"]["flags_ok"])
+            print(f"\n{et} [{phase}]  trials={len(items)}  scorable={n}  unscorable={unsc}")
+            print(f"  Correct      : {_fmt(k, n)}")
+            print(f"  No news      : {_fmt(no_news, n)}")
+            print(f"  Flags ok     : {_fmt(flags, n)}")
 
         print("\n" + "-" * 72)
         print("BEFORE vs AFTER (correctness rate)")
@@ -340,10 +370,12 @@ def generate_report(model_filter: str = None):
             before = by_et_phase.get((et, "before_mitigation"), [])
             after  = by_et_phase.get((et, "after_mitigation"), [])
             if before and after:
-                b_rate = sum(1 for x in before if x["scoring"]["correct"]) / len(before)
-                a_rate = sum(1 for x in after  if x["scoring"]["correct"]) / len(after)
-                delta  = a_rate - b_rate
-                print(f"  {et:<35} {b_rate:.0%} -> {a_rate:.0%}  d={delta:+.0%}")
+                bk, bn, _ = _rate(before)
+                ak, an, _ = _rate(after)
+                if bn and an:
+                    print(f"  {et:<35} {bk/bn:.0%} (n={bn}) -> {ak/an:.0%} (n={an})  d={ak/an - bk/bn:+.0%}")
+                else:
+                    print(f"  {et:<35} n/a (no scorable trials)")
         print("=" * 72)
 
     # Cross-model comparison when multiple models present
@@ -358,9 +390,9 @@ def generate_report(model_filter: str = None):
             row = f"{et:<35}"
             for m in models_found:
                 items = by_model_et_phase.get((m, et, "after_mitigation"), [])
-                if items:
-                    rate = sum(1 for x in items if x["scoring"]["correct"]) / len(items)
-                    row += f"  {rate:>11.0%} "
+                k, n, _ = _rate(items)
+                if n:
+                    row += f"  {k / n:>11.0%} "
                 else:
                     row += f"  {'N/A':>12}"
             print(row)
@@ -385,12 +417,28 @@ def main():
                         help="Model label for result grouping (default: gpt-4o). "
                              "Change the chatbot's LLM config before running with "
                              "a different label for multi-model comparison.")
+    parser.add_argument("--all-queries", action="store_true",
+                        help="Ignore each query's phase tag and run all queries in the "
+                             "selected phase, so before/after use the identical query set "
+                             "(paired comparison). Results are still labelled by --phase.")
+    parser.add_argument("--reps", type=int, default=1,
+                        help="Repeat every query N times (LLM output is non-deterministic).")
+    parser.add_argument("--rep-start", type=int, default=1,
+                        help="First repetition number to run (e.g. --rep-start 2 --reps 3 adds reps 2 and 3 "
+                             "to an earlier --reps 1 run without overwriting rep 1).")
+    parser.add_argument("--base-url", default="http://localhost:5000",
+                        help="Chatbot server to test (http://localhost:5001 for the "
+                             "before-mitigation worktree).")
     parser.add_argument("--report", action="store_true")
     parser.add_argument("--no-gt", action="store_true",
                         help="Skip ground-truth extraction (blockchain node not running)")
     args = parser.parse_args()
 
     MODEL = args.model  # propagate to module-level so run_query picks it up
+    global CHATBOT_URL, STREAM_URL, WALLET_URL
+    base = args.base_url.rstrip("/")
+    CHATBOT_URL, STREAM_URL, WALLET_URL = (f"{base}/api/chat", f"{base}/api/chat/stream",
+                                           f"{base}/api/blockchain/wallet")
 
     if args.report:
         generate_report(model_filter=args.model if args.model != "gpt-4o" else None)
@@ -404,19 +452,22 @@ def main():
         all_queries = [q for q in all_queries if q["id"] == args.query_id]
     if args.error_type:
         all_queries = [q for q in all_queries if q["error_type"] == args.error_type]
-    if args.phase in ("before", "after"):
+    if args.phase in ("before", "after") and not args.all_queries:
         phase_key = f"{args.phase}_mitigation"
         all_queries = [q for q in all_queries
                        if q.get("phase") in (phase_key, "both", "all")]
 
-    # Ground truth
-    gt = {}
+    # Ground truth is fetched per query (inside the loop); check availability once here.
     if not args.no_gt:
-        print(f"Extracting ground truth for wallet {WALLET} ...")
-        gt = get_ground_truth(WALLET)
-        if not gt.get("ok"):
-            print(f"  [warn] Ground truth not available: {gt.get('error', 'unknown')}")
+        print(f"Checking ground truth for wallet {WALLET} ...")
+        probe = get_ground_truth(WALLET)
+        if not probe.get("ok"):
+            print(f"  [warn] Ground truth not available: {probe.get('error', 'unknown')}")
             print("  Run with --no-gt to skip, or start the blockchain node first.")
+        else:
+            print(f"  policies={len(probe.get('policies', []))} claims={len(probe.get('claims', []))} "
+                  f"positions={len((probe.get('altinvest') or {}).get('positions', []))} "
+                  f"coverages={len((probe.get('parametric') or {}).get('coverages', []))}")
     else:
         print("[--no-gt] Ground truth extraction skipped.")
 
@@ -433,13 +484,16 @@ def main():
     out_dir = RESULTS_DIR / _model_slug(MODEL) / phase_label
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"\nRunning {len(all_queries)} queries (phase={phase_label}, model={MODEL}) ...\n")
-    for q in all_queries:
-        result = run_query(q, gt, phase_label)
-        out_file = out_dir / f"{q['id']}.json"
-        out_file.write_text(json.dumps(result, ensure_ascii=False, indent=2),
-                            encoding="utf-8")
-        time.sleep(2)  # rate-limit courtesy
+    print(f"\nRunning {len(all_queries)} queries x {args.reps} rep(s) "
+          f"(phase={phase_label}, model={MODEL}, server={base}) ...\n")
+    for rep_no in range(args.rep_start, args.reps + 1):
+        for q in all_queries:
+            gt_q = {} if args.no_gt else get_ground_truth(WALLET)
+            result = run_query(q, gt_q, phase_label, rep_no)
+            out_file = out_dir / f"{q['id']}__r{rep_no}.json"
+            out_file.write_text(json.dumps(result, ensure_ascii=False, indent=2),
+                                encoding="utf-8")
+            time.sleep(2)  # rate-limit courtesy
 
     print(f"\nResults saved to {out_dir}")
     print("Run with --report to see summary.")
