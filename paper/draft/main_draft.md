@@ -17,7 +17,7 @@ Large language model (LLM) agents that invoke external tools to retrieve structu
 
 ## 1. Introduction
 
-The integration of large language models (LLMs) with external tools has enabled a new class of conversational agents capable of querying real-time databases, APIs, and distributed ledgers [1,2]. In domains such as insurance, banking, and healthcare, such agents offer significant promise: users can obtain policy status, claim updates, or transaction histories through natural-language conversation rather than navigating complex portals [3]. The resulting systems combine the flexibility of LLMs with the precision of structured data sources — in principle.
+The integration of large language models (LLMs) with external tools has enabled a new class of conversational agents capable of querying real-time databases, APIs, and distributed ledgers [1,2]. In domains such as insurance, banking, and healthcare, such agents offer significant promise: users can obtain policy status, claim updates, or transaction histories through natural-language conversation rather than navigating complex portals [9,10]. The resulting systems combine the flexibility of LLMs with the precision of structured data sources — in principle.
 
 In practice, the tool-calling paradigm introduces a subtle failure mode that is both consequential and undercharacterized. When an LLM agent correctly retrieves structured data from an external source but then makes errors in interpreting, presenting, or propagating that data to the user, the resulting response is incorrect despite the data layer being accurate. We term this class of errors **tool-layer presentation errors** (TLPEs). Unlike hallucination — which involves the LLM generating content unsupported by any source — TLPEs occur specifically at the intersection of correct data retrieval and incorrect LLM synthesis. This distinction matters because standard hallucination mitigations (retrieval-augmented generation, source attribution, factuality scoring) are not designed to address TLPEs: the retrieved data is correct, yet the error persists.
 
@@ -41,7 +41,7 @@ The remainder of this paper is organized as follows. Section 2 reviews related w
 
 Augmenting LLMs with the ability to invoke external tools has been a central theme in recent research. Yao et al. [1] introduced ReAct, which interleaves reasoning traces with tool actions (search, calculator, database lookup) in a single generation stream, achieving strong performance on multi-step question answering. Schick et al. [2] showed that LLMs can self-generate training data for tool use via Toolformer. The OpenAI function-calling interface [4] and its successors standardized the protocol by which LLMs declare and invoke typed function schemas, enabling reliable structured output.
 
-Agent frameworks such as LangChain and tool-learning surveys [9] extend tool-calling to multi-step, multi-tool pipelines, applying them to web browsing [6], code execution [7], and database query [8]. Despite this breadth, the literature on failure modes specific to the tool-calling interface remains sparse. Prior work has characterized errors in tool selection (invoking the wrong tool) and in tool output parsing (misreading structured responses), but has not systematically addressed errors in the LLM's subsequent presentation of correctly retrieved data to the user — the class we study here.
+Agent frameworks such as LangChain [5] and tool-learning surveys [9] extend tool-calling to multi-step, multi-tool pipelines, applying them to web browsing [6], code execution [7], and database query [8]. User-facing applications of such agents in regulated domains raise additional considerations around explainability and trustworthiness [3]. Despite this breadth, the literature on failure modes specific to the tool-calling interface remains sparse. Prior work has characterized errors in tool selection (invoking the wrong tool) and in tool output parsing (misreading structured responses), but has not systematically addressed errors in the LLM's subsequent presentation of correctly retrieved data to the user — the class we study here.
 
 ### 2.2 LLM Hallucination and Error Characterization
 
@@ -147,9 +147,9 @@ Tool output:  policies: [
   {id:3, active:false, maturityPaid:true, ...}
 ]
 
-LLM response: "현재 가입된 보험증권은 두 건입니다:
-  - 증권 #1: 활성, 월 납입 $30.00, ...
-  - 증권 #2: 활성, 월 납입 $25.00, ..."
+LLM response: "현재 가입된 보험증권은 두 건입니다:   [= "Currently two policies are enrolled:"]
+  - 증권 #1: 활성, 월 납입 $30.00, ...          [= "Policy #1: active, monthly $30.00"]
+  - 증권 #2: 활성, 월 납입 $25.00, ..."         [= "Policy #2: active, monthly $25.00"]
   [Policy #3 silently omitted]
 ```
 
@@ -169,9 +169,9 @@ LLM response: "현재 가입된 보험증권은 두 건입니다:
 Policy maturityDate timestamp: T + 1,680 seconds (~28 minutes)
 daysUntilMaturity: Math.ceil(1680/86400) = 1
 
-LLM response: "만기일까지 1일 남았습니다."
+LLM response: "만기일까지 1일 남았습니다."     [= "1 day until maturity."]
               -> User interprets as: "expires tomorrow"
-Correct answer: "오늘, 약 28분 후 만기됩니다."
+Correct answer: "오늘, 약 28분 후 만기됩니다." [= "Today, approximately 28 minutes remaining."]
 ```
 
 **Mitigation (M1a).** The tool now computes a human-readable `timeUntilMaturity` string using `Math.floor`-based duration logic identical to the frontend display, and includes it in the JSON payload. The system prompt instructs the LLM to use this string verbatim rather than performing its own date arithmetic.
@@ -271,7 +271,7 @@ The system prompt instructs the LLM to use the `timeUntilMaturity` string verbat
 **Principle.** Override the LLM's default summarization tendency with an explicit instruction that is specific to the tool's array structure.
 
 **Implementation.** The system prompt is extended with:
-> "policies 배열에 증권이 여러 개 있으면 **하나도 빠짐없이 전부** 답변에 포함하세요 (증권 ID, 만기일 등). '대표로 2개만', '첫 번째·두 번째만'처럼 일부만 요약하고 나머지를 조용히 빠뜨리면 안 됩니다."
+> "policies 배열에 증권이 여러 개 있으면 **하나도 빠짐없이 전부** 답변에 포함하세요 (증권 ID, 만기일 등). '대표로 2개만', '첫 번째·두 번째만'처럼 일부만 요약하고 나머지를 조용히 빠뜨리면 안 됩니다." (Translation: "If the policies array contains multiple entries, include **every single one** in the response — do not silently omit any by summarizing only a representative subset.")
 
 An equivalent directive is added for the `positions` array in `get_blockchain_altinvest_status`.
 
@@ -335,21 +335,22 @@ if not any_tool_used and _last_tool_call_names(history) & {
 
 ### 6.1 Experimental Setup
 
-**Query set.** We constructed 50 evaluation queries targeting the six error classes (Table 2). For each error class, we defined queries that reliably trigger the error in the before-mitigation condition and should be resolved in the after-mitigation condition. We also include 5 baseline control queries (non-blockchain questions) to verify that mitigations do not degrade general performance, and 11 mixed-condition queries that combine multiple error triggers.
+**Query set.** We constructed 49 evaluation queries across nine groups (Table 2). For each error class (E1–E6), we define queries that reliably trigger the error in the before-mitigation condition and should be resolved in the after-mitigation condition; all E1–E6 queries run in both experimental conditions. We also include 5 baseline control queries (non-blockchain questions) to verify that mitigations do not degrade general performance, 10 mixed-condition queries combining multiple error triggers, and 5 stress/boundary queries targeting edge cases such as empty arrays and already-expired policies.
 
-**Table 2.** Query distribution.
+**Table 2.** Evaluation query distribution. All 49 queries run in both before- and after-mitigation conditions; *n* = number of distinct queries per group.
 
-| Error Type | Before | After | Mixed/Baseline |
+| Group | Description | *n* | Mitigation tested |
 |---|---|---|---|
-| E1 Array truncation | 3 | 3 | — |
-| E2 Temporal arithmetic | 3 | 3 | — |
-| E3 Stale tool reuse | 3 | 3 | — |
-| E4 Timezone ambiguity | 3 | 3 | — |
-| E5 Expression variability | 3 | 3 | — |
-| E6 Conditional logic | 2 | 2 | — |
-| Baseline (non-blockchain) | — | — | 5 |
-| Mixed / stress | — | — | 11 |
-| **Total** | **17** | **17** | **16** |
+| E1 | Array truncation | 5 | M2 |
+| E2 | Temporal arithmetic | 5 | M1a |
+| E3 | Stale tool reuse | 5 | M4 |
+| E4 | Timezone ambiguity | 5 | M1b |
+| E5 | Expression variability | 5 | M3 |
+| E6 | Conditional logic | 4 | M3 |
+| MX | Mixed / multi-error | 10 | M1–M4 |
+| BL | Baseline (non-blockchain) | 5 | — (control) |
+| ST | Stress / boundary | 5 | M1–M4 |
+| **Total** | | **49** | |
 
 **Before condition.** Evaluated on the `paper/before-mitigation` git branch, which removes M1–M4 from the codebase: `tsToDate()` reverts to `toISOString()`, `timeUntilMaturity` is removed and `Math.ceil(daysUntilMaturity)` is restored, the enumeration prompt is removed, SSE flags are removed, and `_last_tool_call_names()` is removed.
 
@@ -357,7 +358,7 @@ if not any_tool_used and _last_tool_call_names(history) & {
 
 **Ground truth.** For structural queries (array counts, timestamps), ground truth is extracted at evaluation time by calling `node blockchain-dental/scripts/query-policy.js <wallet>` on a fixed local Hardhat node with known state (Hardhat Account #1, deployed via `scripts/deploy.js`). The Hardhat node is deterministic: re-deployment always produces the same contract state, ensuring reproducible ground truth.
 
-**Evaluation model.** GPT-4o (gpt-4o-2024-11-20), temperature=1 (default). Each query is run once per experimental condition; for E5/E6 (which depend on SSE flags rather than LLM text), the flag value is deterministic and a single run is sufficient.
+**Evaluation model.** GPT-4o (`gpt-4o`, API default version at evaluation time), temperature=1 (default). Each query is run once per experimental condition; for E5/E6 (which depend on SSE flags rather than LLM text), the flag value is deterministic and a single run is sufficient.
 
 **Scoring.** Each query is scored on three binary dimensions:
 - **Correctness (C)**: the main answer is factually correct
@@ -426,7 +427,7 @@ This principle has a corollary for system design: LLM-facing tool outputs should
 
 **Local testnet.** The blockchain node is a local Hardhat instance with synthetic data. Real mainnet deployments may exhibit different latency characteristics; whether this affects TLPE rates is not clear.
 
-**Sample size.** With 3–5 queries per error class, per-class statistics are based on small samples. The study is best interpreted as a taxonomy and feasibility demonstration rather than a large-scale empirical characterization.
+**Sample size.** With 4–5 queries per error class, per-class statistics are based on small samples. The study is best interpreted as a taxonomy and feasibility demonstration rather than a large-scale empirical characterization.
 
 **Manual classification.** Correctness scoring for E1 and E2 is automated via pattern matching; E3–E6 scoring involves manual verification of select edge cases.
 
