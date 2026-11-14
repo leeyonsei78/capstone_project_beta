@@ -2282,15 +2282,7 @@ SYSTEM_PROMPT = """당신은 친절하고 전문적인 보험 상담 AI 어시�
   - "내 블록체인 보험 상태 알려줘", "보험금 지급됐어?", "이번 달 보험료 냈나?", "만기 언제야?" 같은 질문에 사용
   - 이런 질문이면 **먼저 사용자에게 지갑 주소를 되묻지 말고 곧바로 이 도구부터 호출**하세요.
   - 일반 상품 추천/비교에는 이 도구를 사용하지 마세요 (실제 가입한 계약 조회 전용)
-  - 만기까지 남은 기간을 답할 때는 반드시 결과의 `timeUntilMaturity` 문자열을 그대로 사용하세요
-    (예: "오늘, 2분 후" → "오늘 만기입니다", "3일 4시간 후" → "3일 후"). `maturityDate`(날짜/시각
-    문자열)만 보고 "내일" 여부를 직접 계산하지 마세요 — 오늘 날짜와 시각 비교를 GPT가 직접
-    암산하면 "오늘인데 내일"이라고 틀리게 답하는 사고가 실제로 있었습니다.
-  - 결과의 `policies` 배열에 증권이 여러 개 있으면 **하나도 빠짐없이 전부** 답변에 포함하세요
-    (증권 ID·만기일 등). "대표로 2개만", "첫 번째·두 번째만" 처럼 일부만 요약해서 나머지를
-    조용히 빠뜨리면 안 됩니다 — 실제로 증권 3개 중 1개(이미 만기 지급 완료된 것)가 답변에서
-    통째로 누락된 사고가 있었습니다. 개수가 많아 표로 정리하는 게 나으면 표로 정리하되, 표에도
-    전부 포함하세요.
+  - 만기까지 남은 기간은 `maturityDate`와 `daysUntilMaturity`를 참고해 답하세요.
 - 이미 투자한 블록체인 대체투자(AltInvestmentFund) 포지션 실시간 조회 → get_blockchain_altinvest_status
   - "내 대체투자 얼마나 벌었어?", "락업 언제 풀려?", "그린인프라 펀드 지금 얼마야?" 같은 질문에 사용
   - 이런 질문도 마찬가지로 지갑 주소를 되묻지 말고 곧바로 이 도구부터 호출하세요.
@@ -2455,27 +2447,6 @@ class InsuranceChatbot:
         # get_personal_trading_status가 매번 bot_id를 묻지 않도록, /api/crypto/personal/
         # register로 등록된 개인별 자동매매 bot_id를 wallet_address와 동일한 패턴으로 기억.
         self.crypto_personal_bot_id: str | None = None
-        # chat()/stream_chat()이 이번 턴에 크립토 조회 도구를 썼는지 저장 — web_app.py가
-        # /api/chat 응답에 실어 프론트엔드가 addLinksToTables()를 건너뛸지 판단하는 데 씀.
-        self.last_response_used_crypto_tool: bool = False
-
-    @staticmethod
-    def _last_tool_call_names(history: list[dict]) -> set[str]:
-        """대화 히스토리에서 가장 최근에 실제로 호출된 도구 이름들을 찾는다.
-
-        GPT가 후속 질문에 이전 턴에서 이미 받아온 도구 결과(tool 메시지)를 재사용해
-        이번 턴엔 도구를 아예 호출하지 않고 바로 답하는 경우가 있다 — 예를 들어
-        "만기 언제야?"에 이미 get_blockchain_dental_status를 호출해 답한 다음,
-        곧바로 "이번 달 보험료 냈어?"라고 물으면 직전 도구 결과만으로 답할 수 있어
-        이번 턴엔 도구를 다시 부르지 않는다. 이때 도구 호출 여부만으로 뉴스 섹션을
-        붙일지 판단하면, 여전히 블록체인 조회 맥락인데 뉴스가 붙는 문제가 생긴다
-        (2026-09-18 발견). 이번 턴에 도구 호출이 전혀 없었을 때, 마지막으로 실제
-        호출됐던 도구가 무엇이었는지 참고하기 위한 헬퍼.
-        """
-        for msg in reversed(history):
-            if msg.get("role") == "assistant" and msg.get("tool_calls"):
-                return {tc["function"]["name"] for tc in msg["tool_calls"]}
-        return set()
 
     # ── 뉴스 섹션 (Python 레벨, 실제 URL 보장) ──────────────────
     @staticmethod
@@ -2672,17 +2643,6 @@ class InsuranceChatbot:
                     "role": "assistant",
                     "content": final_text,
                 })
-                # 이번 턴에 도구를 하나도 호출하지 않았다면(=이전 턴에서 받아온 블록체인
-                # 조회 결과를 그대로 재사용해 답했을 가능성), 직전에 실제로 호출됐던
-                # 도구가 get_blockchain_dental_status/get_blockchain_altinvest_status였는지로 판단한다.
-                if not any_tool_used and self._last_tool_call_names(self.conversation_history) & {"get_blockchain_dental_status", "get_blockchain_altinvest_status", "get_crypto_reserve_status", "get_personal_trading_status"}:
-                    used_blockchain_tool = True
-                # 항상 실제 URL 뉴스 섹션으로 교체 (GPT 생성 뉴스 섹션 제거 후 추가)
-                # 단, 블록체인 온체인 조회 결과에는 무관한 보험 뉴스를 붙이지 않는다.
-                # GPT가 지시를 어기고 이전 턴(대화 히스토리)의 뉴스 섹션을 그대로 베껴
-                # 답변에 포함시키는 경우가 있어, news가 빈 문자열이어도(=뉴스를 붙이지
-                # 않는 턴이어도) GPT가 직접 쓴 뉴스 섹션은 항상 제거한다 (2026-09-18 발견 —
-                # 블록체인 조회 응답에 관련 없는 보험 뉴스가 계속 붙던 버그).
                 news = "" if (used_blockchain_tool or not include_news) else self._build_news_section(user_message)
                 if "📰 관련 최신 뉴스" in final_text:
                     idx = final_text.index("📰 관련 최신 뉴스")
@@ -2690,13 +2650,6 @@ class InsuranceChatbot:
                     final_text = (final_text[:cut].rstrip() if cut >= 0 else final_text[:idx].rstrip())
                 if news:
                     final_text += news
-                # web_app.py가 /api/chat 응답에 실어 프론트엔드로 넘긴다 — GPT가 매번
-                # 표 헤더 문구("Ticker"/"티커"/"종목")나 상태 표현("DRY_RUN"/"dry_run"/
-                # "페이퍼")을 다르게 써서, 렌더링된 텍스트만 보고 크립토 응답인지
-                # 판별하는 클라이언트 쪽 문자열 매칭이 계속 깨지는 문제가 있었다
-                # (2026-09-24 발견) — 도구 호출 여부라는 확정적인 근거를 그대로
-                # 넘겨주는 쪽이 안정적이다.
-                self.last_response_used_crypto_tool = used_blockchain_tool
                 return final_text
 
             elif finish_reason == "tool_calls":
@@ -2798,13 +2751,6 @@ class InsuranceChatbot:
 
             if finish_reason == "stop":
                 self.conversation_history.append({"role": "assistant", "content": full_content})
-                # 이번 턴에 도구를 하나도 호출하지 않았다면(=이전 턴에서 받아온 블록체인
-                # 조회 결과를 그대로 재사용해 답했을 가능성), 직전에 실제로 호출됐던
-                # 도구가 get_blockchain_dental_status/get_blockchain_altinvest_status였는지로 판단한다.
-                if not any_tool_used and self._last_tool_call_names(self.conversation_history) & {"get_blockchain_dental_status", "get_blockchain_altinvest_status", "get_crypto_reserve_status", "get_personal_trading_status"}:
-                    used_blockchain_tool = True
-                # 항상 실제 URL 뉴스 섹션으로 교체 (GPT 생성 뉴스 섹션 제거 후 추가)
-                # 단, 블록체인 온체인 조회 결과에는 무관한 보험 뉴스를 붙이지 않는다
                 if used_blockchain_tool:
                     news = ""
                 else:
@@ -2820,8 +2766,7 @@ class InsuranceChatbot:
                     full_content = (full_content[:cut].rstrip() if cut >= 0 else full_content[:idx].rstrip())
                 if news:
                     full_content += news
-                self.last_response_used_crypto_tool = used_blockchain_tool
-                yield {"type": "done", "full_text": full_content, "used_crypto_tool": used_blockchain_tool}
+                yield {"type": "done", "full_text": full_content}
                 return
 
             elif finish_reason == "tool_calls":
