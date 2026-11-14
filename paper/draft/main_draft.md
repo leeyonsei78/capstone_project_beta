@@ -9,7 +9,7 @@
 
 ## Abstract
 
-Large language model (LLM) agents that invoke external tools to retrieve structured data introduce a category of errors that is distinct from factual hallucination: errors arising in the LLM's reasoning and presentation layer even when the underlying data retrieval succeeds. We identify, classify, and measure this failure class in a production insurance chatbot system (InsureChain) that queries Ethereum smart contract state via tool-calling. Through analysis of real user-reported incidents and a 50-query before/after experiment, we document six recurring error types — (E1) array truncation, (E2) temporal arithmetic mistakes, (E3) stale tool-result reuse, (E4) timezone/locale ambiguity, (E5) response expression variability, and (E6) conditional UI logic failure — and propose four corresponding mitigation strategies: pre-computed string injection, explicit enumeration prompting, server-side tool-use flags, and history-aware tool tracking. Our evaluation shows that the mitigations reduce error rates from [TBD]% to [TBD]% on affected query types while leaving baseline performance unchanged. These findings generalize to any LLM agent that must faithfully report arrays, timestamps, or status codes from real-time structured data sources, with particular relevance for financial and healthcare applications where incorrect responses carry regulatory risk.
+Large language model (LLM) agents that invoke external tools to retrieve structured data introduce a category of errors that is distinct from factual hallucination: errors arising in the LLM's reasoning and presentation layer even when the underlying data retrieval succeeds. We identify, classify, and measure this failure class in a production insurance chatbot system (InsureChain) that queries Ethereum smart contract state via tool-calling. Through analysis of real user-reported incidents and a 49-query before/after experiment, we document six recurring error types — (E1) array truncation, (E2) temporal arithmetic mistakes, (E3) stale tool-result reuse, (E4) timezone/locale ambiguity, (E5) response expression variability, and (E6) conditional UI logic failure — and propose four corresponding mitigation strategies: pre-computed string injection, explicit enumeration prompting, server-side tool-use flags, and history-aware tool tracking. Our evaluation shows that the mitigations reduce error rates from [TBD]% to [TBD]% on affected query types while leaving baseline performance unchanged. These findings generalize to any LLM agent that must faithfully report arrays, timestamps, or status codes from real-time structured data sources, with particular relevance for financial and healthcare applications where incorrect responses carry regulatory risk.
 
 **Keywords**: large language model; tool calling; blockchain; insurance; error taxonomy; smart contract; hallucination mitigation; LLM agent
 
@@ -29,7 +29,7 @@ We make three contributions:
 
 2. **Four targeted mitigation strategies** (Section 5) that address the root cause of each class. The mitigations range from tool-layer changes (pre-computing human-readable strings before passing data to the LLM) to prompt-layer changes (explicit enumeration directives) to application-layer changes (emitting authoritative flags in the SSE event stream).
 
-3. **An empirical evaluation** (Section 6) using a 50-query before/after experiment harness that calls the live chatbot's streaming API and compares responses against ground truth extracted from the blockchain node. Results demonstrate [TBD] after mitigation.
+3. **An empirical evaluation** (Section 6) using a 49-query before/after experiment harness that calls the live chatbot's streaming API and compares responses against ground truth extracted from the blockchain node. Results demonstrate [TBD] after mitigation.
 
 The remainder of this paper is organized as follows. Section 2 reviews related work. Section 3 describes the InsureChain system architecture. Sections 4 and 5 present the taxonomy and mitigations. Section 6 reports the evaluation. Section 7 discusses implications and limitations. Section 8 concludes.
 
@@ -458,14 +458,14 @@ We presented the first systematic taxonomy of tool-layer presentation errors (TL
 14. Eswaran, A.; Golev, O.; Tank, D.; Rahi, S.; Tyagi, H. CryptoAnalystBench: Failures in Multi-Tool Long-Form LLM Analysis. *arXiv* **2026**, arXiv:2602.11304.
 15. Diehl, S. Etherisc: Decentralized Insurance Protocol. Available online: https://etherisc.com (accessed 14 November 2026).
 16. Islayem, R.; Gebreab, S.; AlKhader, W.; Musamih, A.; Salah, K.; Jayaraman, R.; Khan, M.K. Using Large Language Models for Enhanced Fraud Analysis and Detection in Blockchain Based Health Insurance Claims. *Scientific Reports* **2025**, *15*, 11542. https://doi.org/10.1038/s41598-025-15676-4
-17. Mo, Z.; Quan, Z.; O'Donohue, E.; Zhong, K. Claim Automation using Large Language Model. *arXiv* **2026**, arXiv:2602.16836.
+17. Mo, Z.; Quan, Z.; O'Donohue, E.; Zhong, K. Claim Automation using Large Language Model. *arXiv* **2026**, arXiv:2602.16836. (Preprint)
 18. Pałgan, B.; Wawryszczuk, M.; Chwał, J. A State-Aware Dual-Tool Architecture for Improved Tool Use in Multi-Turn LLM Dialogue. *Applied Sciences* **2026**, *16*, 4329. https://doi.org/10.3390/app16094329
 
 ---
 
 ## Appendix A: Full Query Set
 
-See `paper/eval/queries.json` (50 queries, available in the project repository).
+See `paper/eval/queries.json` (49 queries across 9 groups: E1–E6 primary, MX mixed, BL baseline control, ST stress; available in the project repository).
 
 ## Appendix B: Evaluation Harness
 
