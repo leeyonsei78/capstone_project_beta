@@ -1539,3 +1539,71 @@ AI 리포트)을 복제하고 `rb-` 접두사 id로 분리함.
     `Sdapaul` 작성자 그대로 둠.
   - 주의: `git commit --amend`에서 `--reset-author`와 `--author`는 함께 못 씀(fatal 오류). 그리고
     이미 push한 커밋의 작성자를 바꾸려면 force push가 필요하므로 반드시 사용자 확인 후 진행할 것.
+
+### ⑬단계 — SCIE 논문 초안(v0.2) 작성 완료 (2026-11-14, 커밋 baccd20)
+
+⑫단계(타당성 검토·선행연구)에 이어, 실제 논문 초안 `paper/draft/main_draft.md`를
+v0.1(골격+TODO) → v0.2(전 섹션 완성)로 작성함. **제출 목표: 2026-11-27, Applied Sciences
+또는 Future Internet (MDPI, SCIE)**.
+
+**논문 제목**: "Error Taxonomy and Mitigation Strategies for LLM Agents Querying
+Blockchain-Based Insurance Data"
+
+**완성된 섹션** (전부 영어):
+- Abstract (~200단어, 실험 수치는 [TBD])
+- Section 1: Introduction (3가지 기여 명시)
+- Section 2: Related Work (Tool-Calling / 환각 / 블록체인보험 / Gap 4개 하위절)
+- Section 3: System Architecture (ASCII 그림 + 4개 하위절)
+- Section 4: Error Taxonomy — E1~E6 각각 Definition / Root cause / Observed incident /
+  Example (before mitigation) / Mitigation reference 완성
+- Section 5: Mitigation Strategies — M1~M4 각각 Principle / Implementation(코드) /
+  Why-this-works 완성
+- Section 6: Evaluation — 설정·Table 2 완성; 결과(Table 3·Figure 2)는 [TBD]
+- Section 7: Discussion (Generalizability / Financial implications / Design principle /
+  Limitations 4개 하위절)
+- Section 8: Conclusion
+- References (18건, 일부 DOI [TBD])
+- Appendices A, B, C
+
+**[TBD] 남은 것 — 실험 실행 후 채워야 함**:
+- Table 3: 오류 유형별 Before/After 정확도 수치
+- Figure 2: 오류 유형별 Before/After 막대 차트 (`paper/draft/figures/fig2_before_after.png`)
+- 일부 Reference DOI
+
+**실험 실행 절차** (블록체인 스택이 떠 있을 때):
+```
+# 창 1
+C:\test_capstone_project_beta\blockchain-dental\run.bat
+
+# 창 2
+C:\test_capstone_project_beta\start.bat
+
+# Before-mitigation 측정 (paper/before-mitigation 브랜치)
+git checkout paper/before-mitigation
+cd insurance_agent
+python ..\paper\eval\harness.py --phase before
+
+# After-mitigation 측정 (main 브랜치)
+git checkout main
+python ..\paper\eval\harness.py --phase after
+
+# 리포트
+python paper\eval\harness.py --report
+```
+
+**핵심 개념 — Tool-Layer Presentation Errors (TLPEs)**:
+- 데이터 조회 자체는 정확하지만 LLM의 합성·제시 단계에서 발생하는 오류 클래스
+  (기존 "환각"과 구별되는 신규 분류 체계)
+- E1: 배열 누락(일부만 요약), E2: 시간 연산 오류("내일 만기"), E3: 오래된 도구 결과 재사용
+- E4: 타임존 모호성(UTC vs KST), E5: 응답 표현 가변성, E6: 조건부 UI 로직 실패
+- M1: 사전계산 문자열 주입(Node.js), M2: 전수 나열 프롬프트
+- M3: 서버 도구 사용 플래그(SSE), M4: 히스토리 기반 도구 추적
+
+**평가 인프라** (`paper/eval/`):
+- `harness.py`: SSE 스트리밍 호출 + 지상진리 추출(`query-policy.js` subprocess)
+- `queries.json`: E1~E6 + 베이스라인 + 혼합 50개 쿼리
+- `results/{phase}/{query_id}.json`: 개별 결과 저장
+
+**보안 제약 (반드시 유지)**:
+- `capstone_project_alpha`는 절대 수정·변경 금지
+- 모든 문서는 `capstone_project_beta`에만 업로드
