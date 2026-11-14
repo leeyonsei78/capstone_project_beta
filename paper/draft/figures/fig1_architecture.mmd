@@ -1,0 +1,35 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '14px'}}}%%
+flowchart TB
+    U["User (Browser)"]
+
+    subgraph Flask ["Flask Web Server (port 5000)"]
+        OA["Orchestrator Agent (GPT-4o)"]
+        subgraph Tools ["Tool Layer"]
+            UW["Underwriting\nSub-Agent\n(18 tools)"]
+            ST["Search &\nProduct Tools"]
+            BT["Blockchain\nQuery Tools\n(get_blockchain_dental_status\nget_blockchain_altinvest_status\nget_crypto_reserve_status\nget_personal_trading_status)"]
+        end
+        OA --> UW
+        OA --> ST
+        OA --> BT
+    end
+
+    subgraph Node ["Node.js Scripts (ethers.js)"]
+        QP["query-policy.js\nquery-altinvest.js\n..."]
+    end
+
+    subgraph Chain ["Hardhat Local Node (port 8545)"]
+        SC["Smart Contracts\nDentalInsurance · ParametricInsurance\nReinsurancePool · AltInvestmentFund\nReserveFund"]
+    end
+
+    U -- "HTTP / SSE" --> Flask
+    BT -- "subprocess + JSON" --> Node
+    Node -- "ethers.js RPC" --> Chain
+
+    style Flask fill:#dbeafe,stroke:#2563eb
+    style Node fill:#dcfce7,stroke:#16a34a
+    style Chain fill:#fef9c3,stroke:#ca8a04
+    style BT fill:#fce7f3,stroke:#db2777
+
+    classDef tlpe fill:#fce7f3,stroke:#db2777,color:#831843
+    class BT tlpe
