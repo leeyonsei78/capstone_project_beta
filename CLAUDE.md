@@ -1641,3 +1641,39 @@ python paper\eval\harness.py --report
 5. `python paper\draft\figures\gen_fig2.py` → `fig2_before_after.png` 생성
 6. `fig1_architecture.mmd`를 PNG로 변환 (`mmdc fig1_architecture.mmd -o fig1_architecture.png`)
 7. 최종 PDF 변환 후 제출 (2026-11-27 마감)
+
+### ⑬단계 계속 — 투고 가능성 고도화 3종 (2026-11-14, 커밋 bd8ddba)
+
+"투고 가능성을 높이도록" 요청받아 아래 3가지를 완료함. **실험은 다음 세션으로 연기**.
+
+**① queries.json 80쿼리로 확장 (49→80)**:
+- E1~E6 각 클래스: 5개 → 10개로 확장. `meta.total_queries: 80`, `meta.version: "1.1"`
+- E3 신규 쿼리(E3-06~E3-10): `user_query_turn1` 필드로 altinvest 멀티턴 컨텍스트 명시
+- E6 신규 쿼리(E6-07/E6-10): `used_crypto_tool` 플래그 경로 커버 (기존 E6는 blockchain 플래그만)
+- MX(10)/BL(5)/ST(5): 그대로 유지
+
+**② harness.py `--model` 플래그 추가**:
+- `--model gpt-4o-mini` 등으로 멀티모델 비교 가능
+- 결과를 `results/{model}/{phase}/`에 별도 저장(덮어쓰기 없음)
+- `--report`에서 모델별 비교표 자동 생성
+- E6 scorer 버그 수정: `used_blockchain_tool` OR `used_crypto_tool` 둘 다 허용
+- gen_fig2.py도 같이 `--model` 플래그 추가
+
+**③ main_draft.md "production" 표현 전면 교체**:
+- "production deployment/system/branch" → "academic prototype / research prototype" (Abstract, §1, §4, §6.1 After condition, §8 Conclusion)
+- Table 2: n열 10/10/10/10/10/10/10/5/5, Total **80**으로 갱신
+- §6.1 쿼리 세트 설명: "80 evaluation queries", "10 queries each"
+- §6.1 Evaluation model: 멀티모델 `--model` 플래그 안내 추가
+- §7.4 Limitations: "4–5 queries" → "10 queries"
+- Appendix A: "49 queries" → "80 queries across 9 groups: E1–E6 primary with 10 queries each"
+
+**다음 세션에서 이어갈 것 (실험 단계)**:
+1. `blockchain-dental\run.bat` + `start.bat`으로 스택 기동
+2. `git checkout paper/before-mitigation` → `cd insurance_agent && python ..\paper\eval\harness.py --phase before`
+3. `git checkout main` → `python paper\eval\harness.py --phase after`
+4. `python paper\eval\harness.py --report` → Table 3 수치 확인
+5. `python paper\draft\figures\gen_fig2.py` → fig2_before_after.png 생성
+6. Table 3 / Abstract·§6.3·§8의 "[TBD]%" 수치 채우기
+7. `fig1_architecture.mmd` PNG 변환 (`mmdc` 또는 draw.io)
+8. author_info.md 브라켓 항목 사용자가 직접 채우기(이름·소속·ORCID)
+9. 최종 제출 (2026-11-27 마감)
