@@ -3,11 +3,16 @@ Generate Figure 2: before/after correctness-rate bar chart for the paper.
 
 Usage (after running harness.py --phase before and --phase after):
   python paper/draft/figures/gen_fig2.py
+  python paper/draft/figures/gen_fig2.py --model gpt-4o-mini
 
-Reads:  paper/eval/results/{before_mitigation,after_mitigation}/*.json
-Writes: paper/draft/figures/fig2_before_after.png  (300 DPI)
+Reads:  paper/eval/results/{model}/{before_mitigation,after_mitigation}/*.json
+Writes: paper/draft/figures/fig2_before_after[_{model}].png  (300 DPI)
+
+If --model is omitted, uses the first model directory found (or the flat
+legacy layout results/{phase}/*.json for backward compatibility).
 """
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -36,9 +41,22 @@ LABELS = {
 COLORS = {"before_mitigation": "#ef4444", "after_mitigation": "#22c55e"}
 
 
-def load_phase(phase: str) -> dict:
+def _resolve_model_dir(model_slug: str = None) -> Path:
+    """Return the base directory for a model's results."""
+    if model_slug:
+        return RESULTS_DIR / model_slug
+    # Auto-detect: prefer model subdirs over flat layout
+    if RESULTS_DIR.exists():
+        subdirs = [d for d in RESULTS_DIR.iterdir() if d.is_dir()
+                   and not d.name.endswith("_mitigation")]
+        if subdirs:
+            return subdirs[0]
+    return RESULTS_DIR  # flat legacy layout
+
+
+def load_phase(phase: str, base_dir: Path) -> dict:
     """Returns {error_type: correctness_rate}."""
-    phase_dir = RESULTS_DIR / phase
+    phase_dir = base_dir / phase
     if not phase_dir.exists():
         print(f"[warn] {phase_dir} not found — using placeholder 0.0")
         return {et: 0.0 for et in PRIMARY}
@@ -61,8 +79,22 @@ def load_phase(phase: str) -> dict:
 
 
 def main():
-    before = load_phase("before_mitigation")
-    after  = load_phase("after_mitigation")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--model", default=None,
+                    help="Model slug (e.g. gpt-4o-mini). Omit to auto-detect.")
+    args = ap.parse_args()
+
+    model_slug = args.model.replace("/", "-").replace(":", "-") if args.model else None
+    base_dir = _resolve_model_dir(model_slug)
+    print(f"Reading results from: {base_dir}")
+
+    # Adjust output filename when a specific model is requested
+    out_file = OUT_FILE
+    if model_slug and model_slug != "gpt-4o":
+        out_file = OUT_FILE.with_stem(f"fig2_before_after_{model_slug}")
+
+    before = load_phase("before_mitigation", base_dir)
+    after  = load_phase("after_mitigation", base_dir)
 
     x     = np.arange(len(PRIMARY))
     width = 0.35
@@ -106,8 +138,8 @@ def main():
                         ha="center", va="bottom", fontsize=8, color="#15803d")
 
     fig.tight_layout()
-    fig.savefig(str(OUT_FILE), dpi=300, bbox_inches="tight")
-    print(f"Saved: {OUT_FILE}")
+    fig.savefig(str(out_file), dpi=300, bbox_inches="tight")
+    print(f"Saved: {out_file}")
 
 
 if __name__ == "__main__":

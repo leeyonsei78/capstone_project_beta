@@ -9,14 +9,19 @@ Usage:
   python harness.py --phase both             # run all
   python harness.py --error-type E1_array_truncation  # filter by error type
   python harness.py --query-id E1-01        # run single query
+  python harness.py --model gpt-4o-mini     # override model label (default: gpt-4o)
   python harness.py --report                 # generate summary report from results/
+  python harness.py --report --model gpt-4o-mini  # report for specific model
 
 Requirements (must be running):
   - insurance_agent web server: http://localhost:5000
   - Hardhat node: http://localhost:8545  (for ground-truth extraction)
   - node blockchain-dental/scripts/query-policy.js <wallet> (auto-called)
 
-Output: results/{phase}/{query_id}.json
+Output: results/{model}/{phase}/{query_id}.json
+  Multi-model comparison: run twice with different --model labels after
+  configuring the chatbot's LLM. Results are stored per model so runs
+  do not overwrite each other.
 """
 
 import argparse
@@ -40,7 +45,7 @@ RESULTS_DIR   = Path(__file__).parent / "results"
 WALLET        = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"  # Hardhat Account #1
 
 SESSION_ID_PREFIX = "eval-harness"
-MODEL             = "gpt-4o"
+MODEL             = "gpt-4o"   # default; override via --model CLI flag
 
 # ── Scorer: simple string-based correctness ──────────────────────────────────
 SCORING_RUBRIC = {
@@ -128,7 +133,9 @@ def score_response(query: dict, llm_text: str, ground_truth: dict,
 
     # ── E6: Conditional logic failure ─────────────────────────────────────────
     elif et == "E6_conditional_logic_failure":
-        flags_ok = sse_flags.get("used_blockchain_tool", False)
+        # Accept either blockchain or crypto flag — some E6 queries use crypto tool
+        flags_ok = (sse_flags.get("used_blockchain_tool", False) or
+                    sse_flags.get("used_crypto_tool", False))
         correct = True
 
     # ── Baseline control ──────────────────────────────────────────────────────
@@ -248,6 +255,7 @@ def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
         "query_id": qid,
         "error_type": query["error_type"],
         "phase": phase,
+        "model": MODEL,
         "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "user_query": query["user_query"],
         "llm_response": text,
@@ -267,66 +275,125 @@ def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
 
 
 # ── Report generation ─────────────────────────────────────────────────────────
-def generate_report():
+def generate_report(model_filter: str = None):
+    """
+    Print evaluation report. If model_filter is set, restrict to that model's
+    results directory; otherwise aggregate all models found under RESULTS_DIR.
+    """
     rows = []
-    for f in sorted(RESULTS_DIR.glob("**/*.json")):
-        try:
-            rows.append(json.loads(f.read_text(encoding="utf-8")))
-        except Exception:
-            continue
+    if model_filter:
+        search_dirs = [RESULTS_DIR / _model_slug(model_filter)]
+    else:
+        # Find all model subdirs (directories that contain at least one phase subdir)
+        candidates = [d for d in RESULTS_DIR.iterdir() if d.is_dir()] if RESULTS_DIR.exists() else []
+        # If no model subdirs exist, fall back to flat layout (backward compat)
+        if not candidates:
+            search_dirs = [RESULTS_DIR]
+        else:
+            search_dirs = candidates
+
+    for search_dir in search_dirs:
+        for f in sorted(search_dir.glob("**/*.json")):
+            try:
+                rows.append(json.loads(f.read_text(encoding="utf-8")))
+            except Exception:
+                continue
 
     if not rows:
         print("No result files found.")
         return
 
-    by_et_phase: dict = {}
+    # Group by (model, error_type, phase)
+    by_model_et_phase: dict = {}
     for r in rows:
-        key = (r["error_type"], r["phase"])
-        by_et_phase.setdefault(key, []).append(r)
+        model_key = r.get("model", "unknown")
+        key = (model_key, r["error_type"], r["phase"])
+        by_model_et_phase.setdefault(key, []).append(r)
 
-    print("\n" + "=" * 72)
-    print("EVALUATION REPORT")
-    print("=" * 72)
-    for (et, phase), items in sorted(by_et_phase.items()):
-        total = len(items)
-        correct = sum(1 for x in items if x["scoring"]["correct"])
-        no_news = sum(1 for x in items if x["scoring"]["no_news"])
-        flags   = sum(1 for x in items if x["scoring"]["flags_ok"])
-        avg_score = sum(x["scoring"]["score"] for x in items) / total
-        max_score = items[0]["scoring"]["score_max"]
-        print(f"\n{et} [{phase}]  n={total}")
-        print(f"  Correct      : {correct}/{total} = {correct/total:.0%}")
-        print(f"  No news      : {no_news}/{total} = {no_news/total:.0%}")
-        print(f"  Flags ok     : {flags}/{total}  = {flags/total:.0%}")
-        print(f"  Avg score    : {avg_score:.2f}/{max_score}")
+    models_found = sorted(set(k[0] for k in by_model_et_phase))
 
-    print("\n" + "-" * 72)
-    print("OVERALL BEFORE vs AFTER")
-    for et in set(k[0] for k in by_et_phase):
-        before = by_et_phase.get((et, "before_mitigation"), [])
-        after  = by_et_phase.get((et, "after_mitigation"), [])
-        if before and after:
-            b_rate = sum(1 for x in before if x["scoring"]["correct"]) / len(before)
-            a_rate = sum(1 for x in after  if x["scoring"]["correct"]) / len(after)
-            delta  = a_rate - b_rate
-            print(f"  {et:<35} {b_rate:.0%} → {a_rate:.0%}  Δ={delta:+.0%}")
-    print("=" * 72)
+    for model_key in models_found:
+        print("\n" + "=" * 72)
+        print(f"EVALUATION REPORT  |  model={model_key}")
+        print("=" * 72)
+
+        by_et_phase = {(et, ph): v
+                       for (m, et, ph), v in by_model_et_phase.items()
+                       if m == model_key}
+
+        for (et, phase), items in sorted(by_et_phase.items()):
+            total = len(items)
+            correct = sum(1 for x in items if x["scoring"]["correct"])
+            no_news = sum(1 for x in items if x["scoring"]["no_news"])
+            flags   = sum(1 for x in items if x["scoring"]["flags_ok"])
+            avg_score = sum(x["scoring"]["score"] for x in items) / total
+            max_score = items[0]["scoring"]["score_max"]
+            print(f"\n{et} [{phase}]  n={total}")
+            print(f"  Correct      : {correct}/{total} = {correct/total:.0%}")
+            print(f"  No news      : {no_news}/{total} = {no_news/total:.0%}")
+            print(f"  Flags ok     : {flags}/{total}  = {flags/total:.0%}")
+            print(f"  Avg score    : {avg_score:.2f}/{max_score}")
+
+        print("\n" + "-" * 72)
+        print("BEFORE vs AFTER (correctness rate)")
+        for et in sorted(set(k[0] for k in by_et_phase)):
+            before = by_et_phase.get((et, "before_mitigation"), [])
+            after  = by_et_phase.get((et, "after_mitigation"), [])
+            if before and after:
+                b_rate = sum(1 for x in before if x["scoring"]["correct"]) / len(before)
+                a_rate = sum(1 for x in after  if x["scoring"]["correct"]) / len(after)
+                delta  = a_rate - b_rate
+                print(f"  {et:<35} {b_rate:.0%} -> {a_rate:.0%}  d={delta:+.0%}")
+        print("=" * 72)
+
+    # Cross-model comparison when multiple models present
+    if len(models_found) > 1:
+        print("\n" + "=" * 72)
+        print("CROSS-MODEL COMPARISON (after_mitigation, correctness rate)")
+        print("=" * 72)
+        et_set = sorted(set(k[1] for k in by_model_et_phase))
+        header = f"{'Error type':<35}" + "".join(f"  {m[:12]:>12}" for m in models_found)
+        print(header)
+        for et in et_set:
+            row = f"{et:<35}"
+            for m in models_found:
+                items = by_model_et_phase.get((m, et, "after_mitigation"), [])
+                if items:
+                    rate = sum(1 for x in items if x["scoring"]["correct"]) / len(items)
+                    row += f"  {rate:>11.0%} "
+                else:
+                    row += f"  {'N/A':>12}"
+            print(row)
+        print("=" * 72)
+
+
+def _model_slug(model: str) -> str:
+    """Convert model name to a filesystem-safe slug."""
+    return model.replace("/", "-").replace(":", "-").replace(" ", "_")
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
+    global MODEL
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--phase", choices=["before", "after", "both", "all"],
                         default="both")
     parser.add_argument("--error-type", default=None)
     parser.add_argument("--query-id", default=None)
+    parser.add_argument("--model", default=MODEL,
+                        help="Model label for result grouping (default: gpt-4o). "
+                             "Change the chatbot's LLM config before running with "
+                             "a different label for multi-model comparison.")
     parser.add_argument("--report", action="store_true")
     parser.add_argument("--no-gt", action="store_true",
                         help="Skip ground-truth extraction (blockchain node not running)")
     args = parser.parse_args()
 
+    MODEL = args.model  # propagate to module-level so run_query picks it up
+
     if args.report:
-        generate_report()
+        generate_report(model_filter=args.model if args.model != "gpt-4o" else None)
         return
 
     queries_data = json.loads(QUERIES_FILE.read_text(encoding="utf-8"))
@@ -363,10 +430,10 @@ def main():
     else:
         phase_label = args.phase  # "both"
 
-    out_dir = RESULTS_DIR / phase_label
+    out_dir = RESULTS_DIR / _model_slug(MODEL) / phase_label
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"\nRunning {len(all_queries)} queries (phase={phase_label}) ...\n")
+    print(f"\nRunning {len(all_queries)} queries (phase={phase_label}, model={MODEL}) ...\n")
     for q in all_queries:
         result = run_query(q, gt, phase_label)
         out_file = out_dir / f"{q['id']}.json"

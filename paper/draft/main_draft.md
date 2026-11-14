@@ -9,7 +9,7 @@
 
 ## Abstract
 
-Large language model (LLM) agents that invoke external tools to retrieve structured data introduce a category of errors that is distinct from factual hallucination: errors arising in the LLM's reasoning and presentation layer even when the underlying data retrieval succeeds. We identify, classify, and measure this failure class in a production insurance chatbot system (InsureChain) that queries Ethereum smart contract state via tool-calling. Through analysis of real user-reported incidents and a 49-query before/after experiment, we document six recurring error types — (E1) array truncation, (E2) temporal arithmetic mistakes, (E3) stale tool-result reuse, (E4) timezone/locale ambiguity, (E5) response expression variability, and (E6) conditional UI logic failure — and propose four corresponding mitigation strategies: pre-computed string injection, explicit enumeration prompting, server-side tool-use flags, and history-aware tool tracking. Our evaluation shows that the mitigations reduce error rates from [TBD]% to [TBD]% on affected query types while leaving baseline performance unchanged. These findings generalize to any LLM agent that must faithfully report arrays, timestamps, or status codes from real-time structured data sources, with particular relevance for financial and healthcare applications where incorrect responses carry regulatory risk.
+Large language model (LLM) agents that invoke external tools to retrieve structured data introduce a category of errors that is distinct from factual hallucination: errors arising in the LLM's reasoning and presentation layer even when the underlying data retrieval succeeds. We identify, classify, and measure this failure class in a research prototype insurance chatbot system (InsureChain) that queries Ethereum smart contract state via tool-calling. Through analysis of real user-reported incidents and an 80-query before/after experiment, we document six recurring error types — (E1) array truncation, (E2) temporal arithmetic mistakes, (E3) stale tool-result reuse, (E4) timezone/locale ambiguity, (E5) response expression variability, and (E6) conditional UI logic failure — and propose four corresponding mitigation strategies: pre-computed string injection, explicit enumeration prompting, server-side tool-use flags, and history-aware tool tracking. Our evaluation shows that the mitigations reduce error rates from [TBD]% to [TBD]% on affected query types while leaving baseline performance unchanged. These findings generalize to any LLM agent that must faithfully report arrays, timestamps, or status codes from real-time structured data sources, with particular relevance for financial and healthcare applications where incorrect responses carry regulatory risk.
 
 **Keywords**: large language model; tool calling; blockchain; insurance; error taxonomy; smart contract; hallucination mitigation; LLM agent
 
@@ -21,7 +21,7 @@ The integration of large language models (LLMs) with external tools has enabled 
 
 In practice, the tool-calling paradigm introduces a subtle failure mode that is both consequential and undercharacterized. When an LLM agent correctly retrieves structured data from an external source but then makes errors in interpreting, presenting, or propagating that data to the user, the resulting response is incorrect despite the data layer being accurate. We term this class of errors **tool-layer presentation errors** (TLPEs). Unlike hallucination — which involves the LLM generating content unsupported by any source — TLPEs occur specifically at the intersection of correct data retrieval and incorrect LLM synthesis. This distinction matters because standard hallucination mitigations (retrieval-augmented generation, source attribution, factuality scoring) are not designed to address TLPEs: the retrieved data is correct, yet the error persists.
 
-This paper presents the first systematic taxonomy of TLPEs, grounded in a production deployment. Our system, InsureChain, is an insurance advisory chatbot backed by Ethereum smart contracts that record dental insurance policies, parametric triggers, and investment positions. The immutable and time-sensitive nature of blockchain data makes TLPE consequences especially visible: a one-day error in a reported maturity date can cause a user to miss a claim window; a misreported DRY\_RUN status can lead a user to believe real trades are executing when they are not.
+This paper presents the first systematic taxonomy of TLPEs, grounded in an academic prototype deployment. Our system, InsureChain, is a research prototype of an insurance advisory chatbot backed by Ethereum smart contracts that record dental insurance policies, parametric triggers, and investment positions, deployed on a local Hardhat testnet. The immutable and time-sensitive nature of blockchain data makes TLPE consequences especially visible: a one-day error in a reported maturity date can cause a user to miss a claim window; a misreported DRY\_RUN status can lead a user to believe real trades are executing when they are not.
 
 We make three contributions:
 
@@ -29,7 +29,7 @@ We make three contributions:
 
 2. **Four targeted mitigation strategies** (Section 5) that address the root cause of each class. The mitigations range from tool-layer changes (pre-computing human-readable strings before passing data to the LLM) to prompt-layer changes (explicit enumeration directives) to application-layer changes (emitting authoritative flags in the SSE event stream).
 
-3. **An empirical evaluation** (Section 6) using a 49-query before/after experiment harness that calls the live chatbot's streaming API and compares responses against ground truth extracted from the blockchain node. Results demonstrate [TBD] after mitigation.
+3. **An empirical evaluation** (Section 6) using an 80-query before/after experiment harness that calls the live chatbot's streaming API and compares responses against ground truth extracted from the blockchain node. Results demonstrate [TBD] after mitigation.
 
 The remainder of this paper is organized as follows. Section 2 reviews related work. Section 3 describes the InsureChain system architecture. Sections 4 and 5 present the taxonomy and mitigations. Section 6 reports the evaluation. Section 7 discusses implications and limitations. Section 8 concludes.
 
@@ -128,7 +128,7 @@ Blockchain data has three properties that make it particularly susceptible to TL
 
 ## 4. Error Taxonomy
 
-We document six TLPE classes, each confirmed by: (a) a reproducible query sequence, (b) a documented before-state exhibiting the error, and (c) an identified root cause. All incidents were reported by real users during the InsureChain deployment period (September–November 2026).
+We document six TLPE classes, each confirmed by: (a) a reproducible query sequence, (b) a documented before-state exhibiting the error, and (c) an identified root cause. All incidents were encountered during the InsureChain prototype testing period (September–November 2026).
 
 ### 4.1 E1: Array Truncation
 
@@ -335,30 +335,30 @@ if not any_tool_used and _last_tool_call_names(history) & {
 
 ### 6.1 Experimental Setup
 
-**Query set.** We constructed 49 evaluation queries across nine groups (Table 2). For each error class (E1–E6), we define queries that reliably trigger the error in the before-mitigation condition and should be resolved in the after-mitigation condition; all E1–E6 queries run in both experimental conditions. We also include 5 baseline control queries (non-blockchain questions) to verify that mitigations do not degrade general performance, 10 mixed-condition queries combining multiple error triggers, and 5 stress/boundary queries targeting edge cases such as empty arrays and already-expired policies.
+**Query set.** We constructed 80 evaluation queries across nine groups (Table 2). For each error class (E1–E6), we define 10 queries each (5 before-mitigation, 5 after-mitigation triggers) that reliably activate the error in the before-mitigation condition and should be resolved in the after-mitigation condition. We also include 5 baseline control queries (non-blockchain questions) to verify that mitigations do not degrade general performance, 10 mixed-condition queries combining multiple error triggers, and 5 stress/boundary queries targeting edge cases such as empty arrays and already-expired policies.
 
-**Table 2.** Evaluation query distribution. All 49 queries run in both before- and after-mitigation conditions; *n* = number of distinct queries per group.
+**Table 2.** Evaluation query distribution. E1–E6 queries run in the phase they are labelled for; MX/BL/ST run in both conditions. *n* = number of distinct queries per group.
 
 | Group | Description | *n* | Mitigation tested |
 |---|---|---|---|
-| E1 | Array truncation | 5 | M2 |
-| E2 | Temporal arithmetic | 5 | M1a |
-| E3 | Stale tool reuse | 5 | M4 |
-| E4 | Timezone ambiguity | 5 | M1b |
-| E5 | Expression variability | 5 | M3 |
-| E6 | Conditional logic | 4 | M3 |
+| E1 | Array truncation | 10 | M2 |
+| E2 | Temporal arithmetic | 10 | M1a |
+| E3 | Stale tool reuse | 10 | M4 |
+| E4 | Timezone ambiguity | 10 | M1b |
+| E5 | Expression variability | 10 | M3 |
+| E6 | Conditional logic | 10 | M3 |
 | MX | Mixed / multi-error | 10 | M1–M4 |
 | BL | Baseline (non-blockchain) | 5 | — (control) |
 | ST | Stress / boundary | 5 | M1–M4 |
-| **Total** | | **49** | |
+| **Total** | | **80** | |
 
 **Before condition.** Evaluated on the `paper/before-mitigation` git branch, which removes M1–M4 from the codebase: `tsToDate()` reverts to `toISOString()`, `timeUntilMaturity` is removed and `Math.ceil(daysUntilMaturity)` is restored, the enumeration prompt is removed, SSE flags are removed, and `_last_tool_call_names()` is removed.
 
-**After condition.** Evaluated on `main`, the current production branch with all mitigations applied.
+**After condition.** Evaluated on `main`, the current research prototype branch with all mitigations applied.
 
 **Ground truth.** For structural queries (array counts, timestamps), ground truth is extracted at evaluation time by calling `node blockchain-dental/scripts/query-policy.js <wallet>` on a fixed local Hardhat node with known state (Hardhat Account #1, deployed via `scripts/deploy.js`). The Hardhat node is deterministic: re-deployment always produces the same contract state, ensuring reproducible ground truth.
 
-**Evaluation model.** GPT-4o (`gpt-4o`, API default version at evaluation time), temperature=1 (default). Each query is run once per experimental condition; for E5/E6 (which depend on SSE flags rather than LLM text), the flag value is deterministic and a single run is sufficient.
+**Evaluation model.** GPT-4o (`gpt-4o`, API default version at evaluation time), temperature=1 (default). Each query is run once per experimental condition; for E5/E6 (which depend on SSE flags rather than LLM text), the flag value is deterministic and a single run is sufficient. The evaluation harness supports a `--model` flag to repeat runs with alternative models (e.g., `gpt-4o-mini`) for multi-model comparison; results are stored separately per model under `paper/eval/results/{model}/`.
 
 **Scoring.** Each query is scored on three binary dimensions:
 - **Correctness (C)**: the main answer is factually correct
@@ -427,7 +427,7 @@ This principle has a corollary for system design: LLM-facing tool outputs should
 
 **Local testnet.** The blockchain node is a local Hardhat instance with synthetic data. Real mainnet deployments may exhibit different latency characteristics; whether this affects TLPE rates is not clear.
 
-**Sample size.** With 4–5 queries per error class, per-class statistics are based on small samples. The study is best interpreted as a taxonomy and feasibility demonstration rather than a large-scale empirical characterization.
+**Sample size.** With 10 queries per error class, per-class statistics are based on moderate samples sufficient for taxonomy validation. The study is best interpreted as a taxonomy and feasibility demonstration rather than a large-scale empirical characterization.
 
 **Manual classification.** Correctness scoring for E1 and E2 is automated via pattern matching; E3–E6 scoring involves manual verification of select edge cases.
 
@@ -437,7 +437,7 @@ This principle has a corollary for system design: LLM-facing tool outputs should
 
 ## 8. Conclusion
 
-We presented the first systematic taxonomy of tool-layer presentation errors (TLPEs) in LLM agents querying structured real-time data, grounded in a production blockchain-based insurance system. The six-class taxonomy — array truncation, temporal arithmetic, stale tool-result reuse, timezone ambiguity, response expression variability, and conditional logic failure — identifies recurring, systematic failure modes that persist even when the underlying data retrieval is correct. Four targeted mitigation strategies reduce aggregate error rates by [TBD]% without degrading baseline performance. Beyond the specific system studied, the taxonomy provides a generalizable checklist for developers building LLM agents over structured data sources, and the mitigations instantiate a design principle: move knowledge server-side, and treat the LLM as a synthesizer rather than a calculator.
+We presented the first systematic taxonomy of tool-layer presentation errors (TLPEs) in LLM agents querying structured real-time data, grounded in a research prototype blockchain-based insurance advisory system. The six-class taxonomy — array truncation, temporal arithmetic, stale tool-result reuse, timezone ambiguity, response expression variability, and conditional logic failure — identifies recurring, systematic failure modes that persist even when the underlying data retrieval is correct. Four targeted mitigation strategies reduce aggregate error rates by [TBD]% without degrading baseline performance. Beyond the specific system studied, the taxonomy provides a generalizable checklist for developers building LLM agents over structured data sources, and the mitigations instantiate a design principle: move knowledge server-side, and treat the LLM as a synthesizer rather than a calculator.
 
 ---
 
@@ -466,7 +466,7 @@ We presented the first systematic taxonomy of tool-layer presentation errors (TL
 
 ## Appendix A: Full Query Set
 
-See `paper/eval/queries.json` (49 queries across 9 groups: E1–E6 primary, MX mixed, BL baseline control, ST stress; available in the project repository).
+See `paper/eval/queries.json` (80 queries across 9 groups: E1–E6 primary with 10 queries each, MX mixed, BL baseline control, ST stress; available in the project repository).
 
 ## Appendix B: Evaluation Harness
 

@@ -1,9 +1,10 @@
 {
   "meta": {
-    "version": "1.0",
+    "version": "1.1",
     "created": "2026-11-14",
+    "updated": "2026-11-14",
     "description": "Evaluation query set for 'Error Taxonomy and Mitigation Strategies for LLM Agents Querying Blockchain-Based Insurance Data'",
-    "total_queries": 50,
+    "total_queries": 80,
     "error_types": [
       "E1_array_truncation",
       "E2_temporal_reasoning",
@@ -13,7 +14,7 @@
       "E6_conditional_logic_failure"
     ],
     "wallet_address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-    "notes": "wallet_address is Hardhat Account #1 (customer). Blockchain node must be running on localhost:8545 for ground-truth extraction."
+    "notes": "wallet_address is Hardhat Account #1 (customer). Blockchain node must be running on localhost:8545 for ground-truth extraction. v1.1: expanded E1-E6 to 10 queries each (from 4-5); total 80."
   },
   "queries": [
 
@@ -67,6 +68,56 @@
       "expected_behavior": "All claims listed after mitigation",
       "failure_mode": null
     },
+    {
+      "id": "E1-06",
+      "error_type": "E1_array_truncation",
+      "phase": "before_mitigation",
+      "user_query": "파라메트릭 보험 커버리지 목록을 하나도 빠짐없이 나열해줘.",
+      "ground_truth_field": "parametric.coverages.length",
+      "mitigation": "explicit_enumeration_prompt",
+      "expected_behavior": "All parametric coverages listed without omission",
+      "failure_mode": "LLM lists only the first coverage or truncates the list"
+    },
+    {
+      "id": "E1-07",
+      "error_type": "E1_array_truncation",
+      "phase": "before_mitigation",
+      "user_query": "대체투자 포지션 전부 나열해줘. 하나도 빠뜨리지 말고.",
+      "ground_truth_field": "altinvest.positions.length",
+      "mitigation": "explicit_enumeration_prompt",
+      "expected_behavior": "All AltInvest positions listed completely",
+      "failure_mode": "Only first or first few positions shown"
+    },
+    {
+      "id": "E1-08",
+      "error_type": "E1_array_truncation",
+      "phase": "before_mitigation",
+      "user_query": "증권 1번의 보험료 납입 이력을 전부 보여줘.",
+      "ground_truth_field": "policies[0].premiumHistory.length",
+      "mitigation": "explicit_enumeration_prompt",
+      "expected_behavior": "All premium payment history entries listed",
+      "failure_mode": "Only recent or first N payments shown"
+    },
+    {
+      "id": "E1-09",
+      "error_type": "E1_array_truncation",
+      "phase": "after_mitigation",
+      "user_query": "파라메트릭 보험 커버리지 목록을 하나도 빠짐없이 나열해줘.",
+      "ground_truth_field": "parametric.coverages.length",
+      "mitigation": "explicit_enumeration_prompt",
+      "expected_behavior": "All coverages listed after mitigation",
+      "failure_mode": null
+    },
+    {
+      "id": "E1-10",
+      "error_type": "E1_array_truncation",
+      "phase": "after_mitigation",
+      "user_query": "대체투자 포지션 전부 나열해줘. 하나도 빠뜨리지 말고.",
+      "ground_truth_field": "altinvest.positions.length",
+      "mitigation": "explicit_enumeration_prompt",
+      "expected_behavior": "All positions listed after mitigation",
+      "failure_mode": null
+    },
 
     {
       "id": "E2-01",
@@ -116,6 +167,56 @@
       "ground_truth_field": "policies[0].timeUntilMaturity",
       "mitigation": "pre_computed_string",
       "expected_behavior": "Correct answer using pre-computed string",
+      "failure_mode": null
+    },
+    {
+      "id": "E2-06",
+      "error_type": "E2_temporal_reasoning",
+      "phase": "before_mitigation",
+      "user_query": "대체투자 첫 번째 포지션 락업 해제까지 정확히 며칠 남았어?",
+      "ground_truth_field": "altinvest.positions[0].timeUntilUnlock",
+      "mitigation": "pre_computed_string",
+      "expected_behavior": "Uses pre-computed timeUntilUnlock string verbatim",
+      "failure_mode": "LLM recomputes from timestamp using Math.ceil, produces rounding error"
+    },
+    {
+      "id": "E2-07",
+      "error_type": "E2_temporal_reasoning",
+      "phase": "before_mitigation",
+      "user_query": "다음 보험료 자동납부 예정일이 며칠 후야?",
+      "ground_truth_field": "policies[0].timeUntilNextDue",
+      "mitigation": "pre_computed_string",
+      "expected_behavior": "Uses pre-computed string; does not recompute from nextDueTime",
+      "failure_mode": "Incorrect day count due to rounding (Math.ceil vs Math.floor)"
+    },
+    {
+      "id": "E2-08",
+      "error_type": "E2_temporal_reasoning",
+      "phase": "before_mitigation",
+      "user_query": "블록체인 보험 증권이 발급된 지 며칠이나 됐어?",
+      "ground_truth_field": "policies[0].createdAt",
+      "mitigation": "pre_computed_string",
+      "expected_behavior": "Accurate elapsed days using pre-computed or server-formatted string",
+      "failure_mode": "LLM calculates elapsed time incorrectly from createdAt timestamp"
+    },
+    {
+      "id": "E2-09",
+      "error_type": "E2_temporal_reasoning",
+      "phase": "after_mitigation",
+      "user_query": "대체투자 첫 번째 포지션 락업 해제까지 정확히 며칠 남았어?",
+      "ground_truth_field": "altinvest.positions[0].timeUntilUnlock",
+      "mitigation": "pre_computed_string",
+      "expected_behavior": "Pre-computed timeUntilUnlock string used without recomputation",
+      "failure_mode": null
+    },
+    {
+      "id": "E2-10",
+      "error_type": "E2_temporal_reasoning",
+      "phase": "after_mitigation",
+      "user_query": "다음 보험료 자동납부 예정일이 며칠 후야?",
+      "ground_truth_field": "policies[0].timeUntilNextDue",
+      "mitigation": "pre_computed_string",
+      "expected_behavior": "Correct answer from pre-computed string",
       "failure_mode": null
     },
 
@@ -175,6 +276,66 @@
       "expected_behavior": "Correct answer, no irrelevant news section",
       "failure_mode": null
     },
+    {
+      "id": "E3-06",
+      "error_type": "E3_stale_tool_reuse",
+      "phase": "before_mitigation",
+      "turn": 1,
+      "user_query": "대체투자 현황 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].principal",
+      "mitigation": "history_based_tool_tracking",
+      "expected_behavior": "Calls get_blockchain_altinvest_status",
+      "failure_mode": null,
+      "note": "turn 1 of a 2-turn altinvest conversation"
+    },
+    {
+      "id": "E3-07",
+      "error_type": "E3_stale_tool_reuse",
+      "phase": "before_mitigation",
+      "turn": 2,
+      "user_query": "방금 말한 포지션 수익률이 어떻게 돼?",
+      "user_query_turn1": "대체투자 현황 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].pnl",
+      "mitigation": "history_based_tool_tracking",
+      "expected_behavior": "Correct pnl value from previous tool result; no news section",
+      "failure_mode": "News section appended because altinvest tool was not called this turn"
+    },
+    {
+      "id": "E3-08",
+      "error_type": "E3_stale_tool_reuse",
+      "phase": "before_mitigation",
+      "turn": 2,
+      "user_query": "락업이 아직 안 풀렸어?",
+      "user_query_turn1": "대체투자 현황 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].locked",
+      "mitigation": "history_based_tool_tracking",
+      "expected_behavior": "Answers from prior altinvest result; no irrelevant news",
+      "failure_mode": "News section appended; possible incorrect lock status from stale data"
+    },
+    {
+      "id": "E3-09",
+      "error_type": "E3_stale_tool_reuse",
+      "phase": "after_mitigation",
+      "turn": 2,
+      "user_query": "방금 말한 포지션 수익률이 어떻게 돼?",
+      "user_query_turn1": "대체투자 현황 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].pnl",
+      "mitigation": "history_based_tool_tracking",
+      "expected_behavior": "No news section; correct answer from history",
+      "failure_mode": null
+    },
+    {
+      "id": "E3-10",
+      "error_type": "E3_stale_tool_reuse",
+      "phase": "after_mitigation",
+      "turn": 2,
+      "user_query": "락업이 아직 안 풀렸어?",
+      "user_query_turn1": "대체투자 현황 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].locked",
+      "mitigation": "history_based_tool_tracking",
+      "expected_behavior": "Correct answer from history-aware tracking; no news section",
+      "failure_mode": null
+    },
 
     {
       "id": "E4-01",
@@ -224,6 +385,56 @@
       "ground_truth_field": "policies[0].createdAt_kst",
       "mitigation": "explicit_timezone_label",
       "expected_behavior": "KST with label",
+      "failure_mode": null
+    },
+    {
+      "id": "E4-06",
+      "error_type": "E4_timezone_ambiguity",
+      "phase": "before_mitigation",
+      "user_query": "최근 보험 청구가 처리된 시각이 한국 시간으로 언제야?",
+      "ground_truth_field": "policies[0].claims[0].processedAt_kst",
+      "mitigation": "explicit_timezone_label",
+      "expected_behavior": "KST time with (KST) label",
+      "failure_mode": "UTC ISO timestamp shown without timezone context"
+    },
+    {
+      "id": "E4-07",
+      "error_type": "E4_timezone_ambiguity",
+      "phase": "before_mitigation",
+      "user_query": "자동납부 마지막 실행 시각을 한국 시간으로 알려줘.",
+      "ground_truth_field": "policies[0].lastPaymentTime_kst",
+      "mitigation": "explicit_timezone_label",
+      "expected_behavior": "KST time with label matching frontend display",
+      "failure_mode": "Returns UTC time; frontend shows different time (+9h)"
+    },
+    {
+      "id": "E4-08",
+      "error_type": "E4_timezone_ambiguity",
+      "phase": "before_mitigation",
+      "user_query": "대체투자 포지션 만기일을 한국 시간으로 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].unlockDate_kst",
+      "mitigation": "explicit_timezone_label",
+      "expected_behavior": "KST datetime string with explicit timezone label",
+      "failure_mode": "Returns UTC ISO string interpreted as local time, 9h offset error"
+    },
+    {
+      "id": "E4-09",
+      "error_type": "E4_timezone_ambiguity",
+      "phase": "after_mitigation",
+      "user_query": "최근 보험 청구가 처리된 시각이 한국 시간으로 언제야?",
+      "ground_truth_field": "policies[0].claims[0].processedAt_kst",
+      "mitigation": "explicit_timezone_label",
+      "expected_behavior": "KST time with label after mitigation",
+      "failure_mode": null
+    },
+    {
+      "id": "E4-10",
+      "error_type": "E4_timezone_ambiguity",
+      "phase": "after_mitigation",
+      "user_query": "대체투자 포지션 만기일을 한국 시간으로 알려줘.",
+      "ground_truth_field": "altinvest.positions[0].unlockDate_kst",
+      "mitigation": "explicit_timezone_label",
+      "expected_behavior": "Correct KST datetime with label",
       "failure_mode": null
     },
 
@@ -277,6 +488,56 @@
       "expected_behavior": "No unwanted buttons; used_crypto_tool=true in SSE payload",
       "failure_mode": null
     },
+    {
+      "id": "E5-06",
+      "error_type": "E5_expression_variability",
+      "phase": "before_mitigation",
+      "user_query": "준비금 자동매매 SOL 종목 현황 알려줘.",
+      "ground_truth_field": "crypto_reserve.positions.SOL.pnl",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "No insurance comparison buttons on crypto response table",
+      "failure_mode": "LLM describes SOL position differently each run; frontend adds wrong buttons"
+    },
+    {
+      "id": "E5-07",
+      "error_type": "E5_expression_variability",
+      "phase": "before_mitigation",
+      "user_query": "개인 자동매매 현황 알려줘. 지금 어떤 종목 들고 있어?",
+      "ground_truth_field": "personal_trading.positions",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "Correct status; no insurance UI elements on crypto table",
+      "failure_mode": "Variable wording causes frontend to add irrelevant insurance buttons"
+    },
+    {
+      "id": "E5-08",
+      "error_type": "E5_expression_variability",
+      "phase": "before_mitigation",
+      "user_query": "준비금 운용 XRP 평가손익 알려줘.",
+      "ground_truth_field": "crypto_reserve.positions.XRP.pnl",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "used_crypto_tool=true in SSE; no wrong buttons",
+      "failure_mode": "LLM uses different wording for XRP PnL; frontend regex fails to match"
+    },
+    {
+      "id": "E5-09",
+      "error_type": "E5_expression_variability",
+      "phase": "after_mitigation",
+      "user_query": "준비금 자동매매 SOL 종목 현황 알려줘.",
+      "ground_truth_field": "crypto_reserve.positions.SOL.pnl",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "used_crypto_tool=true flag correctly prevents wrong buttons",
+      "failure_mode": null
+    },
+    {
+      "id": "E5-10",
+      "error_type": "E5_expression_variability",
+      "phase": "after_mitigation",
+      "user_query": "개인 자동매매 현황 알려줘. 지금 어떤 종목 들고 있어?",
+      "ground_truth_field": "personal_trading.positions",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "Correct flag in SSE payload; UI renders correctly",
+      "failure_mode": null
+    },
 
     {
       "id": "E6-01",
@@ -316,6 +577,66 @@
       "ground_truth_field": "used_blockchain_tool",
       "mitigation": "server_side_flag",
       "expected_behavior": "No unwanted buttons; correct SSE flag",
+      "failure_mode": null
+    },
+    {
+      "id": "E6-05",
+      "error_type": "E6_conditional_logic_failure",
+      "phase": "before_mitigation",
+      "user_query": "대체투자 현황 보여줘.",
+      "ground_truth_field": "used_blockchain_tool",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "No irrelevant news section appended to altinvest response",
+      "failure_mode": "News section appears because server flag not checked for altinvest tool"
+    },
+    {
+      "id": "E6-06",
+      "error_type": "E6_conditional_logic_failure",
+      "phase": "before_mitigation",
+      "user_query": "파라메트릭 보험 커버리지 현황이 어떻게 돼?",
+      "ground_truth_field": "used_blockchain_tool",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "No news; insurance buttons not added to parametric table",
+      "failure_mode": "Frontend adds insurance comparison buttons to parametric result table"
+    },
+    {
+      "id": "E6-07",
+      "error_type": "E6_conditional_logic_failure",
+      "phase": "before_mitigation",
+      "user_query": "준비금 자동매매 현황 알려줘.",
+      "ground_truth_field": "used_crypto_tool",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "No news section; no insurance buttons on crypto result",
+      "failure_mode": "News appended because news-suppression logic only checks blockchain flag, not crypto flag"
+    },
+    {
+      "id": "E6-08",
+      "error_type": "E6_conditional_logic_failure",
+      "phase": "after_mitigation",
+      "user_query": "대체투자 현황 보여줘.",
+      "ground_truth_field": "used_blockchain_tool",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "used_blockchain_tool=true in SSE; news suppressed correctly",
+      "failure_mode": null
+    },
+    {
+      "id": "E6-09",
+      "error_type": "E6_conditional_logic_failure",
+      "phase": "after_mitigation",
+      "user_query": "파라메트릭 보험 커버리지 현황이 어떻게 돼?",
+      "ground_truth_field": "used_blockchain_tool",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "No news; correct SSE flag",
+      "failure_mode": null
+    },
+    {
+      "id": "E6-10",
+      "error_type": "E6_conditional_logic_failure",
+      "phase": "after_mitigation",
+      "user_query": "준비금 자동매매 현황 알려줘.",
+      "ground_truth_field": "used_crypto_tool",
+      "mitigation": "server_side_flag",
+      "expected_behavior": "used_crypto_tool=true; news not appended",
       "failure_mode": null
     },
 
