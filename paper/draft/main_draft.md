@@ -99,7 +99,7 @@ InsureChain integrates two subsystems: an LLM-based insurance advisory chatbot a
 
 ### 3.2 Chatbot Layer
 
-The chatbot layer is a Flask application hosting a multi-agent GPT-4o pipeline. The primary Orchestrator agent (`agents/orchestrator.py`) handles intent classification and tool dispatch. It manages 19 tools across three categories: (i) product search tools (insurance product database, scraped market data), (ii) underwriting tools (health risk assessment, credit evaluation, 19 sub-tools delegated to a specialist sub-agent with structured output), and (iii) blockchain query tools (the focus of this paper).
+The chatbot layer is a Flask application hosting a multi-agent GPT-4o pipeline. The primary Orchestrator agent (`agents/orchestrator.py`) handles intent classification and tool dispatch. It manages 24 tools across three categories: (i) product search tools (insurance product database, scraped market data), (ii) underwriting tools (health risk assessment, credit evaluation, flexible payment eligibility; 18 sub-tools delegated to a specialist sub-agent with structured output), and (iii) blockchain query tools (the focus of this paper).
 
 The Orchestrator follows the standard function-calling loop: it generates tool\_call messages until it reaches a stop condition, then synthesizes a natural-language response from the accumulated tool outputs. This response is streamed to the client via Server-Sent Events (SSE).
 
@@ -455,11 +455,11 @@ We presented the first systematic taxonomy of tool-layer presentation errors (TL
 11. Ji, Z.; Lee, N.; Frieske, R.; Yu, T.; Su, D.; Xu, Y.; Ishii, E.; Bang, Y.J.; Madotto, A.; Fung, P. Survey of Hallucination in Natural Language Generation. *ACM Computing Surveys* **2023**, *55*, 1–38.
 12. Huang, L.; Yu, W.; Ma, W.; Zhong, W.; Feng, Z.; Wang, H.; Chen, Q.; Peng, W.; Feng, X.; Qin, B.; et al. A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions. *arXiv* **2023**, arXiv:2311.05232.
 13. Maynez, J.; Narayan, S.; Bohnet, B.; McDonald, R. On Faithfulness and Factuality in Abstractive Summarization. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (ACL 2020)*; 2020; pp. 1906–1919.
-14. [TBD — verify full citation]. CryptoAnalystBench. *arXiv* **2026**, arXiv:2602.11304.
-15. Diehl, S.; Etherisc: Decentralized Insurance Protocol. Available online: https://etherisc.com (accessed 14 November 2026).
-16. Islayem, D.; Mekhilef, S.; Rahebi, J. Using Large Language Models for Fraud Analysis in Blockchain Based Health Insurance Claims. *Scientific Reports* **2025**, *15*. https://doi.org/[TBD — verify].
-17. [TBD — verify full citation]. ClaimPilot: LLM-Driven Insurance Claim Processing. *Future Internet* **2026**, *18*.
-18. [TBD — verify full citation]. A State-Aware Dual-Tool Architecture for Improved Tool Use in Multi-Turn LLM Dialogue. *Applied Sciences* **2026**, *16*.
+14. Eswaran, A.; Golev, O.; Tank, D.; Rahi, S.; Tyagi, H. CryptoAnalystBench: Failures in Multi-Tool Long-Form LLM Analysis. *arXiv* **2026**, arXiv:2602.11304.
+15. Diehl, S. Etherisc: Decentralized Insurance Protocol. Available online: https://etherisc.com (accessed 14 November 2026).
+16. Islayem, R.; Gebreab, S.; AlKhader, W.; Musamih, A.; Salah, K.; Jayaraman, R.; Khan, M.K. Using Large Language Models for Enhanced Fraud Analysis and Detection in Blockchain Based Health Insurance Claims. *Scientific Reports* **2025**, *15*, 11542. https://doi.org/10.1038/s41598-025-15676-4
+17. Mo, Z.; Quan, Z.; O'Donohue, E.; Zhong, K. Claim Automation using Large Language Model. *arXiv* **2026**, arXiv:2602.16836.
+18. Pałgan, B.; Wawryszczuk, M.; Chwał, J. A State-Aware Dual-Tool Architecture for Improved Tool Use in Multi-Turn LLM Dialogue. *Applied Sciences* **2026**, *16*, 4329. https://doi.org/10.3390/app16094329
 
 ---
 
@@ -489,4 +489,4 @@ Start with: (1) `blockchain-dental\run.bat` in a new window, (2) `start.bat` in 
 
 ## Appendix C: System Availability
 
-InsureChain source code: https://github.com/leeyonsei78/capstone_project_beta
+InsureChain source code: https://github.com/leeyonsei78/capstone_project_alpha

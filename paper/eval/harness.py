@@ -39,8 +39,8 @@ QUERIES_FILE  = Path(__file__).parent / "queries.json"
 RESULTS_DIR   = Path(__file__).parent / "results"
 WALLET        = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"  # Hardhat Account #1
 
-SESSION_ID    = "eval-harness-session"
-MODEL         = "gpt-4o"
+SESSION_ID_PREFIX = "eval-harness"
+MODEL             = "gpt-4o"
 
 # ── Scorer: simple string-based correctness ──────────────────────────────────
 SCORING_RUBRIC = {
@@ -68,28 +68,43 @@ def score_response(query: dict, llm_text: str, ground_truth: dict,
     # ── E1: Array truncation ──────────────────────────────────────────────────
     if et == "E1_array_truncation":
         gt_field = query["ground_truth_field"]
-        if "policies.length" in gt_field and "policies" in ground_truth:
+        if "policies" in gt_field and "policies" in ground_truth:
             n_policies = len(ground_truth.get("policies", []))
-            # Count how many policy IDs or policy numbers appear in the response
+            # Count how many policy IDs appear in the response.
+            # query-policy.js uses "policyId" (not "id"), so try both keys.
             mentioned = sum(1 for p in ground_truth.get("policies", [])
-                            if str(p.get("id", "")) in llm_text
-                            or f"증권 #{p.get('id','')}" in llm_text
-                            or f"#{p.get('id','')}" in llm_text)
-            correct = mentioned == n_policies
+                            if str(p.get("policyId", p.get("id", ""))) in llm_text)
+            correct = (n_policies == 0) or (mentioned == n_policies)
         else:
             correct = True  # heuristic fallback
 
     # ── E2: Temporal reasoning ────────────────────────────────────────────────
     elif et == "E2_temporal_reasoning":
         if "policies" in ground_truth and ground_truth["policies"]:
-            pre = ground_truth["policies"][0].get("timeUntilMaturity", "")
-            # Must NOT contain "내일" if pre-computed says "오늘" or vice-versa
-            if "오늘" in pre:
-                correct = "내일" not in llm_text and "오늘" in llm_text
-            elif "내일" in pre:
-                correct = "오늘" not in llm_text and "내일" in llm_text
+            p0  = ground_truth["policies"][0]
+            pre = p0.get("timeUntilMaturity", "")
+            if pre:
+                # After-mitigation path: pre-computed human-readable string is present.
+                # The LLM must use "오늘" / "내일" matching that string.
+                if "오늘" in pre:
+                    correct = "내일" not in llm_text and "오늘" in llm_text
+                elif "내일" in pre:
+                    correct = "오늘" not in llm_text and "내일" in llm_text
+                else:
+                    correct = pre[:10] in llm_text
             else:
-                correct = pre[:10] in llm_text if pre else True
+                # Before-mitigation path: timeUntilMaturity was not injected.
+                # The classic bug: Math.ceil(remainingSec/86400) == 1 even when
+                # the policy expires TODAY (remainingSec < 86400).
+                # daysUntilMaturity == 0 means already expired (not interesting);
+                # == 1 from Math.ceil means "bug candidate" (could be today OR tomorrow).
+                # We score correct=False only when daysUntilMaturity==1 AND the LLM
+                # says "내일", which is the specific error we expect.
+                days = p0.get("daysUntilMaturity", -1)
+                if days == 1 and "내일" in llm_text:
+                    correct = False   # confirmed bug: said "내일" for a today-or-tomorrow case
+                else:
+                    correct = True    # can't determine error without exact chain state
         else:
             correct = True
 
@@ -156,11 +171,11 @@ def get_ground_truth(wallet: str) -> dict:
 
 
 # ── Chatbot call ──────────────────────────────────────────────────────────────
-def call_chatbot(user_message: str, history: list = None) -> tuple[str, dict]:
-    """Returns (llm_text, sse_flags). history is list of {role, content} dicts."""
+def call_chatbot(user_message: str, session_id: str = None) -> tuple[str, dict]:
+    """Returns (llm_text, sse_flags)."""
     payload = {
         "message": user_message,
-        "session_id": SESSION_ID,
+        "session_id": session_id or f"{SESSION_ID_PREFIX}-default",
         "mode": "live",
     }
     try:
@@ -176,11 +191,11 @@ def call_chatbot(user_message: str, history: list = None) -> tuple[str, dict]:
         return f"ERROR: {e}", {}
 
 
-def call_chatbot_stream(user_message: str) -> tuple[str, dict]:
+def call_chatbot_stream(user_message: str, session_id: str = None) -> tuple[str, dict]:
     """SSE streaming call. Returns (full_text, sse_flags)."""
     payload = {
         "message": user_message,
-        "session_id": SESSION_ID,
+        "session_id": session_id or f"{SESSION_ID_PREFIX}-default",
         "mode": "live",
     }
     full_text = []
@@ -212,14 +227,19 @@ def run_query(query: dict, ground_truth: dict, phase: str) -> dict:
 
     print(f"  [{qid}] {query['error_type']} | turn={turn}")
 
-    # For multi-turn queries, run turn 1 silently first
+    # Use a per-query session to prevent cross-query history pollution.
+    # Multi-turn queries share the same session within themselves (turn 1 + turn 2),
+    # but different query IDs are always isolated from each other.
+    session_id = f"{SESSION_ID_PREFIX}-{qid}"
+
+    # For multi-turn queries, run turn 1 silently first (same session)
     if turn == 2:
         prev_q = query.get("user_query_turn1", "블록체인 보험 현황 알려줘.")
-        call_chatbot_stream(prev_q)
+        call_chatbot_stream(prev_q, session_id=session_id)
         time.sleep(1)
 
     start = time.time()
-    text, sse_flags = call_chatbot_stream(query["user_query"])
+    text, sse_flags = call_chatbot_stream(query["user_query"], session_id=session_id)
     elapsed = time.time() - start
 
     scoring = score_response(query, text, ground_truth, sse_flags)
@@ -333,7 +353,16 @@ def main():
     else:
         print("[--no-gt] Ground truth extraction skipped.")
 
-    phase_label = args.phase if args.phase != "all" else "both"
+    # Store results with the same phase labels that queries.json uses ("before_mitigation",
+    # "after_mitigation", "both") so generate_report()'s dict lookups match without
+    # needing translation.
+    if args.phase in ("before", "after"):
+        phase_label = f"{args.phase}_mitigation"
+    elif args.phase == "all":
+        phase_label = "both"
+    else:
+        phase_label = args.phase  # "both"
+
     out_dir = RESULTS_DIR / phase_label
     out_dir.mkdir(parents=True, exist_ok=True)
 
