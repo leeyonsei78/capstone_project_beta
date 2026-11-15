@@ -161,3 +161,56 @@
 ## 10. 한계 (논문에 그대로 명시)
 
 합성 데이터, 사용자 1인 라벨, mock 병원 제공자, 로컬 테스트넷과 모의 토큰, 사람 실험 없음(자동화 편향 미측정), 단일 모델 중심, 실제 분포·유병률 미반영. 법적 허용과 스테이블코인 존재는 가정.
+
+
+## 5.8 Dental scope and complexity layer (2026-11-15)
+
+Scope statement for the paper: dental insurance claims and applications at dental institutions (CDT-style code
+table from mock-provider.js, not the Korean fee schedule). Say "structured claim codes and a narrow range of
+procedures", not "simple" - the simplicity is a scope condition, and it is also a threat to external validity.
+
+Complexity levels (claims above the 20% auto-pay line; `gen_complex_cases.py`, 74 cases, own seed, own files, the
+240 base cases are untouched):
+- L1 base set: single-claim consistency (code vs description vs amount).
+- L2 tooth-level history (50): same code on a different tooth is legitimate, on the same tooth a duplicate; crown after
+  extraction of that tooth; second implant on the same site within a year. The count-only production summary hides
+  the tooth, so C2 cannot separate them; only the detailed history (C3) can.
+- L3 same-family upcoding (24): description matches the cheaper sibling code (1- vs 3-surface filling, 1-3 teeth vs wide
+  periodontal, simple extraction vs bony impaction) while the expensive code is billed; amount stays inside the billed
+  code's ceiling. Needs code semantics plus free text. The prompt gives only the code number.
+
+Each case carries `rule_detectable`: tooth_rule (a structured (tooth, code, date) rule catches it, so the LLM adds little
+beyond a well-built rule) or text_only (the part where an LLM could add value). Report the two separately; claiming the
+LLM catches L2 anomalies is not a contribution if a rule over the same fields does.
+
+Model axis: `run_advisor.py --model ... [--base-url ...]`; `score_complexity.py --models a b c` compares models on the
+same 74 cases. Hypotheses to record before running: H8 the gap between a small and a large model is small on L1/L2
+(C3) and widens on L3; H9 L2 is near chance under C2 for every model (the evidence is absent, not the model weak).
+Models to compare must be fixed before the first run (at least one large, one small API model, one local open-weight).
+
+Limits: planted labels are first-pass (a second implant can be a legitimate redo; the expert decides); the amounts and
+wording are invented; 74 cases give wide CIs; the case sets for L2/L3 were designed by us, so they show sensitivity to
+these anomaly types and nothing about prevalence.
+
+
+## 5.9 Clause-conditioned review (2026-11-15)
+
+Goal: show whether an LLM follows the insurer's terms. The same facts (coverage, cause, days since contract, extraction
+date and reason, count paid this year) are judged under three profiles built from real public product summaries
+(`terms_profiles.py`; comparison in `paper/data/terms_clause_matrix.md`). The correct answer (지급 / 감액지급 / 부지급)
+comes from the clause parameters through a deterministic engine, so unlike the planted-anomaly cases it is not circular.
+
+- Profiles: A standard (Samsung Fire/DB/KB/Hanwha family: 90-day waiting, 1/2-year reduction, crown cap), B Lina Non-life
+  (180-day waiting for implant/bridge, 270-day crown reduction, 3 per year while <730 days), C Dongyang/NH style
+  (reduction by EXTRACTION date, strict exclusions, pre-start extraction excluded, 3 per year).
+- 60 scenarios x 3 profiles = 180 cases (`gen_terms_cases.py`); 60% of scenarios are chosen where the profiles disagree.
+- Conditions: T0 facts only (the model cannot know the terms), T1 facts + the profile's clause excerpt.
+- Metrics (`score_terms.py`): accuracy, accuracy on disagreeing scenarios, adaptation (all three profiles right), overpay
+  vs underpay, abstention; CI by bootstrap over scenarios. Models side by side (`--models`).
+- Hypotheses to record before the full run: H10 T0 is near the rate of "pick the most common answer" because the terms are
+  not in the input; H11 T1 lifts accuracy for every model and the small-vs-large gap is smaller than in T0;
+  H12 errors concentrate in day arithmetic and in the extraction-date basis of profile C (a 6-call smoke on gpt-4o-mini
+  already showed denials where the day counts were well past the threshold; n=3, not evidence).
+Limits: the excerpt is a clean restatement of the profile, not the verbatim, messy 약관 text (a T2 condition with verbatim
+excerpts is the natural next step); only crown/implant/bridge are modelled; A and B exclusions beyond the summaries are not
+encoded; the clause numbers are simplified from summaries and not yet checked against the full 약관.

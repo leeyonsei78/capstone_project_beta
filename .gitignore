@@ -12,3 +12,7 @@ __pycache__/
 
 # Claude Code 로컬 설정
 .claude/
+
+# 제3자 보험사 약관/요약서 원문 (공개 저장소에 올리지 않음)
+paper/data/terms_raw/
+paper/data/terms_txt/

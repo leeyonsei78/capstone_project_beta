@@ -1,0 +1,4142 @@
+[
+  {
+    "case_id": "TS-001-A",
+    "type": "terms_claim",
+    "scenario": "TS-001",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 428,
+      "extraction_day": 293,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-001-B",
+    "type": "terms_claim",
+    "scenario": "TS-001",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 428,
+      "extraction_day": 293,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-001-C",
+    "type": "terms_claim",
+    "scenario": "TS-001",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 428,
+      "extraction_day": 293,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-002-A",
+    "type": "terms_claim",
+    "scenario": "TS-002",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 76,
+      "extraction_day": 1,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-002-B",
+    "type": "terms_claim",
+    "scenario": "TS-002",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 76,
+      "extraction_day": 1,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-002-C",
+    "type": "terms_claim",
+    "scenario": "TS-002",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 76,
+      "extraction_day": 1,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-003-A",
+    "type": "terms_claim",
+    "scenario": "TS-003",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 896,
+      "extraction_day": 768,
+      "extraction_kind": "normal",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-003-B",
+    "type": "terms_claim",
+    "scenario": "TS-003",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 896,
+      "extraction_day": 768,
+      "extraction_kind": "normal",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-003-C",
+    "type": "terms_claim",
+    "scenario": "TS-003",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 896,
+      "extraction_day": 768,
+      "extraction_kind": "normal",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-004-A",
+    "type": "terms_claim",
+    "scenario": "TS-004",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 1292,
+      "extraction_day": 1231,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-004-B",
+    "type": "terms_claim",
+    "scenario": "TS-004",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 1292,
+      "extraction_day": 1231,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-004-C",
+    "type": "terms_claim",
+    "scenario": "TS-004",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 1292,
+      "extraction_day": 1231,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-005-A",
+    "type": "terms_claim",
+    "scenario": "TS-005",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "accident",
+      "event_day": 296,
+      "extraction_day": 263,
+      "extraction_kind": "wisdom",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-005-B",
+    "type": "terms_claim",
+    "scenario": "TS-005",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "accident",
+      "event_day": 296,
+      "extraction_day": 263,
+      "extraction_kind": "wisdom",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-005-C",
+    "type": "terms_claim",
+    "scenario": "TS-005",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "accident",
+      "event_day": 296,
+      "extraction_day": 263,
+      "extraction_kind": "wisdom",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-006-A",
+    "type": "terms_claim",
+    "scenario": "TS-006",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 81,
+      "extraction_day": 1,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-006-B",
+    "type": "terms_claim",
+    "scenario": "TS-006",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 81,
+      "extraction_day": 1,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-006-C",
+    "type": "terms_claim",
+    "scenario": "TS-006",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 81,
+      "extraction_day": 1,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-007-A",
+    "type": "terms_claim",
+    "scenario": "TS-007",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 306,
+      "extraction_day": 187,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-007-B",
+    "type": "terms_claim",
+    "scenario": "TS-007",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 306,
+      "extraction_day": 187,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-007-C",
+    "type": "terms_claim",
+    "scenario": "TS-007",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 306,
+      "extraction_day": 187,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-008-A",
+    "type": "terms_claim",
+    "scenario": "TS-008",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 787,
+      "extraction_day": 750,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-008-B",
+    "type": "terms_claim",
+    "scenario": "TS-008",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 787,
+      "extraction_day": 750,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-008-C",
+    "type": "terms_claim",
+    "scenario": "TS-008",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 787,
+      "extraction_day": 750,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-009-A",
+    "type": "terms_claim",
+    "scenario": "TS-009",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 637,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-009-B",
+    "type": "terms_claim",
+    "scenario": "TS-009",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 637,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-009-C",
+    "type": "terms_claim",
+    "scenario": "TS-009",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 637,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-010-A",
+    "type": "terms_claim",
+    "scenario": "TS-010",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 419,
+      "extraction_day": 290,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-010-B",
+    "type": "terms_claim",
+    "scenario": "TS-010",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 419,
+      "extraction_day": 290,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-010-C",
+    "type": "terms_claim",
+    "scenario": "TS-010",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 419,
+      "extraction_day": 290,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-011-A",
+    "type": "terms_claim",
+    "scenario": "TS-011",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 305,
+      "extraction_day": 156,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-011-B",
+    "type": "terms_claim",
+    "scenario": "TS-011",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 305,
+      "extraction_day": 156,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-011-C",
+    "type": "terms_claim",
+    "scenario": "TS-011",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 305,
+      "extraction_day": 156,
+      "extraction_kind": "ortho",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-012-A",
+    "type": "terms_claim",
+    "scenario": "TS-012",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 326,
+      "extraction_day": 277,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-012-B",
+    "type": "terms_claim",
+    "scenario": "TS-012",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 326,
+      "extraction_day": 277,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-012-C",
+    "type": "terms_claim",
+    "scenario": "TS-012",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 326,
+      "extraction_day": 277,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-013-A",
+    "type": "terms_claim",
+    "scenario": "TS-013",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 29,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-013-B",
+    "type": "terms_claim",
+    "scenario": "TS-013",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 29,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-013-C",
+    "type": "terms_claim",
+    "scenario": "TS-013",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 29,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-014-A",
+    "type": "terms_claim",
+    "scenario": "TS-014",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 703,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-014-B",
+    "type": "terms_claim",
+    "scenario": "TS-014",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 703,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-014-C",
+    "type": "terms_claim",
+    "scenario": "TS-014",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 703,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-015-A",
+    "type": "terms_claim",
+    "scenario": "TS-015",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 706,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-015-B",
+    "type": "terms_claim",
+    "scenario": "TS-015",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 706,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-015-C",
+    "type": "terms_claim",
+    "scenario": "TS-015",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 706,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-016-A",
+    "type": "terms_claim",
+    "scenario": "TS-016",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 521,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-016-B",
+    "type": "terms_claim",
+    "scenario": "TS-016",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 521,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-016-C",
+    "type": "terms_claim",
+    "scenario": "TS-016",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 521,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-017-A",
+    "type": "terms_claim",
+    "scenario": "TS-017",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 248,
+      "extraction_day": 198,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-017-B",
+    "type": "terms_claim",
+    "scenario": "TS-017",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 248,
+      "extraction_day": 198,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-017-C",
+    "type": "terms_claim",
+    "scenario": "TS-017",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 248,
+      "extraction_day": 198,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-018-A",
+    "type": "terms_claim",
+    "scenario": "TS-018",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 139,
+      "extraction_day": 29,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-018-B",
+    "type": "terms_claim",
+    "scenario": "TS-018",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 139,
+      "extraction_day": 29,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-018-C",
+    "type": "terms_claim",
+    "scenario": "TS-018",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 139,
+      "extraction_day": 29,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-019-A",
+    "type": "terms_claim",
+    "scenario": "TS-019",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 143,
+      "extraction_day": 5,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-019-B",
+    "type": "terms_claim",
+    "scenario": "TS-019",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 143,
+      "extraction_day": 5,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-019-C",
+    "type": "terms_claim",
+    "scenario": "TS-019",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 143,
+      "extraction_day": 5,
+      "extraction_kind": "normal",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "pre_start",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-020-A",
+    "type": "terms_claim",
+    "scenario": "TS-020",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1297,
+      "extraction_day": 1252,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-020-B",
+    "type": "terms_claim",
+    "scenario": "TS-020",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1297,
+      "extraction_day": 1252,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-020-C",
+    "type": "terms_claim",
+    "scenario": "TS-020",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1297,
+      "extraction_day": 1252,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-021-A",
+    "type": "terms_claim",
+    "scenario": "TS-021",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 901,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-021-B",
+    "type": "terms_claim",
+    "scenario": "TS-021",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 901,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-021-C",
+    "type": "terms_claim",
+    "scenario": "TS-021",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 901,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-022-A",
+    "type": "terms_claim",
+    "scenario": "TS-022",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 636,
+      "extraction_day": 588,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-022-B",
+    "type": "terms_claim",
+    "scenario": "TS-022",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 636,
+      "extraction_day": 588,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-022-C",
+    "type": "terms_claim",
+    "scenario": "TS-022",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 636,
+      "extraction_day": 588,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-023-A",
+    "type": "terms_claim",
+    "scenario": "TS-023",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 521,
+      "extraction_day": 423,
+      "extraction_kind": "prep",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-023-B",
+    "type": "terms_claim",
+    "scenario": "TS-023",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 521,
+      "extraction_day": 423,
+      "extraction_kind": "prep",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-023-C",
+    "type": "terms_claim",
+    "scenario": "TS-023",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 521,
+      "extraction_day": 423,
+      "extraction_kind": "prep",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-024-A",
+    "type": "terms_claim",
+    "scenario": "TS-024",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 81,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-024-B",
+    "type": "terms_claim",
+    "scenario": "TS-024",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 81,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-024-C",
+    "type": "terms_claim",
+    "scenario": "TS-024",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 81,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-025-A",
+    "type": "terms_claim",
+    "scenario": "TS-025",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 903,
+      "extraction_day": 889,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-025-B",
+    "type": "terms_claim",
+    "scenario": "TS-025",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 903,
+      "extraction_day": 889,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-025-C",
+    "type": "terms_claim",
+    "scenario": "TS-025",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 903,
+      "extraction_day": 889,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-026-A",
+    "type": "terms_claim",
+    "scenario": "TS-026",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "accident",
+      "event_day": 70,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-026-B",
+    "type": "terms_claim",
+    "scenario": "TS-026",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "accident",
+      "event_day": 70,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-026-C",
+    "type": "terms_claim",
+    "scenario": "TS-026",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "accident",
+      "event_day": 70,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-027-A",
+    "type": "terms_claim",
+    "scenario": "TS-027",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1108,
+      "extraction_day": 979,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-027-B",
+    "type": "terms_claim",
+    "scenario": "TS-027",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1108,
+      "extraction_day": 979,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-027-C",
+    "type": "terms_claim",
+    "scenario": "TS-027",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1108,
+      "extraction_day": 979,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-028-A",
+    "type": "terms_claim",
+    "scenario": "TS-028",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 247,
+      "extraction_day": 173,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-028-B",
+    "type": "terms_claim",
+    "scenario": "TS-028",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 247,
+      "extraction_day": 173,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-028-C",
+    "type": "terms_claim",
+    "scenario": "TS-028",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 247,
+      "extraction_day": 173,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-029-A",
+    "type": "terms_claim",
+    "scenario": "TS-029",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 134,
+      "extraction_day": 28,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-029-B",
+    "type": "terms_claim",
+    "scenario": "TS-029",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 134,
+      "extraction_day": 28,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-029-C",
+    "type": "terms_claim",
+    "scenario": "TS-029",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 134,
+      "extraction_day": 28,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-030-A",
+    "type": "terms_claim",
+    "scenario": "TS-030",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 144,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-030-B",
+    "type": "terms_claim",
+    "scenario": "TS-030",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 144,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-030-C",
+    "type": "terms_claim",
+    "scenario": "TS-030",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 144,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-031-A",
+    "type": "terms_claim",
+    "scenario": "TS-031",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 643,
+      "extraction_day": 519,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-031-B",
+    "type": "terms_claim",
+    "scenario": "TS-031",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 643,
+      "extraction_day": 519,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-031-C",
+    "type": "terms_claim",
+    "scenario": "TS-031",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 643,
+      "extraction_day": 519,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-032-A",
+    "type": "terms_claim",
+    "scenario": "TS-032",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 643,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-032-B",
+    "type": "terms_claim",
+    "scenario": "TS-032",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 643,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-032-C",
+    "type": "terms_claim",
+    "scenario": "TS-032",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 643,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-033-A",
+    "type": "terms_claim",
+    "scenario": "TS-033",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 904,
+      "extraction_day": 766,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-033-B",
+    "type": "terms_claim",
+    "scenario": "TS-033",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 904,
+      "extraction_day": 766,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-033-C",
+    "type": "terms_claim",
+    "scenario": "TS-033",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 904,
+      "extraction_day": 766,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-034-A",
+    "type": "terms_claim",
+    "scenario": "TS-034",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1096,
+      "extraction_day": 1071,
+      "extraction_kind": "prep",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-034-B",
+    "type": "terms_claim",
+    "scenario": "TS-034",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1096,
+      "extraction_day": 1071,
+      "extraction_kind": "prep",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-034-C",
+    "type": "terms_claim",
+    "scenario": "TS-034",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1096,
+      "extraction_day": 1071,
+      "extraction_kind": "prep",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-035-A",
+    "type": "terms_claim",
+    "scenario": "TS-035",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 331,
+      "extraction_day": 243,
+      "extraction_kind": "impacted",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-035-B",
+    "type": "terms_claim",
+    "scenario": "TS-035",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 331,
+      "extraction_day": 243,
+      "extraction_kind": "impacted",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-035-C",
+    "type": "terms_claim",
+    "scenario": "TS-035",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 331,
+      "extraction_day": 243,
+      "extraction_kind": "impacted",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-036-A",
+    "type": "terms_claim",
+    "scenario": "TS-036",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 192,
+      "extraction_day": 162,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-036-B",
+    "type": "terms_claim",
+    "scenario": "TS-036",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 192,
+      "extraction_day": 162,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-036-C",
+    "type": "terms_claim",
+    "scenario": "TS-036",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 192,
+      "extraction_day": 162,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-037-A",
+    "type": "terms_claim",
+    "scenario": "TS-037",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 698,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-037-B",
+    "type": "terms_claim",
+    "scenario": "TS-037",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 698,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-037-C",
+    "type": "terms_claim",
+    "scenario": "TS-037",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 698,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-038-A",
+    "type": "terms_claim",
+    "scenario": "TS-038",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 415,
+      "extraction_day": 329,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-038-B",
+    "type": "terms_claim",
+    "scenario": "TS-038",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 415,
+      "extraction_day": 329,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-038-C",
+    "type": "terms_claim",
+    "scenario": "TS-038",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 415,
+      "extraction_day": 329,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-039-A",
+    "type": "terms_claim",
+    "scenario": "TS-039",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 199,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-039-B",
+    "type": "terms_claim",
+    "scenario": "TS-039",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 199,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-039-C",
+    "type": "terms_claim",
+    "scenario": "TS-039",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 199,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-040-A",
+    "type": "terms_claim",
+    "scenario": "TS-040",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 645,
+      "extraction_day": 628,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-040-B",
+    "type": "terms_claim",
+    "scenario": "TS-040",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 645,
+      "extraction_day": 628,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-040-C",
+    "type": "terms_claim",
+    "scenario": "TS-040",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 645,
+      "extraction_day": 628,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-041-A",
+    "type": "terms_claim",
+    "scenario": "TS-041",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 334,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-041-B",
+    "type": "terms_claim",
+    "scenario": "TS-041",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 334,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-041-C",
+    "type": "terms_claim",
+    "scenario": "TS-041",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 334,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-042-A",
+    "type": "terms_claim",
+    "scenario": "TS-042",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 31,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-042-B",
+    "type": "terms_claim",
+    "scenario": "TS-042",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 31,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-042-C",
+    "type": "terms_claim",
+    "scenario": "TS-042",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 31,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-043-A",
+    "type": "terms_claim",
+    "scenario": "TS-043",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 695,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-043-B",
+    "type": "terms_claim",
+    "scenario": "TS-043",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 695,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-043-C",
+    "type": "terms_claim",
+    "scenario": "TS-043",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 695,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-044-A",
+    "type": "terms_claim",
+    "scenario": "TS-044",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 246,
+      "extraction_day": 113,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-044-B",
+    "type": "terms_claim",
+    "scenario": "TS-044",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 246,
+      "extraction_day": 113,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-044-C",
+    "type": "terms_claim",
+    "scenario": "TS-044",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 246,
+      "extraction_day": 113,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-045-A",
+    "type": "terms_claim",
+    "scenario": "TS-045",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 30,
+      "extraction_day": 1,
+      "extraction_kind": "prep",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-045-B",
+    "type": "terms_claim",
+    "scenario": "TS-045",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 30,
+      "extraction_day": 1,
+      "extraction_kind": "prep",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-045-C",
+    "type": "terms_claim",
+    "scenario": "TS-045",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "accident",
+      "event_day": 30,
+      "extraction_day": 1,
+      "extraction_kind": "prep",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-046-A",
+    "type": "terms_claim",
+    "scenario": "TS-046",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 300,
+      "extraction_day": 255,
+      "extraction_kind": "prep",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-046-B",
+    "type": "terms_claim",
+    "scenario": "TS-046",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 300,
+      "extraction_day": 255,
+      "extraction_kind": "prep",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-046-C",
+    "type": "terms_claim",
+    "scenario": "TS-046",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 300,
+      "extraction_day": 255,
+      "extraction_kind": "prep",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-047-A",
+    "type": "terms_claim",
+    "scenario": "TS-047",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 198,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-047-B",
+    "type": "terms_claim",
+    "scenario": "TS-047",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 198,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-047-C",
+    "type": "terms_claim",
+    "scenario": "TS-047",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 198,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-048-A",
+    "type": "terms_claim",
+    "scenario": "TS-048",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 23,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-048-B",
+    "type": "terms_claim",
+    "scenario": "TS-048",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 23,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-048-C",
+    "type": "terms_claim",
+    "scenario": "TS-048",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 23,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "부지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-049-A",
+    "type": "terms_claim",
+    "scenario": "TS-049",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 194,
+      "extraction_day": 77,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-049-B",
+    "type": "terms_claim",
+    "scenario": "TS-049",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 194,
+      "extraction_day": 77,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-049-C",
+    "type": "terms_claim",
+    "scenario": "TS-049",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 194,
+      "extraction_day": 77,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "pre_start",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-050-A",
+    "type": "terms_claim",
+    "scenario": "TS-050",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 424,
+      "extraction_day": 400,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-050-B",
+    "type": "terms_claim",
+    "scenario": "TS-050",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 424,
+      "extraction_day": 400,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-050-C",
+    "type": "terms_claim",
+    "scenario": "TS-050",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 424,
+      "extraction_day": 400,
+      "extraction_kind": "normal",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-051-A",
+    "type": "terms_claim",
+    "scenario": "TS-051",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1298,
+      "extraction_day": 1256,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-051-B",
+    "type": "terms_claim",
+    "scenario": "TS-051",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1298,
+      "extraction_day": 1256,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-051-C",
+    "type": "terms_claim",
+    "scenario": "TS-051",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 1298,
+      "extraction_day": 1256,
+      "extraction_kind": "normal",
+      "count_this_year": 2
+    },
+    "profiles_disagree": false,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "지급"
+    }
+  },
+  {
+    "case_id": "TS-052-A",
+    "type": "terms_claim",
+    "scenario": "TS-052",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 103,
+      "extraction_day": 53,
+      "extraction_kind": "prep",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-052-B",
+    "type": "terms_claim",
+    "scenario": "TS-052",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 103,
+      "extraction_day": 53,
+      "extraction_kind": "prep",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-052-C",
+    "type": "terms_claim",
+    "scenario": "TS-052",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 103,
+      "extraction_day": 53,
+      "extraction_kind": "prep",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-053-A",
+    "type": "terms_claim",
+    "scenario": "TS-053",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 248,
+      "extraction_day": 234,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-053-B",
+    "type": "terms_claim",
+    "scenario": "TS-053",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 248,
+      "extraction_day": 234,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-053-C",
+    "type": "terms_claim",
+    "scenario": "TS-053",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 248,
+      "extraction_day": 234,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-054-A",
+    "type": "terms_claim",
+    "scenario": "TS-054",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 134,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-054-B",
+    "type": "terms_claim",
+    "scenario": "TS-054",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 134,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "waiting",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-054-C",
+    "type": "terms_claim",
+    "scenario": "TS-054",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 134,
+      "extraction_day": 1,
+      "extraction_kind": "normal",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "pre_start",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-055-A",
+    "type": "terms_claim",
+    "scenario": "TS-055",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 323,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-055-B",
+    "type": "terms_claim",
+    "scenario": "TS-055",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 323,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-055-C",
+    "type": "terms_claim",
+    "scenario": "TS-055",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 323,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-056-A",
+    "type": "terms_claim",
+    "scenario": "TS-056",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 696,
+      "extraction_day": 622,
+      "extraction_kind": "wisdom",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-056-B",
+    "type": "terms_claim",
+    "scenario": "TS-056",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 696,
+      "extraction_day": 622,
+      "extraction_kind": "wisdom",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "annual_cap",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-056-C",
+    "type": "terms_claim",
+    "scenario": "TS-056",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 696,
+      "extraction_day": 622,
+      "extraction_kind": "wisdom",
+      "count_this_year": 3
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "부지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-057-A",
+    "type": "terms_claim",
+    "scenario": "TS-057",
+    "profile": "A",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 646,
+      "extraction_day": 534,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-057-B",
+    "type": "terms_claim",
+    "scenario": "TS-057",
+    "profile": "B",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 646,
+      "extraction_day": 534,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-057-C",
+    "type": "terms_claim",
+    "scenario": "TS-057",
+    "profile": "C",
+    "facts": {
+      "coverage": "implant",
+      "cause": "disease",
+      "event_day": 646,
+      "extraction_day": 534,
+      "extraction_kind": "prep",
+      "count_this_year": 1
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-058-A",
+    "type": "terms_claim",
+    "scenario": "TS-058",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 1105,
+      "extraction_day": 1043,
+      "extraction_kind": "wisdom",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-058-B",
+    "type": "terms_claim",
+    "scenario": "TS-058",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 1105,
+      "extraction_day": 1043,
+      "extraction_kind": "wisdom",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "지급",
+    "expected_ratio": 1.0,
+    "expected_reason": "none",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-058-C",
+    "type": "terms_claim",
+    "scenario": "TS-058",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 1105,
+      "extraction_day": 1043,
+      "extraction_kind": "wisdom",
+      "count_this_year": 4
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "지급",
+      "B": "지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-059-A",
+    "type": "terms_claim",
+    "scenario": "TS-059",
+    "profile": "A",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 112,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-059-B",
+    "type": "terms_claim",
+    "scenario": "TS-059",
+    "profile": "B",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 112,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-059-C",
+    "type": "terms_claim",
+    "scenario": "TS-059",
+    "profile": "C",
+    "facts": {
+      "coverage": "crown",
+      "cause": "disease",
+      "event_day": 112,
+      "extraction_day": null,
+      "extraction_kind": null,
+      "count_this_year": 0
+    },
+    "profiles_disagree": false,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "감액지급"
+    }
+  },
+  {
+    "case_id": "TS-060-A",
+    "type": "terms_claim",
+    "scenario": "TS-060",
+    "profile": "A",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 694,
+      "extraction_day": 569,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-060-B",
+    "type": "terms_claim",
+    "scenario": "TS-060",
+    "profile": "B",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 694,
+      "extraction_day": 569,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "감액지급",
+    "expected_ratio": 0.5,
+    "expected_reason": "reduced",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  },
+  {
+    "case_id": "TS-060-C",
+    "type": "terms_claim",
+    "scenario": "TS-060",
+    "profile": "C",
+    "facts": {
+      "coverage": "bridge",
+      "cause": "disease",
+      "event_day": 694,
+      "extraction_day": 569,
+      "extraction_kind": "wisdom",
+      "count_this_year": 0
+    },
+    "profiles_disagree": true,
+    "expected": "부지급",
+    "expected_ratio": 0.0,
+    "expected_reason": "excluded_kind",
+    "all_profiles_expected": {
+      "A": "감액지급",
+      "B": "감액지급",
+      "C": "부지급"
+    }
+  }
+]

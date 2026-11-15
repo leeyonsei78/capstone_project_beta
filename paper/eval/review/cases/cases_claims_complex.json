@@ -1,0 +1,2824 @@
+[
+  {
+    "case_id": "CX-L2-001",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 40,
+      "policy_age_days": 365,
+      "total_paid": 480,
+      "total_claimed": 280,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 280,
+      "ratio_of_limit": 0.28,
+      "description": "아래 오른쪽 작은어금니(44번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 44
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 280,
+        "status": "Paid",
+        "days_ago": 6,
+        "tooth": 45
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $280.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 6일 전 | D2160 아말감 충전 (3면) | 아래 오른쪽 작은어금니(45번) | $280.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-002",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 47,
+      "policy_age_days": 664,
+      "total_paid": 1034,
+      "total_claimed": 231,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 237,
+      "ratio_of_limit": 0.237,
+      "description": "아래 오른쪽 작은어금니(45번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 45
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 231,
+        "status": "Paid",
+        "days_ago": 14,
+        "tooth": 34
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $231.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 14일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 작은어금니(34번) | $231.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-003",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 400,
+      "monthly_premium": 22,
+      "policy_age_days": 618,
+      "total_paid": 440,
+      "total_claimed": 183,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2150",
+      "treatment_name": "아말감 충전 (2면)",
+      "amount": 188,
+      "ratio_of_limit": 0.47,
+      "description": "아래 오른쪽 큰어금니(46번) - 어금니 두 면 충전 치료",
+      "tooth": 46
+    },
+    "history": [
+      {
+        "code": "D2150",
+        "amount": 183,
+        "status": "Paid",
+        "days_ago": 10,
+        "tooth": 47
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $183.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 10일 전 | D2150 아말감 충전 (2면) | 아래 오른쪽 큰어금니(47번) | $183.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-004",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 51,
+      "policy_age_days": 647,
+      "total_paid": 1071,
+      "total_claimed": 225,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 220,
+      "ratio_of_limit": 0.22,
+      "description": "위 왼쪽 큰어금니(26번) - 충치가 크게 번져 세 면을 제거하고 충전",
+      "tooth": 26
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 225,
+        "status": "Paid",
+        "days_ago": 9,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $225.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 9일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 큰어금니(37번) | $225.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-005",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 400,
+      "monthly_premium": 15,
+      "policy_age_days": 611,
+      "total_paid": 300,
+      "total_claimed": 217,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 210,
+      "ratio_of_limit": 0.525,
+      "description": "아래 오른쪽 큰어금니(47번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 47
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 217,
+        "status": "Paid",
+        "days_ago": 3,
+        "tooth": 36
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $217.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 3일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 큰어금니(36번) | $217.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-006",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 64,
+      "policy_age_days": 399,
+      "total_paid": 832,
+      "total_claimed": 587,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2740",
+      "treatment_name": "도재관 크라운",
+      "amount": 584,
+      "ratio_of_limit": 0.3893,
+      "description": "아래 오른쪽 작은어금니(44번) - 치아를 다듬고 도재 크라운으로 보철",
+      "tooth": 44
+    },
+    "history": [
+      {
+        "code": "D2740",
+        "amount": 587,
+        "status": "Paid",
+        "days_ago": 11,
+        "tooth": 47
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $587.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 11일 전 | D2740 도재관 크라운 | 아래 오른쪽 큰어금니(47번) | $587.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-007",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 400,
+      "monthly_premium": 15,
+      "policy_age_days": 392,
+      "total_paid": 195,
+      "total_claimed": 195,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2150",
+      "treatment_name": "아말감 충전 (2면)",
+      "amount": 200,
+      "ratio_of_limit": 0.5,
+      "description": "위 오른쪽 작은어금니(14번) - 어금니 두 면 충전 치료",
+      "tooth": 14
+    },
+    "history": [
+      {
+        "code": "D2150",
+        "amount": 195,
+        "status": "Paid",
+        "days_ago": 3,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $195.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 3일 전 | D2150 아말감 충전 (2면) | 위 오른쪽 작은어금니(15번) | $195.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-008",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 43,
+      "policy_age_days": 478,
+      "total_paid": 645,
+      "total_claimed": 250,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 262,
+      "ratio_of_limit": 0.262,
+      "description": "아래 왼쪽 큰어금니(37번) - 충치가 크게 번져 세 면을 제거하고 충전",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 250,
+        "status": "Paid",
+        "days_ago": 7,
+        "tooth": 36
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $250.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 7일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 큰어금니(36번) | $250.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-009",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 37,
+      "policy_age_days": 843,
+      "total_paid": 1036,
+      "total_claimed": 789,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 754,
+      "ratio_of_limit": 0.754,
+      "description": "아래 왼쪽 작은어금니(35번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 35
+    },
+    "history": [
+      {
+        "code": "D2750",
+        "amount": 789,
+        "status": "Paid",
+        "days_ago": 1,
+        "tooth": 14
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $789.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 1일 전 | D2750 세라믹관 크라운 | 위 오른쪽 작은어금니(14번) | $789.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-010",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 70,
+      "policy_age_days": 767,
+      "total_paid": 1750,
+      "total_claimed": 637,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 631,
+      "ratio_of_limit": 0.3155,
+      "description": "아래 오른쪽 작은어금니(45번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 45
+    },
+    "history": [
+      {
+        "code": "D2750",
+        "amount": 637,
+        "status": "Paid",
+        "days_ago": 7,
+        "tooth": 34
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $637.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 7일 전 | D2750 세라믹관 크라운 | 아래 왼쪽 작은어금니(34번) | $637.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-011",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 108,
+      "policy_age_days": 677,
+      "total_paid": 2376,
+      "total_claimed": 538,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D3330",
+      "treatment_name": "근관치료 (대구치)",
+      "amount": 516,
+      "ratio_of_limit": 0.258,
+      "description": "위 오른쪽 큰어금니(16번) - 큰어금니 근관치료 진행",
+      "tooth": 16
+    },
+    "history": [
+      {
+        "code": "D3330",
+        "amount": 538,
+        "status": "Paid",
+        "days_ago": 12,
+        "tooth": 16
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $538.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 12일 전 | D3330 근관치료 (대구치) | 위 오른쪽 큰어금니(16번) | $538.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-012",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 93,
+      "policy_age_days": 380,
+      "total_paid": 1116,
+      "total_claimed": 546,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D3330",
+      "treatment_name": "근관치료 (대구치)",
+      "amount": 563,
+      "ratio_of_limit": 0.2815,
+      "description": "위 왼쪽 작은어금니(24번) - 큰어금니 근관치료 진행",
+      "tooth": 24
+    },
+    "history": [
+      {
+        "code": "D3330",
+        "amount": 546,
+        "status": "Paid",
+        "days_ago": 12,
+        "tooth": 24
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $546.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 12일 전 | D3330 근관치료 (대구치) | 위 왼쪽 작은어금니(24번) | $546.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-013",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 88,
+      "policy_age_days": 427,
+      "total_paid": 1232,
+      "total_claimed": 645,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 654,
+      "ratio_of_limit": 0.327,
+      "description": "아래 왼쪽 큰어금니(37번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D2750",
+        "amount": 645,
+        "status": "Paid",
+        "days_ago": 6,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $645.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 6일 전 | D2750 세라믹관 크라운 | 아래 왼쪽 큰어금니(37번) | $645.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-014",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 53,
+      "policy_age_days": 456,
+      "total_paid": 795,
+      "total_claimed": 213,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2150",
+      "treatment_name": "아말감 충전 (2면)",
+      "amount": 223,
+      "ratio_of_limit": 0.223,
+      "description": "위 오른쪽 작은어금니(14번) - 어금니 두 면 충전 치료",
+      "tooth": 14
+    },
+    "history": [
+      {
+        "code": "D2150",
+        "amount": 213,
+        "status": "Paid",
+        "days_ago": 9,
+        "tooth": 14
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $213.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 9일 전 | D2150 아말감 충전 (2면) | 위 오른쪽 작은어금니(14번) | $213.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-015",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 35,
+      "policy_age_days": 488,
+      "total_paid": 560,
+      "total_claimed": 245,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 241,
+      "ratio_of_limit": 0.241,
+      "description": "위 왼쪽 큰어금니(27번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 27
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 245,
+        "status": "Paid",
+        "days_ago": 3,
+        "tooth": 27
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $245.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 3일 전 | D2160 아말감 충전 (3면) | 위 왼쪽 큰어금니(27번) | $245.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-016",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 47,
+      "policy_age_days": 450,
+      "total_paid": 705,
+      "total_claimed": 218,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 228,
+      "ratio_of_limit": 0.228,
+      "description": "아래 왼쪽 큰어금니(37번) - 충치가 크게 번져 세 면을 제거하고 충전",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 218,
+        "status": "Paid",
+        "days_ago": 6,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $218.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 6일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 큰어금니(37번) | $218.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-017",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 35,
+      "policy_age_days": 584,
+      "total_paid": 665,
+      "total_claimed": 281,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 270,
+      "ratio_of_limit": 0.27,
+      "description": "위 오른쪽 작은어금니(14번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 14
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 281,
+        "status": "Paid",
+        "days_ago": 3,
+        "tooth": 14
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $281.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 3일 전 | D2160 아말감 충전 (3면) | 위 오른쪽 작은어금니(14번) | $281.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-018",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 48,
+      "policy_age_days": 613,
+      "total_paid": 960,
+      "total_claimed": 485,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D3330",
+      "treatment_name": "근관치료 (대구치)",
+      "amount": 505,
+      "ratio_of_limit": 0.3367,
+      "description": "위 왼쪽 큰어금니(26번) - 심한 치통으로 어금니 신경치료 여러 번 받음",
+      "tooth": 26
+    },
+    "history": [
+      {
+        "code": "D3330",
+        "amount": 485,
+        "status": "Paid",
+        "days_ago": 3,
+        "tooth": 26
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $485.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 3일 전 | D3330 근관치료 (대구치) | 위 왼쪽 큰어금니(26번) | $485.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-019",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 46,
+      "policy_age_days": 643,
+      "total_paid": 966,
+      "total_claimed": 755,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2740",
+      "treatment_name": "도재관 크라운",
+      "amount": 743,
+      "ratio_of_limit": 0.743,
+      "description": "아래 오른쪽 큰어금니(46번) - 금이 가고 깨진 치아에 도재 크라운 씌움",
+      "tooth": 46
+    },
+    "history": [
+      {
+        "code": "D2740",
+        "amount": 755,
+        "status": "Paid",
+        "days_ago": 5,
+        "tooth": 46
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $755.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 5일 전 | D2740 도재관 크라운 | 아래 오른쪽 큰어금니(46번) | $755.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-020",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X1anom",
+    "label": "investigate",
+    "anomaly": "X1",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 75,
+      "policy_age_days": 563,
+      "total_paid": 1350,
+      "total_claimed": 514,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D3330",
+      "treatment_name": "근관치료 (대구치)",
+      "amount": 532,
+      "ratio_of_limit": 0.266,
+      "description": "아래 오른쪽 큰어금니(47번) - 큰어금니 근관치료 진행",
+      "tooth": 47
+    },
+    "history": [
+      {
+        "code": "D3330",
+        "amount": 514,
+        "status": "Paid",
+        "days_ago": 2,
+        "tooth": 47
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $514.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 2일 전 | D3330 근관치료 (대구치) | 아래 오른쪽 큰어금니(47번) | $514.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-021",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 5000,
+      "monthly_premium": 238,
+      "policy_age_days": 804,
+      "total_paid": 6188,
+      "total_claimed": 127,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1658,
+      "ratio_of_limit": 0.3316,
+      "description": "아래 오른쪽 작은어금니(45번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 45
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 127,
+        "status": "Paid",
+        "days_ago": 242,
+        "tooth": 45
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $127.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 242일 전 | D7140 단순 발치 | 아래 오른쪽 작은어금니(45번) | $127.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-022",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 5000,
+      "monthly_premium": 212,
+      "policy_age_days": 674,
+      "total_paid": 4664,
+      "total_claimed": 185,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1622,
+      "ratio_of_limit": 0.3244,
+      "description": "아래 왼쪽 큰어금니(36번) - 임플란트 식립 수술 받음",
+      "tooth": 36
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 185,
+        "status": "Paid",
+        "days_ago": 241,
+        "tooth": 36
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $185.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 241일 전 | D7210 매복 발치 (부분) | 아래 왼쪽 큰어금니(36번) | $185.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-023",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 133,
+      "policy_age_days": 853,
+      "total_paid": 3724,
+      "total_claimed": 188,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1523,
+      "ratio_of_limit": 0.5077,
+      "description": "위 오른쪽 큰어금니(16번) - 임플란트 식립 수술 받음",
+      "tooth": 16
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 188,
+        "status": "Paid",
+        "days_ago": 115,
+        "tooth": 16
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $188.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 115일 전 | D7140 단순 발치 | 위 오른쪽 큰어금니(16번) | $188.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-024",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 160,
+      "policy_age_days": 694,
+      "total_paid": 3680,
+      "total_claimed": 104,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1825,
+      "ratio_of_limit": 0.6083,
+      "description": "위 오른쪽 작은어금니(15번) - 임플란트 식립 수술 받음",
+      "tooth": 15
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 104,
+        "status": "Paid",
+        "days_ago": 106,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $104.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 106일 전 | D7210 매복 발치 (부분) | 위 오른쪽 작은어금니(15번) | $104.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-025",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 126,
+      "policy_age_days": 577,
+      "total_paid": 2394,
+      "total_claimed": 196,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1607,
+      "ratio_of_limit": 0.5357,
+      "description": "아래 오른쪽 작은어금니(45번) - 임플란트 식립 수술 받음",
+      "tooth": 45
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 196,
+        "status": "Paid",
+        "days_ago": 135,
+        "tooth": 45
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $196.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 135일 전 | D7140 단순 발치 | 아래 오른쪽 작은어금니(45번) | $196.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-026",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 108,
+      "policy_age_days": 785,
+      "total_paid": 2808,
+      "total_claimed": 267,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1794,
+      "ratio_of_limit": 0.598,
+      "description": "아래 오른쪽 큰어금니(47번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 47
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 267,
+        "status": "Paid",
+        "days_ago": 201,
+        "tooth": 47
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $267.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 201일 전 | D7140 단순 발치 | 아래 오른쪽 큰어금니(47번) | $267.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-027",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 5000,
+      "monthly_premium": 162,
+      "policy_age_days": 453,
+      "total_paid": 2430,
+      "total_claimed": 144,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1711,
+      "ratio_of_limit": 0.3422,
+      "description": "위 오른쪽 작은어금니(15번) - 임플란트 식립 수술 받음",
+      "tooth": 15
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 144,
+        "status": "Paid",
+        "days_ago": 268,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $144.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 268일 전 | D7140 단순 발치 | 위 오른쪽 작은어금니(15번) | $144.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-028",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 97,
+      "policy_age_days": 775,
+      "total_paid": 2425,
+      "total_claimed": 236,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1518,
+      "ratio_of_limit": 0.759,
+      "description": "아래 왼쪽 작은어금니(35번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 35
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 236,
+        "status": "Paid",
+        "days_ago": 108,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $236.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 108일 전 | D7210 매복 발치 (부분) | 아래 왼쪽 작은어금니(35번) | $236.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-029",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 64,
+      "policy_age_days": 822,
+      "total_paid": 1728,
+      "total_claimed": 198,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1621,
+      "ratio_of_limit": 0.8105,
+      "description": "위 오른쪽 작은어금니(15번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 15
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 198,
+        "status": "Paid",
+        "days_ago": 109,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $198.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 109일 전 | D7210 매복 발치 (부분) | 위 오른쪽 작은어금니(15번) | $198.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-030",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 123,
+      "policy_age_days": 832,
+      "total_paid": 3321,
+      "total_claimed": 114,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1642,
+      "ratio_of_limit": 0.5473,
+      "description": "위 오른쪽 작은어금니(15번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 15
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 114,
+        "status": "Paid",
+        "days_ago": 292,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $114.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 292일 전 | D7210 매복 발치 (부분) | 위 오른쪽 작은어금니(15번) | $114.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-031",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 87,
+      "policy_age_days": 247,
+      "total_paid": 696,
+      "total_claimed": 307,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 657,
+      "ratio_of_limit": 0.3285,
+      "description": "아래 오른쪽 작은어금니(44번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 44
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 307,
+        "status": "Paid",
+        "days_ago": 157,
+        "tooth": 44
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $307.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 157일 전 | D7140 단순 발치 | 아래 오른쪽 작은어금니(44번) | $307.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-032",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 54,
+      "policy_age_days": 753,
+      "total_paid": 1350,
+      "total_claimed": 144,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 770,
+      "ratio_of_limit": 0.5133,
+      "description": "아래 오른쪽 작은어금니(44번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 44
+    },
+    "history": [
+      {
+        "code": "D7240",
+        "amount": 144,
+        "status": "Paid",
+        "days_ago": 82,
+        "tooth": 44
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $144.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 82일 전 | D7240 완전 매복 발치 | 아래 오른쪽 작은어금니(44번) | $144.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-033",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 121,
+      "policy_age_days": 568,
+      "total_paid": 2178,
+      "total_claimed": 235,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 806,
+      "ratio_of_limit": 0.2687,
+      "description": "위 왼쪽 작은어금니(24번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 24
+    },
+    "history": [
+      {
+        "code": "D7240",
+        "amount": 235,
+        "status": "Paid",
+        "days_ago": 124,
+        "tooth": 24
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $235.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 124일 전 | D7240 완전 매복 발치 | 위 왼쪽 작은어금니(24번) | $235.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-034",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 63,
+      "policy_age_days": 545,
+      "total_paid": 1134,
+      "total_claimed": 282,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 776,
+      "ratio_of_limit": 0.388,
+      "description": "아래 오른쪽 큰어금니(47번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 47
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 282,
+        "status": "Paid",
+        "days_ago": 64,
+        "tooth": 47
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $282.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 64일 전 | D7140 단순 발치 | 아래 오른쪽 큰어금니(47번) | $282.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-035",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 66,
+      "policy_age_days": 759,
+      "total_paid": 1650,
+      "total_claimed": 298,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 715,
+      "ratio_of_limit": 0.4767,
+      "description": "아래 왼쪽 큰어금니(37번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D7240",
+        "amount": 298,
+        "status": "Paid",
+        "days_ago": 39,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $298.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 39일 전 | D7240 완전 매복 발치 | 아래 왼쪽 큰어금니(37번) | $298.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-036",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 42,
+      "policy_age_days": 705,
+      "total_paid": 966,
+      "total_claimed": 129,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2740",
+      "treatment_name": "도재관 크라운",
+      "amount": 688,
+      "ratio_of_limit": 0.688,
+      "description": "아래 왼쪽 큰어금니(37번) - 치아를 다듬고 도재 크라운으로 보철",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 129,
+        "status": "Paid",
+        "days_ago": 39,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $129.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 39일 전 | D7210 매복 발치 (부분) | 아래 왼쪽 큰어금니(37번) | $129.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-037",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 56,
+      "policy_age_days": 379,
+      "total_paid": 672,
+      "total_claimed": 122,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 646,
+      "ratio_of_limit": 0.4307,
+      "description": "아래 오른쪽 큰어금니(47번) - 어금니에 세라믹 크라운을 씌우는 치료",
+      "tooth": 47
+    },
+    "history": [
+      {
+        "code": "D7240",
+        "amount": 122,
+        "status": "Paid",
+        "days_ago": 97,
+        "tooth": 47
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $122.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 97일 전 | D7240 완전 매복 발치 | 아래 오른쪽 큰어금니(47번) | $122.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-038",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 41,
+      "policy_age_days": 505,
+      "total_paid": 656,
+      "total_claimed": 217,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2740",
+      "treatment_name": "도재관 크라운",
+      "amount": 637,
+      "ratio_of_limit": 0.637,
+      "description": "아래 왼쪽 작은어금니(35번) - 금이 가고 깨진 치아에 도재 크라운 씌움",
+      "tooth": 35
+    },
+    "history": [
+      {
+        "code": "D7140",
+        "amount": 217,
+        "status": "Paid",
+        "days_ago": 180,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $217.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 180일 전 | D7140 단순 발치 | 아래 왼쪽 작은어금니(35번) | $217.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-039",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 35,
+      "policy_age_days": 689,
+      "total_paid": 770,
+      "total_claimed": 357,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2740",
+      "treatment_name": "도재관 크라운",
+      "amount": 688,
+      "ratio_of_limit": 0.688,
+      "description": "아래 왼쪽 작은어금니(35번) - 금이 가고 깨진 치아에 도재 크라운 씌움",
+      "tooth": 35
+    },
+    "history": [
+      {
+        "code": "D7240",
+        "amount": 357,
+        "status": "Paid",
+        "days_ago": 187,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $357.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 187일 전 | D7240 완전 매복 발치 | 아래 왼쪽 작은어금니(35번) | $357.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-040",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomCrown",
+    "label": "investigate",
+    "anomaly": "X2a",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 63,
+      "policy_age_days": 608,
+      "total_paid": 1260,
+      "total_claimed": 145,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2750",
+      "treatment_name": "세라믹관 크라운",
+      "amount": 740,
+      "ratio_of_limit": 0.4933,
+      "description": "위 오른쪽 큰어금니(17번) - 깨진 어금니 세라믹 크라운 보철",
+      "tooth": 17
+    },
+    "history": [
+      {
+        "code": "D7210",
+        "amount": 145,
+        "status": "Paid",
+        "days_ago": 160,
+        "tooth": 17
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $145.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 160일 전 | D7210 매복 발치 (부분) | 위 오른쪽 큰어금니(17번) | $145.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-041",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 127,
+      "policy_age_days": 855,
+      "total_paid": 3556,
+      "total_claimed": 1945,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1882,
+      "ratio_of_limit": 0.6273,
+      "description": "아래 오른쪽 작은어금니(44번) - 임플란트 식립 수술 받음",
+      "tooth": 44
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1945,
+        "status": "Paid",
+        "days_ago": 116,
+        "tooth": 44
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1945.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 116일 전 | D6010 임플란트 수술 | 아래 오른쪽 작은어금니(44번) | $1945.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-042",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 5000,
+      "monthly_premium": 270,
+      "policy_age_days": 431,
+      "total_paid": 3780,
+      "total_claimed": 1665,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1775,
+      "ratio_of_limit": 0.355,
+      "description": "아래 왼쪽 큰어금니(36번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 36
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1665,
+        "status": "Paid",
+        "days_ago": 153,
+        "tooth": 36
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1665.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 153일 전 | D6010 임플란트 수술 | 아래 왼쪽 큰어금니(36번) | $1665.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-043",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 150,
+      "policy_age_days": 562,
+      "total_paid": 2700,
+      "total_claimed": 1617,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1750,
+      "ratio_of_limit": 0.5833,
+      "description": "아래 왼쪽 작은어금니(35번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 35
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1617,
+        "status": "Paid",
+        "days_ago": 285,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1617.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 285일 전 | D6010 임플란트 수술 | 아래 왼쪽 작은어금니(35번) | $1617.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-044",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 5000,
+      "monthly_premium": 210,
+      "policy_age_days": 361,
+      "total_paid": 2520,
+      "total_claimed": 1509,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1667,
+      "ratio_of_limit": 0.3334,
+      "description": "아래 왼쪽 큰어금니(37번) - 임플란트 식립 수술 받음",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1509,
+        "status": "Paid",
+        "days_ago": 279,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1509.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 279일 전 | D6010 임플란트 수술 | 아래 왼쪽 큰어금니(37번) | $1509.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-045",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 101,
+      "policy_age_days": 238,
+      "total_paid": 707,
+      "total_claimed": 1576,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1609,
+      "ratio_of_limit": 0.8045,
+      "description": "아래 왼쪽 작은어금니(35번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 35
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1576,
+        "status": "Paid",
+        "days_ago": 187,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1576.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 187일 전 | D6010 임플란트 수술 | 아래 왼쪽 작은어금니(35번) | $1576.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-046",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 78,
+      "policy_age_days": 378,
+      "total_paid": 936,
+      "total_claimed": 1561,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1665,
+      "ratio_of_limit": 0.8325,
+      "description": "위 오른쪽 작은어금니(15번) - 임플란트 식립 수술 받음",
+      "tooth": 15
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1561,
+        "status": "Paid",
+        "days_ago": 172,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1561.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 172일 전 | D6010 임플란트 수술 | 위 오른쪽 작은어금니(15번) | $1561.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-047",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 3000,
+      "monthly_premium": 157,
+      "policy_age_days": 530,
+      "total_paid": 2669,
+      "total_claimed": 1555,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1723,
+      "ratio_of_limit": 0.5743,
+      "description": "위 왼쪽 큰어금니(27번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 27
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1555,
+        "status": "Paid",
+        "days_ago": 240,
+        "tooth": 27
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1555.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 240일 전 | D6010 임플란트 수술 | 위 왼쪽 큰어금니(27번) | $1555.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-048",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 5000,
+      "monthly_premium": 161,
+      "policy_age_days": 337,
+      "total_paid": 1771,
+      "total_claimed": 1699,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1622,
+      "ratio_of_limit": 0.3244,
+      "description": "위 왼쪽 큰어금니(26번) - 임플란트 식립 수술 받음",
+      "tooth": 26
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1699,
+        "status": "Paid",
+        "days_ago": 272,
+        "tooth": 26
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1699.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 272일 전 | D6010 임플란트 수술 | 위 왼쪽 큰어금니(26번) | $1699.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-049",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 90,
+      "policy_age_days": 818,
+      "total_paid": 2430,
+      "total_claimed": 1614,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1587,
+      "ratio_of_limit": 0.7935,
+      "description": "위 왼쪽 작은어금니(24번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 24
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1614,
+        "status": "Paid",
+        "days_ago": 276,
+        "tooth": 24
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1614.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 276일 전 | D6010 임플란트 수술 | 위 왼쪽 작은어금니(24번) | $1614.00 | Paid"
+  },
+  {
+    "case_id": "CX-L2-050",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L2",
+    "kind": "X2anomImplant",
+    "label": "investigate",
+    "anomaly": "X2b",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "tooth_rule",
+    "policy": {
+      "coverage_limit": 8000,
+      "monthly_premium": 329,
+      "policy_age_days": 631,
+      "total_paid": 6909,
+      "total_claimed": 1636,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D6010",
+      "treatment_name": "임플란트 수술",
+      "amount": 1806,
+      "ratio_of_limit": 0.2258,
+      "description": "위 왼쪽 작은어금니(24번) - 빠진 치아 자리에 임플란트를 심는 수술",
+      "tooth": 24
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1636,
+        "status": "Paid",
+        "days_ago": 308,
+        "tooth": 24
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1636.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 308일 전 | D6010 임플란트 수술 | 위 왼쪽 작은어금니(24번) | $1636.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-051",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 77,
+      "policy_age_days": 309,
+      "total_paid": 770,
+      "total_claimed": 967,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D4342",
+      "treatment_name": "치주 소파술 (4치+)",
+      "amount": 461,
+      "ratio_of_limit": 0.2305,
+      "description": "위 왼쪽 큰어금니(26번) - 잇몸 염증이 넓어 여러 부위 잇몸 치료",
+      "tooth": 26
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 967,
+        "status": "Paid",
+        "days_ago": 113,
+        "tooth": 14
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $967.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 113일 전 | D6010 임플란트 수술 | 위 오른쪽 작은어금니(14번) | $967.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-052",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 34,
+      "policy_age_days": 194,
+      "total_paid": 204,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 242,
+      "ratio_of_limit": 0.242,
+      "description": "위 왼쪽 큰어금니(27번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 27
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-053",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 102,
+      "policy_age_days": 337,
+      "total_paid": 1122,
+      "total_claimed": 247,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D7240",
+      "treatment_name": "완전 매복 발치",
+      "amount": 475,
+      "ratio_of_limit": 0.2375,
+      "description": "아래 왼쪽 작은어금니(34번) - 완전히 묻힌 사랑니를 뼈를 깎고 발치",
+      "tooth": 34
+    },
+    "history": [
+      {
+        "code": "D4341",
+        "amount": 247,
+        "status": "Paid",
+        "days_ago": 161,
+        "tooth": 37
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $247.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 161일 전 | D4341 치주 소파술 (1~3치) | 아래 왼쪽 큰어금니(37번) | $247.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-054",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 47,
+      "policy_age_days": 454,
+      "total_paid": 705,
+      "total_claimed": 109,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D4342",
+      "treatment_name": "치주 소파술 (4치+)",
+      "amount": 454,
+      "ratio_of_limit": 0.3027,
+      "description": "위 왼쪽 작은어금니(25번) - 잇몸 염증이 넓어 여러 부위 잇몸 치료",
+      "tooth": 25
+    },
+    "history": [
+      {
+        "code": "D9930",
+        "amount": 109,
+        "status": "Paid",
+        "days_ago": 406,
+        "tooth": 23
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $109.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 406일 전 | D9930 치아 교합 조정 | 위 왼쪽 송곳니(23번) | $109.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-055",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 76,
+      "policy_age_days": 364,
+      "total_paid": 912,
+      "total_claimed": 70,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D7240",
+      "treatment_name": "완전 매복 발치",
+      "amount": 526,
+      "ratio_of_limit": 0.263,
+      "description": "위 오른쪽 큰어금니(17번) - 완전히 묻힌 사랑니를 뼈를 깎고 발치",
+      "tooth": 17
+    },
+    "history": [
+      {
+        "code": "D0150",
+        "amount": 70,
+        "status": "Paid",
+        "days_ago": 144,
+        "tooth": 14
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $70.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 144일 전 | D0150 포괄 구강검진 | 위 오른쪽 작은어금니(14번) | $70.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-056",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 43,
+      "policy_age_days": 214,
+      "total_paid": 301,
+      "total_claimed": 108,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 257,
+      "ratio_of_limit": 0.257,
+      "description": "위 오른쪽 큰어금니(16번) - 충치가 크게 번져 세 면을 제거하고 충전",
+      "tooth": 16
+    },
+    "history": [
+      {
+        "code": "D2150",
+        "amount": 108,
+        "status": "Paid",
+        "days_ago": 102,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $108.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 102일 전 | D2150 아말감 충전 (2면) | 아래 왼쪽 작은어금니(35번) | $108.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-057",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 97,
+      "policy_age_days": 827,
+      "total_paid": 2619,
+      "total_claimed": 0,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D7240",
+      "treatment_name": "완전 매복 발치",
+      "amount": 459,
+      "ratio_of_limit": 0.2295,
+      "description": "아래 오른쪽 큰어금니(47번) - 완전히 묻힌 사랑니를 뼈를 깎고 발치",
+      "tooth": 47
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 2건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-058",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 64,
+      "policy_age_days": 800,
+      "total_paid": 1664,
+      "total_claimed": 59,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D7240",
+      "treatment_name": "완전 매복 발치",
+      "amount": 540,
+      "ratio_of_limit": 0.27,
+      "description": "아래 오른쪽 큰어금니(46번) - 턱뼈 속 매복 사랑니 수술 발치",
+      "tooth": 46
+    },
+    "history": [
+      {
+        "code": "D1110",
+        "amount": 59,
+        "status": "Paid",
+        "days_ago": 445,
+        "tooth": 33
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $59.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 445일 전 | D1110 성인 스케일링 | 아래 왼쪽 송곳니(33번) | $59.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-059",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 37,
+      "policy_age_days": 734,
+      "total_paid": 888,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 275,
+      "ratio_of_limit": 0.275,
+      "description": "위 오른쪽 작은어금니(15번) - 큰 충치로 세 면 충전 치료 진행",
+      "tooth": 15
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-060",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 46,
+      "policy_age_days": 685,
+      "total_paid": 1012,
+      "total_claimed": 114,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 246,
+      "ratio_of_limit": 0.246,
+      "description": "위 왼쪽 작은어금니(24번) - 충치가 크게 번져 세 면을 제거하고 충전",
+      "tooth": 24
+    },
+    "history": [
+      {
+        "code": "D9110",
+        "amount": 114,
+        "status": "Paid",
+        "days_ago": 273,
+        "tooth": 35
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $114.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 273일 전 | D9110 치과 응급 처치 | 아래 왼쪽 작은어금니(35번) | $114.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-061",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 37,
+      "policy_age_days": 629,
+      "total_paid": 740,
+      "total_claimed": 160,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D4342",
+      "treatment_name": "치주 소파술 (4치+)",
+      "amount": 383,
+      "ratio_of_limit": 0.383,
+      "description": "아래 왼쪽 작은어금니(34번) - 잇몸 염증이 넓어 여러 부위 잇몸 치료",
+      "tooth": 34
+    },
+    "history": [
+      {
+        "code": "D2160",
+        "amount": 160,
+        "status": "Paid",
+        "days_ago": 453,
+        "tooth": 45
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $160.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 453일 전 | D2160 아말감 충전 (3면) | 아래 오른쪽 작은어금니(45번) | $160.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-062",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3clean",
+    "label": "approve",
+    "anomaly": "none",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "none",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 42,
+      "policy_age_days": 213,
+      "total_paid": 294,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 282,
+      "ratio_of_limit": 0.282,
+      "description": "위 왼쪽 작은어금니(24번) - 충치가 크게 번져 세 면을 제거하고 충전",
+      "tooth": 24
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-063",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 47,
+      "policy_age_days": 640,
+      "total_paid": 987,
+      "total_claimed": 215,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 236,
+      "ratio_of_limit": 0.236,
+      "description": "아래 오른쪽 큰어금니(47번) - 어금니 충치 부위를 제거하고 아말감으로 메움",
+      "tooth": 47
+    },
+    "history": [
+      {
+        "code": "D3310",
+        "amount": 215,
+        "status": "Paid",
+        "days_ago": 88,
+        "tooth": 44
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $215.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 88일 전 | D3310 근관치료 (전치) | 아래 오른쪽 작은어금니(44번) | $215.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-064",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 43,
+      "policy_age_days": 743,
+      "total_paid": 1032,
+      "total_claimed": 328,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D4342",
+      "treatment_name": "치주 소파술 (4치+)",
+      "amount": 449,
+      "ratio_of_limit": 0.449,
+      "description": "아래 오른쪽 작은어금니(45번) - 잇몸이 붓고 피가 나서 잇몸 속 치석 제거 치료",
+      "tooth": 45
+    },
+    "history": [
+      {
+        "code": "D3330",
+        "amount": 328,
+        "status": "Paid",
+        "days_ago": 460,
+        "tooth": 42
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $328.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 460일 전 | D3330 근관치료 (대구치) | 아래 오른쪽 앞니(42번) | $328.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-065",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 64,
+      "policy_age_days": 308,
+      "total_paid": 640,
+      "total_claimed": 84,
+      "policies": 2
+    },
+    "claim": {
+      "treatment_code": "D4342",
+      "treatment_name": "치주 소파술 (4치+)",
+      "amount": 447,
+      "ratio_of_limit": 0.2235,
+      "description": "위 오른쪽 작은어금니(15번) - 치주 소파술로 한쪽 잇몸 치료",
+      "tooth": 15
+    },
+    "history": [
+      {
+        "code": "D0330",
+        "amount": 84,
+        "status": "Paid",
+        "days_ago": 121,
+        "tooth": 22
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $84.00, 보유 증권 2건.",
+    "evidence_rich": "과거 청구 상세:\n- 121일 전 | D0330 파노라마 X선 | 위 왼쪽 앞니(22번) | $84.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-066",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 49,
+      "policy_age_days": 539,
+      "total_paid": 833,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 227,
+      "ratio_of_limit": 0.227,
+      "description": "아래 오른쪽 큰어금니(46번) - 충치 치료 후 한 면 충전",
+      "tooth": 46
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-067",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 34,
+      "policy_age_days": 577,
+      "total_paid": 646,
+      "total_claimed": 406,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 281,
+      "ratio_of_limit": 0.281,
+      "description": "위 오른쪽 작은어금니(14번) - 어금니 충치 부위를 제거하고 아말감으로 메움",
+      "tooth": 14
+    },
+    "history": [
+      {
+        "code": "D3330",
+        "amount": 406,
+        "status": "Paid",
+        "days_ago": 46,
+        "tooth": 32
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $406.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 46일 전 | D3330 근관치료 (대구치) | 아래 왼쪽 앞니(32번) | $406.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-068",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 38,
+      "policy_age_days": 486,
+      "total_paid": 608,
+      "total_claimed": 267,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 247,
+      "ratio_of_limit": 0.247,
+      "description": "아래 왼쪽 큰어금니(37번) - 충치 치료 후 한 면 충전",
+      "tooth": 37
+    },
+    "history": [
+      {
+        "code": "D4341",
+        "amount": 267,
+        "status": "Paid",
+        "days_ago": 393,
+        "tooth": 26
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $267.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 393일 전 | D4341 치주 소파술 (1~3치) | 위 왼쪽 큰어금니(26번) | $267.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-069",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 71,
+      "policy_age_days": 194,
+      "total_paid": 426,
+      "total_claimed": 289,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D7240",
+      "treatment_name": "완전 매복 발치",
+      "amount": 553,
+      "ratio_of_limit": 0.3687,
+      "description": "아래 오른쪽 작은어금니(45번) - 치아 단순 발치 진행",
+      "tooth": 45
+    },
+    "history": [
+      {
+        "code": "D2740",
+        "amount": 289,
+        "status": "Paid",
+        "days_ago": 79,
+        "tooth": 46
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $289.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 79일 전 | D2740 도재관 크라운 | 아래 오른쪽 큰어금니(46번) | $289.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-070",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 2000,
+      "monthly_premium": 87,
+      "policy_age_days": 584,
+      "total_paid": 1653,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D7240",
+      "treatment_name": "완전 매복 발치",
+      "amount": 477,
+      "ratio_of_limit": 0.2385,
+      "description": "아래 왼쪽 작은어금니(34번) - 치아 단순 발치 진행",
+      "tooth": 34
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-071",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 39,
+      "policy_age_days": 277,
+      "total_paid": 351,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 282,
+      "ratio_of_limit": 0.282,
+      "description": "아래 왼쪽 작은어금니(34번) - 충치 치료 후 한 면 충전",
+      "tooth": 34
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-072",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1500,
+      "monthly_premium": 53,
+      "policy_age_days": 430,
+      "total_paid": 742,
+      "total_claimed": 68,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D4342",
+      "treatment_name": "치주 소파술 (4치+)",
+      "amount": 430,
+      "ratio_of_limit": 0.2867,
+      "description": "아래 왼쪽 작은어금니(34번) - 잇몸이 붓고 피가 나서 잇몸 속 치석 제거 치료",
+      "tooth": 34
+    },
+    "history": [
+      {
+        "code": "D0210",
+        "amount": 68,
+        "status": "Paid",
+        "days_ago": 58,
+        "tooth": 42
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $68.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 58일 전 | D0210 전악 X선 촬영 | 아래 오른쪽 앞니(42번) | $68.00 | Paid"
+  },
+  {
+    "case_id": "CX-L3-073",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 39,
+      "policy_age_days": 251,
+      "total_paid": 312,
+      "total_claimed": 0,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 253,
+      "ratio_of_limit": 0.253,
+      "description": "아래 오른쪽 큰어금니(46번) - 충치 치료 후 한 면 충전",
+      "tooth": 46
+    },
+    "history": [],
+    "evidence_current": "이 환자의 과거 청구 이력 없음 (이번이 첫 청구, 보유 증권 1건).",
+    "evidence_rich": "과거 청구 없음."
+  },
+  {
+    "case_id": "CX-L3-074",
+    "type": "claim",
+    "group": "complex",
+    "complexity": "L3",
+    "kind": "X3anom",
+    "label": "investigate",
+    "anomaly": "X3",
+    "injection": false,
+    "expert_label": null,
+    "rule_detectable": "text_only",
+    "policy": {
+      "coverage_limit": 1000,
+      "monthly_premium": 46,
+      "policy_age_days": 516,
+      "total_paid": 782,
+      "total_claimed": 1590,
+      "policies": 1
+    },
+    "claim": {
+      "treatment_code": "D2160",
+      "treatment_name": "아말감 충전 (3면)",
+      "amount": 248,
+      "ratio_of_limit": 0.248,
+      "description": "위 왼쪽 작은어금니(25번) - 충치 치료 후 한 면 충전",
+      "tooth": 25
+    },
+    "history": [
+      {
+        "code": "D6010",
+        "amount": 1590,
+        "status": "Paid",
+        "days_ago": 40,
+        "tooth": 15
+      }
+    ],
+    "evidence_current": "이 환자의 과거 청구 이력: 총 1건 (지급완료 1 / 승인 0 / 거절 0 / 대기중 0), 누적 지급액 $1590.00, 보유 증권 1건.",
+    "evidence_rich": "과거 청구 상세:\n- 40일 전 | D6010 임플란트 수술 | 위 오른쪽 작은어금니(15번) | $1590.00 | Paid"
+  }
+]

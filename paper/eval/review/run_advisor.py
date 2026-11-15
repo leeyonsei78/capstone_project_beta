@@ -14,6 +14,7 @@ Scopes
   tier2  claims > 20% of the limit and applications waiting for manual review (what a human sees)
   all    every case (needed to evaluate gating policies on the automatic tier)
   cf     counterfactual twins of the tier-2 applications (fairness check)
+  complex  dental complexity layer L2/L3 (gen_complex_cases.py); results go to <cond>_cx
 
 Results: results/advisor/<model>/<cond>/<case_id>__r<rep>.json (existing files are skipped; --force
 to redo). Token usage is stored so the cost can be estimated before the full run.
@@ -126,7 +127,16 @@ def load_cases():
     return claims, apps
 
 
+def load_complex():
+    f = CASES / "cases_claims_complex.json"
+    if not f.exists():
+        raise SystemExit("cases_claims_complex.json missing - run gen_complex_cases.py first")
+    return json.loads(f.read_text(encoding="utf-8"))
+
+
 def select_cases(scope, claims, apps):
+    if scope == "complex":     # dental complexity layer (L2/L3); kept out of every other scope on purpose
+        return load_complex()
     if scope == "all":
         return claims + apps
     tier2_claims = [c for c in claims if c["group"] == "large"]
@@ -140,17 +150,23 @@ def select_cases(scope, claims, apps):
 
 # ── API ──────────────────────────────────────────────────────────────────────
 
-def get_client():
-    if not os.environ.get("OPENAI_API_KEY") and ENV_FILE.exists():
+def get_client(base_url=None, key_env="OPENAI_API_KEY"):
+    """OpenAI-compatible client. --base-url lets the same harness call a local open-weight server
+    (Ollama / vLLM / llama.cpp expose /v1) or another vendor's compatible endpoint."""
+    if not os.environ.get(key_env) and ENV_FILE.exists():
         try:
             from dotenv import load_dotenv
             load_dotenv(ENV_FILE)
         except ImportError:
             pass
-    if not os.environ.get("OPENAI_API_KEY"):
-        raise SystemExit("OPENAI_API_KEY is not set (and insurance_agent/.env has none).")
+    key = os.environ.get(key_env)
+    if not key:
+        if base_url:            # local servers usually ignore the key but the SDK wants a non-empty one
+            key = "local"
+        else:
+            raise SystemExit(f"{key_env} is not set (and insurance_agent/.env has none).")
     from openai import OpenAI
-    return OpenAI()
+    return OpenAI(api_key=key, base_url=base_url) if base_url else OpenAI(api_key=key)
 
 
 def call_model(client, model, system, user, structured, retries=3):
@@ -160,7 +176,19 @@ def call_model(client, model, system, user, structured, retries=3):
         kw["response_format"] = {"type": "json_object"}
     for attempt in range(retries):
         try:
-            r = client.chat.completions.create(**kw)
+            try:
+                r = client.chat.completions.create(**kw)
+            except Exception as e:   # noqa: BLE001
+                # Model families differ: newer OpenAI models want max_completion_tokens; some local
+                # servers reject response_format. Adapt once, then let the normal retry loop handle it.
+                msg = str(e)
+                if "max_tokens" in msg and "max_completion_tokens" in msg:
+                    kw["max_completion_tokens"] = kw.pop("max_tokens")
+                elif "response_format" in msg and "response_format" in kw:
+                    kw.pop("response_format")     # parser still extracts JSON from free text
+                else:
+                    raise
+                r = client.chat.completions.create(**kw)
             u = getattr(r, "usage", None)
             return (r.choices[0].message.content or "",
                     {"prompt_tokens": getattr(u, "prompt_tokens", None),
@@ -190,8 +218,12 @@ def run_one(client, model, case, cond, rep, out_dir, force):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cond", choices=["C1", "C2", "C3", "all"], default="all")
-    ap.add_argument("--scope", choices=["tier2", "all", "cf"], default="tier2")
+    ap.add_argument("--scope", choices=["tier2", "all", "cf", "complex"], default="tier2")
     ap.add_argument("--model", default="gpt-4o")
+    ap.add_argument("--base-url", default=None,
+                    help="OpenAI-compatible endpoint, e.g. http://localhost:11434/v1 (Ollama)")
+    ap.add_argument("--api-key-env", default="OPENAI_API_KEY",
+                    help="env var holding the key for --base-url vendors")
     ap.add_argument("--reps", type=int, default=1)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=None)
@@ -219,11 +251,11 @@ def main():
             print(f"\n--- {cond} {c['case_id']} (structured={st}) ---\n[system] {s}\n[user]\n{u}")
         return
 
-    client = get_client()
+    client = get_client(args.base_url, args.api_key_env)
     done = 0
     t0 = time.time()
     for cond in conds:
-        out_dir = RESULTS / args.model.replace("/", "-") / (cond + ("_cf" if args.scope == "cf" else ""))
+        out_dir = RESULTS / args.model.replace("/", "-") / (cond + {"cf": "_cf", "complex": "_cx"}.get(args.scope, ""))
         out_dir.mkdir(parents=True, exist_ok=True)
         sub = [(c, rep) for cd, c, rep in jobs if cd == cond]
         with ThreadPoolExecutor(max_workers=args.workers) as ex:
