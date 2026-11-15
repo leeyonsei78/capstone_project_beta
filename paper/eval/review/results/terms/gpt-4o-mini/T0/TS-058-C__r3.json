@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-058-C",
+  "scenario": "TS-058",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보(브릿지) 건수가 4건으로 개수 한도에 도달했습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보(브릿지) 건수가 4건으로 개수 한도에 도달했습니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 63
+  }
+}

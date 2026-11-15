@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-C",
+  "scenario": "TS-013",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"청구가 계약일로부터 29일째 치료가 이루어졌고, 영구치 발치는 상해로 인해 정당한 사유로 시행되었으며, 아직 같은 담보에 대해 지급된 건수가 없으므로 지급이 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "청구가 계약일로부터 29일째 치료가 이루어졌고, 영구치 발치는 상해로 인해 정당한 사유로 시행되었으며, 아직 같은 담보에 대해 지급된 건수가 없으므로 지급이 가능합니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 85
+  }
+}

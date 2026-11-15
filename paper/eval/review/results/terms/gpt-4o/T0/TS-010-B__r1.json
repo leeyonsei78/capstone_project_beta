@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-010-B",
+  "scenario": "TS-010",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 80,\n    \"reason\": \"계약일로부터 290일째에 영구치 발치를 하였으며, 임플란트하는 날은 419일째로 보장 개시일 이후이고, 이번 연도에 이미 2건 지급되었으므로 개수 한도 내에서 지급 가능해 보입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "계약일로부터 290일째에 영구치 발치를 하였으며, 임플란트하는 날은 419일째로 보장 개시일 이후이고, 이번 연도에 이미 2건 지급되었으므로 개수 한도 내에서 지급 가능해 보입니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 94
+  }
+}

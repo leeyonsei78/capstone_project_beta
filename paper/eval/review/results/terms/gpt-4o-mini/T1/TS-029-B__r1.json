@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-B",
+  "scenario": "TS-029",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이번 계약연도에 이미 지급된 브릿지 건수가 2건으로, 임플란트·브릿지의 계약 후 730일 미만 개수 한도가 초과하여 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이번 계약연도에 이미 지급된 브릿지 건수가 2건으로, 임플란트·브릿지의 계약 후 730일 미만 개수 한도가 초과하여 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 575,
+    "completion_tokens": 78
+  }
+}

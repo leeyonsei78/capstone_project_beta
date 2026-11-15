@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-B",
+  "scenario": "TS-013",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":100,\"reason\":\"상해로 인한 브릿지 치료이며, 치료일이 계약일로부터 29일째로 보험 약관에 따라 즉시 보장대상이며, 개수 한도 및 면책기간에 해당하지 않고 감액지급 조건도 없습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지 치료이며, 치료일이 계약일로부터 29일째로 보험 약관에 따라 즉시 보장대상이며, 개수 한도 및 면책기간에 해당하지 않고 감액지급 조건도 없습니다.",
+  "usage": {
+    "prompt_tokens": 575,
+    "completion_tokens": 74
+  }
+}

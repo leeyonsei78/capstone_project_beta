@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-B",
+  "scenario": "TS-035",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 95,\n  \"reason\": \"상해에 대한 보장 조건이 계약일부터 유효하며, 이번 청구에 대해 면책이나 감액 사유가 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 95,
+  "reason": "상해에 대한 보장 조건이 계약일부터 유효하며, 이번 청구에 대해 면책이나 감액 사유가 없습니다.",
+  "usage": {
+    "prompt_tokens": 560,
+    "completion_tokens": 59
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-051-B",
+  "scenario": "TS-051",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"임플란트는 계약 후 730일 미만에는 계약연도당 3개까지만 지급되며, 이미 2건이 지급된 상태에서 이번 청구는 3건을 초과하므로 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "임플란트는 계약 후 730일 미만에는 계약연도당 3개까지만 지급되며, 이미 2건이 지급된 상태에서 이번 청구는 3건을 초과하므로 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 585,
+    "completion_tokens": 84
+  }
+}

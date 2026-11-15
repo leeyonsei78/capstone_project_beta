@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-A",
+  "scenario": "TS-021",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"질병에 대한 보장은 계약일로부터 90일이 지나야 하므로, 치료일이 이 시점을 지나기 전이기 때문에 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "질병에 대한 보장은 계약일로부터 90일이 지나야 하므로, 치료일이 이 시점을 지나기 전이기 때문에 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 67
+  }
+}

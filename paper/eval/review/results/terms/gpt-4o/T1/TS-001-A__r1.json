@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-001-A",
+  "scenario": "TS-001",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\":\"감액지급\",\"reason_code\":\"reduced\",\"confidence\":100,\"reason\":\"브릿지 치료는 질병으로 인한 것으로, 치료일이 계약 후 365일을 초과했지만 730일 미만이므로 감액 대상입니다.\"}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "브릿지 치료는 질병으로 인한 것으로, 치료일이 계약 후 365일을 초과했지만 730일 미만이므로 감액 대상입니다.",
+  "usage": {
+    "prompt_tokens": 535,
+    "completion_tokens": 58
+  }
+}

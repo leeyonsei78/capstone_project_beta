@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-009-B",
+  "scenario": "TS-009",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 95,\n  \"reason\": \"치료일이 계약일로부터 637일째로 면책 기간인 90일을 초과했으나, 질병에 의한 크라운 치료는 270일 미만일 경우만 지급되므로 부지급 처리됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 95,
+  "reason": "치료일이 계약일로부터 637일째로 면책 기간인 90일을 초과했으나, 질병에 의한 크라운 치료는 270일 미만일 경우만 지급되므로 부지급 처리됩니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 85
+  }
+}

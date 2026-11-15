@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-038-B",
+  "scenario": "TS-038",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"이번 계약연도에 이미 2건이 지급되어, 연간 급여 횟수 한도 초과로 감액지급이 요구됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이번 계약연도에 이미 2건이 지급되어, 연간 급여 횟수 한도 초과로 감액지급이 요구됩니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 66
+  }
+}

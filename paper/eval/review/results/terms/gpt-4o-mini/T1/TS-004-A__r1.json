@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-004-A",
+  "scenario": "TS-004",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 90,\n  \"reason\": \"브릿지 치료일이 계약일로부터 1292일째로 감액 지급이 적용됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 90,
+  "reason": "브릿지 치료일이 계약일로부터 1292일째로 감액 지급이 적용됩니다.",
+  "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 56
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-001-A",
+  "scenario": "TS-001",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"브릿지 치료는 계약일로부터 428일째 이루어졌으며, 영구치 발치일도 보장개시일 이후에 해당하여 약관상 면책 또는 제한 조항이 없다고 판단됨.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "브릿지 치료는 계약일로부터 428일째 이루어졌으며, 영구치 발치일도 보장개시일 이후에 해당하여 약관상 면책 또는 제한 조항이 없다고 판단됨.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 79
+  }
+}

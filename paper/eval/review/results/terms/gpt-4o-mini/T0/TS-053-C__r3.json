@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-053-C",
+  "scenario": "TS-053",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 85,\n  \"reason\": \"계약일로부터 248일째에 치료가 이루어졌으며, 같은 계약연도에 이미 지급된 브릿지 건수가 1건으로 확인되어 감액지급으로 판단됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 85,
+  "reason": "계약일로부터 248일째에 치료가 이루어졌으며, 같은 계약연도에 이미 지급된 브릿지 건수가 1건으로 확인되어 감액지급으로 판단됩니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 77
+  }
+}

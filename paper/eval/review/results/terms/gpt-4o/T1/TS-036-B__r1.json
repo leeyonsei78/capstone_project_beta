@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-036-B",
+  "scenario": "TS-036",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\":\"감액지급\",\"reason_code\":\"reduced\",\"confidence\":100,\"reason\":\"치료일이 270일 미만으로 감액기간에 해당하므로 50%만 지급합니다.\"}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "치료일이 270일 미만으로 감액기간에 해당하므로 50%만 지급합니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 45
+  }
+}

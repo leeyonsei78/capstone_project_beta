@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-058-A",
+  "scenario": "TS-058",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"치료가 계약일로부터 충분히 경과된 시점에 이루어졌고, 올해 이미 지급된 같은 담보가 4건으로 개수 한도를 초과하지 않음.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료가 계약일로부터 충분히 경과된 시점에 이루어졌고, 올해 이미 지급된 같은 담보가 4건으로 개수 한도를 초과하지 않음.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 67
+  }
+}

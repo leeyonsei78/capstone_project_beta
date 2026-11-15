@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-026-A",
+  "scenario": "TS-026",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 임플란트 치료로 계약일로부터 70일이 지났으며, 연간 개수 한도에도 적합하므로 전액 지급이 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 임플란트 치료로 계약일로부터 70일이 지났으며, 연간 개수 한도에도 적합하므로 전액 지급이 가능합니다.",
+  "usage": {
+    "prompt_tokens": 531,
+    "completion_tokens": 70
+  }
+}

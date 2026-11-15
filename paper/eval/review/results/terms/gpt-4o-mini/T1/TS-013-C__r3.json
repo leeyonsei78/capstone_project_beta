@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-C",
+  "scenario": "TS-013",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 90,\n  \"reason\": \"영구치가 계약일로부터 1일째에 발치되어 보장개시일 이전 발치로 인해 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "영구치가 계약일로부터 1일째에 발치되어 보장개시일 이전 발치로 인해 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 63
+  }
+}

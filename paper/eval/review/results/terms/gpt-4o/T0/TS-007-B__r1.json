@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-B",
+  "scenario": "TS-007",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"치료일은 계약일로부터 306일째로 면책기간과 보장개시일 이후이며 연간 지급한도가 초과되지 않았습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일은 계약일로부터 306일째로 면책기간과 보장개시일 이후이며 연간 지급한도가 초과되지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 60
+  }
+}

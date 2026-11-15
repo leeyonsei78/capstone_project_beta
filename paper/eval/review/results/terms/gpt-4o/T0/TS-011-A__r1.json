@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-011-A",
+  "scenario": "TS-011",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"브릿지 담보 청구는 각 계약연도 당 2건까지 허용되며 면책기간 90일이 지나 지급대상입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "브릿지 담보 청구는 각 계약연도 당 2건까지 허용되며 면책기간 90일이 지나 지급대상입니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 64
+  }
+}

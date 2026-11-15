@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-C",
+  "scenario": "TS-029",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":80,\"reason\":\"치료일이 계약일부터 134일째로 감액기간이 경과하였고, 발치일이 보장개시일 이후이며 이번 계약연도에 이미 지급된 건수가 2건이라 개수 한도 초과에 해당하지 않아 지급이 가능합니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치료일이 계약일부터 134일째로 감액기간이 경과하였고, 발치일이 보장개시일 이후이며 이번 계약연도에 이미 지급된 건수가 2건이라 개수 한도 초과에 해당하지 않아 지급이 가능합니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 78
+  }
+}

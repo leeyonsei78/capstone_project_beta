@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-C",
+  "scenario": "TS-021",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"보험 약관 내용이 제공되지 않아 특정 판단을 내리기 어렵다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "보험 약관 내용이 제공되지 않아 특정 판단을 내리기 어렵다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 49
+  }
+}

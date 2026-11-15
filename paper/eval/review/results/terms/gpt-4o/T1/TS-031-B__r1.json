@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-B",
+  "scenario": "TS-031",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 730일 미만이라 연도당 3개 한도가 있으며, 2개째 청구라서 한도에 문제가 없고, 상해로 인한 브릿지 시술에는 감액이 적용되지 않습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "계약일로부터 730일 미만이라 연도당 3개 한도가 있으며, 2개째 청구라서 한도에 문제가 없고, 상해로 인한 브릿지 시술에는 감액이 적용되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 575,
+    "completion_tokens": 84
+  }
+}

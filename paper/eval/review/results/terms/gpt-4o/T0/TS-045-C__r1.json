@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-045-C",
+  "scenario": "TS-045",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{ \"decision\": \"근거부족\", \"reason_code\": \"none\", \"confidence\": 50, \"reason\": \"제공된 정보로는 치과보험 약관의 구체적인 내용을 알 수 없기 때문에 판단이 어렵습니다.\" }",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "제공된 정보로는 치과보험 약관의 구체적인 내용을 알 수 없기 때문에 판단이 어렵습니다.",
+  "usage": {
+    "prompt_tokens": 343,
+    "completion_tokens": 54
+  }
+}

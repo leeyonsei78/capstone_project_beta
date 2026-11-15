@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-008-C",
+  "scenario": "TS-008",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":100,\"reason\":\"상해에 의한 브릿지 치료이며 계약연도당 3개 개수 한도를 초과하지 않았으므로 전액 지급 가능합니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해에 의한 브릿지 치료이며 계약연도당 3개 개수 한도를 초과하지 않았으므로 전액 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 50
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-C",
+  "scenario": "TS-035",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 331일째인 점에서 면책기간이 경과하지 않았을 가능성이 높다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 331일째인 점에서 면책기간이 경과하지 않았을 가능성이 높다.",
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 60
+  }
+}

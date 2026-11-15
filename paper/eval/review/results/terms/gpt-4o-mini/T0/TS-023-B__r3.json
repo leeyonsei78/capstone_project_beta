@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-023-B",
+  "scenario": "TS-023",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 75,\n  \"reason\": \"치료일이 계약일로부터 521일째로 계약 후 일정 기간 경과 후 발생한 청구이므로 일부 감액이 적절합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 75,
+  "reason": "치료일이 계약일로부터 521일째로 계약 후 일정 기간 경과 후 발생한 청구이므로 일부 감액이 적절합니다.",
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 67
+  }
+}

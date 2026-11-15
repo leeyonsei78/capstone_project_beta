@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-039-A",
+  "scenario": "TS-039",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":85,\"reason\":\"치료일이 계약일로부터 199일째로 면책기간이 지나 지급 조건을 충족합니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 199일째로 면책기간이 지나 지급 조건을 충족합니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 43
+  }
+}

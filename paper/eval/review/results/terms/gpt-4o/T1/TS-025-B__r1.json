@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-B",
+  "scenario": "TS-025",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"브릿지 치료일이 면책기간과 감액기간을 모두 지나고, 이번 계약연도에 지급된 건수가 3개 이하입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "브릿지 치료일이 면책기간과 감액기간을 모두 지나고, 이번 계약연도에 지급된 건수가 3개 이하입니다.",
+  "usage": {
+    "prompt_tokens": 581,
+    "completion_tokens": 63
+  }
+}

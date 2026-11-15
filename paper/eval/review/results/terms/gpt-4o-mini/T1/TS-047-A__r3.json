@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-047-A",
+  "scenario": "TS-047",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"질병 치료는 계약일로부터 90일이 지나야 보장되지만 해당 청구는 198일째 치료로 면책 기간이 지나지 않아 부지급.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "질병 치료는 계약일로부터 90일이 지나야 보장되지만 해당 청구는 198일째 치료로 면책 기간이 지나지 않아 부지급.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 70
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-B",
+  "scenario": "TS-031",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 95,\n  \"reason\": \"이번 계약연도에 이미 지급된 브릿지 건수가 1건으로, 730일 미만에서는 최대 3건이 지급 가능하지만 이 청구는 개수 제한에는 영향을 주지 않으므로 부지급으로 판정합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 95,
+  "reason": "이번 계약연도에 이미 지급된 브릿지 건수가 1건으로, 730일 미만에서는 최대 3건이 지급 가능하지만 이 청구는 개수 제한에는 영향을 주지 않으므로 부지급으로 판정합니다.",
+  "usage": {
+    "prompt_tokens": 575,
+    "completion_tokens": 86
+  }
+}

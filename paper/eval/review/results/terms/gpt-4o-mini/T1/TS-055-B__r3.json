@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-055-B",
+  "scenario": "TS-055",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 323일째로, 90일의 면책기간을 초과하지 않았기 때문에 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 323일째로, 90일의 면책기간을 초과하지 않았기 때문에 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 65
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-045-C",
+  "scenario": "TS-045",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"다른 보철 치료를 준비하기 위한 영구치 발치는 지급 제외 사유입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "다른 보철 치료를 준비하기 위한 영구치 발치는 지급 제외 사유입니다.",
+  "usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 52
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-056-B",
+  "scenario": "TS-056",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 95,\n  \"reason\": \"계약 후 730일 미만이므로 이미 지급된 임플란트 건수가 3건으로 개수 한도를 초과하여 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 95,
+  "reason": "계약 후 730일 미만이므로 이미 지급된 임플란트 건수가 3건으로 개수 한도를 초과하여 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 67
+  }
+}

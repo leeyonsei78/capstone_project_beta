@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-C",
+  "scenario": "TS-025",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"감액지급\", \"reason_code\": \"annual_cap\", \"confidence\": 85, \"reason\": \"이번 계약연도에 지급된 같은 담보 건수가 이미 2건으로 개수 한도를 초과할 가능성이 있음.\"}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도에 지급된 같은 담보 건수가 이미 2건으로 개수 한도를 초과할 가능성이 있음.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 56
+  }
+}

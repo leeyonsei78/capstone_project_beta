@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-039-B",
+  "scenario": "TS-039",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"질병에 의한 크라운 치료는 90일의 면책기간이 지나야 보장되기 때문에 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "질병에 의한 크라운 치료는 90일의 면책기간이 지나야 보장되기 때문에 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 62
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-041-C",
+  "scenario": "TS-041",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 334일째로 면책기간이 지났음에도 불구하고 치료가 보험 가입 초기에 발생한 것으로 보아 면책 사유에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 334일째로 면책기간이 지났음에도 불구하고 치료가 보험 가입 초기에 발생한 것으로 보아 면책 사유에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 74
+  }
+}

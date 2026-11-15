@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-045-A",
+  "scenario": "TS-045",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"상해로 인한 브릿지 시술이며, 개수 한도 및 감액 조건이 해당되지 않으므로 전액 지급합니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지 시술이며, 개수 한도 및 감액 조건이 해당되지 않으므로 전액 지급합니다.",
+  "usage": {
+    "prompt_tokens": 518,
+    "completion_tokens": 56
+  }
+}

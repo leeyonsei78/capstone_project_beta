@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-A",
+  "scenario": "TS-029",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"상해에 해당하여 면책이 없고, 연간 개수 한도도 초과하지 않아 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "상해에 해당하여 면책이 없고, 연간 개수 한도도 초과하지 않아 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 55
+  }
+}

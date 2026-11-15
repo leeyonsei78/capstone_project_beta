@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-036-B",
+  "scenario": "TS-036",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"계약연도에 이미 지급된 임플란트 건수가 1건이므로, 계약 후 730일 미만에서는 3개까지 지급 가능하지만 보장개시일이 지났기 때문에 지급할 수 없습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "계약연도에 이미 지급된 임플란트 건수가 1건이므로, 계약 후 730일 미만에서는 3개까지 지급 가능하지만 보장개시일이 지났기 때문에 지급할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 82
+  }
+}

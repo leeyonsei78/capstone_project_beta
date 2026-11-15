@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-033-C",
+  "scenario": "TS-033",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 95,\n  \"reason\": \"계약일로부터 904일째 치료받고 있지만, 영구치는 계약일로부터 766일째 발치되었으므로 면책기간 이후 발치로 인해 보장이 되지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 95,
+  "reason": "계약일로부터 904일째 치료받고 있지만, 영구치는 계약일로부터 766일째 발치되었으므로 면책기간 이후 발치로 인해 보장이 되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 77
+  }
+}

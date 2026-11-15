@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-006-A",
+  "scenario": "TS-006",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"질병에 의한 브릿지 치료로 면책기간을 경과하였고, 연간 지급 한도도 초과하지 않았습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "질병에 의한 브릿지 치료로 면책기간을 경과하였고, 연간 지급 한도도 초과하지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 62
+  }
+}

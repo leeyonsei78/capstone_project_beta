@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-017-C",
+  "scenario": "TS-017",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 100,\n  \"reason\": \"영구치 발치일이 계약일로부터 198일째로, 보장 개시일인 90일 이후 발치했으나 질병에 의한 발치가 아닌 부적합한 사유로 발치되었으므로 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 100,
+  "reason": "영구치 발치일이 계약일로부터 198일째로, 보장 개시일인 90일 이후 발치했으나 질병에 의한 발치가 아닌 부적합한 사유로 발치되었으므로 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 91
+  }
+}

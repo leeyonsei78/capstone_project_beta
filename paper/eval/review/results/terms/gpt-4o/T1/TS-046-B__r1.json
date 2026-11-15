@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-046-B",
+  "scenario": "TS-046",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\":\"부지급\",\"reason_code\":\"annual_cap\",\"confidence\":100,\"reason\":\"이번 계약연도에 같은 담보로 이미 4건이 지급되어 연간 지급 한도를 초과했습니다.\"}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이번 계약연도에 같은 담보로 이미 4건이 지급되어 연간 지급 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 570,
+    "completion_tokens": 45
+  }
+}

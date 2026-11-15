@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-040-B",
+  "scenario": "TS-040",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 80,\n  \"reason\": \"해당 계약연도에 이미 지급된 같은 담보 건수가 1건으로, 추가 지급이 법적인 한도에 의해 감액될 수 있습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 80,
+  "reason": "해당 계약연도에 이미 지급된 같은 담보 건수가 1건으로, 추가 지급이 법적인 한도에 의해 감액될 수 있습니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 67
+  }
+}

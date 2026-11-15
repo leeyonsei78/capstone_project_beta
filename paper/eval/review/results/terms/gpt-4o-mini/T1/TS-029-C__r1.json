@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-C",
+  "scenario": "TS-029",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"영구치를 발치한 날짜가 계약일로부터 90일이 지나기 전에 진행되었으므로 지급되지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "영구치를 발치한 날짜가 계약일로부터 90일이 지나기 전에 진행되었으므로 지급되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 60
+  }
+}

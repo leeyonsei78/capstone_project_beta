@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-040-B",
+  "scenario": "TS-040",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"계약 후 730일 미만에는 임플란트 지급 개수가 3개로 제한되어 있지만 이미 1건이 지급되어 추가 지급이 불가능하다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "계약 후 730일 미만에는 임플란트 지급 개수가 3개로 제한되어 있지만 이미 1건이 지급되어 추가 지급이 불가능하다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 69
+  }
+}

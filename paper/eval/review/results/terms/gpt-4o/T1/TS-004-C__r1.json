@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-004-C",
+  "scenario": "TS-004",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"모든 조건을 충족하며 개수 한도를 초과하지 않았으므로 지급 가능합니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "모든 조건을 충족하며 개수 한도를 초과하지 않았으므로 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 45
+  }
+}

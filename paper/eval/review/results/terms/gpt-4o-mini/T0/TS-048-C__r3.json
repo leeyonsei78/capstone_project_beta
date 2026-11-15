@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-048-C",
+  "scenario": "TS-048",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 85,\n  \"reason\": \"치료일이 계약일로부터 23일째이므로 보장 개시일 이전에 발치가 이루어져 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 23일째이므로 보장 개시일 이전에 발치가 이루어져 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 64
+  }
+}

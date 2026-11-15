@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-033-A",
+  "scenario": "TS-033",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 904일이므로 면책기간인 90일이 지나야 보장되나, 발치는 계약일로부터 766일째로 이미 보장개시일 경과 후 발생하여도 질병으로 인해 치료받은 것이므로 부지급.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 904일이므로 면책기간인 90일이 지나야 보장되나, 발치는 계약일로부터 766일째로 이미 보장개시일 경과 후 발생하여도 질병으로 인해 치료받은 것이므로 부지급.",
+  "usage": {
+    "prompt_tokens": 535,
+    "completion_tokens": 95
+  }
+}

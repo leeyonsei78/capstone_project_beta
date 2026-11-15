@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-041-C",
+  "scenario": "TS-041",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 90,\n    \"reason\": \"치료가 보장 개시일 이후에 발생했으며 관련 정보에서 제외 사유나 감액 지급 사유를 확인할 수 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료가 보장 개시일 이후에 발생했으며 관련 정보에서 제외 사유나 감액 지급 사유를 확인할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 61
+  }
+}

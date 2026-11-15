@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-038-B",
+  "scenario": "TS-038",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이번 계약연도에 이미 임플란트 담보로 2건이 지급되었고 이번 청구 1건 포함 시 계약연도당 3개를 초과하여 개수 한도에 의해 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이번 계약연도에 이미 임플란트 담보로 2건이 지급되었고 이번 청구 1건 포함 시 계약연도당 3개를 초과하여 개수 한도에 의해 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 83
+  }
+}

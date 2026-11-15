@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-046-C",
+  "scenario": "TS-046",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 80,\n  \"reason\": \"이미 같은 담보에 대해 계약연도 내 4건 지급이 있어 추가 지급이 감액될 것으로 예상됨.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 80,
+  "reason": "이미 같은 담보에 대해 계약연도 내 4건 지급이 있어 추가 지급이 감액될 것으로 예상됨.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 59
+  }
+}

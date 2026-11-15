@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-024-A",
+  "scenario": "TS-024",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 95,\n  \"reason\": \"청구는 상해로 인한 브릿지 치료이며, 면책 기간이 지났기 때문에 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 95,
+  "reason": "청구는 상해로 인한 브릿지 치료이며, 면책 기간이 지났기 때문에 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 55
+  }
+}

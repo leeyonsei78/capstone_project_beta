@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-014-B",
+  "scenario": "TS-014",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 상당히 지나 보장 개시일 및 면책기간 관련 문제 없이 담보에 해당하는 치료입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 상당히 지나 보장 개시일 및 면책기간 관련 문제 없이 담보에 해당하는 치료입니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 61
+  }
+}

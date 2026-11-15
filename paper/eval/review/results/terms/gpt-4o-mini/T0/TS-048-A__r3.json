@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-048-A",
+  "scenario": "TS-048",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 85,\n  \"reason\": \"영구치 발치일이 계약일로부터 1일째로 보장개시일 이전에 해당하여 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 85,
+  "reason": "영구치 발치일이 계약일로부터 1일째로 보장개시일 이전에 해당하여 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 63
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-C",
+  "scenario": "TS-007",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{ \"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"치아 보험 약관 내 지급 제외 사유에 해당하지 않는 것으로 보이며, 면책기간과 보장개시일 이후에 발생한 상해로 인한 청구로 보입니다.\" }",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치아 보험 약관 내 지급 제외 사유에 해당하지 않는 것으로 보이며, 면책기간과 보장개시일 이후에 발생한 상해로 인한 청구로 보입니다.",
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 68
+  }
+}

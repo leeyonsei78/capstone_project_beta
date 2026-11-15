@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-B",
+  "scenario": "TS-015",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 면책기한과 감액기한 모두 초과하여 정상 지급 대상입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 면책기한과 감액기한 모두 초과하여 정상 지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 52
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-C",
+  "scenario": "TS-031",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"발치일이 계약일로부터 519일째로, 계약일 이후에 발생한 사고 때문이라면 보장하지만, 영구치 발치는 면책 종료일 이전에 이루어졌으므로 부지급 대상입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "발치일이 계약일로부터 519일째로, 계약일 이후에 발생한 사고 때문이라면 보장하지만, 영구치 발치는 면책 종료일 이전에 이루어졌으므로 부지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 82
+  }
+}

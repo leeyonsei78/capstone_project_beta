@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-A",
+  "scenario": "TS-013",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 75,\n  \"reason\": \"청구는 계약일로부터 29일째에 발생하였으나 발치가 계약일로부터 1일째에 이루어져 면책기간이 적용됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 75,
+  "reason": "청구는 계약일로부터 29일째에 발생하였으나 발치가 계약일로부터 1일째에 이루어져 면책기간이 적용됩니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 71
+  }
+}

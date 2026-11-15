@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-043-B",
+  "scenario": "TS-043",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"크라운 치료는 계약일부터 90일이 지나야 보장되지만, 치료일이 계약일로부터 695일째로 면책 기간을 지나지 않았습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "크라운 치료는 계약일부터 90일이 지나야 보장되지만, 치료일이 계약일로부터 695일째로 면책 기간을 지나지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 70
+  }
+}

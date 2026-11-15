@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-052-B",
+  "scenario": "TS-052",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 85,\n  \"reason\": \"청구된 브릿지 치료는 계약일로부터 103일 지나서 발생했지만, 이미 당해 연도에 같은 담보에 대해 3건이 지급되어 해당 개수 한도를 초과하였습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 85,
+  "reason": "청구된 브릿지 치료는 계약일로부터 103일 지나서 발생했지만, 이미 당해 연도에 같은 담보에 대해 3건이 지급되어 해당 개수 한도를 초과하였습니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 80
+  }
+}

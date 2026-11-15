@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-023-B",
+  "scenario": "TS-023",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 70,\n  \"reason\": \"청구일이 계약일로부터 521일째인 것으로 보아 면책기간이 만료된 이후의 청구로 판단되나, 실제 발치일이 계약일로부터 423일째로 면책기간 내에 발생하여 감액지급으로 판단됨.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 70,
+  "reason": "청구일이 계약일로부터 521일째인 것으로 보아 면책기간이 만료된 이후의 청구로 판단되나, 실제 발치일이 계약일로부터 423일째로 면책기간 내에 발생하여 감액지급으로 판단됨.",
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 93
+  }
+}

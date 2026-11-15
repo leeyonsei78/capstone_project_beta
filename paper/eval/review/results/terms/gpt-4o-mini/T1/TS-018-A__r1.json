@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-018-A",
+  "scenario": "TS-018",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 95,\n  \"reason\": \"치료일이 계약일로부터 139일째로, 면책 기간인 90일을 초과한 것으로 보장 가능하지만 발치가 계약일로부터 29일째로, 보장 개시일 이전에 발치되어 부지급으로 판정되었습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 95,
+  "reason": "치료일이 계약일로부터 139일째로, 면책 기간인 90일을 초과한 것으로 보장 가능하지만 발치가 계약일로부터 29일째로, 보장 개시일 이전에 발치되어 부지급으로 판정되었습니다.",
+  "usage": {
+    "prompt_tokens": 524,
+    "completion_tokens": 92
+  }
+}

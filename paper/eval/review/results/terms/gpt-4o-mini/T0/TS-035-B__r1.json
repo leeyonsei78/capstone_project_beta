@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-B",
+  "scenario": "TS-035",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"제공된 정보만으로는 청구의 적합성을 판단할 근거가 부족합니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "제공된 정보만으로는 청구의 적합성을 판단할 근거가 부족합니다.",
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 53
+  }
+}

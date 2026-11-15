@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-A",
+  "scenario": "TS-015",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"약관 내용이 제공되지 않아 적합한 판정을 내리기 위한 정보가 부족합니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "약관 내용이 제공되지 않아 적합한 판정을 내리기 위한 정보가 부족합니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 53
+  }
+}

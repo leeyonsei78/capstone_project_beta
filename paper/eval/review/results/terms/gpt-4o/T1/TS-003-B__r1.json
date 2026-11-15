@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-003-B",
+  "scenario": "TS-003",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"상해로 인한 브릿지 치료이고 계약일로부터 730일이 초과되어 개수한도가 없으므로 지급됩니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지 치료이고 계약일로부터 730일이 초과되어 개수한도가 없으므로 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 575,
+    "completion_tokens": 56
+  }
+}

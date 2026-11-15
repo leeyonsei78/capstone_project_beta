@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-005-A",
+  "scenario": "TS-005",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"상해로 인한 임플란트는 감액되지 않으며, 연간 개수 한도가 없습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 임플란트는 감액되지 않으며, 연간 개수 한도가 없습니다.",
+  "usage": {
+    "prompt_tokens": 521,
+    "completion_tokens": 49
+  }
+}

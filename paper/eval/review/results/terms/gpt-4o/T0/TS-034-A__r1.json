@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-034-A",
+  "scenario": "TS-034",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"부지급\",\n    \"reason_code\": \"annual_cap\",\n    \"confidence\": 95,\n    \"reason\": \"임플란트는 이미 계약연도 내 한도인 3건이 지급되었습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 95,
+  "reason": "임플란트는 이미 계약연도 내 한도인 3건이 지급되었습니다.",
+  "usage": {
+    "prompt_tokens": 353,
+    "completion_tokens": 52
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-055-B",
+  "scenario": "TS-055",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 95,\n  \"reason\": \"치료일이 계약일로부터 323일째로, 질병에 의한 크라운 치료는 270일 미만일 경우 50%만 지급되므로 감액 지급에 해당합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 95,
+  "reason": "치료일이 계약일로부터 323일째로, 질병에 의한 크라운 치료는 270일 미만일 경우 50%만 지급되므로 감액 지급에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 78
+  }
+}

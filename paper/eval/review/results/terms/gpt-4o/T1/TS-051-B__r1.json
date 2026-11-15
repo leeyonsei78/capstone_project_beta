@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-051-B",
+  "scenario": "TS-051",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"치료일이 보장개시일 이후이며, 감액 및 개수 한도 조건에 해당하지 않으므로 정상 지급합니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 보장개시일 이후이며, 감액 및 개수 한도 조건에 해당하지 않으므로 정상 지급합니다.",
+  "usage": {
+    "prompt_tokens": 585,
+    "completion_tokens": 55
+  }
+}

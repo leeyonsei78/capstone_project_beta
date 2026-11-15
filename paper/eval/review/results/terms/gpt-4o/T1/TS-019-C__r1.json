@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-019-C",
+  "scenario": "TS-019",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 100,\n  \"reason\": \"영구치를 보장개시일 이전에 발치하여 부지급 대상입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 100,
+  "reason": "영구치를 보장개시일 이전에 발치하여 부지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 51
+  }
+}

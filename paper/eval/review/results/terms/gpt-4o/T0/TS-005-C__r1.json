@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-005-C",
+  "scenario": "TS-005",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 85, \"reason\": \"치료일이 계약일로부터 296일로 면책기간이 지났으며, 동일 담보 지급 건수가 연간 한도를 초과하지 않았습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 296일로 면책기간이 지났으며, 동일 담보 지급 건수가 연간 한도를 초과하지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 346,
+    "completion_tokens": 61
+  }
+}

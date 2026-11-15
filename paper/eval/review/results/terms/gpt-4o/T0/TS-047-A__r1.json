@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-047-A",
+  "scenario": "TS-047",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 90,\n    \"reason\": \"충치로 인한 크라운 치료는 일반적으로 치과 보험에서 보장되며, 치료일이 계약일로부터 198일째로 면책기간을 초과했습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "충치로 인한 크라운 치료는 일반적으로 치과 보험에서 보장되며, 치료일이 계약일로부터 198일째로 면책기간을 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 71
+  }
+}

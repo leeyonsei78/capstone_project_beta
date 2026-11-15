@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-C",
+  "scenario": "TS-015",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 95,\n  \"reason\": \"크라운 치료일이 계약일로부터 730일 미만이므로 50%만 지급됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 95,
+  "reason": "크라운 치료일이 계약일로부터 730일 미만이므로 50%만 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 562,
+    "completion_tokens": 57
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-028-B",
+  "scenario": "TS-028",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\":\"부지급\",\"reason_code\":\"annual_cap\",\"confidence\":100,\"reason\":\"계약연도 개수 한도인 3건을 초과하여 부지급 대상입니다.\"}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "계약연도 개수 한도인 3건을 초과하여 부지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 42
+  }
+}

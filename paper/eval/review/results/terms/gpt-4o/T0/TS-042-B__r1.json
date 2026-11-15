@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-042-B",
+  "scenario": "TS-042",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"감액지급\", \"reason_code\": \"reduced\", \"confidence\": 80, \"reason\": \"치료일이 계약일로부터 31일째로, 약관에 따른 감액기간일 가능성이 높다.\"}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 31일째로, 약관에 따른 감액기간일 가능성이 높다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 55
+  }
+}

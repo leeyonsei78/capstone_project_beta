@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-030-A",
+  "scenario": "TS-030",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\":\"감액지급\",\"reason_code\":\"reduced\",\"confidence\":100,\"reason\":\"크라운 치료가 질병으로 인해 발생했으며, 계약 후 365일 미만으로 감액 대상입니다.\"}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "크라운 치료가 질병으로 인해 발생했으며, 계약 후 365일 미만으로 감액 대상입니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 47
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-040-B",
+  "scenario": "TS-040",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"이미 같은 담보의 임플란트 청구가 계약연도에 1건 지급되었으므로, 이번 청구가 포함되면 두 건이 되어 계약연도당 최대 지급 건수인 3건을 초과하지 않지만, 당시 계약일로부터 730일이 지나지 않아 지급이 불가능하다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이미 같은 담보의 임플란트 청구가 계약연도에 1건 지급되었으므로, 이번 청구가 포함되면 두 건이 되어 계약연도당 최대 지급 건수인 3건을 초과하지 않지만, 당시 계약일로부터 730일이 지나지 않아 지급이 불가능하다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 105
+  }
+}

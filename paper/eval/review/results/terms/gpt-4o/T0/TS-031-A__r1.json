@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-A",
+  "scenario": "TS-031",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 85,\n    \"reason\": \"브릿지 담보 청구는 치료일과 발치일 모두 보장 개시일 이후이며, 같은 연도 내 두 번째 청구지만 한도 초과에 대한 정보가 없어 지급 판단함.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "브릿지 담보 청구는 치료일과 발치일 모두 보장 개시일 이후이며, 같은 연도 내 두 번째 청구지만 한도 초과에 대한 정보가 없어 지급 판단함.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 75
+  }
+}

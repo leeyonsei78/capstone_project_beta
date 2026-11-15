@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-036-C",
+  "scenario": "TS-036",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"해당 계약연도에 이미 지급된 임플란트 건수가 1건으로, 한도 초과로 인해 감액지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "해당 계약연도에 이미 지급된 임플란트 건수가 1건으로, 한도 초과로 인해 감액지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 67
+  }
+}

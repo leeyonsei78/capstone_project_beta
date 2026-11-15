@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-037-A",
+  "scenario": "TS-037",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 계약일로부터 698일 지나 질병으로 인한 크라운 감액 기간에 해당하지 않습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 계약일로부터 698일 지나 질병으로 인한 크라운 감액 기간에 해당하지 않습니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 58
+  }
+}

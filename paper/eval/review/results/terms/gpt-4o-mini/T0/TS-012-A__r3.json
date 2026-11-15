@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-012-A",
+  "scenario": "TS-012",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"계약일로부터 326일째 치료로 면책기간이 이미 지나지 않았으나, 영구치 발치일이 계약일로부터 277일째로 교합이 아직 완료되지 않아 감액 지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "계약일로부터 326일째 치료로 면책기간이 이미 지나지 않았으나, 영구치 발치일이 계약일로부터 277일째로 교합이 아직 완료되지 않아 감액 지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 84
+  }
+}

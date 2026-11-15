@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-044-A",
+  "scenario": "TS-044",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"올해 계약연도에 이미 지급된 같은 담보가 2건 존재하여 보장 개수가 초과하였음.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "올해 계약연도에 이미 지급된 같은 담보가 2건 존재하여 보장 개수가 초과하였음.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 60
+  }
+}

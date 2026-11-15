@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-054-B",
+  "scenario": "TS-054",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 감액기간을 초과하였고 연간 2개 한도 내에 있어 지급 가능성 높음.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치료일이 감액기간을 초과하였고 연간 2개 한도 내에 있어 지급 가능성 높음.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 59
+  }
+}

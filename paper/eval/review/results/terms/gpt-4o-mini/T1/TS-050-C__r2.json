@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-050-C",
+  "scenario": "TS-050",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 90,\n  \"reason\": \"영구치 발치일이 계약일로부터 400일째로, 면책 기간이 종료된 후 발치하였으나 발치 사유가 질병으로 인한 경우임에도 보장개시일 이전의 발치로 부지급에 해당됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "영구치 발치일이 계약일로부터 400일째로, 면책 기간이 종료된 후 발치하였으나 발치 사유가 질병으로 인한 경우임에도 보장개시일 이전의 발치로 부지급에 해당됩니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 92
+  }
+}

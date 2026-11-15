@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-B",
+  "scenario": "TS-013",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"청구 치료일이 계약일로부터 29일째로 면책기간이 지나지 않았습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "청구 치료일이 계약일로부터 29일째로 면책기간이 지나지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 55
+  }
+}

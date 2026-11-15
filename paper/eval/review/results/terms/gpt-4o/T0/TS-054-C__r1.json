@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-054-C",
+  "scenario": "TS-054",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 90,\n  \"reason\": \"발치가 보장개시일 이전에 이루어졌기 때문에 지급이 제한됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "발치가 보장개시일 이전에 이루어졌기 때문에 지급이 제한됩니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 52
+  }
+}

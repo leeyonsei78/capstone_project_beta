@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-041-B",
+  "scenario": "TS-041",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"크라운 치료가 계약일로부터 90일이 지나기 전에 이루어져 면책 적용으로 인해 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "크라운 치료가 계약일로부터 90일이 지나기 전에 이루어져 면책 적용으로 인해 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 60
+  }
+}

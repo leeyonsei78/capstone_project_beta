@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-C",
+  "scenario": "TS-027",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"annual_cap\", \"confidence\": 100, \"reason\": \"이번 계약연도에 이미 같은 담보로 2건이 지급되었으므로 최대 개수인 3건을 초과하여 부지급입니다.\"}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이번 계약연도에 이미 같은 담보로 2건이 지급되었으므로 최대 개수인 3건을 초과하여 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 627,
+    "completion_tokens": 62
+  }
+}

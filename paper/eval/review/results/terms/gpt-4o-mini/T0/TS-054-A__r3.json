@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-054-A",
+  "scenario": "TS-054",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 134일째로 면책기간이 지나므로 보험금 지급이 가능하나, 이번 계약연도에 이미 지급된 건수가 1건으로 한도 초과로 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 134일째로 면책기간이 지나므로 보험금 지급이 가능하나, 이번 계약연도에 이미 지급된 건수가 1건으로 한도 초과로 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 82
+  }
+}

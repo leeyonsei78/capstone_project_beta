@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-006-C",
+  "scenario": "TS-006",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"교정 및 위치 이상 목적의 발치는 보장 대상이 아니므로 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "교정 및 위치 이상 목적의 발치는 보장 대상이 아니므로 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 53
+  }
+}

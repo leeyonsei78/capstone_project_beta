@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-040-A",
+  "scenario": "TS-040",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 645일 차로 면책 기간이 경과했으나, 임플란트 치료가 계약 후 730일 미만으로 발급된 경우이므로 50% 감액 지급에 해당합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 645일 차로 면책 기간이 경과했으나, 임플란트 치료가 계약 후 730일 미만으로 발급된 경우이므로 50% 감액 지급에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 86
+  }
+}

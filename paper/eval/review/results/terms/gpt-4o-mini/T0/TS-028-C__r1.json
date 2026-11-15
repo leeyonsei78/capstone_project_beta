@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-028-C",
+  "scenario": "TS-028",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수가 3건으로, 추가 지급이 한도에 도달하여 감액지급이 적합합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수가 3건으로, 추가 지급이 한도에 도달하여 감액지급이 적합합니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 75
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-009-C",
+  "scenario": "TS-009",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 면책기간보다 길기 때문에 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 면책기간보다 길기 때문에 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 52
+  }
+}

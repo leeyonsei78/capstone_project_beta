@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-059-A",
+  "scenario": "TS-059",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 85,\n    \"reason\": \"치료일이 계약일로부터 112일째로 면책기간을 지났고, 특별한 문제점이 정보에 나타나지 않았습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 112일째로 면책기간을 지났고, 특별한 문제점이 정보에 나타나지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 64
+  }
+}

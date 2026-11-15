@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-B",
+  "scenario": "TS-029",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"계약일로부터 134일째로 감액기간이 지나고, 동일 연도에 브릿지 이용 건수가 2건이므로 일반적으로 적용되는 보장 횟수를 초과하지 않은 것으로 보입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "계약일로부터 134일째로 감액기간이 지나고, 동일 연도에 브릿지 이용 건수가 2건이므로 일반적으로 적용되는 보장 횟수를 초과하지 않은 것으로 보입니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 79
+  }
+}

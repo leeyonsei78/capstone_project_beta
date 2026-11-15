@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-047-A",
+  "scenario": "TS-047",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\":\"감액지급\",\"reason_code\":\"reduced\",\"confidence\":100,\"reason\":\"치료일이 계약 후 365일 미만이라 질병으로 인한 크라운은 50% 지급 기준에 해당합니다.\"}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "치료일이 계약 후 365일 미만이라 질병으로 인한 크라운은 50% 지급 기준에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 51
+  }
+}

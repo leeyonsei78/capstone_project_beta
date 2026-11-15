@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-004-C",
+  "scenario": "TS-004",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 90,\n  \"reason\": \"영구치 발치일이 계약일로부터 1231일째로 면책기간인 90일이 경과하기 전에 이루어졌음.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "영구치 발치일이 계약일로부터 1231일째로 면책기간인 90일이 경과하기 전에 이루어졌음.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 66
+  }
+}

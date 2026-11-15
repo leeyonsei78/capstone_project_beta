@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-C",
+  "scenario": "TS-027",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"계약연도 내 지급된 임플란트 건수가 2건이지만 구체적인 연간 지급 한도에 대한 정보가 없으므로, 추가 제한 사유 없이 지정된 결함소인(충치·잇몸질환)에 속하므로 지급이 적절합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "계약연도 내 지급된 임플란트 건수가 2건이지만 구체적인 연간 지급 한도에 대한 정보가 없으므로, 추가 제한 사유 없이 지정된 결함소인(충치·잇몸질환)에 속하므로 지급이 적절합니다.",
+  "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 94
+  }
+}

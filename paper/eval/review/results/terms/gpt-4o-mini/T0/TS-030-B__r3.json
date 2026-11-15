@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-030-B",
+  "scenario": "TS-030",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"보험가입 후 면책기간이 지나지 않아 지원이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "보험가입 후 면책기간이 지나지 않아 지원이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 47
+  }
+}

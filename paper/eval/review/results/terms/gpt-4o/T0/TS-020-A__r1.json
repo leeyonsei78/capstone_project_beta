@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-020-A",
+  "scenario": "TS-020",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일과 영구치 발치일 모두 보장 개시일 이후이며, 면책기간이나 개수 한도 초과 사유에 해당되지 않습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일과 영구치 발치일 모두 보장 개시일 이후이며, 면책기간이나 개수 한도 초과 사유에 해당되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 364,
+    "completion_tokens": 66
+  }
+}

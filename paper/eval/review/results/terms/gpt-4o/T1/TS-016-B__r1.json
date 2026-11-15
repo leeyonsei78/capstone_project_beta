@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-016-B",
+  "scenario": "TS-016",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"크라운 치료는 계약일로부터 521일이 경과했으므로 면책기간과 감액기간 모두 지났습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "크라운 치료는 계약일로부터 521일이 경과했으므로 면책기간과 감액기간 모두 지났습니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 60
+  }
+}

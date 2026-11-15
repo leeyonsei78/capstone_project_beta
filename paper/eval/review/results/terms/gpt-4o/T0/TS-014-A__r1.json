@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-014-A",
+  "scenario": "TS-014",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":85,\"reason\":\"계약일로부터 703일째에 치료가 이루어졌으므로 면책기간과 감액기간을 모두 초과하였으며, 약관의 지급 제외 사유와 개수 한도 정보가 없으므로 지급 거부 사유가 없습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "계약일로부터 703일째에 치료가 이루어졌으므로 면책기간과 감액기간을 모두 초과하였으며, 약관의 지급 제외 사유와 개수 한도 정보가 없으므로 지급 거부 사유가 없습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 75
+  }
+}

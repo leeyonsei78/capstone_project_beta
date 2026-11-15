@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-012-A",
+  "scenario": "TS-012",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 70,\n  \"reason\": \"보험 계약 후 면책기간이 경과하지 않아 감액 지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 70,
+  "reason": "보험 계약 후 면책기간이 경과하지 않아 감액 지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 50
+  }
+}

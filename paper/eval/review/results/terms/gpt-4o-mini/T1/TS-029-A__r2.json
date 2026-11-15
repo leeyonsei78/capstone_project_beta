@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-A",
+  "scenario": "TS-029",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 95,\n  \"reason\": \"상해로 인한 브릿지 치료는 계약일로부터 보장되며 면책 및 개수 한도를 초과하지 않았기 때문에 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 95,
+  "reason": "상해로 인한 브릿지 치료는 계약일로부터 보장되며 면책 및 개수 한도를 초과하지 않았기 때문에 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 64
+  }
+}

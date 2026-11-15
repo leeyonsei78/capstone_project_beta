@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-003-C",
+  "scenario": "TS-003",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"청구 담보에 대한 약관에서 특정 조건을 충족하지 못해 지급이 불가하다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "청구 담보에 대한 약관에서 특정 조건을 충족하지 못해 지급이 불가하다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 55
+  }
+}

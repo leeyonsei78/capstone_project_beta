@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-023-C",
+  "scenario": "TS-023",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"영구치 발치가 다른 보철 치료를 준비하기 위한 목적으로 이루어졌기 때문에 지급 제외됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "영구치 발치가 다른 보철 치료를 준비하기 위한 목적으로 이루어졌기 때문에 지급 제외됩니다.",
+  "usage": {
+    "prompt_tokens": 615,
+    "completion_tokens": 57
+  }
+}

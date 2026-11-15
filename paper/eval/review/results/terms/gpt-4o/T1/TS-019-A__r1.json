@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-019-A",
+  "scenario": "TS-019",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 100,\n  \"reason\": \"임플란트는 질병으로 인한 경우 계약 후 730일 미만이면 50%만 지급하며, 면책기간을 지났습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "임플란트는 질병으로 인한 경우 계약 후 730일 미만이면 50%만 지급하며, 면책기간을 지났습니다.",
+  "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 67
+  }
+}

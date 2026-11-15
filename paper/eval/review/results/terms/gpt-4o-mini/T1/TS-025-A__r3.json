@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-A",
+  "scenario": "TS-025",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 95,\n  \"reason\": \"치료일이 계약일로부터 903일로 730일 미만이 아니므로 브릿지에 대해 50%만 지급됨.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 95,
+  "reason": "치료일이 계약일로부터 903일로 730일 미만이 아니므로 브릿지에 대해 50%만 지급됨.",
+  "usage": {
+    "prompt_tokens": 535,
+    "completion_tokens": 65
+  }
+}

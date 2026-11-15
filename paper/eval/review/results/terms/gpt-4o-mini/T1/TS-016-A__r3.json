@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-016-A",
+  "scenario": "TS-016",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 521일이 경과하여 면책 기간이 종료되어 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "계약일로부터 521일이 경과하여 면책 기간이 종료되어 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 51
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-060-B",
+  "scenario": "TS-060",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"브릿지 치료로 청구한 항목이 보험 약관의 제외 항목에 해당할 수 있다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "브릿지 치료로 청구한 항목이 보험 약관의 제외 항목에 해당할 수 있다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 56
+  }
+}

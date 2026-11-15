@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-049-C",
+  "scenario": "TS-049",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":100,\"reason\":\"이번 계약연도에 임플란트 2건만 지급되었으므로, 이번 청구는 개수 한도를 초과하지 않았고, 발치일 감액기간 조건에 따라 지급 대상입니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "이번 계약연도에 임플란트 2건만 지급되었으므로, 이번 청구는 개수 한도를 초과하지 않았고, 발치일 감액기간 조건에 따라 지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 64
+  }
+}

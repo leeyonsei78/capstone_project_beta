@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-052-B",
+  "scenario": "TS-052",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 70,\n  \"reason\": \"브릿지 치료는 영구치 발치일로부터 6개월이 경과해야 가능한데, 이번 청구는 계약일로부터 103일째로 발치일로부터 충분한 시간이 경과하지 않았습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 70,
+  "reason": "브릿지 치료는 영구치 발치일로부터 6개월이 경과해야 가능한데, 이번 청구는 계약일로부터 103일째로 발치일로부터 충분한 시간이 경과하지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 82
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-060-A",
+  "scenario": "TS-060",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 694일째로 면책기간이나 감액지급 기간이 지났으며, 이번 계약연도에 같은 담보에 대한 지급 건수가 없으므로 한도 초과도 아닙니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 694일째로 면책기간이나 감액지급 기간이 지났으며, 이번 계약연도에 같은 담보에 대한 지급 건수가 없으므로 한도 초과도 아닙니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 82
+  }
+}

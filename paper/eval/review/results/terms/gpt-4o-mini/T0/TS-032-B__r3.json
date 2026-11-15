@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-032-B",
+  "scenario": "TS-032",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"치료일이 계약일로부터 643일째인 점은 긍정적이나, 약관 내용이 없어 지급 여부를 판단할 수 없다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "치료일이 계약일로부터 643일째인 점은 긍정적이나, 약관 내용이 없어 지급 여부를 판단할 수 없다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 66
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-C",
+  "scenario": "TS-007",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 95,\n  \"reason\": \"사랑니 발치는 지급 제외 사유에 해당하므로 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 95,
+  "reason": "사랑니 발치는 지급 제외 사유에 해당하므로 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 608,
+    "completion_tokens": 50
+  }
+}

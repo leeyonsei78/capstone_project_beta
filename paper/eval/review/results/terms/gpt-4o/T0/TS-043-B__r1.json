@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-043-B",
+  "scenario": "TS-043",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 90,\n    \"reason\": \"치료일이 계약일로부터 695일째로 면책기간이나 보장개시일 이전이 아님.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 695일째로 면책기간이나 보장개시일 이전이 아님.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 57
+  }
+}

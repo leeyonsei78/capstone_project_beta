@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-005-C",
+  "scenario": "TS-005",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"사랑니 발치로 인한 임플란트 치료는 지급 제외 사유에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "사랑니 발치로 인한 임플란트 치료는 지급 제외 사유에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 610,
+    "completion_tokens": 54
+  }
+}

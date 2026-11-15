@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-051-B",
+  "scenario": "TS-051",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"이미 계약연도에 지급된 임플란트 건수가 2건으로, 최대 3건까지 지급 가능하므로 면책 조건이 해당되지 않으며, 추가적인 임플란트 지급이 불가능합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이미 계약연도에 지급된 임플란트 건수가 2건으로, 최대 3건까지 지급 가능하므로 면책 조건이 해당되지 않으며, 추가적인 임플란트 지급이 불가능합니다.",
+  "usage": {
+    "prompt_tokens": 585,
+    "completion_tokens": 80
+  }
+}

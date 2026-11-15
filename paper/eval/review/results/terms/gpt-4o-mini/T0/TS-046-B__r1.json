@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-046-B",
+  "scenario": "TS-046",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보 건수가 4건으로, 보장이 제한된 건수에 도달했기 때문에 감액지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보 건수가 4건으로, 보장이 제한된 건수에 도달했기 때문에 감액지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 71
+  }
+}

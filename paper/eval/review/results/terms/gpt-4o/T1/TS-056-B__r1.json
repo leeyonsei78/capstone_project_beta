@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-056-B",
+  "scenario": "TS-056",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이번 계약연도에 이미 임플란트가 3개 지급되어 연도당 개수 한도를 초과하여 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이번 계약연도에 이미 임플란트가 3개 지급되어 연도당 개수 한도를 초과하여 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 63
+  }
+}

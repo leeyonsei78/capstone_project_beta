@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-060-B",
+  "scenario": "TS-060",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 85,\n  \"reason\": \"영구치 발치일이 계약일로부터 569일로, 보장이 시작된 후 694일째 청구가 접수되어 발치가 발행한 적이 없기 때문에 지급이 불가능합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 85,
+  "reason": "영구치 발치일이 계약일로부터 569일로, 보장이 시작된 후 694일째 청구가 접수되어 발치가 발행한 적이 없기 때문에 지급이 불가능합니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 80
+  }
+}

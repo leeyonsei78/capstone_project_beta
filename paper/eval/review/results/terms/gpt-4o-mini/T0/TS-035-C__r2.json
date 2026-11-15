@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-C",
+  "scenario": "TS-035",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"보험 약관의 상세 내용이 제공되지 않아 청구의 심사를 위한 충분한 정보를 파악할 수 없습니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "보험 약관의 상세 내용이 제공되지 않아 청구의 심사를 위한 충분한 정보를 파악할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 57
+  }
+}

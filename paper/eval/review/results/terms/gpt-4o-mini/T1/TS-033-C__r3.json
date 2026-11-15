@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-033-C",
+  "scenario": "TS-033",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 95,\n  \"reason\": \"청구는 질병에 해당하지만 계약일로부터 766일째에 발치된 영구치가 보장개시일 이전의 발치로 간주되어 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 95,
+  "reason": "청구는 질병에 해당하지만 계약일로부터 766일째에 발치된 영구치가 보장개시일 이전의 발치로 간주되어 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 74
+  }
+}

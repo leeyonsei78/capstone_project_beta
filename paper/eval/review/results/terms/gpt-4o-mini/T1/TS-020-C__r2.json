@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-020-C",
+  "scenario": "TS-020",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"계약일로부터 90일 이내에 치료받아 면책사항에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "계약일로부터 90일 이내에 치료받아 면책사항에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 628,
+    "completion_tokens": 53
+  }
+}

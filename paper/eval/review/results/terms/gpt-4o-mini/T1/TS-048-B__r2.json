@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-048-B",
+  "scenario": "TS-048",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이미 계약연도에 지급된 임플란트 건수가 2건으로, 추가 청구는 최대 3건이므로 현재 3건 이상이 돼서 지급할 수 없습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이미 계약연도에 지급된 임플란트 건수가 2건으로, 추가 청구는 최대 3건이므로 현재 3건 이상이 돼서 지급할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 74
+  }
+}

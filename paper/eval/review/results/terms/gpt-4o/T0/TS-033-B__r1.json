@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-033-B",
+  "scenario": "TS-033",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"부지급\",\n    \"reason_code\": \"annual_cap\",\n    \"confidence\": 90,\n    \"reason\": \"이번 계약연도에 이미 브릿지 3건이 지급되어 연도별 한도를 초과했습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이번 계약연도에 이미 브릿지 3건이 지급되어 연도별 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 56
+  }
+}

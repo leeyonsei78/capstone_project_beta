@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-B",
+  "scenario": "TS-013",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 30일 이내로 면책기간에 해당하므로 감액 지급이 필요함.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 30일 이내로 면책기간에 해당하므로 감액 지급이 필요함.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 60
+  }
+}

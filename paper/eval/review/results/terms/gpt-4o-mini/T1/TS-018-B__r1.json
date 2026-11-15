@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-018-B",
+  "scenario": "TS-018",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"브릿지 치료는 면책 기간인 180일 이내에 이루어져 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "브릿지 치료는 면책 기간인 180일 이내에 이루어져 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 570,
+    "completion_tokens": 54
+  }
+}

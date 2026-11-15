@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-010-C",
+  "scenario": "TS-010",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"계약일로부터 290일째에 영구치가 발치되어 면책기간이 끝나기 전에 이루어진 발치이므로 지급이 되지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "계약일로부터 290일째에 영구치가 발치되어 면책기간이 끝나기 전에 이루어진 발치이므로 지급이 되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 69
+  }
+}

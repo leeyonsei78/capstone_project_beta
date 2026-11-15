@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-049-A",
+  "scenario": "TS-049",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 194일째이므로 면책 기간인 90일을 초과했지만 영구치 발치일이 계약일로부터 77일째로 발치일이 면책 기간 내에 해당하여 부지급으로 판정됨.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 194일째이므로 면책 기간인 90일을 초과했지만 영구치 발치일이 계약일로부터 77일째로 발치일이 면책 기간 내에 해당하여 부지급으로 판정됨.",
+  "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 92
+  }
+}

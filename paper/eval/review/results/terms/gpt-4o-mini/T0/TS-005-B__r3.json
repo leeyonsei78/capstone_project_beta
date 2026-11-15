@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-005-B",
+  "scenario": "TS-005",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"이번 계약연도에 이미 지급된 임플란트 건수가 3건으로, 개수 한도가 초과되었습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이번 계약연도에 이미 지급된 임플란트 건수가 3건으로, 개수 한도가 초과되었습니다.",
+  "usage": {
+    "prompt_tokens": 346,
+    "completion_tokens": 60
+  }
+}

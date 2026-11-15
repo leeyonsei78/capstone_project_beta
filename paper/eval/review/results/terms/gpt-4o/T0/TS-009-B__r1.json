@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-009-B",
+  "scenario": "TS-009",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"치아 보장은 계약일로부터 637일째에 충치나 잇몸질환으로 인한 치료에 대해 크라운 청구의 면책기간이나 개시일 이전 발치로 문제되지 않으므로 지급 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치아 보장은 계약일로부터 637일째에 충치나 잇몸질환으로 인한 치료에 대해 크라운 청구의 면책기간이나 개시일 이전 발치로 문제되지 않으므로 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 82
+  }
+}

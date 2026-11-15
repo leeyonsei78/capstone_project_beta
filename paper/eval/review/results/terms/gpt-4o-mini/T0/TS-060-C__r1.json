@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-060-C",
+  "scenario": "TS-060",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"브릿지 치료청구는 치료일 기준으로 계약일로부터 694일이 경과하여 면책기간이 지나지 않았기 때문에 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "브릿지 치료청구는 치료일 기준으로 계약일로부터 694일이 경과하여 면책기간이 지나지 않았기 때문에 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 67
+  }
+}

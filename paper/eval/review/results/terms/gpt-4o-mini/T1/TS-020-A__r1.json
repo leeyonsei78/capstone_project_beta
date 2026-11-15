@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-020-A",
+  "scenario": "TS-020",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 90,\n  \"reason\": \"계약일로부터 90일이 지나기 이전에 치료가 이루어져 면책 기간에 해당하여 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 90,
+  "reason": "계약일로부터 90일이 지나기 이전에 치료가 이루어져 면책 기간에 해당하여 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 539,
+    "completion_tokens": 60
+  }
+}

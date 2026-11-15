@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-042-C",
+  "scenario": "TS-042",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 90일이 지나야 질병으로 인한 치료가 보장되기 때문에 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "계약일로부터 90일이 지나야 질병으로 인한 치료가 보장되기 때문에 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 59
+  }
+}

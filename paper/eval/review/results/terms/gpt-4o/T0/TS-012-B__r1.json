@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-012-B",
+  "scenario": "TS-012",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{ \"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"치료일이 계약일로부터 326일째로 면책기간과 보장개시일 이전에 해당하지 않으며, 사랑니 발치는 일반적으로 지급 제외 사유에 포함되지 않습니다.\" }",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 326일째로 면책기간과 보장개시일 이전에 해당하지 않으며, 사랑니 발치는 일반적으로 지급 제외 사유에 포함되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 70
+  }
+}

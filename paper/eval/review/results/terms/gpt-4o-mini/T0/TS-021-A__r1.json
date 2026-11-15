@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-A",
+  "scenario": "TS-021",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 901일 째인 점이 면책기간 기준에 해당하여 부지급 처리됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 901일 째인 점이 면책기간 기준에 해당하여 부지급 처리됩니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 60
+  }
+}

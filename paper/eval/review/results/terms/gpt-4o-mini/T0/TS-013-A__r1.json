@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-A",
+  "scenario": "TS-013",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"면책기간이 지나지 않아 청구 금액의 일부만 지급 가능합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "면책기간이 지나지 않아 청구 금액의 일부만 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 49
+  }
+}

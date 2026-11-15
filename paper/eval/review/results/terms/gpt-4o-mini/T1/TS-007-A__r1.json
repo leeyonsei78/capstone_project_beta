@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-A",
+  "scenario": "TS-007",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 브릿지 치료는 계약 이후에 보장이 되며, 이미 면책 기간이 지나고 치료가 이루어졌으므로 지급 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지 치료는 계약 이후에 보장이 되며, 이미 면책 기간이 지나고 치료가 이루어졌으므로 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 65
+  }
+}

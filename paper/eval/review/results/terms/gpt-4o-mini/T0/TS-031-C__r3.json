@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-C",
+  "scenario": "TS-031",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 80,\n  \"reason\": \"이 청구는 계약 연도에 이미 지급된 동일 담보 건수에 따라 감액 지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 80,
+  "reason": "이 청구는 계약 연도에 이미 지급된 동일 담보 건수에 따라 감액 지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 58
+  }
+}

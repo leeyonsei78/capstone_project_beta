@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-017-B",
+  "scenario": "TS-017",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 75,\n  \"reason\": \"보험 가입 후 248일째 치료로 감액 지급 기준에 해당할 수 있습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 75,
+  "reason": "보험 가입 후 248일째 치료로 감액 지급 기준에 해당할 수 있습니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 52
+  }
+}

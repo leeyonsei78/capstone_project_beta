@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-A",
+  "scenario": "TS-027",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":100,\"reason\":\"계약일로부터 1108일 경과하여 감액기간을 초과했으며, 이번 연도에는 개수 한도가 적용되지 않습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "계약일로부터 1108일 경과하여 감액기간을 초과했으며, 이번 연도에는 개수 한도가 적용되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 538,
+    "completion_tokens": 51
+  }
+}

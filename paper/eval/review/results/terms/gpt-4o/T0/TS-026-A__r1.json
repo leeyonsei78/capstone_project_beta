@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-026-A",
+  "scenario": "TS-026",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 85,\n    \"reason\": \"임플란트 관련 청구는 계약일부터 70일째에 이루어졌고 보장개시일 이후이며, 상해로 인한 발치로 면책기간과 관계없이 보장되는 것으로 추정되며, 연간 개수 한도는 3건으로 규정이 없으면 제한없다고 판단합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "임플란트 관련 청구는 계약일부터 70일째에 이루어졌고 보장개시일 이후이며, 상해로 인한 발치로 면책기간과 관계없이 보장되는 것으로 추정되며, 연간 개수 한도는 3건으로 규정이 없으면 제한없다고 판단합니다.",
+  "usage": {
+    "prompt_tokens": 356,
+    "completion_tokens": 102
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-B",
+  "scenario": "TS-007",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"상해로 인한 브릿지이며, 면책기간 및 감액 대상이 아니며 개수 한도에도 문제가 없습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지이며, 면책기간 및 감액 대상이 아니며 개수 한도에도 문제가 없습니다.",
+  "usage": {
+    "prompt_tokens": 565,
+    "completion_tokens": 53
+  }
+}

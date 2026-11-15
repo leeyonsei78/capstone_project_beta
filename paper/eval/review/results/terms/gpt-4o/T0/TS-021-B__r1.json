@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-B",
+  "scenario": "TS-021",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 충분히 경과되어 면책기간이나 보장개시일 이전 치료에 해당하지 않고, 크라운 처치는 일반적으로 제외되지 않는 담보에 해당한다고 판단됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 충분히 경과되어 면책기간이나 보장개시일 이전 치료에 해당하지 않고, 크라운 처치는 일반적으로 제외되지 않는 담보에 해당한다고 판단됩니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 77
+  }
+}

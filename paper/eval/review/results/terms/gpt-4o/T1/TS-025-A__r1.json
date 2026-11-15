@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-A",
+  "scenario": "TS-025",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"none\",\n    \"reason_code\": \"none\",\n    \"confidence\": 100,\n    \"reason\": \"모든 보험 조건을 충족하며 지급에 문제 없습니다.\"\n}",
+  "decision": "unparsed",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "모든 보험 조건을 충족하며 지급에 문제 없습니다.",
+  "usage": {
+    "prompt_tokens": 535,
+    "completion_tokens": 42
+  }
+}

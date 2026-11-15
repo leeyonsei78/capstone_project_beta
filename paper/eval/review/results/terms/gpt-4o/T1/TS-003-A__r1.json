@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-003-A",
+  "scenario": "TS-003",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 브릿지이며, 경과일수 896일째는 보장개시일 이후로 면책 및 감액 조건에 해당하지 않고 연간 개수 한도도 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지이며, 경과일수 896일째는 보장개시일 이후로 면책 및 감액 조건에 해당하지 않고 연간 개수 한도도 없습니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 75
+  }
+}

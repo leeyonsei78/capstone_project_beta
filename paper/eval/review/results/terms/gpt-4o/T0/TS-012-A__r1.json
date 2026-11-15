@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-012-A",
+  "scenario": "TS-012",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"이번 계약연도에 같은 담보 건수가 없고, 치료일과 발치일 모두 보장 개시일 이후임.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "이번 계약연도에 같은 담보 건수가 없고, 치료일과 발치일 모두 보장 개시일 이후임.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 58
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-A",
+  "scenario": "TS-007",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 브릿지 치료는 보장되며, 계약일로부터 306일이 지나 정상적으로 지급 가능하다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지 치료는 보장되며, 계약일로부터 306일이 지나 정상적으로 지급 가능하다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 60
+  }
+}

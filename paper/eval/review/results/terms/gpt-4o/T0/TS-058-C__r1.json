@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-058-C",
+  "scenario": "TS-058",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 1105일째로 보장개시일 이후이며, 동일 담보 지급 건수가 4건으로 특정 가능 개수 한도가 명시되지 않은 상황에서는 문제되지 않음.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 1105일째로 보장개시일 이후이며, 동일 담보 지급 건수가 4건으로 특정 가능 개수 한도가 명시되지 않은 상황에서는 문제되지 않음.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 79
+  }
+}

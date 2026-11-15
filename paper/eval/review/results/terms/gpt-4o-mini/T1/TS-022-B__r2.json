@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-B",
+  "scenario": "TS-022",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 85,\n  \"reason\": \"임플란트를 위해서 질병이 원인일 경우 180일의 면책기간이 지나지 않았습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 85,
+  "reason": "임플란트를 위해서 질병이 원인일 경우 180일의 면책기간이 지나지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 573,
+    "completion_tokens": 57
+  }
+}

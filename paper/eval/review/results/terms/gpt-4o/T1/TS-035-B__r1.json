@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-B",
+  "scenario": "TS-035",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 치료는 면책 및 감액 규정이 적용되지 않으며, 연간 개수 한도 내에 있어 문제가 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 치료는 면책 및 감액 규정이 적용되지 않으며, 연간 개수 한도 내에 있어 문제가 없습니다.",
+  "usage": {
+    "prompt_tokens": 560,
+    "completion_tokens": 62
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-010-A",
+  "scenario": "TS-010",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 계약 후 419일로 730일 미만이므로 임플란트는 50% 지급됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "치료일이 계약 후 419일로 730일 미만이므로 임플란트는 50% 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 61
+  }
+}

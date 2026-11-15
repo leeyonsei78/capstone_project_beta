@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-B",
+  "scenario": "TS-007",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 치료이므로 지급이 가능하며, 조건에 부합합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 치료이므로 지급이 가능하며, 조건에 부합합니다.",
+  "usage": {
+    "prompt_tokens": 565,
+    "completion_tokens": 49
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-C",
+  "scenario": "TS-035",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 331일째로, 면책기간이 끝난 시점에서 청구가 접수되었으나, 발치일이 계약일로부터 243일째로 판단하여 면책기간을 적용했습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 331일째로, 면책기간이 끝난 시점에서 청구가 접수되었으나, 발치일이 계약일로부터 243일째로 판단하여 면책기간을 적용했습니다.",
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 87
+  }
+}

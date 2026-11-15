@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-A",
+  "scenario": "TS-022",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 90,\n    \"reason\": \"치료일이 면책기간 및 감액기간 이후이며, 사랑니 발치는 포함되지 않는 것으로 보이고, 같은 담보로 이미 지급된 건수가 없으므로 지급 가능성이 높습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 면책기간 및 감액기간 이후이며, 사랑니 발치는 포함되지 않는 것으로 보이고, 같은 담보로 이미 지급된 건수가 없으므로 지급 가능성이 높습니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 73
+  }
+}

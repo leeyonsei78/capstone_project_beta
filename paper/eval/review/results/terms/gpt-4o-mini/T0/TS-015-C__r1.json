@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-C",
+  "scenario": "TS-015",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 706일째로 면책기간이 경과하지 않아 보험금이 지급되지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 706일째로 면책기간이 경과하지 않아 보험금이 지급되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 59
+  }
+}

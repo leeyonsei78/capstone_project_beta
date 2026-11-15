@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-026-A",
+  "scenario": "TS-026",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수 3건으로 인해 감액지급이 필요함.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수 3건으로 인해 감액지급이 필요함.",
+  "usage": {
+    "prompt_tokens": 356,
+    "completion_tokens": 65
+  }
+}

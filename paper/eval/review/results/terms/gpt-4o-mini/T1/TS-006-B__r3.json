@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-006-B",
+  "scenario": "TS-006",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 계약일로부터 81일째로, 브릿지 보장 개시일(180일)을 만족하지 않아 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "치료일이 계약일로부터 81일째로, 브릿지 보장 개시일(180일)을 만족하지 않아 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 570,
+    "completion_tokens": 65
+  }
+}

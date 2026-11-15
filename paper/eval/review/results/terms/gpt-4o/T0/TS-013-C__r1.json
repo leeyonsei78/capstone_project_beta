@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-C",
+  "scenario": "TS-013",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 29일째로 면책기간 이후이고, 연간 지급 건수 초과가 아니므로 지급 대상에 해당됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 29일째로 면책기간 이후이고, 연간 지급 건수 초과가 아니므로 지급 대상에 해당됩니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 65
+  }
+}

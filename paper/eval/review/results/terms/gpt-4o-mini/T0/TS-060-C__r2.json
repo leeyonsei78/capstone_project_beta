@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-060-C",
+  "scenario": "TS-060",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 85,\n  \"reason\": \"계약일로부터 694일째 치료일은 면책기간 이후인데, 발치는 569일째에 이루어져 청구 가능한 기간 안에 해당하지 않기 때문에 부지급으로 판단됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 85,
+  "reason": "계약일로부터 694일째 치료일은 면책기간 이후인데, 발치는 569일째에 이루어져 청구 가능한 기간 안에 해당하지 않기 때문에 부지급으로 판단됩니다.",
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 77
+  }
+}

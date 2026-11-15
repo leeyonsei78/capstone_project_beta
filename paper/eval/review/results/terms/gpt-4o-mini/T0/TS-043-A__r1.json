@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-043-A",
+  "scenario": "TS-043",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 70,\n  \"reason\": \"계약일로부터 695일째이지만 면책기간이 적용되어 지급할 수 없습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 70,
+  "reason": "계약일로부터 695일째이지만 면책기간이 적용되어 지급할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 53
+  }
+}

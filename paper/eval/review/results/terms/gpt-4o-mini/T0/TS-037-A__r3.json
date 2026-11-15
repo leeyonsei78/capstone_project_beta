@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-037-A",
+  "scenario": "TS-037",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"제공된 정보로는 청구의 유효성 여부를 판단할 수 없습니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "제공된 정보로는 청구의 유효성 여부를 판단할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 51
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-002-C",
+  "scenario": "TS-002",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n    \"decision\": \"부지급\",\n    \"reason_code\": \"pre_start\",\n    \"confidence\": 100,\n    \"reason\": \"보장개시일(면책 종료일) 이전에 영구치를 발치한 경우로 부지급 사유입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 100,
+  "reason": "보장개시일(면책 종료일) 이전에 영구치를 발치한 경우로 부지급 사유입니다.",
+  "usage": {
+    "prompt_tokens": 615,
+    "completion_tokens": 60
+  }
+}

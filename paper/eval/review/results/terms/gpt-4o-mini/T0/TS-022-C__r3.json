@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-C",
+  "scenario": "TS-022",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 636일째로 면책기간을 초과했으나, 발치일이 계약일로부터 588일째로 면책기간 내의 발치와 관련된 치료로 간주되어 감액지급이 적절합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 636일째로 면책기간을 초과했으나, 발치일이 계약일로부터 588일째로 면책기간 내의 발치와 관련된 치료로 간주되어 감액지급이 적절합니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 92
+  }
+}

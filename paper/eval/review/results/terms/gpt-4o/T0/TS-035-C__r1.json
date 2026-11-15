@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-C",
+  "scenario": "TS-035",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{ \"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"치료일이 계약일로부터 331일째로 보장 개시일 이후이며, 보험금 지급 건수가 연간 한도 내에 있고, 발치는 매복된 치아로 면책 기간에 해당하지 않는다.\" }",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 331일째로 보장 개시일 이후이며, 보험금 지급 건수가 연간 한도 내에 있고, 발치는 매복된 치아로 면책 기간에 해당하지 않는다.",
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 76
+  }
+}

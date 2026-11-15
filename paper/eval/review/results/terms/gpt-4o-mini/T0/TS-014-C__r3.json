@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-014-C",
+  "scenario": "TS-014",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 85,\n  \"reason\": \"치료일이 계약일로부터 703일째로, 면책기간이 지나지 않았습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 703일째로, 면책기간이 지나지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 54
+  }
+}

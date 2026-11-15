@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-A",
+  "scenario": "TS-015",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"질병에 대한 면책기간이 지난 후 치료가 이루어졌고, 감액 기준에 해당하지 않기 때문에 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "질병에 대한 면책기간이 지난 후 치료가 이루어졌고, 감액 기준에 해당하지 않기 때문에 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 59
+  }
+}

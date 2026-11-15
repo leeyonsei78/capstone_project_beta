@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-A",
+  "scenario": "TS-022",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"청구인의 치료일이 보장 개시일로부터 636일이며, 임플란트 보장 기간 내에 있기 때문에 면책 기간이 적용되어 감액 지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "청구인의 치료일이 보장 개시일로부터 636일이며, 임플란트 보장 기간 내에 있기 때문에 면책 기간이 적용되어 감액 지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 74
+  }
+}

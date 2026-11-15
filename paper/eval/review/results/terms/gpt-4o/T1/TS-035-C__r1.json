@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-C",
+  "scenario": "TS-035",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"excluded_kind\", \"confidence\": 100, \"reason\": \"매복된 치아 발치는 지급 제외 사유에 해당됩니다.\"}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "매복된 치아 발치는 지급 제외 사유에 해당됩니다.",
+  "usage": {
+    "prompt_tokens": 603,
+    "completion_tokens": 42
+  }
+}

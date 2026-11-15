@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-C",
+  "scenario": "TS-022",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 75,\n  \"reason\": \"면책기간이 지나지 않아 감액지급 판정됨.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 75,
+  "reason": "면책기간이 지나지 않아 감액지급 판정됨.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 47
+  }
+}

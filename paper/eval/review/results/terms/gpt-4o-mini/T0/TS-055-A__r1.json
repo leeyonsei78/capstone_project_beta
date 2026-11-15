@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-055-A",
+  "scenario": "TS-055",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"치료일이 계약일로부터 323일째인 경우 면책기간이 지났으므로 보험금 지급이 불가함.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 323일째인 경우 면책기간이 지났으므로 보험금 지급이 불가함.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 61
+  }
+}

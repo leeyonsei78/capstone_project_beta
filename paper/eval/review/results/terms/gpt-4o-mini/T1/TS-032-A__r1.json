@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-032-A",
+  "scenario": "TS-032",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"질병에 대한 면책 기간이 경과하였고, 크라운 치료일이 계약 후 365일을 초과하여 지급이 가능하다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "질병에 대한 면책 기간이 경과하였고, 크라운 치료일이 계약 후 365일을 초과하여 지급이 가능하다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 64
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-A",
+  "scenario": "TS-015",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 계약일로부터 706일째로, 면책 기간 90일이 경과하였으며, 감액 조건도 충족하지 않아 전액 지급 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 계약일로부터 706일째로, 면책 기간 90일이 경과하였으며, 감액 조건도 충족하지 않아 전액 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 70
+  }
+}

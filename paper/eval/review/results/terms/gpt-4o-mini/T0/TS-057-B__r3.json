@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-057-B",
+  "scenario": "TS-057",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 80,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수가 하나 있어, 지급이 감액될 수 있습니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 80,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수가 하나 있어, 지급이 감액될 수 있습니다.",
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 63
+  }
+}

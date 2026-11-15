@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-B",
+  "scenario": "TS-025",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"계약 후 730일 미만에 이미 지급된 브릿지 2건이 있어, 이번 청구로 인해 총 3건이 되어 개수 한도가 초과되어 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "계약 후 730일 미만에 이미 지급된 브릿지 2건이 있어, 이번 청구로 인해 총 3건이 되어 개수 한도가 초과되어 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 581,
+    "completion_tokens": 76
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-005-A",
+  "scenario": "TS-005",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"사랑니 발치는 보험에서 제외되는 발치 종류에 해당될 가능성이 높습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "사랑니 발치는 보험에서 제외되는 발치 종류에 해당될 가능성이 높습니다.",
+  "usage": {
+    "prompt_tokens": 346,
+    "completion_tokens": 52
+  }
+}

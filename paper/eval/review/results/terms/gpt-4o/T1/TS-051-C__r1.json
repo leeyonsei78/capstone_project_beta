@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-051-C",
+  "scenario": "TS-051",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"임플란트 개수 한도 초과로 인해 이번 계약연도에 이미 3건이 지급되어 더 이상 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "임플란트 개수 한도 초과로 인해 이번 계약연도에 이미 3건이 지급되어 더 이상 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 628,
+    "completion_tokens": 64
+  }
+}

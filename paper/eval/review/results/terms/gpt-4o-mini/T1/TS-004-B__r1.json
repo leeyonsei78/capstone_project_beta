@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-004-B",
+  "scenario": "TS-004",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"브릿지 치료는 면책 기간(180일)을 초과하기 전에 이루어졌으며, 이미 같은 담보로 2건이 지급되어 이번 건은 부지급에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "브릿지 치료는 면책 기간(180일)을 초과하기 전에 이루어졌으며, 이미 같은 담보로 2건이 지급되어 이번 건은 부지급에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 74
+  }
+}

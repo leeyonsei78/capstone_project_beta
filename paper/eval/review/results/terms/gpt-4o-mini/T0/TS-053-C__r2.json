@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-053-C",
+  "scenario": "TS-053",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"이번 계약연도에 이미 지급된 브릿지 건수가 1건으로, 지급 한도를 초과하여 감액지급으로 판정됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도에 이미 지급된 브릿지 건수가 1건으로, 지급 한도를 초과하여 감액지급으로 판정됩니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 66
+  }
+}

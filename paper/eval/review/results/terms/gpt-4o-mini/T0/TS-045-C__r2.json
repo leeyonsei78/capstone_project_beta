@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-045-C",
+  "scenario": "TS-045",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 85,\n  \"reason\": \"브릿지 보철 치료에 대한 청구는 이미 계약 연도 내에 지급된 4건이 있어 추가 지급이 불가능함.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 85,
+  "reason": "브릿지 보철 치료에 대한 청구는 이미 계약 연도 내에 지급된 4건이 있어 추가 지급이 불가능함.",
+  "usage": {
+    "prompt_tokens": 343,
+    "completion_tokens": 63
+  }
+}

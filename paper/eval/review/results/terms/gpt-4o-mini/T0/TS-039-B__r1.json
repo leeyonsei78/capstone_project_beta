@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-039-B",
+  "scenario": "TS-039",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"제공된 정보만으로는 면책기간이나 약관의 세부 내용을 확인할 수 없어 최종 판단을 내리지 못함.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "제공된 정보만으로는 면책기간이나 약관의 세부 내용을 확인할 수 없어 최종 판단을 내리지 못함.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 62
+  }
+}

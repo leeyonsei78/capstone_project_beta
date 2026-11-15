@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-C",
+  "scenario": "TS-013",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 95,\n  \"reason\": \"상해로 인한 치료로 면책 기간이 적용되지 않으며, 영구치 발치일이 계약일 이후 1일째로 보장 개시일 이전이 아니므로 지급 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 95,
+  "reason": "상해로 인한 치료로 면책 기간이 적용되지 않으며, 영구치 발치일이 계약일 이후 1일째로 보장 개시일 이전이 아니므로 지급 가능합니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 73
+  }
+}

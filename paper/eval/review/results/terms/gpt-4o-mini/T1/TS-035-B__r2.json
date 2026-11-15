@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-B",
+  "scenario": "TS-035",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 브릿지 치료는 계약일부터 보장하며, 해당 건은 조건에 부합하여 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지 치료는 계약일부터 보장하며, 해당 건은 조건에 부합하여 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 560,
+    "completion_tokens": 57
+  }
+}

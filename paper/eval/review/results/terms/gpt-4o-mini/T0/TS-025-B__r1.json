@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-B",
+  "scenario": "TS-025",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"이번 계약연도 내에 이미 지급된 같은 담보(브릿지) 건수가 2건으로, 지급 한도를 초과하여 감액지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "이번 계약연도 내에 이미 지급된 같은 담보(브릿지) 건수가 2건으로, 지급 한도를 초과하여 감액지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 71
+  }
+}

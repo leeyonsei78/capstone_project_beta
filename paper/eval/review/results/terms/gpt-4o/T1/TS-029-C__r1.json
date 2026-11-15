@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-C",
+  "scenario": "TS-029",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"부지급\",\n    \"reason_code\": \"annual_cap\",\n    \"confidence\": 100,\n    \"reason\": \"계약연도당 지급 한도인 3건이 이미 초과되었습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "계약연도당 지급 한도인 3건이 이미 초과되었습니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 50
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-048-B",
+  "scenario": "TS-048",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보 임플란트 건수가 2건으로, 한도 초과로 인한 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보 임플란트 건수가 2건으로, 한도 초과로 인한 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 66
+  }
+}

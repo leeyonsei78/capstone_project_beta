@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-048-B",
+  "scenario": "TS-048",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"pre_start\", \"confidence\": 95, \"reason\": \"임플란트는 영구치 발치가 보장 개시일 이후에 이루어져야 지급될 수 있습니다.\"}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 95,
+  "reason": "임플란트는 영구치 발치가 보장 개시일 이후에 이루어져야 지급될 수 있습니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 54
+  }
+}

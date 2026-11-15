@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-003-B",
+  "scenario": "TS-003",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"annual_cap\", \"confidence\": 95, \"reason\": \"같은 담보의 지급 건수가 연간 한도를 초과했습니다.\"}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 95,
+  "reason": "같은 담보의 지급 건수가 연간 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 43
+  }
+}

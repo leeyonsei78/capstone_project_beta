@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-B",
+  "scenario": "TS-027",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수가 2건으로, 일반적으로 연간 한도를 초과하여 지급이 제한됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보(임플란트) 건수가 2건으로, 일반적으로 연간 한도를 초과하여 지급이 제한됩니다.",
+  "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 71
+  }
+}

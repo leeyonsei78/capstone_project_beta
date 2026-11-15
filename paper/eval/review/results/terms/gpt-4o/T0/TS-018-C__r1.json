@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-018-C",
+  "scenario": "TS-018",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"계약일로부터 139일째로 면책기간이 경과하였고, 영구치 발치일은 보장개시일 이후로 문제 없으며 연간 지급 건수에도 여유가 있다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "계약일로부터 139일째로 면책기간이 경과하였고, 영구치 발치일은 보장개시일 이후로 문제 없으며 연간 지급 건수에도 여유가 있다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 78
+  }
+}

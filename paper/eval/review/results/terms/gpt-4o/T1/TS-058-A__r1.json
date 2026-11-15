@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-058-A",
+  "scenario": "TS-058",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 계약일로부터 1105일째로 보장 개시 후이고, 감액기간도 지났으며, 연간 개수 한도는 적용되지 않습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 계약일로부터 1105일째로 보장 개시 후이고, 감액기간도 지났으며, 연간 개수 한도는 적용되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 527,
+    "completion_tokens": 70
+  }
+}

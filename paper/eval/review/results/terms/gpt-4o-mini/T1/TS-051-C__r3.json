@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-051-C",
+  "scenario": "TS-051",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 100,\n  \"reason\": \"영구치 발치일이 계약일로부터 90일 이전이므로 지급되지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 100,
+  "reason": "영구치 발치일이 계약일로부터 90일 이전이므로 지급되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 628,
+    "completion_tokens": 53
+  }
+}

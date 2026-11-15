@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-045-B",
+  "scenario": "TS-045",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 90,\n  \"reason\": \"계약일로부터 1일째 발치는 보장 개시일 이전이므로 부지급 사유에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "계약일로부터 1일째 발치는 보장 개시일 이전이므로 부지급 사유에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 343,
+    "completion_tokens": 60
+  }
+}

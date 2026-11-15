@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-014-B",
+  "scenario": "TS-014",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 100,\n  \"reason\": \"크라운 치료가 질병으로 인한 것이며, 치료일은 계약일로부터 270일이 지난 703일째로 감액기간에 해당되어 50% 지급합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "크라운 치료가 질병으로 인한 것이며, 치료일은 계약일로부터 270일이 지난 703일째로 감액기간에 해당되어 50% 지급합니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 75
+  }
+}

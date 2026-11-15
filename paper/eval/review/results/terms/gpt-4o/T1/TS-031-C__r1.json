@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-C",
+  "scenario": "TS-031",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인한 브릿지이며 발치일과 치료일 모두 계약조건을 만족하고, 현재 계약연도에서 동일 담보 건수가 3개 미만이므로 지급합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지이며 발치일과 치료일 모두 계약조건을 만족하고, 현재 계약연도에서 동일 담보 건수가 3개 미만이므로 지급합니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 72
+  }
+}

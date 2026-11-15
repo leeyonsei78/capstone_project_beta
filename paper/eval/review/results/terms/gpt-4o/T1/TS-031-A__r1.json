@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-A",
+  "scenario": "TS-031",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"상해로 인한 브릿지는 계약일로부터 즉시 보장되며 감액 조건이 적용되지 않습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 브릿지는 계약일로부터 즉시 보장되며 감액 조건이 적용되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 51
+  }
+}

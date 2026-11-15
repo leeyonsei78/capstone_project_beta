@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-A",
+  "scenario": "TS-007",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"사랑니 발치는 일반적으로 보장 대상인 브릿지 치료에 포함되지 않으며, 치료일이 계약일로부터 충분히 경과하였고, 이번 계약연도에 같은 담보의 건수가 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "사랑니 발치는 일반적으로 보장 대상인 브릿지 치료에 포함되지 않으며, 치료일이 계약일로부터 충분히 경과하였고, 이번 계약연도에 같은 담보의 건수가 없습니다.",
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 79
+  }
+}

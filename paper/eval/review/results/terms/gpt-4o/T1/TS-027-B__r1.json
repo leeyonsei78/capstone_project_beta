@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-B",
+  "scenario": "TS-027",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"보장 개시일, 감액 기간, 그리고 연간 개수 한도 조건 모두 충족합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "보장 개시일, 감액 기간, 그리고 연간 개수 한도 조건 모두 충족합니다.",
+  "usage": {
+    "prompt_tokens": 584,
+    "completion_tokens": 53
+  }
+}

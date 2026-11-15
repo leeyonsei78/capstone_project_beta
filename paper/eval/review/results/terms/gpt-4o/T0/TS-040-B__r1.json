@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-040-B",
+  "scenario": "TS-040",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"발치일과 치료일 모두 보장 개시일 이후이고, 연간 지급 건수 한도를 초과하지 않았습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "발치일과 치료일 모두 보장 개시일 이후이고, 연간 지급 건수 한도를 초과하지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 53
+  }
+}

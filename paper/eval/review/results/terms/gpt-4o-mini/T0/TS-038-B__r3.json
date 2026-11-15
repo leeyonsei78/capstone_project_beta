@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-038-B",
+  "scenario": "TS-038",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"청구자는 같은 계약연도에 이미 2건의 임플란트 치료를 청구하여 개수 한도를 초과했습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "청구자는 같은 계약연도에 이미 2건의 임플란트 치료를 청구하여 개수 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 62
+  }
+}

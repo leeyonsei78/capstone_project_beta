@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-055-B",
+  "scenario": "TS-055",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"세부 약관 내용이 없어서 청구 지급 여부를 판단할 수 없습니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "세부 약관 내용이 없어서 청구 지급 여부를 판단할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 50
+  }
+}

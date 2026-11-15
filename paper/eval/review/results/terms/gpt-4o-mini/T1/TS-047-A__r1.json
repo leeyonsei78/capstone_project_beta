@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-047-A",
+  "scenario": "TS-047",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 90일 이내에 발생하여 면책에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 90일 이내에 발생하여 면책에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 53
+  }
+}

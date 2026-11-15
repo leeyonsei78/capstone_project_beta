@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-B",
+  "scenario": "TS-031",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 보장개시일 이후이며, 연간 지급 한도 내의 두 번째 청구로 문제 없음.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 보장개시일 이후이며, 연간 지급 한도 내의 두 번째 청구로 문제 없음.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 57
+  }
+}

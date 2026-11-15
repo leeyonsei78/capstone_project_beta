@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-047-A",
+  "scenario": "TS-047",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"약관 내용이 제공되지 않아 지급 여부를 판단할 수 없다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "약관 내용이 제공되지 않아 지급 여부를 판단할 수 없다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 47
+  }
+}

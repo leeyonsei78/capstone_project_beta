@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-049-B",
+  "scenario": "TS-049",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이번 계약연도에 이미 2건의 임플란트 치료가 지급되어, 임플란트 지급 한도인 3건을 초과하지 않아 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이번 계약연도에 이미 2건의 임플란트 치료가 지급되어, 임플란트 지급 한도인 3건을 초과하지 않아 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 583,
+    "completion_tokens": 72
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-C",
+  "scenario": "TS-021",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":70,\"reason\":\"치료일이 계약일로부터 901일째로 면책기간이나 감액기간을 지났을 가능성이 높습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 70,
+  "reason": "치료일이 계약일로부터 901일째로 면책기간이나 감액기간을 지났을 가능성이 높습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 47
+  }
+}

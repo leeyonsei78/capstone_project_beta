@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-058-A",
+  "scenario": "TS-058",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"브릿지 치료를 위해 필요한 영구치가 발치된 날이 계약일로부터 1043일째로, 면책 기간이 지나지 않았습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "브릿지 치료를 위해 필요한 영구치가 발치된 날이 계약일로부터 1043일째로, 면책 기간이 지나지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 68
+  }
+}

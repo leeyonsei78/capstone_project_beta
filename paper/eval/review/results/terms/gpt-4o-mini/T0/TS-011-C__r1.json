@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-011-C",
+  "scenario": "TS-011",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 75,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보 건수가 1건으로, 추가 지급이 제한됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 75,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보 건수가 1건으로, 추가 지급이 제한됩니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 57
+  }
+}

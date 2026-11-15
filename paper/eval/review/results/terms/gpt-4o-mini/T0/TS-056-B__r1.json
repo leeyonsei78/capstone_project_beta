@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-056-B",
+  "scenario": "TS-056",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"청구된 임플란트 치료는 발치일로부터 12개월 이내에 발생해야 하지만, 청구자는 이미 발치일로부터 696일이 경과하여 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "청구된 임플란트 치료는 발치일로부터 12개월 이내에 발생해야 하지만, 청구자는 이미 발치일로부터 696일이 경과하여 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 77
+  }
+}

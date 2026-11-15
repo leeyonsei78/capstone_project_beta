@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-C",
+  "scenario": "TS-031",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"치료일이 계약일로부터 643일째로 면책기간 종료 후이며, 같은 연도 내에 이미 브릿지 1건 지급했으므로 한도 초과는 아닙니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 643일째로 면책기간 종료 후이며, 같은 연도 내에 이미 브릿지 1건 지급했으므로 한도 초과는 아닙니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 75
+  }
+}

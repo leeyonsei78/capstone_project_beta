@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-057-C",
+  "scenario": "TS-057",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"계약일로부터 646일째 치료가 이루어져 면책기간과 감액기간에 해당하지 않으며, 연간 지급 한도 이내로 판단됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "계약일로부터 646일째 치료가 이루어져 면책기간과 감액기간에 해당하지 않으며, 연간 지급 한도 이내로 판단됩니다.",
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 68
+  }
+}

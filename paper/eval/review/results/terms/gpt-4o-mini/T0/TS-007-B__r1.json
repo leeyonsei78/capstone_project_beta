@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-007-B",
+  "scenario": "TS-007",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 85,\n  \"reason\": \"상해로 인한 발치가 아닌 사랑니 발치로 인해 브릿지 치료가 제외될 수 있기 때문입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 85,
+  "reason": "상해로 인한 발치가 아닌 사랑니 발치로 인해 브릿지 치료가 제외될 수 있기 때문입니다.",
+  "usage": {
+    "prompt_tokens": 344,
+    "completion_tokens": 59
+  }
+}

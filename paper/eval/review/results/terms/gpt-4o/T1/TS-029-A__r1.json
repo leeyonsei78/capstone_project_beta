@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-029-A",
+  "scenario": "TS-029",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"상해로 인한 치료는 계약일부터 보장되고, 연간 개수 한도가 없어 이번 청구는 정상적으로 지급됩니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인한 치료는 계약일부터 보장되고, 연간 개수 한도가 없어 이번 청구는 정상적으로 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 54
+  }
+}

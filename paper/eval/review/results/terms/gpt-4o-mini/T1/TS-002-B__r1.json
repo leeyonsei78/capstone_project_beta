@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-002-B",
+  "scenario": "TS-002",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"임플란트는 면책기간인 180일 내에 치료받아 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "임플란트는 면책기간인 180일 내에 치료받아 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 572,
+    "completion_tokens": 54
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-002-A",
+  "scenario": "TS-002",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\":\"부지급\",\"reason_code\":\"waiting\",\"confidence\":100,\"reason\":\"질병에 의한 임플란트 치료가 면책기간 90일 이전에 이루어졌기 때문에 부지급 대상입니다.\"}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "질병에 의한 임플란트 치료가 면책기간 90일 이전에 이루어졌기 때문에 부지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 526,
+    "completion_tokens": 49
+  }
+}

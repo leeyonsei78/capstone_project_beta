@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-043-A",
+  "scenario": "TS-043",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 계약일로부터 695일째로, 면책 및 감액 조건에 해당하지 않으므로 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 계약일로부터 695일째로, 면책 및 감액 조건에 해당하지 않으므로 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 59
+  }
+}

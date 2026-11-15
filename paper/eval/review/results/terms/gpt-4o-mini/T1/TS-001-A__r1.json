@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-001-A",
+  "scenario": "TS-001",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 85,\n  \"reason\": \"브릿지 치료일이 계약일로부터 428일째로 보장 개시일로부터 365일 이상 경과하였지만, 여전히 감액 기준인 730일 미만에 해당하므로 50% 감액 지급됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 85,
+  "reason": "브릿지 치료일이 계약일로부터 428일째로 보장 개시일로부터 365일 이상 경과하였지만, 여전히 감액 기준인 730일 미만에 해당하므로 50% 감액 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 535,
+    "completion_tokens": 88
+  }
+}

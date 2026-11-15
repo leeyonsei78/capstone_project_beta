@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-055-A",
+  "scenario": "TS-055",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"제공된 정보만으로는 청구에 대한 구체적인 지급 기준이나 면책 사항을 판단할 수 없어 근거 부족.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "제공된 정보만으로는 청구에 대한 구체적인 지급 기준이나 면책 사항을 판단할 수 없어 근거 부족.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 61
+  }
+}

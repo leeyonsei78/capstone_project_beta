@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-058-B",
+  "scenario": "TS-058",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"브릿지 치료는 이미 계약된 연도에 동일한 담보로 4건 지급 이력이 있어 지급이 불가능하다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "브릿지 치료는 이미 계약된 연도에 동일한 담보로 4건 지급 이력이 있어 지급이 불가능하다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 61
+  }
+}

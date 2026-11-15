@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-037-B",
+  "scenario": "TS-037",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"계약일로부터 698일째 치료일이므로 면책기간이 지났지만, 청구된 크라운 치료가 약관에서 보장되지 않을 가능성이 있음.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "계약일로부터 698일째 치료일이므로 면책기간이 지났지만, 청구된 크라운 치료가 약관에서 보장되지 않을 가능성이 있음.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 71
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-051-A",
+  "scenario": "TS-051",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{ \"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"임플란트는 질병에 의해 1256일째 발치되었으며 모든 면책 기간과 감액 기간이 지났고, 연간 개수 한도도 적용되지 않습니다.\" }",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "임플란트는 질병에 의해 1256일째 발치되었으며 모든 면책 기간과 감액 기간이 지났고, 연간 개수 한도도 적용되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 539,
+    "completion_tokens": 69
+  }
+}

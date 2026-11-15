@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-006-B",
+  "scenario": "TS-006",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 85, \"reason\": \"계약일로부터 81일째 치료로 면책기간을 지났으며, 동일 담보 건수 제한에도 위배되지 않습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "계약일로부터 81일째 치료로 면책기간을 지났으며, 동일 담보 건수 제한에도 위배되지 않습니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 56
+  }
+}

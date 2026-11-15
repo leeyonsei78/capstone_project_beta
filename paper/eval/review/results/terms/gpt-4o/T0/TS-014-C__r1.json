@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-014-C",
+  "scenario": "TS-014",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 75,\n    \"reason\": \"치료일이 계약일로부터 703일째로 면책기간과 감액기간을 벗어났을 가능성이 높아 보장 대상인 것으로 추측됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 75,
+  "reason": "치료일이 계약일로부터 703일째로 면책기간과 감액기간을 벗어났을 가능성이 높아 보장 대상인 것으로 추측됩니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 69
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-014-B",
+  "scenario": "TS-014",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"크라운 치료일이 계약일로부터 703일째로 면책기간 90일을 초과하지 않았으므로 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "크라운 치료일이 계약일로부터 703일째로 면책기간 90일을 초과하지 않았으므로 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 64
+  }
+}

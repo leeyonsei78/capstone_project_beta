@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-011-C",
+  "scenario": "TS-011",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"치료일은 계약일로부터 305일째로 보장개시일 이후이며, 이번 연도에 이미 지급된 같은 담보 건수가 1건으로 개수 한도에 미달하는 것으로 보입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일은 계약일로부터 305일째로 보장개시일 이후이며, 이번 연도에 이미 지급된 같은 담보 건수가 1건으로 개수 한도에 미달하는 것으로 보입니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 79
+  }
+}

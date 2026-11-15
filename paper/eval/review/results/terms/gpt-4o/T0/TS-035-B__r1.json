@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-B",
+  "scenario": "TS-035",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일이 계약일로부터 331일째로 면책기간이 지났고, 연간 지급 한도에 도달하지 않았습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일이 계약일로부터 331일째로 면책기간이 지났고, 연간 지급 한도에 도달하지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 339,
+    "completion_tokens": 63
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-001-A",
+  "scenario": "TS-001",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"청구자가 이번 계약연도에 이미 지급된 같은 담보(브릿지) 건수가 1건으로, 일반적으로 연간 지급 건수 제한이 있어 감액지급으로 판단됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "청구자가 이번 계약연도에 이미 지급된 같은 담보(브릿지) 건수가 1건으로, 일반적으로 연간 지급 건수 제한이 있어 감액지급으로 판단됩니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 77
+  }
+}

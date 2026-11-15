@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-026-C",
+  "scenario": "TS-026",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 100,\n  \"reason\": \"영구치 발치일이 계약일로부터 1일째로, 보장개시일 이전에 발치한 경우 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 100,
+  "reason": "영구치 발치일이 계약일로부터 1일째로, 보장개시일 이전에 발치한 경우 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 620,
+    "completion_tokens": 65
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-045-A",
+  "scenario": "TS-045",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 95,\n  \"reason\": \"상해로 인한 치료로 면책이 없으며, 브릿지에 대한 연간 개수 한도가 없으므로 전액 지급됩니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 95,
+  "reason": "상해로 인한 치료로 면책이 없으며, 브릿지에 대한 연간 개수 한도가 없으므로 전액 지급됩니다.",
+  "usage": {
+    "prompt_tokens": 518,
+    "completion_tokens": 62
+  }
+}

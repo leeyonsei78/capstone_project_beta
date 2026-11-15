@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-053-C",
+  "scenario": "TS-053",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 85,\n    \"reason\": \"치료일과 발치일 모두 감액기간과 보장개시일 이후이며, 연간 한도도 초과하지 않았음.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일과 발치일 모두 감액기간과 보장개시일 이후이며, 연간 한도도 초과하지 않았음.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 61
+  }
+}

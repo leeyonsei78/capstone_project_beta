@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-B",
+  "scenario": "TS-022",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{ \"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 85, \"reason\": \"치료일이 보장개시일 2년 후이며, 연간 한도 외 다른 거부 사유 없음.\" }",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일이 보장개시일 2년 후이며, 연간 한도 외 다른 거부 사유 없음.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 53
+  }
+}

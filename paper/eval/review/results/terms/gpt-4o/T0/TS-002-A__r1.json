@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-002-A",
+  "scenario": "TS-002",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\":\"부지급\",\"reason_code\":\"pre_start\",\"confidence\":90,\"reason\":\"이 청구는 임플란트를 위한 발치가 보장 개시일 이전에 이루어져 보장 대상이 아닙니다.\"}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "이 청구는 임플란트를 위한 발치가 보장 개시일 이전에 이루어져 보장 대상이 아닙니다.",
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 50
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-034-A",
+  "scenario": "TS-034",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"면책기간과 감액기간을 모두 경과하였으며 개수 한도 제한도 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "면책기간과 감액기간을 모두 경과하였으며 개수 한도 제한도 없습니다.",
+  "usage": {
+    "prompt_tokens": 528,
+    "completion_tokens": 52
+  }
+}

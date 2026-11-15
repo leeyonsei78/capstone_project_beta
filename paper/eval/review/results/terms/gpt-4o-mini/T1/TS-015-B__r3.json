@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-B",
+  "scenario": "TS-015",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 95,\n  \"reason\": \"치료일이 계약일로부터 706일이 지나 면책 조건에 해당하여 보장이 이루어지지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 95,
+  "reason": "치료일이 계약일로부터 706일이 지나 면책 조건에 해당하여 보장이 이루어지지 않습니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 58
+  }
+}

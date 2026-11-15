@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-006-A",
+  "scenario": "TS-006",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 80,\n  \"reason\": \"교정·위치이상 목적의 발치는 보장되지 않기 때문에 지급이 불가능합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 80,
+  "reason": "교정·위치이상 목적의 발치는 보장되지 않기 때문에 지급이 불가능합니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 55
+  }
+}

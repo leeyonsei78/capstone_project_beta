@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-A",
+  "scenario": "TS-021",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 90,\n    \"reason\": \"면책기간이 초과되었고 보장 개시일 이후에 치료가 이루어졌습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "면책기간이 초과되었고 보장 개시일 이후에 치료가 이루어졌습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 53
+  }
+}

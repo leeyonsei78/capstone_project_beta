@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-017-A",
+  "scenario": "TS-017",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"제공된 정보만으로는 약관 내용을 확인할 수 없어 지급 여부를 판정할 수 없습니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "제공된 정보만으로는 약관 내용을 확인할 수 없어 지급 여부를 판정할 수 없습니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 55
+  }
+}

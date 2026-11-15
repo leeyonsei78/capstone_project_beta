@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-B",
+  "scenario": "TS-021",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"근거부족\",\n  \"reason_code\": \"none\",\n  \"confidence\": 50,\n  \"reason\": \"보험 약관의 구체적 내용이 없어 지급 가능성 여부 판단이 어렵습니다.\"\n}",
+  "decision": "근거부족",
+  "reason_code": "none",
+  "confidence": 50,
+  "reason": "보험 약관의 구체적 내용이 없어 지급 가능성 여부 판단이 어렵습니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 51
+  }
+}

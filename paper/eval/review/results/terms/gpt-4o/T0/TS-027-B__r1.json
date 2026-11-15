@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-B",
+  "scenario": "TS-027",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"임플란트 청구는 보장 개시일 이후 발치된 경우이고, 개수 한도 초과 조건이 명시되지 않아 문제 없음.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "임플란트 청구는 보장 개시일 이후 발치된 경우이고, 개수 한도 초과 조건이 명시되지 않아 문제 없음.",
+  "usage": {
+    "prompt_tokens": 363,
+    "completion_tokens": 59
+  }
+}

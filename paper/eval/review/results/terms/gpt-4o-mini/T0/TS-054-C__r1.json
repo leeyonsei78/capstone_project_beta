@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-054-C",
+  "scenario": "TS-054",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 80,\n  \"reason\": \"올해에 이미 같은 담보로 지급된 건수가 있어 개수 한도 초과로 감액지급이 필요합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 80,
+  "reason": "올해에 이미 같은 담보로 지급된 건수가 있어 개수 한도 초과로 감액지급이 필요합니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 61
+  }
+}

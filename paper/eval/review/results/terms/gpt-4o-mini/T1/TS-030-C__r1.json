@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-030-C",
+  "scenario": "TS-030",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 144일째 된 날에 치료를 받았으나, 질병으로 인한 보장은 계약일로부터 90일 지난 이후에만 가능하여 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "계약일로부터 144일째 된 날에 치료를 받았으나, 질병으로 인한 보장은 계약일로부터 90일 지난 이후에만 가능하여 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 562,
+    "completion_tokens": 75
+  }
+}

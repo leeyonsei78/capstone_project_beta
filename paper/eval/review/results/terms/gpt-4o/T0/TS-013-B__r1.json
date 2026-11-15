@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-B",
+  "scenario": "TS-013",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\":\"지급\",\"reason_code\":\"none\",\"confidence\":80,\"reason\":\"치료일이 계약일로부터 29일째로 면책기간을 초과하였고, 이번 계약연도에 같은 담보로 인한 지급 건수가 0건이므로 문제 없음.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "치료일이 계약일로부터 29일째로 면책기간을 초과하였고, 이번 계약연도에 같은 담보로 인한 지급 건수가 0건이므로 문제 없음.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 63
+  }
+}

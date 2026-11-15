@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-026-B",
+  "scenario": "TS-026",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이미 계약연도에 3건이 지급되어 개수 한도 초과로 부지급에 해당합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이미 계약연도에 3건이 지급되어 개수 한도 초과로 부지급에 해당합니다.",
+  "usage": {
+    "prompt_tokens": 577,
+    "completion_tokens": 57
+  }
+}

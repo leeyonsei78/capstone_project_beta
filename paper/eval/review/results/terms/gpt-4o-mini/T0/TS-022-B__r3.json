@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-B",
+  "scenario": "TS-022",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 85,\n  \"reason\": \"면책기간이 지난 후 발치가 이루어져서 임플란트 치료가 가능하지만 발치일과 치료일 간 636일이 지나고 추가적인 면책 조항이 있을 가능성이 있다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "waiting",
+  "confidence": 85,
+  "reason": "면책기간이 지난 후 발치가 이루어져서 임플란트 치료가 가능하지만 발치일과 치료일 간 636일이 지나고 추가적인 면책 조항이 있을 가능성이 있다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 78
+  }
+}

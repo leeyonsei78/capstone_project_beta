@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-027-B",
+  "scenario": "TS-027",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 100,\n  \"reason\": \"이미 계약연도에 지급된 임플란트 청구건수가 2건이며, 이번 청구로 총 3건이 되어 개수 한도를 초과합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "이미 계약연도에 지급된 임플란트 청구건수가 2건이며, 이번 청구로 총 3건이 되어 개수 한도를 초과합니다.",
+  "usage": {
+    "prompt_tokens": 584,
+    "completion_tokens": 70
+  }
+}

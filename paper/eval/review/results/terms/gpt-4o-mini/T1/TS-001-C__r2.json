@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-001-C",
+  "scenario": "TS-001",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"영구치 발치일이 계약일로부터 293일째로 면책이 종료된 이후이지만, 발치 사유가 충치·잇몸질환으로 보존할 수 없어 발치가 아닌 다른 치료를 위한 준비 목적 발치로 판단됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "영구치 발치일이 계약일로부터 293일째로 면책이 종료된 이후이지만, 발치 사유가 충치·잇몸질환으로 보존할 수 없어 발치가 아닌 다른 치료를 위한 준비 목적 발치로 판단됩니다.",
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 92
+  }
+}

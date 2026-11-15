@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-001-C",
+  "scenario": "TS-001",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"영구치를 발치한 일자가 면책 기간 종료 후에도 여전히 보장개시일 이전이므로 지급이 제외됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "영구치를 발치한 일자가 면책 기간 종료 후에도 여전히 보장개시일 이전이므로 지급이 제외됩니다.",
+  "usage": {
+    "prompt_tokens": 624,
+    "completion_tokens": 61
+  }
+}

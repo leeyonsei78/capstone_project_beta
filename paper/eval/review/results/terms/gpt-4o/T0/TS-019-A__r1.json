@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-019-A",
+  "scenario": "TS-019",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"임플란트 보장 개시일 이후에 시행되었고 연간 한도 초과가 아닙니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "임플란트 보장 개시일 이후에 시행되었고 연간 한도 초과가 아닙니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 56
+  }
+}

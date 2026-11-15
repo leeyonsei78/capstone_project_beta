@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-012-B",
+  "scenario": "TS-012",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 95,\n  \"reason\": \"치료일이 계약일로부터 326일째로 면책 기간(180일)을 초과하지 못했기 때문에 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 95,
+  "reason": "치료일이 계약일로부터 326일째로 면책 기간(180일)을 초과하지 못했기 때문에 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 571,
+    "completion_tokens": 64
+  }
+}

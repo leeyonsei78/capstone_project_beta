@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-039-B",
+  "scenario": "TS-039",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 85,\n    \"reason\": \"치료일이 계약일로부터 199일째로 면책기간 180일 이후에 해당되므로 지급 대상입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일이 계약일로부터 199일째로 면책기간 180일 이후에 해당되므로 지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 58
+  }
+}

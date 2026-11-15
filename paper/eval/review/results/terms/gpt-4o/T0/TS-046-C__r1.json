@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-046-C",
+  "scenario": "TS-046",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"annual_cap\", \"confidence\": 90, \"reason\": \"같은 계약연도에 브릿지 담보로 이미 4건이 지급되어, 개수 한도를 초과했습니다.\"}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "같은 계약연도에 브릿지 담보로 이미 4건이 지급되어, 개수 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 55
+  }
+}

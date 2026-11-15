@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-021-A",
+  "scenario": "TS-021",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 95,\n  \"reason\": \"치료일(901일째)가 계약일로부터 90일 경과 후에 해당하여 면책 사유가 없고, 감액 조건도 충족하지 않으므로 전체 지급이 가능합니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 95,
+  "reason": "치료일(901일째)가 계약일로부터 90일 경과 후에 해당하여 면책 사유가 없고, 감액 조건도 충족하지 않으므로 전체 지급이 가능합니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 74
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-002-B",
+  "scenario": "TS-002",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 76일째 치료받은 질병으로 인한 임플란트는 면책기간 180일 이내로 보장하지 않습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "계약일로부터 76일째 치료받은 질병으로 인한 임플란트는 면책기간 180일 이내로 보장하지 않습니다.",
+  "usage": {
+    "prompt_tokens": 572,
+    "completion_tokens": 67
+  }
+}

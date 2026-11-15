@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-015-A",
+  "scenario": "TS-015",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 100, \"reason\": \"질병으로 인한 크라운 치료가 보장 개시일 이후 365일이 지나 감액 대상이 아니며, 면책기간도 이미 지났으므로 정상 지급 대상입니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "질병으로 인한 크라운 치료가 보장 개시일 이후 365일이 지나 감액 대상이 아니며, 면책기간도 이미 지났으므로 정상 지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 67
+  }
+}

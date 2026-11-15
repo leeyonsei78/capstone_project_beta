@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-023-B",
+  "scenario": "TS-023",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 90,\n    \"reason\": \"보장개시일 이후 발치가 이루어졌고, 담보 건수도 한도내이며, 면책이나 감액 기간이 지나 지급에 문제가 없습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "보장개시일 이후 발치가 이루어졌고, 담보 건수도 한도내이며, 면책이나 감액 기간이 지나 지급에 문제가 없습니다.",
+  "usage": {
+    "prompt_tokens": 351,
+    "completion_tokens": 67
+  }
+}

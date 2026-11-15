@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-043-A",
+  "scenario": "TS-043",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"치료일이 보장 개시일 이후이며, 크라운의 경우 감액기간도 지났으므로 전액 지급입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "치료일이 보장 개시일 이후이며, 크라운의 경우 감액기간도 지났으므로 전액 지급입니다.",
+  "usage": {
+    "prompt_tokens": 473,
+    "completion_tokens": 60
+  }
+}

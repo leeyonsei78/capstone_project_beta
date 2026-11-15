@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-023-B",
+  "scenario": "TS-023",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"reduced\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 521일째의 임플란트 치료는 면책기간이 지났으나 감액지급 조건을 충족합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "reduced",
+  "confidence": 100,
+  "reason": "계약일로부터 521일째의 임플란트 치료는 면책기간이 지났으나 감액지급 조건을 충족합니다.",
+  "usage": {
+    "prompt_tokens": 572,
+    "completion_tokens": 67
+  }
+}

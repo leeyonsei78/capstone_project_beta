@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-028-C",
+  "scenario": "TS-028",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"계약일로부터 173일째에 발치가 이루어졌으며, 이는 보장개시일 이전 발치로 간주되어 지급이 제외됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "계약일로부터 173일째에 발치가 이루어졌으며, 이는 보장개시일 이전 발치로 간주되어 지급이 제외됩니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 68
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-019-C",
+  "scenario": "TS-019",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"영구치 발치일이 계약일로부터 5일째로 면책기간(90일)을 지나지 않아 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "영구치 발치일이 계약일로부터 5일째로 면책기간(90일)을 지나지 않아 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 63
+  }
+}

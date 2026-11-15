@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-033-B",
+  "scenario": "TS-033",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 85,\n  \"reason\": \"동일 담보(브릿지)에 대해 계약 연도 내에서 이미 지급된 건수가 3건으로 한도에 도달했습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 85,
+  "reason": "동일 담보(브릿지)에 대해 계약 연도 내에서 이미 지급된 건수가 3건으로 한도에 도달했습니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 63
+  }
+}

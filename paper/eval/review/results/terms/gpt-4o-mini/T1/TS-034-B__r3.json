@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-034-B",
+  "scenario": "TS-034",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"계약 후 730일 미만이므로 이미 지급된 건수가 3개 이상이어서 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "계약 후 730일 미만이므로 이미 지급된 건수가 3개 이상이어서 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 574,
+    "completion_tokens": 58
+  }
+}

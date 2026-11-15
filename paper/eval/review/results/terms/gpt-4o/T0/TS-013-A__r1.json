@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-A",
+  "scenario": "TS-013",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"pre_start\",\n  \"confidence\": 90,\n  \"reason\": \"영구치 발치일이 계약일로부터 1일째로 보장개시일 이전에 발치가 이루어져 보상 대상이 아닙니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "pre_start",
+  "confidence": 90,
+  "reason": "영구치 발치일이 계약일로부터 1일째로 보장개시일 이전에 발치가 이루어져 보상 대상이 아닙니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 69
+  }
+}

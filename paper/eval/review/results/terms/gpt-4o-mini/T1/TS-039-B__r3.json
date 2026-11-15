@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-039-B",
+  "scenario": "TS-039",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 95,\n  \"reason\": \"계약일로부터 199일이 지나야 질병으로 인한 크라운 치료비가 지급되지만 치료일 기준으로 계약 후 90일이 지나지 않아 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 95,
+  "reason": "계약일로부터 199일이 지나야 질병으로 인한 크라운 치료비가 지급되지만 치료일 기준으로 계약 후 90일이 지나지 않아 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 519,
+    "completion_tokens": 74
+  }
+}

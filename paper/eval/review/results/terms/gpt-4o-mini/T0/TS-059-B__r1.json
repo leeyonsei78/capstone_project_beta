@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-059-B",
+  "scenario": "TS-059",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 80,\n  \"reason\": \"보험 가입 후 면책 기간인 120일이 지나지 않아 청구가 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 80,
+  "reason": "보험 가입 후 면책 기간인 120일이 지나지 않아 청구가 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 298,
+    "completion_tokens": 53
+  }
+}

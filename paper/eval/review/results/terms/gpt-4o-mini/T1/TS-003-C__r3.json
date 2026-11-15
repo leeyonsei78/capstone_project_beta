@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-003-C",
+  "scenario": "TS-003",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"영구치 발치가 계약일로부터 768일째로 보장개시일 이전에 해당하여 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "영구치 발치가 계약일로부터 768일째로 보장개시일 이전에 해당하여 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 618,
+    "completion_tokens": 61
+  }
+}

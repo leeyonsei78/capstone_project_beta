@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-B",
+  "scenario": "TS-025",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"치료일은 계약일로부터 903일째로 감액기간 종료 후이며, 보장 연도 내 한도 초과 정보가 없으므로 지급 가능한 것으로 보입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "치료일은 계약일로부터 903일째로 감액기간 종료 후이며, 보장 연도 내 한도 초과 정보가 없으므로 지급 가능한 것으로 보입니다.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 70
+  }
+}

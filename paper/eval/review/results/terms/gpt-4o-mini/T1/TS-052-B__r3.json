@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-052-B",
+  "scenario": "TS-052",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 90,\n  \"reason\": \"브릿지 치료는 면책기간인 180일을 지나지 않아 지급이 불가합니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 90,
+  "reason": "브릿지 치료는 면책기간인 180일을 지나지 않아 지급이 불가합니다.",
+  "usage": {
+    "prompt_tokens": 570,
+    "completion_tokens": 54
+  }
+}

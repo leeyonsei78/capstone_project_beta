@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-059-C",
+  "scenario": "TS-059",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"waiting\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 90일이 지나야 질병 치료에 대한 보장이 이루어지므로 부지급입니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "계약일로부터 90일이 지나야 질병 치료에 대한 보장이 이루어지므로 부지급입니다.",
+  "usage": {
+    "prompt_tokens": 562,
+    "completion_tokens": 58
+  }
+}

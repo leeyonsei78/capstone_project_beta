@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-052-C",
+  "scenario": "TS-052",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{ \"decision\": \"부지급\", \"reason_code\": \"annual_cap\", \"confidence\": 90, \"reason\": \"같은 해에 브릿지 청구 건수가 이미 3건으로 계약 연간 한도를 초과하였습니다.\" }",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "같은 해에 브릿지 청구 건수가 이미 3건으로 계약 연간 한도를 초과하였습니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 54
+  }
+}

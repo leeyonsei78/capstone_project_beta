@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-040-A",
+  "scenario": "TS-040",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\"decision\": \"지급\", \"reason_code\": \"none\", \"confidence\": 90, \"reason\": \"발치일이 보장 개시 후이며 연간 개수 한도에 도달하지 않았습니다.\"}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "발치일이 보장 개시 후이며 연간 개수 한도에 도달하지 않았습니다.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 48
+  }
+}

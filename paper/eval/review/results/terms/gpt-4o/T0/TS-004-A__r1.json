@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-004-A",
+  "scenario": "TS-004",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n    \"decision\": \"지급\",\n    \"reason_code\": \"none\",\n    \"confidence\": 85,\n    \"reason\": \"계약일로부터 충분한 시간이 경과하였고, 이번 연도 보장 기간 동안 브릿지 최대 3건 이내 청구로 보장 내에 있기에 지급 가능함.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "계약일로부터 충분한 시간이 경과하였고, 이번 연도 보장 기간 동안 브릿지 최대 3건 이내 청구로 보장 내에 있기에 지급 가능함.",
+  "usage": {
+    "prompt_tokens": 362,
+    "completion_tokens": 73
+  }
+}

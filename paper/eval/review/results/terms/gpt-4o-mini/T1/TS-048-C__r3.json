@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-048-C",
+  "scenario": "TS-048",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"계약일로부터 1일째에 영구치를 발치하여 면책 기간 이전 발치로 지급이 제외됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "계약일로부터 1일째에 영구치를 발치하여 면책 기간 이전 발치로 지급이 제외됩니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 60
+  }
+}

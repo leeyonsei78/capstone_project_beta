@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-050-C",
+  "scenario": "TS-050",
+  "profile": "C",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"excluded_kind\",\n  \"confidence\": 100,\n  \"reason\": \"임플란트 치료에 해당하는 경우 면책 종료일 이전에 영구치를 발치했기 때문에 부지급됩니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "excluded_kind",
+  "confidence": 100,
+  "reason": "임플란트 치료에 해당하는 경우 면책 종료일 이전에 영구치를 발치했기 때문에 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 626,
+    "completion_tokens": 60
+  }
+}

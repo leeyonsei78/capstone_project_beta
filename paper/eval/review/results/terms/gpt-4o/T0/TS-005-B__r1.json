@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-005-B",
+  "scenario": "TS-005",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 85,\n  \"reason\": \"임플란트 보험 청구는 계약일로부터 296일째로 면책기간이 없음 및 같은 보험연도의 한도 초과가 발생하지 않습니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 85,
+  "reason": "임플란트 보험 청구는 계약일로부터 296일째로 면책기간이 없음 및 같은 보험연도의 한도 초과가 발생하지 않습니다.",
+  "usage": {
+    "prompt_tokens": 346,
+    "completion_tokens": 66
+  }
+}

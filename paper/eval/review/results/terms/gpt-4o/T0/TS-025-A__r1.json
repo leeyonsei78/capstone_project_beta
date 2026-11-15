@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-025-A",
+  "scenario": "TS-025",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 90,\n  \"reason\": \"치료일은 면책기간 이후이고 이번 연도의 지급 한도 내에 있어 문제 없음.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 90,
+  "reason": "치료일은 면책기간 이후이고 이번 연도의 지급 한도 내에 있어 문제 없음.",
+  "usage": {
+    "prompt_tokens": 360,
+    "completion_tokens": 51
+  }
+}

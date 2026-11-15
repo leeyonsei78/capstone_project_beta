@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-035-A",
+  "scenario": "TS-035",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"상해로 인해 보장 시작일 이후에 치료받았으며, 같은 담보의 청구가 없기 때문에 지급 가능.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "상해로 인해 보장 시작일 이후에 치료받았으며, 같은 담보의 청구가 없기 때문에 지급 가능.",
+  "usage": {
+    "prompt_tokens": 514,
+    "completion_tokens": 58
+  }
+}

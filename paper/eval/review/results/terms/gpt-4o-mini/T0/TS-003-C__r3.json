@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-003-C",
+  "scenario": "TS-003",
+  "profile": "C",
+  "cond": "T0",
+  "rep": 3,
+  "model": "gpt-4o-mini",
+  "expected": "부지급",
+  "raw": "{\n  \"decision\": \"부지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 90,\n  \"reason\": \"청구자가 계약 연도에 이미 같은 담보(브릿지)로 4건을 청구하여 개수 한도를 초과했습니다.\"\n}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 90,
+  "reason": "청구자가 계약 연도에 이미 같은 담보(브릿지)로 4건을 청구하여 개수 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 64
+  }
+}

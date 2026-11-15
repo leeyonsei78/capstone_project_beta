@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-031-A",
+  "scenario": "TS-031",
+  "profile": "A",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"annual_cap\",\n  \"confidence\": 80,\n  \"reason\": \"이번 계약연도에 이미 지급된 같은 담보 건수가 1건으로 확인되어 개수 한도 초과로 감액지급됩니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "annual_cap",
+  "confidence": 80,
+  "reason": "이번 계약연도에 이미 지급된 같은 담보 건수가 1건으로 확인되어 개수 한도 초과로 감액지급됩니다.",
+  "usage": {
+    "prompt_tokens": 354,
+    "completion_tokens": 65
+  }
+}

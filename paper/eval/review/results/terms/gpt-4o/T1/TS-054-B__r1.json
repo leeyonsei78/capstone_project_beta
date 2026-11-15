@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-054-B",
+  "scenario": "TS-054",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"waiting\", \"confidence\": 100, \"reason\": \"브릿지는 질병의 경우 180일의 면책기간이 지나야 보장되지만, 치료일이 계약일로부터 134일째이므로 면책기간에 해당하여 부지급합니다.\"}",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "브릿지는 질병의 경우 180일의 면책기간이 지나야 보장되지만, 치료일이 계약일로부터 134일째이므로 면책기간에 해당하여 부지급합니다.",
+  "usage": {
+    "prompt_tokens": 581,
+    "completion_tokens": 72
+  }
+}

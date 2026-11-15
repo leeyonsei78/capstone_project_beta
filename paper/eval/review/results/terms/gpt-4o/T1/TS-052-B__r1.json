@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-052-B",
+  "scenario": "TS-052",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{ \"decision\": \"부지급\", \"reason_code\": \"waiting\", \"confidence\": 100, \"reason\": \"브릿지 보장은 계약일로부터 180일의 면책기간이 있어, 아직 면책기간이 지나지 않았으므로 부지급됩니다.\" }",
+  "decision": "부지급",
+  "reason_code": "waiting",
+  "confidence": 100,
+  "reason": "브릿지 보장은 계약일로부터 180일의 면책기간이 있어, 아직 면책기간이 지나지 않았으므로 부지급됩니다.",
+  "usage": {
+    "prompt_tokens": 570,
+    "completion_tokens": 61
+  }
+}

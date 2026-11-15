@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-053-B",
+  "scenario": "TS-053",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 80,\n  \"reason\": \"발치와 치료일 모두 면책기간 이후이며 해당 연도 내 지급 건수도 한도를 초과하지 않는 것으로 보입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 80,
+  "reason": "발치와 치료일 모두 면책기간 이후이며 해당 연도 내 지급 건수도 한도를 초과하지 않는 것으로 보입니다.",
+  "usage": {
+    "prompt_tokens": 349,
+    "completion_tokens": 59
+  }
+}

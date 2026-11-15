@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-013-A",
+  "scenario": "TS-013",
+  "profile": "A",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o-mini",
+  "expected": "지급",
+  "raw": "{\n  \"decision\": \"지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 100,\n  \"reason\": \"이번 청구는 상해로 인한 치료로 면책 기간이 적용되지 않으며, 계약 후 29일째 치료를 받았기 때문에 지급 대상입니다.\"\n}",
+  "decision": "지급",
+  "reason_code": "none",
+  "confidence": 100,
+  "reason": "이번 청구는 상해로 인한 치료로 면책 기간이 적용되지 않으며, 계약 후 29일째 치료를 받았기 때문에 지급 대상입니다.",
+  "usage": {
+    "prompt_tokens": 529,
+    "completion_tokens": 66
+  }
+}

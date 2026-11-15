@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-022-B",
+  "scenario": "TS-022",
+  "profile": "B",
+  "cond": "T0",
+  "rep": 2,
+  "model": "gpt-4o-mini",
+  "expected": "감액지급",
+  "raw": "{\n  \"decision\": \"감액지급\",\n  \"reason_code\": \"none\",\n  \"confidence\": 70,\n  \"reason\": \"발치일로부터 1년이 경과했으므로 임플란트 치료비에 대해 감액 지급이 가능합니다.\"\n}",
+  "decision": "감액지급",
+  "reason_code": "none",
+  "confidence": 70,
+  "reason": "발치일로부터 1년이 경과했으므로 임플란트 치료비에 대해 감액 지급이 가능합니다.",
+  "usage": {
+    "prompt_tokens": 352,
+    "completion_tokens": 60
+  }
+}

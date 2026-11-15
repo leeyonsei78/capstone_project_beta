@@ -1,0 +1,18 @@
+{
+  "case_id": "TS-026-B",
+  "scenario": "TS-026",
+  "profile": "B",
+  "cond": "T1",
+  "rep": 1,
+  "model": "gpt-4o",
+  "expected": "부지급",
+  "raw": "{\"decision\": \"부지급\", \"reason_code\": \"annual_cap\", \"confidence\": 100, \"reason\": \"계약연도당 최대 3개의 임플란트만 지급되며, 이미 3건이 지급되어 한도를 초과했습니다.\"}",
+  "decision": "부지급",
+  "reason_code": "annual_cap",
+  "confidence": 100,
+  "reason": "계약연도당 최대 3개의 임플란트만 지급되며, 이미 3건이 지급되어 한도를 초과했습니다.",
+  "usage": {
+    "prompt_tokens": 577,
+    "completion_tokens": 58
+  }
+}
