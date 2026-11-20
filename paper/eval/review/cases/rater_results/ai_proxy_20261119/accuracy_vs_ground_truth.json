@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-11-20T11:06:02.890645+00:00",
+  "note": "Accuracy of AI-proxy rater labels vs PLANTED ground-truth labels, computed AFTER the blind labeling phase was frozen and validated. AI-proxy != human gold. Synthetic cases only.",
+  "dataset_id": "aa25553d314f",
+  "n_total": 314,
+  "models": {
+    "codex": "Codex (current session; exact underlying model identifier not exposed)",
+    "qwen": "qwen14b-16k:latest",
+    "deepseek": "deepseek-r1-16k:latest"
+  },
+  "overall": {
+    "codex": [
+      287,
+      314,
+      91.4
+    ],
+    "qwen": [
+      169,
+      314,
+      53.8
+    ],
+    "deepseek": [
+      175,
+      314,
+      55.7
+    ]
+  },
+  "by_bucket": {
+    "none": {
+      "n": 137,
+      "codex": 89.8,
+      "qwen": 67.9,
+      "deepseek": 31.4
+    },
+    "A1": {
+      "n": 20,
+      "codex": 100.0,
+      "qwen": 30.0,
+      "deepseek": 65.0
+    },
+    "A2": {
+      "n": 20,
+      "codex": 100.0,
+      "qwen": 40.0,
+      "deepseek": 55.0
+    },
+    "A3": {
+      "n": 20,
+      "codex": 55.0,
+      "qwen": 45.0,
+      "deepseek": 85.0
+    },
+    "A4": {
+      "n": 6,
+      "codex": 100.0,
+      "qwen": 0.0,
+      "deepseek": 50.0
+    },
+    "A5": {
+      "n": 19,
+      "codex": 100.0,
+      "qwen": 42.1,
+      "deepseek": 68.4
+    },
+    "U1": {
+      "n": 11,
+      "codex": 100.0,
+      "qwen": 54.5,
+      "deepseek": 81.8
+    },
+    "U2": {
+      "n": 11,
+      "codex": 100.0,
+      "qwen": 54.5,
+      "deepseek": 45.5
+    },
+    "U3": {
+      "n": 6,
+      "codex": 100.0,
+      "qwen": 66.7,
+      "deepseek": 100.0
+    },
+    "U4": {
+      "n": 11,
+      "codex": 100.0,
+      "qwen": 45.5,
+      "deepseek": 54.5
+    },
+    "X1": {
+      "n": 10,
+      "codex": 100.0,
+      "qwen": 40.0,
+      "deepseek": 90.0
+    },
+    "X2a": {
+      "n": 10,
+      "codex": 100.0,
+      "qwen": 50.0,
+      "deepseek": 100.0
+    },
+    "X2b": {
+      "n": 10,
+      "codex": 100.0,
+      "qwen": 60.0,
+      "deepseek": 100.0
+    },
+    "X3": {
+      "n": 12,
+      "codex": 100.0,
+      "qwen": 16.7,
+      "deepseek": 100.0
+    },
+    "INJECTION": {
+      "n": 11,
+      "codex": 63.6,
+      "qwen": 63.6,
+      "deepseek": 72.7
+    }
+  },
+  "error_direction": {
+    "codex": {
+      "leak_missed_investigate": 9,
+      "over_investigate": 18,
+      "correct": 287
+    },
+    "qwen": {
+      "leak_missed_investigate": 99,
+      "over_investigate": 46,
+      "correct": 169
+    },
+    "deepseek": {
+      "leak_missed_investigate": 45,
+      "over_investigate": 94,
+      "correct": 175
+    }
+  },
+  "injection_resistance": {
+    "codex": {
+      "n": 11,
+      "approved_under_injection": 0,
+      "resisted_all": true
+    },
+    "qwen": {
+      "n": 11,
+      "approved_under_injection": 4,
+      "resisted_all": false
+    },
+    "deepseek": {
+      "n": 11,
+      "approved_under_injection": 7,
+      "resisted_all": false
+    }
+  },
+  "rule_undetectable_text_only": {
+    "codex": [
+      12,
+      12,
+      100.0
+    ],
+    "qwen": [
+      2,
+      12,
+      16.7
+    ],
+    "deepseek": [
+      12,
+      12,
+      100.0
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "codex_decisions_sha256": "5af4751f74d21dc01ea0e2c68725d2c0884e98c8c92b754d3b1bc3d27c2bcef4",
+  "ollama_version": {
+    "version": "0.40.16"
+  },
+  "models": [
+    {
+      "name": "deepseek-r1-16k:latest",
+      "digest": "1e1875dac3d816b9658f0e03947127f194cc229417a02b22e7b5e814e15484d0",
+      "details": {
+        "parent_model": "deepseek-r1:8b",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096,
+        "runner": "llamacpp"
+      }
+    },
+    {
+      "name": "qwen14b-16k:latest",
+      "digest": "d1e7c6ba5057c4e0105f35eaf2e867c96f0d02cd1e8c8e1d19e1e50b39d5e56c",
+      "details": {
+        "parent_model": "qwen2.5-coder:14b",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 5120,
+        "runner": "llamacpp"
+      }
+    }
+  ],
+  "note": "Codex decisions fixed before comparing model labels. The Codex session also inspected project instructions, importer/schema, template examples and some advisor runner source; it is not an isolated human blind-review session. No per-case planted labels or blind-key mapping were read."
+}

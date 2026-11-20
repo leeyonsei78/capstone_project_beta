@@ -1,0 +1,39 @@
+{
+  "request": {
+    "model": "qwen14b-16k:latest",
+    "stream": false,
+    "think": false,
+    "format": "json",
+    "keep_alive": "30m",
+    "options": {
+      "temperature": 0,
+      "seed": 20261119,
+      "num_ctx": 4096,
+      "num_predict": 2400
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "보험 심사 실험에 대한 AI 대리 검토 의견을 작성하세요. 사람 전문가 경력이나 실증값을 주장하지 마세요.\n다른 심사자 의견과 생성 정답은 제공되지 않습니다. 한국어로 간결하게 JSON 객체만 반환하세요.\nassumptions_review 객체의 키는 review_cost_15, loss_fraction_1, prevalence_003, small_share_085, required_company_data, sensitivity_plan 입니다.\n각 값은 검토 의견 한 문장입니다. 가정은 건당 사람 검토비용 $15, 부적정 지급 손실비율 1.0, 이상청구 비율 3%, 한도대비 20% 이하 소액청구 비중 85%입니다. 모두 자리표시 값입니다. 실제 회사 수치는 없으며 만들어내면 안 됩니다.\nrealism_review: 합성 사례가 외부 타당성을 갖추려면 필요한 검증을 한 문장.\nlimitations: AI 심사와 인간 전문가 검증의 차이를 한 문장.\nauthored: 완전히 새로 만든 가상 사례 두 개(청구 하나, 청약 하나) 배열. 가상 약관을 스스로 명시하여 판정 가능한 사례를 만드세요. 실제 사건으로 주장하지 마세요.\n각 사례의 키: n(1 또는 2), type(claim 또는 app), contract(상품·담보·한도·가입 경과), facts(이번 건 사실), narrative(3문장 이내), clause(가상 약관), history(치료이력 또는 고지 답변), label(approve 또는 investigate), action(지급/보완요청/계약인수 등), rationale(판단근거), why_rules_fail(금액·건수 규칙으로 판단 못하는 이유), evidence_level(narrative 또는 detail), difficulty(1~5 정수), realism(1~5 정수), provenance(반드시 fictional), seconds(null).\n최소한 하나는 investigate로 하세요. 한 항목마다 짧게 쓰되 정보가 서로 모순되지 않게 하세요."
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen14b-16k:latest",
+    "created_at": "2026-11-19T10:59:21.5157402Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"assumptions_review\": {\n    \"review_cost_15\": \"AI 검토 비용이 $15로 가정됩니다.\",\n    \"loss_fraction_1\": \"부적정 지급 손실비율이 1.0으로 가정됩니다.\",\n    \"prevalence_003\": \"이상청구 비율이 3%로 가정됩니다.\",\n    \"small_share_085\": \"한도대비 20% 이하 소액청구 비중이 85%로 가정됩니다.\",\n    \"required_company_data\": \"회사 데이터가 필요합니다.\",\n    \"sensitivity_plan\": \"민감성 계획이 필요합니다.\"\n  },\n  \"realism_review\": \"AI가 합성 사례를 외부 타당성을 갖추려면 실제 데이터와 비교 검증이 필요합니다.\",\n  \"limitations\": \"AI 심사의 정확성은 인간 전문가 검증과 비교하여 차이가 있을 수 있습니다.\",\n  \"authored\": [\n    {\n      \"n\": 1,\n      \"type\": \"claim\",\n      \"contract\": \"자동차 보험, 100만원 한도, 1년 가입\",\n      \"facts\": \"사고 발생, 손상 금액 50만원\",\n      \"narrative\": \"고객이 자동차를 운전 중에 사고를 입었습니다. 손상 금액은 50만원입니다.\",\n      \"clause\": \"손상 금액이 100만원 이하인 경우, 해당 금액을 보상합니다.\",\n      \"history\": \"고객의 운전 기록은 정상적입니다.\",\n      \"label\": \"approve\",\n      \"action\": \"지급\",\n      \"rationale\": \"약관에 따라 손상 금액을 보상할 수 있습니다.\",\n      \"why_rules_fail\": \"규칙에 위배되지 않습니다.\",\n      \"evidence_level\": \"detail\",\n      \"difficulty\": 2,\n      \"realism\": 3,\n      \"provenance\": \"fictional\",\n      \"seconds\": null\n    },\n    {\n      \"n\": 2,\n      \"type\": \"app\",\n      \"contract\": \"건강 보험, 500만원 한도, 2년 가입\",\n      \"facts\": \"고객이 건강검진을 받았으며, 정상적인 결과를 받았습니다.\",\n      \"narrative\": \"고객이 정기적인 건강검진을 받았고, 검진 결과는 정상적입니다.\",\n      \"clause\": \"정기적인 건강검진을 받은 고객에게는 보험 혜택을 제공합니다.\",\n      \"history\": \"고객의 건강 기록은 정상적입니다.\",\n      \"label\": \"investigate\",\n      \"action\": \"보완요청\",\n      \"rationale\": \"약관에 따라 보험 혜택을 제공할 수 있지만, 추가 검증이 필요합니다.\",\n      \"why_rules_fail\": \"규칙에 위배되지 않습니다.\",\n      \"evidence_level\": \"detail\",\n      \"difficulty\": 3,\n      \"realism\": 4,\n      \"provenance\": \"fictional\",\n      \"seconds\": null\n    }\n  ]\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 320718544300,
+    "load_duration": 12740800,
+    "prompt_eval_count": 512,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 3568269000,
+    "eval_count": 718,
+    "eval_duration": 251997152000
+  },
+  "elapsed_seconds": 320.80734070000017
+}

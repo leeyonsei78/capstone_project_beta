@@ -1,0 +1,58 @@
+{
+  "resumed_at": "2026-11-19T20:53:35.336990+00:00",
+  "models": [
+    {
+      "name": "deepseek-r1-16k:latest",
+      "model": "deepseek-r1-16k:latest",
+      "modified_at": "2026-11-17T21:35:11.9245668+09:00",
+      "size": 5225375691,
+      "digest": "1e1875dac3d816b9658f0e03947127f194cc229417a02b22e7b5e814e15484d0",
+      "details": {
+        "parent_model": "deepseek-r1:8b",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 4096,
+        "runner": "llamacpp"
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "completion"
+      ]
+    },
+    {
+      "name": "qwen14b-16k:latest",
+      "model": "qwen14b-16k:latest",
+      "modified_at": "2026-11-06T22:59:44.6865177+09:00",
+      "size": 8988123962,
+      "digest": "d1e7c6ba5057c4e0105f35eaf2e867c96f0d02cd1e8c8e1d19e1e50b39d5e56c",
+      "details": {
+        "parent_model": "qwen2.5-coder:14b",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 5120,
+        "runner": "llamacpp"
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "insert"
+      ]
+    }
+  ],
+  "same_model_digests_as_original": true,
+  "original_checkpoints": "resume_20261120/",
+  "plan": "Reuse validated saved batches; replace archived Qwen pilot batches with final settings; run DeepSeek independently; no human-label import."
+}

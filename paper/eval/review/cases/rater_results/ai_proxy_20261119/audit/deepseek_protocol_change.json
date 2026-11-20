@@ -1,0 +1,9 @@
+{
+  "changed_at": "2026-11-19T21:52:13.982461+00:00",
+  "reason": "DeepSeek /api/chat emitted thinking despite think=false (1260 tokens, 450.05 seconds for first ten cases).",
+  "pilot_archive": "deepseek/pilot_chat_think_false/",
+  "final_protocol": "DeepSeek: /api/generate; native prompt prefilled with </think>; JSON Schema keyed by all supplied case IDs enforces one label per ID and structured label/realism/memo fields. Original Ollama response and exact wire request preserved. Same protocol for all 314 labeled cases.",
+  "all_deepseek_cases_use_new_protocol": true,
+  "human_decision_times": "unmeasured; null",
+  "supplement_protocol": "The same /api/generate transport and closing-thought prefill were used for DeepSeek supplementary opinions."
+}

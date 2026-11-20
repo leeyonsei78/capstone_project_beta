@@ -1,0 +1,50 @@
+{
+  "validated_at": "2026-11-20T11:03:15.220966+00:00",
+  "dataset_id": "aa25553d314f",
+  "inputs_sha256": {
+    "review_blind.html": "617eb798909c97777f4c91bca8e92412695aa396260d7a11a09d788d4e39e82f",
+    "review_claims_blind.csv": "6841518ea86eb91c90e3b645d34f460bfbe6989c509440ba609bf6aa1f4255e4",
+    "review_apps_blind.csv": "6ce374d4991e6fccd2f03549f39e84f2d181ca5927cbbae4f577aa5485b98b1d",
+    "review_claims_complex_blind.csv": "7fd345a6413f1fb9b240f938f91f0d2d1cea69846cec5f371559320f6562c717"
+  },
+  "human_expert_validation": false,
+  "raters": {
+    "codex": {
+      "labels": 314,
+      "counts": {
+        "approve": 132,
+        "investigate": 182
+      },
+      "fictional_cases": 2,
+      "previous_final_labels_preserved": 314,
+      "pilot_labels_replaced": 0
+    },
+    "qwen": {
+      "labels": 314,
+      "counts": {
+        "approve": 194,
+        "investigate": 120
+      },
+      "fictional_cases": 2,
+      "previous_final_labels_preserved": 180,
+      "pilot_labels_replaced": 20,
+      "raw_batches_verified": 32,
+      "final_prompt_consistent": true
+    },
+    "deepseek": {
+      "labels": 314,
+      "counts": {
+        "approve": 92,
+        "investigate": 222
+      },
+      "fictional_cases": 2,
+      "raw_batches_verified": 32,
+      "final_prompt_consistent": true
+    }
+  },
+  "total_labels": 942,
+  "unanimous": 98,
+  "disagreements": 216,
+  "status": "passed",
+  "scope": "Completeness, schema and provenance only; not correctness or external validity."
+}

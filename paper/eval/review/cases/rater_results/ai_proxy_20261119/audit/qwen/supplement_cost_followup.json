@@ -1,0 +1,39 @@
+{
+  "request": {
+    "model": "qwen14b-16k:latest",
+    "stream": false,
+    "think": false,
+    "format": "json",
+    "keep_alive": "30m",
+    "options": {
+      "temperature": 0,
+      "seed": 20261119,
+      "num_ctx": 4096,
+      "num_predict": 1800
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "보험 실험의 비용 가정을 검토하는 AI입니다. 사람 전문가로 행세하지 마세요.\n정정: 건당 $15는 AI 호출비가 아니라 사람이 청구 1건을 검토하는 비용입니다.\n다음 값은 전부 실증자료가 없는 자리표시입니다: 사람 검토비용 $15, 잘못 지급한 금액의 손실비율 1.0, 이상청구 비율 3%, 한도대비 20% 이하 소액청구 비중 85%.\n단순히 값을 반복하거나 '검토가 필요하다'라고 끝내지 마세요. 각 가정에 대해 (1) 무엇을 가정하는지 (2) 이 가정이 틀릴 수 있는 구체적 이유 (3) 검증에 필요한 회사 데이터를 한두 문장으로 쓰세요.\nJSON 키는 review_cost_15, loss_fraction_1, prevalence_003, small_share_085, required_company_data, sensitivity_plan 입니다. 값은 한국어 문자열입니다.\nsensitivity_plan에는 여러 가정을 동시에 변화시키는 구체적 분석 방법을 제안하되 실제 수치를 추정하지 마세요. required_company_data는 수집할 구체적 열을 열거하세요. JSON만 출력하세요."
+      }
+    ]
+  },
+  "response": {
+    "model": "qwen14b-16k:latest",
+    "created_at": "2026-11-19T11:04:05.3481586Z",
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"review_cost_15\": \"사람이 청구 1건을 검토하는 비용을 $15로 가정합니다.\",\n  \"loss_fraction_1\": \"잘못 지급한 금액의 손실비율이 1.0으로 가정합니다.\",\n  \"prevalence_003\": \"이상청구 비율이 3%로 가정합니다.\",\n  \"small_share_085\": \"한도대비 20% 이하 소액청구 비중이 85%로 가정합니다.\",\n  \"required_company_data\": \"사람 검토비용, 잘못 지급한 금액의 손실비율, 이상청구 비율, 한도대비 20% 이하 소액청구 비중에 대한 실제 데이터를 수집해야 합니다.\",\n  \"sensitivity_plan\": \"다음 가정들을 동시에 변화시키는 분석 방법을 제안합니다: 사람 검토비용을 증감시키면서 잘못 지급한 금액의 손실비율과 이상청구 비율을 고정한 상태에서 전체 비용의 변화를 관찰합니다. 또한, 이상청구 비율을 증감시키면서 사람 검토비용과 잘못 지급한 금액의 손실비율을 고정한 상태에서 전체 비용의 변화를 관찰합니다. 마지막으로, 한도대비 20% 이하 소액청구 비중을 증감시키면서 사람 검토비용과 잘못 지급한 금액의 손실비율, 이상청구 비율을 고정한 상태에서 전체 비용의 변화를 관찰합니다.\"\n}"
+    },
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 153345672100,
+    "load_duration": 11905600,
+    "prompt_eval_count": 330,
+    "prompt_eval_cached_count": 3,
+    "prompt_eval_duration": 1163677000,
+    "eval_count": 369,
+    "eval_duration": 101799715000
+  },
+  "elapsed_seconds": 153.42840590000014
+}

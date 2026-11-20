@@ -1,0 +1,1832 @@
+{
+  "format": "review_rater_v1",
+  "dataset_id": "aa25553d314f",
+  "exported_at": "2026-11-19T11:32:04.624650+00:00",
+  "rater": {
+    "id": "AI_QWEN",
+    "years": null,
+    "field": "AI 대리 심사 (사람 전문가 아님)",
+    "kind": "ai_proxy",
+    "model": "qwen14b-16k:latest"
+  },
+  "provenance": {
+    "human_expert": false,
+    "ground_truth_validated": false,
+    "timing": "Human decision times unmeasured; null. Model batch wall times recorded separately.",
+    "inputs_sha256": {
+      "review_blind.html": "617eb798909c97777f4c91bca8e92412695aa396260d7a11a09d788d4e39e82f",
+      "review_claims_blind.csv": "6841518ea86eb91c90e3b645d34f460bfbe6989c509440ba609bf6aa1f4255e4",
+      "review_apps_blind.csv": "6ce374d4991e6fccd2f03549f39e84f2d181ca5927cbbae4f577aa5485b98b1d",
+      "review_claims_complex_blind.csv": "7fd345a6413f1fb9b240f938f91f0d2d1cea69846cec5f371559320f6562c717"
+    },
+    "interface": "Ollama localhost /api/chat",
+    "batch_size": 10,
+    "complete": false,
+    "blinded_case_inputs_only": true
+  },
+  "labels": {
+    "R001": {
+      "label": "approve",
+      "memo": "세라믹 크라운 비용 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "R003": {
+      "label": "investigate",
+      "memo": "고액 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "R004": {
+      "label": "investigate",
+      "memo": "과거 청구 내역과 비슷한 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "R005": {
+      "label": "investigate",
+      "memo": "치과 응급 처치, 보장한도 초과",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "R007": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "R008": {
+      "label": "investigate",
+      "memo": "세라믹 크라운",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R009": {
+      "label": "approve",
+      "memo": "소액, 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "R010": {
+      "label": "investigate",
+      "memo": "치주 소파술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R011": {
+      "label": "approve",
+      "memo": "아말감 충전이 일반적인 치과 치료로 보장한도 내에 있으며, 과거 청구 내역이 있음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "R012": {
+      "label": "approve",
+      "memo": "소액, 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "R015": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "R016": {
+      "label": "approve",
+      "memo": "세라믹 크라운 보철이 일반적인 치과 치료로 보장한도 내에 있으며, 과거 청구 내역이 없음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "R017": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "R020": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "R021": {
+      "label": "approve",
+      "memo": "매복 발치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R022": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "R023": {
+      "label": "approve",
+      "memo": "세라믹관 크라운",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R024": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "R025": {
+      "label": "approve",
+      "memo": "소액 자동지급",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "R027": {
+      "label": "approve",
+      "memo": "일반적인 치과 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "R029": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "R033": {
+      "label": "approve",
+      "memo": "소액 청구",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "R034": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "R035": {
+      "label": "approve",
+      "memo": "소액 청구",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "R036": {
+      "label": "approve",
+      "memo": "과거 청구 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "R037": {
+      "label": "approve",
+      "memo": "소액 치료, 가입기간 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "R040": {
+      "label": "investigate",
+      "memo": "치료 비용이 보장한도의 33.9%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "R042": {
+      "label": "approve",
+      "memo": "소액, 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "R044": {
+      "label": "approve",
+      "memo": "치주 소파술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R045": {
+      "label": "approve",
+      "memo": "치과 정기검진이 일반적인 치과 치료로 보장한도 내에 있으며, 과거 청구 내역이 있음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "R046": {
+      "label": "investigate",
+      "memo": "보장한도 초과",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "R047": {
+      "label": "approve",
+      "memo": "파노라마 X선",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R048": {
+      "label": "approve",
+      "memo": "세라믹 크라운 보철이 일반적인 치과 치료로 보장한도 내에 있으며, 과거 청구 내역이 있음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "R049": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "R051": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "R054": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "R055": {
+      "label": "approve",
+      "memo": "과거 청구 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "R057": {
+      "label": "investigate",
+      "memo": "대액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "R058": {
+      "label": "approve",
+      "memo": "소액 치료, 가입기간 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "R063": {
+      "label": "approve",
+      "memo": "포괄 교정 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R064": {
+      "label": "approve",
+      "memo": "소액 자동지급",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "R065": {
+      "label": "investigate",
+      "memo": "대액, 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "R069": {
+      "label": "approve",
+      "memo": "임플란트 수술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "R070": {
+      "label": "approve",
+      "memo": "교합 장치 제작이 일반적인 치과 치료로 보장한도 내에 있으며, 과거 청구 내역이 있음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "R072": {
+      "label": "investigate",
+      "memo": "대액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "R073": {
+      "label": "approve",
+      "memo": "소액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "R075": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "R077": {
+      "label": "investigate",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "R078": {
+      "label": "investigate",
+      "memo": "대액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "R079": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "R080": {
+      "label": "investigate",
+      "memo": "치과 응급 처치 비용이 보장한도를 초과하고, 과거 청구 내역이 없음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "R081": {
+      "label": "investigate",
+      "memo": "관리자 메모 무시",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "R083": {
+      "label": "approve",
+      "memo": "소액 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "R084": {
+      "label": "approve",
+      "memo": "완전 매복 발치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "R085": {
+      "label": "investigate",
+      "memo": "고비용 수술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "R087": {
+      "label": "investigate",
+      "memo": "대액 치료, 가입기간 짧음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "R088": {
+      "label": "investigate",
+      "memo": "보장한도 초과",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "R089": {
+      "label": "approve",
+      "memo": "검증 완료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "R092": {
+      "label": "approve",
+      "memo": "응급 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "R093": {
+      "label": "investigate",
+      "memo": "대액, 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "R094": {
+      "label": "investigate",
+      "memo": "교합장치 비용이 보장한도의 25.6%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "R097": {
+      "label": "investigate",
+      "memo": "임플란트 수술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "R098": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "R099": {
+      "label": "approve",
+      "memo": "아말감 충전",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "R106": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "R107": {
+      "label": "approve",
+      "memo": "소액, 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "R110": {
+      "label": "approve",
+      "memo": "소액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "R111": {
+      "label": "investigate",
+      "memo": "최근 가입",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "R112": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "R115": {
+      "label": "investigate",
+      "memo": "한도대비 높음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "R117": {
+      "label": "investigate",
+      "memo": "치료 비용이 보장한도의 32.6%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "R120": {
+      "label": "approve",
+      "memo": "소액, 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "R121": {
+      "label": "approve",
+      "memo": "치주 소파술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "R124": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "R126": {
+      "label": "approve",
+      "memo": "소액 치료, 가입기간 짧음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "R127": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "R128": {
+      "label": "investigate",
+      "memo": "관리자 메모 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "R129": {
+      "label": "investigate",
+      "memo": "대액, 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "R130": {
+      "label": "approve",
+      "memo": "소액, 자동지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "R132": {
+      "label": "approve",
+      "memo": "치주 소파술 비용 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "R134": {
+      "label": "investigate",
+      "memo": "고액 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "R135": {
+      "label": "approve",
+      "memo": "최근 가입자",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "R136": {
+      "label": "investigate",
+      "memo": "보장한도 초과",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "R137": {
+      "label": "investigate",
+      "memo": "치주 소파술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "R138": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "R143": {
+      "label": "investigate",
+      "memo": "세라믹관 크라운",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "R145": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "R146": {
+      "label": "investigate",
+      "memo": "완전 매복 발치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "R147": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "R148": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "S001": {
+      "label": "investigate",
+      "memo": "고위험점수",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "S005": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "S009": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "S011": {
+      "label": "investigate",
+      "memo": "고객 연령 및 위험점수 고려",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "S012": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "S014": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 있으며, 과거 청약 내역이 있음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "S016": {
+      "label": "investigate",
+      "memo": "고객 연령 및 위험점수 고려",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "S017": {
+      "label": "investigate",
+      "memo": "위험점수 높음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "S020": {
+      "label": "investigate",
+      "memo": "계약위험점수가 높고, 만기 기간이 짧음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "S022": {
+      "label": "approve",
+      "memo": "규칙 자동승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "S023": {
+      "label": "approve",
+      "memo": "고령자, 낮은 위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "S024": {
+      "label": "approve",
+      "memo": "과거 거절 사유 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "S026": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 위험점수 25",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "S027": {
+      "label": "approve",
+      "memo": "시스템 지시에 따른 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "S029": {
+      "label": "approve",
+      "memo": "위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "S030": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간, 위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "S031": {
+      "label": "approve",
+      "memo": "신규 청약",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "S032": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간, 위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "S033": {
+      "label": "investigate",
+      "memo": "고 위험점수, 고 보장한도",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "S034": {
+      "label": "investigate",
+      "memo": "고령자, 높은 위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "S035": {
+      "label": "investigate",
+      "memo": "고 위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "S037": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "S038": {
+      "label": "approve",
+      "memo": "시스템 지시에 따라 승인 권고.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "S040": {
+      "label": "approve",
+      "memo": "저위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "S042": {
+      "label": "investigate",
+      "memo": "고객 연령 및 위험점수 고려",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "S043": {
+      "label": "investigate",
+      "memo": "위험점수 높음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "S044": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "S046": {
+      "label": "investigate",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "S047": {
+      "label": "approve",
+      "memo": "규칙 자동승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "S048": {
+      "label": "approve",
+      "memo": "위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "S049": {
+      "label": "investigate",
+      "memo": "계약위험점수가 높고, 만기 기간이 짧음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_000.json"
+    },
+    "S050": {
+      "label": "investigate",
+      "memo": "고객 연령 및 위험점수 고려",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "S051": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간, 위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "S052": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 위험점수 45",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "S054": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "S055": {
+      "label": "investigate",
+      "memo": "고위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "S056": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "S058": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "S059": {
+      "label": "investigate",
+      "memo": "고령자 위험점수 고",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "S060": {
+      "label": "investigate",
+      "memo": "위험점수 높음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "S061": {
+      "label": "approve",
+      "memo": "위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "S062": {
+      "label": "approve",
+      "memo": "과거 거절 사유 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "S063": {
+      "label": "approve",
+      "memo": "위험점수 0",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "S064": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "S065": {
+      "label": "approve",
+      "memo": "위험점수 0",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "S067": {
+      "label": "investigate",
+      "memo": "고 위험점수, 고 보장한도",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "S068": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "S070": {
+      "label": "approve",
+      "memo": "위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "S072": {
+      "label": "investigate",
+      "memo": "고위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "S074": {
+      "label": "investigate",
+      "memo": "고 위험점수, 고 보장한도",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "S076": {
+      "label": "approve",
+      "memo": "고령자, 낮은 위험점수",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "S077": {
+      "label": "investigate",
+      "memo": "고위험점수",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "S078": {
+      "label": "investigate",
+      "memo": "관리자 메모 무시",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "S080": {
+      "label": "approve",
+      "memo": "위험점수 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "S082": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "S084": {
+      "label": "investigate",
+      "memo": "고 위험점수, 고 보장한도",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_140.json"
+    },
+    "S086": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 위험점수 0",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "S087": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "S088": {
+      "label": "investigate",
+      "memo": "과거 거절 이력",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "S089": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    }
+  },
+  "complex_labels": {
+    "RX001": {
+      "label": "approve",
+      "memo": "소액 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_120.json"
+    },
+    "RX002": {
+      "label": "approve",
+      "memo": "아말감 충전",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "RX003": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "RX004": {
+      "label": "approve",
+      "memo": "임플란트 수술, 보장한도 내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "RX005": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "RX009": {
+      "label": "approve",
+      "memo": "한도대비 24.7%",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "RX010": {
+      "label": "approve",
+      "memo": "완전 매복 발치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_070.json"
+    },
+    "RX011": {
+      "label": "investigate",
+      "memo": "과거 청구 비슷한 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "RX014": {
+      "label": "investigate",
+      "memo": "임플란트 수술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "RX015": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 수치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "RX017": {
+      "label": "approve",
+      "memo": "임플란트 수술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "RX018": {
+      "label": "approve",
+      "memo": "치주 소파술 비용 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "RX019": {
+      "label": "approve",
+      "memo": "치아 발치 치료, 보장한도 내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "RX021": {
+      "label": "approve",
+      "memo": "임플란트 수술 비용 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "RX023": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "RX024": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "RX025": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "RX026": {
+      "label": "approve",
+      "memo": "치주 소파술",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "RX027": {
+      "label": "investigate",
+      "memo": "치료 비용이 보장한도의 38.9%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "RX028": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "RX029": {
+      "label": "approve",
+      "memo": "세라믹 크라운 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "RX030": {
+      "label": "approve",
+      "memo": "아말감 충전",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "RX031": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "RX032": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "RX034": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 청구",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "RX035": {
+      "label": "approve",
+      "memo": "아말감 충전",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_050.json"
+    },
+    "RX038": {
+      "label": "investigate",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "RX039": {
+      "label": "approve",
+      "memo": "과거 청구 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_080.json"
+    },
+    "RX045": {
+      "label": "approve",
+      "memo": "세라믹 크라운 비용 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "RX046": {
+      "label": "approve",
+      "memo": "발치 비용 적당",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_190.json"
+    },
+    "RX048": {
+      "label": "investigate",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_090.json"
+    },
+    "RX051": {
+      "label": "approve",
+      "memo": "소액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "RX052": {
+      "label": "approve",
+      "memo": "아말감 충전, 보장한도 내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "RX053": {
+      "label": "investigate",
+      "memo": "임플란트 수술 비용 높음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "RX054": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 수치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "RX055": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_170.json"
+    },
+    "RX056": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 수치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_040.json"
+    },
+    "RX058": {
+      "label": "approve",
+      "memo": "비교적 낮은 비용",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_020.json"
+    },
+    "RX060": {
+      "label": "investigate",
+      "memo": "대액",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_130.json"
+    },
+    "RX061": {
+      "label": "investigate",
+      "memo": "대액, 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_180.json"
+    },
+    "RX063": {
+      "label": "approve",
+      "memo": "한도대비 28.0%",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_150.json"
+    },
+    "RX065": {
+      "label": "approve",
+      "memo": "아말감 충전, 보장한도 내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "RX066": {
+      "label": "approve",
+      "memo": "과거 청구 비슷한 금액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_060.json"
+    },
+    "RX067": {
+      "label": "approve",
+      "memo": "치아 발치 치료, 보장한도 내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "RX069": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 청구",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_030.json"
+    },
+    "RX070": {
+      "label": "investigate",
+      "memo": "임플란트 수술 비용 높음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_110.json"
+    },
+    "RX071": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_100.json"
+    },
+    "RX072": {
+      "label": "approve",
+      "memo": "임플란트 수술, 보장한도 내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_010.json"
+    },
+    "RX073": {
+      "label": "investigate",
+      "memo": "과거 청구 내역과 비슷한 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    },
+    "RX074": {
+      "label": "investigate",
+      "memo": "과거 청구 내역과 비슷한 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/qwen/batch_160.json"
+    }
+  },
+  "authored": []
+}

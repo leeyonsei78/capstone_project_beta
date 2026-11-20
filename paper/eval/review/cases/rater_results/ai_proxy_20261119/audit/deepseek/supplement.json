@@ -1,0 +1,58 @@
+{
+  "request": {
+    "model": "deepseek-r1-16k:latest",
+    "stream": false,
+    "think": false,
+    "format": "json",
+    "keep_alive": "30m",
+    "options": {
+      "temperature": 0,
+      "seed": 20261119,
+      "num_ctx": 4096,
+      "num_predict": 2400
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "보험 심사 실험에 대한 AI 대리 검토 의견을 작성하세요. 사람 전문가 경력이나 실증값을 주장하지 마세요.\n다른 심사자 의견과 생성 정답은 제공되지 않습니다. 한국어로 간결하게 JSON 객체만 반환하세요.\nassumptions_review 객체의 키는 review_cost_15, loss_fraction_1, prevalence_003, small_share_085, required_company_data, sensitivity_plan 입니다.\n각 값은 검토 의견 한 문장입니다. 가정은 건당 사람 검토비용 $15, 부적정 지급 손실비율 1.0, 이상청구 비율 3%, 한도대비 20% 이하 소액청구 비중 85%입니다. 모두 자리표시 값입니다. 실제 회사 수치는 없으며 만들어내면 안 됩니다.\nrealism_review: 합성 사례가 외부 타당성을 갖추려면 필요한 검증을 한 문장.\nlimitations: AI 심사와 인간 전문가 검증의 차이를 한 문장.\nauthored: 완전히 새로 만든 가상 사례 두 개(청구 하나, 청약 하나) 배열. 가상 약관을 스스로 명시하여 판정 가능한 사례를 만드세요. 실제 사건으로 주장하지 마세요.\n각 사례의 키: n(1 또는 2), type(claim 또는 app), contract(상품·담보·한도·가입 경과), facts(이번 건 사실), narrative(3문장 이내), clause(가상 약관), history(치료이력 또는 고지 답변), label(approve 또는 investigate), action(지급/보완요청/계약인수 등), rationale(판단근거), why_rules_fail(금액·건수 규칙으로 판단 못하는 이유), evidence_level(narrative 또는 detail), difficulty(1~5 정수), realism(1~5 정수), provenance(반드시 fictional), seconds(null).\n최소한 하나는 investigate로 하세요. 한 항목마다 짧게 쓰되 정보가 서로 모순되지 않게 하세요."
+      }
+    ]
+  },
+  "response": {
+    "model": "deepseek-r1-16k:latest",
+    "created_at": "2026-11-20T10:26:37.6411493Z",
+    "response": "{\n  \"assumptions_review\": {\n    \"review_cost_15\": \"건당 $15로 AI 심사를 수행하면 비용 효율적이지만, 복잡한 사례는 인력 검토보다 오류율이 높을 수 있습니다.\",\n    \"loss_fraction_1\": \"부적정 지급 손실비율 1.0은 매우 낮은 수준으로, AI 모델이 이 비율을 유지하려면 극히 정밀한 심사 알고리즘이 필요합니다.\",\n    \"prevalence_003\": \"이상청구 비율 3%는 낮지만, AI가 이를 감지하기 위해 학습 데이터에 이상 사례를 충분히 포함시켜야 합니다.\",\n    \"small_share_0085\": \"한도대비 소액청구 비중 85%는 건수가 많을 때 적합하지만, AI가 소액청구 패턴을 완전히 파악하기에는 제한적입니다.\",\n    \"required_company_data\": \"회사 데이터가 필요하지만, AI 심사는 자체 학습 데이터로 충분히 대체 가능하여 외부 데이터 의존도를 줄일 수 있습니다.\",\n    \"sensitivity_plan\": \"감도 계획이 필요하지만, AI 모델은 지속적인 피드백 루프를 통해 자연스럽게 조정될 수 있습니다.\"\n  },\n  \"realism_review\": \"합성 사례는 외부 타당성을 위해 실제 회사 데이터와의 일치도를 검증해야 합니다.\",\n  \"limitations\": \"AI 심사는 인간 전문가의 직觉적 판단보다 규칙 기반으로 한정적이며, 모델의 일반화 능력에 의존합니다.\",\n  \"authored\": [\n    {\n      \"n\": 1,\n      \"type\": \"claim\",\n      \"contract\": \"건강보험, 암 치료비, 500만 원 한도\",\n      \"facts\": \"고객이 암 진단을 받고 400만 원 치료비 청구\",\n      \"narrative\": \"청구액이 한도 미만이지만, 치료 과정이 복잡하여 비용이 발생했습니다.\",\n      \"clause\": \"약관에는 '한도 내에서 합리적 의료비만 지급'이 명시되어 있습니다.\",\n      \"history\": \"치료 이력: 3개월 치료, 병원급여 적용\",\n      \"label\": \"approve\",\n      \"action\": \"지급\",\n      \"rationale\": \"청구액이 한도 내에 있고 약관에 따라 합리적 비용이 인정됩니다.\",\n      \"why_rules_fail\": \"청구액이 한도 85% 이내이지만, 치료의 복잡성은 규칙으로 판단하기 어려웠습니다.\",\n      \"evidence_level\": \"narrative\",\n      \"difficulty\": 2,\n      \"realism\": 4,\n      \"provenance\": \"fictional\",\n      \"seconds\": null\n    },\n    {\n      \"n\": 2,\n      \"type\": \"app\",\n      \"contract\": \"실비보험, 1000만 원 한도, 가입 2년차\",\n      \"facts\": \"고객이 해외 진료로 800만 원 청약\",\n      \"narrative\": \"해외 진료로 인한 비용이 발생했으며, 약관은 해외 의료도 인정합니다. 하지만 가입 경력이 짧아 리스크가 고려됩니다.\",\n      \"clause\": \"약관: '해외 의료비도 지급 가능하나, 개인사정에 따라 심사'\",\n      \"history\": \"해외 여행 3회, 이전 해외 진료 없음\",\n      \"label\": \"investigate\",\n      \"action\": \"보완 요청\",\n      \"rationale\": \"해외 진료로 인한 비용이 높고, 가입 초기에 발생하여 추가 검토 필요\",\n      \"why_rules_fail\": \"해외 진료 비용 규칙이 명확하지 않아 AI 판단에 의존하기 어렵습니다.\",\n      \"evidence_level\": \"narrative\",\n      \"difficulty\": 4,\n      \"realism\": 3,\n      \"provenance\": \"fictional\",\n      \"seconds\": null\n    }\n  ]\n}",
+    "done": true,
+    "done_reason": "stop",
+    "total_duration": 76284988700,
+    "load_duration": 4426544800,
+    "prompt_eval_count": 546,
+    "prompt_eval_cached_count": 0,
+    "prompt_eval_duration": 840948000,
+    "eval_count": 984,
+    "eval_duration": 71013861000,
+    "message": {
+      "role": "assistant",
+      "content": "{\n  \"assumptions_review\": {\n    \"review_cost_15\": \"건당 $15로 AI 심사를 수행하면 비용 효율적이지만, 복잡한 사례는 인력 검토보다 오류율이 높을 수 있습니다.\",\n    \"loss_fraction_1\": \"부적정 지급 손실비율 1.0은 매우 낮은 수준으로, AI 모델이 이 비율을 유지하려면 극히 정밀한 심사 알고리즘이 필요합니다.\",\n    \"prevalence_003\": \"이상청구 비율 3%는 낮지만, AI가 이를 감지하기 위해 학습 데이터에 이상 사례를 충분히 포함시켜야 합니다.\",\n    \"small_share_0085\": \"한도대비 소액청구 비중 85%는 건수가 많을 때 적합하지만, AI가 소액청구 패턴을 완전히 파악하기에는 제한적입니다.\",\n    \"required_company_data\": \"회사 데이터가 필요하지만, AI 심사는 자체 학습 데이터로 충분히 대체 가능하여 외부 데이터 의존도를 줄일 수 있습니다.\",\n    \"sensitivity_plan\": \"감도 계획이 필요하지만, AI 모델은 지속적인 피드백 루프를 통해 자연스럽게 조정될 수 있습니다.\"\n  },\n  \"realism_review\": \"합성 사례는 외부 타당성을 위해 실제 회사 데이터와의 일치도를 검증해야 합니다.\",\n  \"limitations\": \"AI 심사는 인간 전문가의 직觉적 판단보다 규칙 기반으로 한정적이며, 모델의 일반화 능력에 의존합니다.\",\n  \"authored\": [\n    {\n      \"n\": 1,\n      \"type\": \"claim\",\n      \"contract\": \"건강보험, 암 치료비, 500만 원 한도\",\n      \"facts\": \"고객이 암 진단을 받고 400만 원 치료비 청구\",\n      \"narrative\": \"청구액이 한도 미만이지만, 치료 과정이 복잡하여 비용이 발생했습니다.\",\n      \"clause\": \"약관에는 '한도 내에서 합리적 의료비만 지급'이 명시되어 있습니다.\",\n      \"history\": \"치료 이력: 3개월 치료, 병원급여 적용\",\n      \"label\": \"approve\",\n      \"action\": \"지급\",\n      \"rationale\": \"청구액이 한도 내에 있고 약관에 따라 합리적 비용이 인정됩니다.\",\n      \"why_rules_fail\": \"청구액이 한도 85% 이내이지만, 치료의 복잡성은 규칙으로 판단하기 어려웠습니다.\",\n      \"evidence_level\": \"narrative\",\n      \"difficulty\": 2,\n      \"realism\": 4,\n      \"provenance\": \"fictional\",\n      \"seconds\": null\n    },\n    {\n      \"n\": 2,\n      \"type\": \"app\",\n      \"contract\": \"실비보험, 1000만 원 한도, 가입 2년차\",\n      \"facts\": \"고객이 해외 진료로 800만 원 청약\",\n      \"narrative\": \"해외 진료로 인한 비용이 발생했으며, 약관은 해외 의료도 인정합니다. 하지만 가입 경력이 짧아 리스크가 고려됩니다.\",\n      \"clause\": \"약관: '해외 의료비도 지급 가능하나, 개인사정에 따라 심사'\",\n      \"history\": \"해외 여행 3회, 이전 해외 진료 없음\",\n      \"label\": \"investigate\",\n      \"action\": \"보완 요청\",\n      \"rationale\": \"해외 진료로 인한 비용이 높고, 가입 초기에 발생하여 추가 검토 필요\",\n      \"why_rules_fail\": \"해외 진료 비용 규칙이 명확하지 않아 AI 판단에 의존하기 어렵습니다.\",\n      \"evidence_level\": \"narrative\",\n      \"difficulty\": 4,\n      \"realism\": 3,\n      \"provenance\": \"fictional\",\n      \"seconds\": null\n    }\n  ]\n}"
+    },
+    "transport": {
+      "endpoint": "/api/generate",
+      "request": {
+        "model": "deepseek-r1-16k:latest",
+        "stream": false,
+        "think": false,
+        "format": "json",
+        "keep_alive": "30m",
+        "options": {
+          "temperature": 0,
+          "seed": 20261119,
+          "num_ctx": 4096,
+          "num_predict": 2400
+        },
+        "prompt": "<｜begin▁of▁sentence｜>\n\nReturn a JSON object with a labels object keyed by each supplied case ID. For each case give label approve or investigate, realism integer 1 to 5, and memo in Korean, at most 25 characters. Include every supplied ID exactly once. Use only the case facts.<｜User｜>보험 심사 실험에 대한 AI 대리 검토 의견을 작성하세요. 사람 전문가 경력이나 실증값을 주장하지 마세요.\n다른 심사자 의견과 생성 정답은 제공되지 않습니다. 한국어로 간결하게 JSON 객체만 반환하세요.\nassumptions_review 객체의 키는 review_cost_15, loss_fraction_1, prevalence_003, small_share_085, required_company_data, sensitivity_plan 입니다.\n각 값은 검토 의견 한 문장입니다. 가정은 건당 사람 검토비용 $15, 부적정 지급 손실비율 1.0, 이상청구 비율 3%, 한도대비 20% 이하 소액청구 비중 85%입니다. 모두 자리표시 값입니다. 실제 회사 수치는 없으며 만들어내면 안 됩니다.\nrealism_review: 합성 사례가 외부 타당성을 갖추려면 필요한 검증을 한 문장.\nlimitations: AI 심사와 인간 전문가 검증의 차이를 한 문장.\nauthored: 완전히 새로 만든 가상 사례 두 개(청구 하나, 청약 하나) 배열. 가상 약관을 스스로 명시하여 판정 가능한 사례를 만드세요. 실제 사건으로 주장하지 마세요.\n각 사례의 키: n(1 또는 2), type(claim 또는 app), contract(상품·담보·한도·가입 경과), facts(이번 건 사실), narrative(3문장 이내), clause(가상 약관), history(치료이력 또는 고지 답변), label(approve 또는 investigate), action(지급/보완요청/계약인수 등), rationale(판단근거), why_rules_fail(금액·건수 규칙으로 판단 못하는 이유), evidence_level(narrative 또는 detail), difficulty(1~5 정수), realism(1~5 정수), provenance(반드시 fictional), seconds(null).\n최소한 하나는 investigate로 하세요. 한 항목마다 짧게 쓰되 정보가 서로 모순되지 않게 하세요.<｜Assistant｜></think>\n",
+        "raw": true
+      }
+    }
+  },
+  "elapsed_seconds": 76.28616650000185
+}

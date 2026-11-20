@@ -1,0 +1,51 @@
+{
+  "assumptions_review": {
+    "review_cost_15": "사람이 청구 1건을 검토하는 비용을 $15로 가정합니다.",
+    "loss_fraction_1": "잘못 지급한 금액의 손실비율이 1.0으로 가정합니다.",
+    "prevalence_003": "이상청구 비율이 3%로 가정합니다.",
+    "small_share_085": "한도대비 20% 이하 소액청구 비중이 85%로 가정합니다.",
+    "required_company_data": "사람 검토비용, 잘못 지급한 금액의 손실비율, 이상청구 비율, 한도대비 20% 이하 소액청구 비중에 대한 실제 데이터를 수집해야 합니다.",
+    "sensitivity_plan": "다음 가정들을 동시에 변화시키는 분석 방법을 제안합니다: 사람 검토비용을 증감시키면서 잘못 지급한 금액의 손실비율과 이상청구 비율을 고정한 상태에서 전체 비용의 변화를 관찰합니다. 또한, 이상청구 비율을 증감시키면서 사람 검토비용과 잘못 지급한 금액의 손실비율을 고정한 상태에서 전체 비용의 변화를 관찰합니다. 마지막으로, 한도대비 20% 이하 소액청구 비중을 증감시키면서 사람 검토비용과 잘못 지급한 금액의 손실비율, 이상청구 비율을 고정한 상태에서 전체 비용의 변화를 관찰합니다."
+  },
+  "realism_review": "AI가 합성 사례를 외부 타당성을 갖추려면 실제 데이터와 비교 검증이 필요합니다.",
+  "limitations": "AI 심사의 정확성은 인간 전문가 검증과 비교하여 차이가 있을 수 있습니다.",
+  "authored": [
+    {
+      "n": 1,
+      "type": "claim",
+      "contract": "자동차 보험, 100만원 한도, 1년 가입",
+      "facts": "사고 발생, 손상 금액 50만원",
+      "narrative": "고객이 자동차를 운전 중에 사고를 입었습니다. 손상 금액은 50만원입니다.",
+      "clause": "손상 금액이 100만원 이하인 경우, 해당 금액을 보상합니다.",
+      "history": "고객의 운전 기록은 정상적입니다.",
+      "label": "approve",
+      "action": "지급",
+      "rationale": "약관에 따라 손상 금액을 보상할 수 있습니다.",
+      "why_rules_fail": "규칙에 위배되지 않습니다.",
+      "evidence_level": "detail",
+      "difficulty": 2,
+      "realism": 3,
+      "provenance": "fictional",
+      "seconds": null
+    },
+    {
+      "n": 2,
+      "type": "app",
+      "contract": "건강 보험, 500만원 한도, 2년 가입",
+      "facts": "고객이 건강검진을 받았으며, 정상적인 결과를 받았습니다.",
+      "narrative": "고객이 정기적인 건강검진을 받았고, 검진 결과는 정상적입니다.",
+      "clause": "정기적인 건강검진을 받은 고객에게는 보험 혜택을 제공합니다.",
+      "history": "고객의 건강 기록은 정상적입니다.",
+      "label": "investigate",
+      "action": "보완요청",
+      "rationale": "약관에 따라 보험 혜택을 제공할 수 있지만, 추가 검증이 필요합니다.",
+      "why_rules_fail": "규칙에 위배되지 않습니다.",
+      "evidence_level": "detail",
+      "difficulty": 3,
+      "realism": 4,
+      "provenance": "fictional",
+      "seconds": null
+    }
+  ],
+  "assumptions_review_source": "audit/qwen/supplement_cost_followup.json"
+}
