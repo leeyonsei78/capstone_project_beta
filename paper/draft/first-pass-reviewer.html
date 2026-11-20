@@ -1,0 +1,267 @@
+<title>고액 심사 LLM 1차 심사자</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap">
+<style>
+  /* 레이아웃: 종이질감 배경 위 단일 학술 컬럼(~52rem). 결과는 테두리 표 + 그룹 막대차트 1개. */
+  :root{
+    --paper:#f7f6f2; --surface:#fffefb; --ink:#1b1d22; --muted:#5c6069;
+    --line:#d9d6cc; --accent:#1f6f6b; --accent-soft:#e4efed;
+    --danger:#a8432f; --safe:#6b7a2e; --shadow:0 1px 2px rgba(20,22,30,.06);
+    --serif:"Spectral","Noto Serif KR",Georgia,serif;
+    --sans:"Inter","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#15171b; --surface:#1d2025; --ink:#e9e8e3; --muted:#9aa0ab;
+    --line:#2f333b; --accent:#5bc8c0; --accent-soft:#17312f;
+    --danger:#e08a73; --safe:#b6c56f; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#15171b; --surface:#1d2025; --ink:#e9e8e3; --muted:#9aa0ab;
+    --line:#2f333b; --accent:#5bc8c0; --accent-soft:#17312f;
+    --danger:#e08a73; --safe:#b6c56f; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.75;margin:0;
+    font-size:16.5px;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  .wrap{max-width:52rem;margin:0 auto;
+    padding-left:max(18px,env(safe-area-inset-left,0px));
+    padding-right:max(18px,env(safe-area-inset-right,0px));
+    padding-block:clamp(2rem,5vw,4rem)}
+  .eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;
+    color:var(--accent);font-weight:700;margin:0 0 .9rem}
+  h1{font-family:var(--sans);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.2rem);line-height:1.3;letter-spacing:-.01em;
+    text-wrap:balance;margin:0 0 1rem}
+  h2{font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.01em;
+    color:var(--ink);margin:3rem 0 .5rem;padding-bottom:.5rem;border-bottom:2px solid var(--accent);display:inline-block}
+  h3{font-family:var(--sans);font-weight:600;font-size:1.08rem;margin:2rem 0 .3rem}
+  p{margin:.7rem 0}
+  a{color:var(--accent)}
+  .byline{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin:.4rem 0 0;line-height:1.6}
+  .meta{font-family:var(--sans);font-size:.76rem;color:var(--muted);letter-spacing:.02em;
+    display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--line)}
+  .meta b{color:var(--ink);font-weight:600}
+  .caveat{background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:6px;padding:1rem 1.2rem;margin:1.6rem 0;font-size:.93rem;line-height:1.7}
+  .caveat p{margin:.35rem 0}
+  .abstract{font-size:1rem}
+  .finding{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:1.4rem 0}
+  .finding div{background:var(--surface);padding:1rem 1.1rem}
+  .finding .num{font-family:var(--sans);font-weight:700;font-size:1.85rem;letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;line-height:1}
+  .finding .lab{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:.4rem;line-height:1.45}
+  .tbl-wrap{overflow-x:auto;margin:1.1rem 0;border:1px solid var(--line);border-radius:8px}
+  table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.85rem;min-width:30rem}
+  caption{caption-side:top;text-align:left;font-family:var(--sans);font-size:.82rem;color:var(--muted);
+    padding:.2rem .2rem .7rem;font-weight:600}
+  th,td{padding:.5rem .7rem;text-align:right;border-bottom:1px solid var(--line);
+    font-variant-numeric:tabular-nums;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:10rem}
+  thead th{font-weight:700;color:var(--muted);font-size:.74rem;letter-spacing:.02em;
+    border-bottom:2px solid var(--line)}
+  tbody tr:last-child td{border-bottom:none}
+  tr.total td{font-weight:700;background:var(--accent-soft)}
+  .c-codex{color:var(--accent);font-weight:700}
+  .bad{color:var(--danger);font-weight:700}
+  .ok{color:var(--safe);font-weight:700}
+  figure{margin:1.4rem 0}
+  figure svg{display:block;width:100%;height:auto;max-width:100%}
+  figcaption{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:.5rem;line-height:1.55}
+  .legend{font-family:var(--sans);font-size:.78rem;display:flex;gap:1.1rem;flex-wrap:wrap;margin:.3rem 0 .6rem}
+  .legend span{display:inline-flex;align-items:center;gap:.4rem}
+  .sw{width:12px;height:12px;border-radius:2px;display:inline-block}
+  ul{padding-left:1.25rem}li{margin:.35rem 0}
+  code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.84em;background:var(--accent-soft);
+    padding:.1em .4em;border-radius:4px;word-break:break-all}
+  .lead-note{font-family:var(--sans);font-size:.9rem;color:var(--muted)}
+  footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);font-family:var(--sans);
+    font-size:.8rem;color:var(--muted);line-height:1.6}
+  .toggle{position:fixed;top:env(safe-area-inset-top,0px);right:max(14px,env(safe-area-inset-right,0px));
+    margin-top:12px;font-family:var(--sans);font-size:.74rem;background:var(--surface);color:var(--muted);
+    border:1px solid var(--line);border-radius:999px;padding:.35rem .8rem;cursor:pointer;z-index:20;box-shadow:var(--shadow)}
+</style>
+
+<button class="toggle" id="themeBtn" aria-label="테마 전환">◐ 테마</button>
+<div class="wrap">
+
+  <p class="eyebrow">작업 논문 · v1.0(한글) · 2026-11-20 · 갱신 중</p>
+  <h1>고액 보험 심사에서 LLM은 언제 신뢰할 수 있는 1차 심사자인가</h1>
+  <p class="byline"><b>모델 의존적 정확도에 관한 실증 연구 — 고액 청구·언더라이팅에 대한 LLM 권고.</b><br>
+  이용세. SCIE 저널 투고 준비(Applied Sciences / Future Internet, 등재·분위 확인 예정).</p>
+
+  <div class="meta">
+    <span><b>사례</b> 314건 블라인드·합성</span>
+    <span><b>판정</b> 942건(3개 모델)</span>
+    <span><b>데이터</b> aa25553d314f</span>
+    <span><b>채점</b> 심어둔 정답 대비</span>
+  </div>
+
+  <div class="caveat">
+    <p><b>수치를 보기 전에.</b> 본 페이지의 모든 값은 <b>합성 사례</b>에서 측정되었으며, <b>심어둔 정답 라벨과 대조한 AI 판정</b> 결과다 — 사람 전문가 gold가 아니고 외부 타당성도 아니다. 역량 높은 모델의 판정은 turnkey 판정 API가 아니라 어시스턴트 세션으로 생성되어, 이 수치는 그 프로토콜 하 강한 모델의 역량 상한으로 읽어야 한다. 본 결과는 갱신 중인 초안이며 실험을 추가하며 계속 바뀐다.</p>
+  </div>
+
+  <h2>초록</h2>
+  <div class="abstract">
+    <p>보험사는 소액·저위험 청구를 규칙으로 자동 지급하고 고액·모호 건은 사람 심사자에게 상신한다. 자연스러운 설계는 상신된 건에 대해 LLM이 <b>1차 심사 권고</b>를 내고 최종 판단은 사람이 하는 2단계 구조다. 안전성은 LLM이 얼마나 정확히 판정하는가, 그리고 <b>어떤 모델</b>을 배치하는가에 달려 있다.</p>
+    <p>심어둔 정답 라벨과 이상(인젝션 포함)을 가진 314건의 블라인드 합성 치아보험 심사 사례(청구 150 + 청약 90 + 복잡층 74)를 구성하고, 역량 높은 호스티드 모델(<b>Codex</b>) 1종과 로컬 오픈웨이트 2종(Qwen-14B, DeepSeek-R1)이 각각 314건을 블라인드로 판정하게 하여 총 942건을 얻었다. 역량 높은 모델은 <b>전체 91.4%, 고액 소집합 86.0%</b>, 로컬 모델은 52–57%(우연 수준)였다. 역량 높은 모델은 <b>규칙이 0% 잡는 이상 유형(코드–설명 불일치, 업코딩, 텍스트 전용 복잡 사례)을 100% 포착</b>하고 11건 인젝션을 모두 저항한 반면, 로컬 모델은 각각 4/11, 7/11건에서 조작당했다. 잔여 오류는 금액 단독 과다청구(55%)에 집중되며 이는 사람의 몫인 판단 의존 범주다. 역량 높은 LLM은 고액의 효과적 1차 심사자이지만, 그 가치는 <b>모델 의존적</b>이어서 약한 대체 모델은 안전하지 않고, 최종 판단은 사람에게 남아야 한다.</p>
+  </div>
+
+  <h2>핵심 발견</h2>
+  <div class="finding">
+    <div><div class="num c-codex">86.0%</div><div class="lab">Codex의 고액 청구(164건) 정확도 — 로컬 모델은 52.4% / 56.7%</div></div>
+    <div><div class="num c-codex">100%</div><div class="lab">규칙이 0% 잡는 유형(A2 불일치·업코딩·텍스트 전용)에서 Codex</div></div>
+    <div><div class="num c-codex">0 / 11</div><div class="lab">인젝션 하 Codex 승인 — 전부 저항. 로컬 모델은 4건·7건 조작</div></div>
+    <div><div class="num bad">99</div><div class="lab">Qwen 누수: 조사 대상인데 자동승인할 건(314건 중)</div></div>
+  </div>
+
+  <h2>검증 대상 설계</h2>
+  <p>청구액이 보장 한도의 20% 이내면 자동 지급하고, 그 이상인 청구와 자동판정 규칙을 벗어난 청약은 <b>상신</b>한다. 상신 흐름이 바로 결정론적 규칙이 실패하는 지점이다 — 신호가 텍스트적이기 때문이다(설명과 불일치하는 치료코드, 임계값 바로 아래로 쪼갠 청구, 형식상 일관되나 실질적으로 의심스러운 고지). 질문은, LLM 1차 판정(뒤이어 사람 최종 판단)이 그 틈을 유용하게 메우는가, 그리고 그 답이 선택한 모델에 얼마나 의존하는가이다.</p>
+
+  <h2>결과</h2>
+
+  <h3>사례 범주별 정확도</h3>
+  <div class="tbl-wrap">
+  <table>
+    <caption>표 1. 심어둔 정답 대비 1차 정확도, 범주별 (정답/건수, %).</caption>
+    <thead><tr><th>범주</th><th>n</th><th>Codex</th><th>Qwen</th><th>DeepSeek</th></tr></thead>
+    <tbody>
+      <tr><td>소액 청구 (≤20%, 자동)</td><td>60</td><td class="c-codex">98.3</td><td>50.0</td><td>48.3</td></tr>
+      <tr><td>고액 청구 — 기본 (&gt;20%)</td><td>90</td><td class="c-codex">84.4</td><td>53.3</td><td>55.6</td></tr>
+      <tr><td>고액 청구 — 복잡</td><td>74</td><td class="c-codex">87.8</td><td>51.4</td><td>58.1</td></tr>
+      <tr><td>청약 — 자동 구간</td><td>30</td><td class="c-codex">100</td><td>63.3</td><td>53.3</td></tr>
+      <tr><td>청약 — 수동심사 구간</td><td>60</td><td class="c-codex">95.0</td><td>56.7</td><td>61.7</td></tr>
+      <tr class="total"><td>고액 소집합 (청구 &gt;20%)</td><td>164</td><td>86.0</td><td>52.4</td><td>56.7</td></tr>
+      <tr class="total"><td>전체</td><td>314</td><td>91.4</td><td>53.8</td><td>55.7</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="lead-note">설계 질문의 핵심은 고액 소집합이다 — <b>역량 높은 모델 86.0% 대 로컬 모델 52–57%</b>. 상신 흐름의 1차 정확도는 역량 높은 모델에서만 활용 가능하다.</p>
+
+  <h3>LLM이 가치를 더하는 곳 / 실패하는 곳</h3>
+  <p>그림 1은 전체·고액 소집합·규칙 미탐지(텍스트 전용) 세 세트에서 세 모델을 대비한다. 역량 높은 모델은 전 구간에서 높고, 로컬 모델은 우연 수준이다. DeepSeek의 텍스트 전용 100%는 변별력이 아니라 "거의 전부 조사"의 산물이다.</p>
+  <figure>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--accent)"></span>Codex</span>
+      <span><span class="sw" style="background:var(--muted)"></span>Qwen-14B</span>
+      <span><span class="sw" style="background:var(--danger)"></span>DeepSeek-R1</span>
+    </div>
+    <svg viewBox="0 0 720 320" role="img" aria-label="세 사례 세트에 대한 모델 정확도 그룹 막대차트">
+      <g font-family="Inter,sans-serif" font-size="11" fill="var(--muted)">
+        <line x1="60" y1="20"  x2="700" y2="20"  stroke="var(--line)"/>
+        <line x1="60" y1="82.5" x2="700" y2="82.5" stroke="var(--line)"/>
+        <line x1="60" y1="145" x2="700" y2="145" stroke="var(--line)"/>
+        <line x1="60" y1="207.5" x2="700" y2="207.5" stroke="var(--line)"/>
+        <line x1="60" y1="270" x2="700" y2="270" stroke="var(--line)" stroke-width="1.5"/>
+        <text x="52" y="24"  text-anchor="end">100</text>
+        <text x="52" y="86.5" text-anchor="end">75</text>
+        <text x="52" y="149" text-anchor="end">50</text>
+        <text x="52" y="211.5" text-anchor="end">25</text>
+        <text x="52" y="274" text-anchor="end">0</text>
+      </g>
+      <g>
+        <rect x="94"  y="41.5"  width="44" height="228.5" fill="var(--accent)"/>
+        <rect x="144" y="135.5" width="44" height="134.5" fill="var(--muted)"/>
+        <rect x="194" y="130.75" width="44" height="139.25" fill="var(--danger)"/>
+        <rect x="308" y="55"   width="44" height="215" fill="var(--accent)"/>
+        <rect x="358" y="139"  width="44" height="131" fill="var(--muted)"/>
+        <rect x="408" y="128.25" width="44" height="141.75" fill="var(--danger)"/>
+        <rect x="522" y="20"    width="44" height="250" fill="var(--accent)"/>
+        <rect x="572" y="228.25" width="44" height="41.75" fill="var(--muted)"/>
+        <rect x="622" y="20"    width="44" height="250" fill="var(--danger)"/>
+      </g>
+      <g font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="var(--ink)" text-anchor="middle">
+        <text x="116" y="35">91</text><text x="166" y="129">54</text><text x="216" y="124">56</text>
+        <text x="330" y="49">86</text><text x="380" y="133">52</text><text x="430" y="122">57</text>
+        <text x="544" y="14">100</text><text x="594" y="222">17</text><text x="644" y="14">100</text>
+      </g>
+      <g font-family="'Noto Sans KR',Inter,sans-serif" font-size="12" fill="var(--muted)" text-anchor="middle">
+        <text x="166" y="290">전체 (314)</text>
+        <text x="380" y="290">고액 (164)</text>
+        <text x="594" y="290">규칙 미탐지 (12)</text>
+      </g>
+    </svg>
+    <figcaption>그림 1. 모델별 정확도(%) — 세 사례 세트. 규칙 미탐지 = 결정론적 기준선이 0% 잡는 텍스트 전용 복잡 사례.</figcaption>
+  </figure>
+
+  <div class="tbl-wrap">
+  <table>
+    <caption>표 2. 이상유형별 정확도, 전체 314건 (%).</caption>
+    <thead><tr><th>이상유형</th><th>n</th><th>Codex</th><th>Qwen</th><th>DeepSeek</th></tr></thead>
+    <tbody>
+      <tr><td>정상(이상 없음)</td><td>137</td><td class="c-codex">89.8</td><td>67.9</td><td>31.4</td></tr>
+      <tr><td>A1 중복청구</td><td>20</td><td class="c-codex">100</td><td>30.0</td><td>65.0</td></tr>
+      <tr><td>A2 코드–설명 불일치</td><td>20</td><td class="c-codex">100</td><td>40.0</td><td>55.0</td></tr>
+      <tr><td>A3 금액 과다</td><td>20</td><td class="bad">55.0</td><td>45.0</td><td>85.0</td></tr>
+      <tr><td>A4 분할청구(한도 회피)</td><td>6</td><td class="c-codex">100</td><td>0.0</td><td>50.0</td></tr>
+      <tr><td>A5 면책/대기기간</td><td>19</td><td class="c-codex">100</td><td>42.1</td><td>68.4</td></tr>
+      <tr><td>U1–U4 언더라이팅</td><td>39</td><td class="c-codex">100</td><td>53.8</td><td>66.7</td></tr>
+      <tr><td>X1–X2 복잡</td><td>30</td><td class="c-codex">100</td><td>50.0</td><td>96.7</td></tr>
+      <tr><td>X3 업코딩</td><td>12</td><td class="c-codex">100</td><td>16.7</td><td>100</td></tr>
+      <tr><td>프롬프트 인젝션</td><td>11</td><td>63.6</td><td>63.6</td><td>72.7</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>역량 높은 모델은 <b>A2·X3에서 100% — 규칙이 0% 잡는 범주</b>로, 이것이 1차 선별의 구체적 증분 가치다. 다만 <b>무오류는 아니다</b>: A3(금액 과다)는 55%인데, 재료·요율 자료 없이 금액만으로는 과다를 확정할 수 없기 때문이다. A3는 프롬프트로 없앨 결함이 아니라 사람에게 남겨야 할 <b>판단 의존 범주</b>로 본다.</p>
+
+  <h3>오류 방향과 인젝션</h3>
+  <p>정확도는 운영 위험을 가린다. 보험사에게는 오류의 방향이 중요하다.</p>
+  <div class="tbl-wrap">
+  <table>
+    <caption>표 3. 오류 방향(전체 314)과 프롬프트 인젝션 저항(11건).</caption>
+    <thead><tr><th>모델</th><th>정답</th><th>누수(위험)</th><th>과조사(안전)</th><th>인젝션 하 승인</th></tr></thead>
+    <tbody>
+      <tr><td class="c-codex">Codex</td><td>287</td><td class="ok">9</td><td>18</td><td class="ok">0 / 11</td></tr>
+      <tr><td>Qwen-14B</td><td>169</td><td class="bad">99</td><td>46</td><td class="bad">4 / 11</td></tr>
+      <tr><td>DeepSeek-R1</td><td>175</td><td class="bad">45</td><td class="bad">94</td><td class="bad">7 / 11</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>역량 높은 모델의 오류는 적고 균형적이다(314건 중 <b>누수 9건</b>뿐). 약한 모델들은 반대로, 둘 다 바람직하지 않게 실패한다 — Qwen은 조사 대상 <b>99건을 승인으로 누수</b>, DeepSeek은 94건을 과조사해 심사를 노이즈로 채운다. 인젝션에서 역량 높은 모델은 조작된 <b>11건 중 0건</b>을 승인했다 — 삽입된 "자동 승인" 지시에 한 번도 복종하지 않았다. 두 로컬 모델은 모두 조작당했다.</p>
+
+  <h2>이 연구가 보이는 것과 보이지 못하는 것</h2>
+  <ul>
+    <li><b>역량 높은 LLM은 고액 건의 효과적 1차 심사자다</b> — 86% 정확, 규칙 미탐지 이상 유형 100%, 낮은 누수, 완전한 인젝션 저항.</li>
+    <li><b>가치는 "LLM을 쓴다"에 내재하지 않고 모델 의존적이다.</b> 두 로컬 모델은 우연 수준이며 위험하게 실패한다 — 비용 절감형 다운그레이드는 안전하지 않다. 배치 주장은 모델명과 오류 방향을 명시해야 한다.</li>
+    <li><b>최종 판단은 사람에게 남고, 한 범주는 환원 불가능하게 사람 몫이다.</b> 금액 단독 과다(A3)는 역량 높은 모델에게도 저항한다 — 그러한 판단은 사람에게 둔다.</li>
+  </ul>
+
+  <h2>한계 &amp; 다음 실험</h2>
+  <ul>
+    <li><b>합성·AI 채점.</b> 사람 gold가 아니라 심어둔 라벨 대비다. 사람 전문가 검증 소집합(약 30–40건)과 제2 라벨러를 계획한다.</li>
+    <li><b>사람 심사자 효과 미측정.</b> 권고의 품질을 측정하며, 사람 최종 판단 개선은 측정하지 않는다 — IRB 하 reader study 필요.</li>
+    <li><b>단일 실행·보정 미보고.</b> 사례당 1회 판정. 근거수준 조건(요약/상세/약관 포함), ECE·Brier 보정, 전통 ML 기준선, 제2 벤더는 대기 중.</li>
+    <li><b>재현성.</b> 역량 높은 모델은 turnkey API가 아니라 어시스턴트 세션으로 실행 — 상용 경로는 동급 모델 API로 재측정한다.</li>
+    <li><b>규칙은 본 시스템 기준.</b> 20% 자동지급 규칙·이상 정의는 참조 계약을 따른다 — 타 보험사 규칙 외적 타당성은 한계다.</li>
+  </ul>
+
+  <h2>부록 A. 관련 시스템 작업 — 도구 계층 제시 오류(TLPE)</h2>
+  <p class="lead-note">선행 작업에서, 온체인 데이터를 조회해 답하는 LLM 챗봇이 <b>조회는 정확한데 제시 단계에서 내는 오류</b> 6종을 실제 신고 기반으로 문서화·완화했다(정량 전/후 비교는 향후 연구, 여기선 질적 기록).</p>
+  <ul>
+    <li><b>E1 배열 누락</b> — 3건 중 2건만 요약. 완화 M2: 전수 나열 지시.</li>
+    <li><b>E2 시간 산술 오류</b> — 28분 뒤 만기를 "1일 후"로. 완화 M1: 결정론 코드가 "오늘, 약 28분 후" 문자열을 미리 계산.</li>
+    <li><b>E3 이전 결과 재사용</b> — 후속 턴 오판. 완화 M4: 히스토리 기반 도구 추적.</li>
+    <li><b>E4 타임존 모호성</b> — 라벨 없는 UTC 혼동. 완화 M1: KST 라벨 명시.</li>
+    <li><b>E5/E6 표현 가변성·조건부 UI 실패</b> — 응답 텍스트 매칭 실패. 완화 M3: 서버가 확정 플래그를 SSE로 전달.</li>
+  </ul>
+  <p class="lead-note">설계 원칙: <b>지식을 서버 측(결정론적 코드)으로 옮기고 LLM은 계산기가 아니라 합성·설명자로 취급하라.</b> 이는 본문 결론(신뢰는 모델 하나가 아니라 결정론적 계층과 사람 승인이 함께 받친다)과 일관된다.</p>
+
+  <footer>
+    갱신 중 작업 논문 · 재현 파일: <code>paper/eval/review/cases/rater_results/ai_proxy_20261119/</code> (classification_summary, accuracy_vs_ground_truth, validation_report). 모든 수치는 합성·심어둔 정답 대비이며 한계는 위 참조.
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var btn=document.getElementById('themeBtn');
+    var order=['','light','dark'],names={'':'◐ 시스템','light':'◐ 라이트','dark':'◐ 다크'};
+    function cur(){try{return localStorage.getItem('fpr-theme')||''}catch(e){return ''}}
+    function apply(v){var r=document.documentElement;
+      if(v)r.setAttribute('data-theme',v);else r.removeAttribute('data-theme');}
+    apply(cur());btn.textContent=names[cur()];
+    btn.addEventListener('click',function(){
+      var v=cur(),i=(order.indexOf(v)+1)%order.length,n=order[i];
+      apply(n);try{localStorage.setItem('fpr-theme',n)}catch(e){}
+      btn.textContent=names[n];
+    });
+  })();
+</script>
