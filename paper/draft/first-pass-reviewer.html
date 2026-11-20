@@ -193,21 +193,41 @@
 
   <section id="s3">
     <h2>3. 시스템과 에이전트 심사 구조</h2>
-    <h3 id="s3a">3.1 에이전트 심사 파이프라인 (구현됨)</h3>
-    <p>본 시스템(InsureChain)에는 "AI 에이전트 심사자"가 이미 구현되어 있다. 메인 오케스트레이터가 상신 건을 받으면 <b>언더라이팅 서브에이전트(LLM)</b>를 호출하고, 이 에이전트는 자체 도구호출 루프로 <code>assess_*</code> 심사도구 19종을 스스로 선택·실행한 뒤 구조화된 결론(<code>tier/route/missing_items/reasons</code>)을 반환한다. <b>핵심 안전장치: 등급(tier)은 LLM이 정하지만, 자동승인/보완요청/수동심사의 경로(route)는 모델이 아니라 코드의 tier→route 매핑이 결정</b>한다. 청구는 한도 20% 이하면 컨트랙트가 자동 지급하고, 그 이상은 항상 상신되며 LLM은 Slack 자문 의견만 낸다.</p>
+    <h3 id="s3a">3.1 구현된 다중 에이전트 자율 심사 구조</h3>
+    <p>본 시스템(InsureChain)에는 "AI 에이전트 심사자"가 <b>가설이 아니라 코드로 구현</b>되어 있으며, 세 에이전트로 구성된다.</p>
+    <ul>
+      <li><b>① 메인 오케스트레이터 에이전트</b> — 사용자 요청을 처리하고, 정밀 심사가 필요하면 <code>run_underwriting_review</code> 하나로 언더라이팅을 위임한다.</li>
+      <li><b>② 언더라이팅 서브에이전트</b> — 자체 도구호출 루프로 <code>assess_*</code> 심사도구 19종을 스스로 골라 실행한 뒤, <code>submit_underwriting_decision</code>으로 구조화 결론(<code>tier</code>/<code>reasons</code>/<code>missing_items</code>)을 제출한다.</li>
+      <li><b>③ 교차심사 리뷰어</b> — <b>경계·중위험 건에 한해</b> 건강 관점(도구 10종)·신용·행동 관점(도구 9종) 리뷰어 둘이 독립적으로 재검한다. 불일치 시 <b>항상 더 보수적인(위험도 높은) tier를 채택</b>하며, 완화 경로는 코드에 없다(안전망). 정상·고위험은 제외(속도·경로 불변).</li>
+    </ul>
     <div class="arch">
-<span class="a">[상신 건]</span> → <b>오케스트레이터</b> → <b>언더라이팅 서브에이전트(LLM)</b>
-     │  자체 tool-calling 루프
-     ├─ assess_health_risk / assess_medical_history / assess_adverse_selection ... <span class="a">(19종)</span>
-     ▼
-  <b>submit_underwriting_decision</b> → {tier, reasons, missing_items}
-     │
-     ▼  <span class="g">tier → route 매핑은 "코드"가 결정 (모델 아님)</span>
-  ┌──────────────┬───────────────┬────────────────┐
-  <span class="g">자동승인</span>         <span class="a">보완요청</span>          <span class="r">수동심사(사람)</span>
-  <span class="a">청구 ≤20% 한도 → 컨트랙트 자동지급 · >20% → 사람 + LLM 자문(Slack)</span>
+<span class="a">[요청]</span> → <b>① 오케스트레이터</b> ──(위임)──▶ <b>② 언더라이팅 서브에이전트(LLM)</b>
+                                   │ assess_* 19종 tool-calling 루프
+                                   ▼
+                        <b>submit_underwriting_decision</b> → {tier}
+                                   │  tier=경계/중위험?
+                                   ├──▶ <b>③ 교차심사</b> 건강리뷰어 ∥ 신용·행동리뷰어 → <span class="r">상향만</span>
+                                   ▼  <span class="g">tier → route 는 "코드"가 결정 (모델 아님)</span>
+   ┌────────────────┬───────────────────┬──────────────────┐
+   <span class="g">정상·경계 → 자동승인</span>   <span class="a">중위험 → 보완요청(1회)</span>   <span class="r">고위험·불명 → 수동심사(사람)</span>
+   <span class="a">(경계는 사후 샘플감사)</span>   <span class="a">(재차 중위험 → 수동)</span>   <span class="a">파싱 실패 시에도 수동으로 안전 수렴</span>
     </div>
-    <div class="cap">그림 1. 에이전트 심사 파이프라인. 본 314건 실험은 이 파이프라인의 "판단 코어"(승인/조사 1차 판정)의 역량을 모델별로 측정한다.</div>
+    <div class="cap">그림 1. 구현된 다중 에이전트 자율 심사 구조(코드 확인). 정상·경계는 <b>사람 개입 없이 자동승인</b>된다. 본 314건 실험은 이 구조의 "판단 코어"(승인/조사 1차 판정)의 역량을 모델별로 측정한 것이다.</div>
+
+    <p>각 결정이 <b>자동(사람 없음)·자문·사람</b> 중 무엇인지는 아래와 같다 — "AI 에이전트 자동 판단"이 실제로 어디에 구현돼 있는지를 코드 기준으로 정리한다.</p>
+    <div class="tw"><table>
+      <caption>표 2. 결정 유형별 자동화 수준 (코드 확인).</caption>
+      <thead><tr><th>업무</th><th>판단 주체</th><th>사람 개입</th></tr></thead>
+      <tbody>
+        <tr><td>청약 심사 — 정상·경계 tier</td><td class="cdx">AI 에이전트 → 코드 route</td><td class="good">없음(자동승인, 경계는 사후감사)</td></tr>
+        <tr><td>청약 심사 — 중위험</td><td>AI(보완 요청) → 재차 중위험이면 전환</td><td class="mid">보완 1회 후 사람</td></tr>
+        <tr><td>청약 심사 — 고위험·불명</td><td>코드(안전 수렴)</td><td class="bad">수동심사(사람)</td></tr>
+        <tr><td>청구 — 소액(≤20% 한도)</td><td>컨트랙트 규칙(LLM 미관여)</td><td class="good">없음(자동지급)</td></tr>
+        <tr><td>청구 — 고액(&gt;20%)</td><td>사람 + LLM 자문(Slack)</td><td class="bad">사람(자문만 AI)</td></tr>
+      </tbody>
+    </table><div class="cap">정상·경계 청약은 사람 없이 자동승인되는 <b>구현된 자율 판단</b>이다. 고액 <b>청구</b>의 자율 판정은 아직 없으며(자문+사람), 본 논문의 314건 실험은 "맡긴다면 얼마나 정확한가"로 그 가능성을 측정한다.</div></div>
+
+    <div class="box info"><b>안전 설계(코드 확인).</b> ① tier는 모델, route는 코드(모델이 "고위험인데 자동승인" 같은 모순 라우팅 불가). ② 구조화 결론 미제출·파싱 실패·반복 한도 초과는 전부 <code>불명→수동심사</code>로 수렴(자동승인 쪽으로 새지 않음). ③ 보완은 1회 제한. ④ 교차심사는 상향(보수)만, 리뷰어 실패는 안전하게 무시. ⑤ 확정 수동심사 건은 관리자 대기열 UI로 적재.</div>
 
     <h3 id="s3b">3.2 LLM 행동반경 감사 — 모델이 닿을 수 있는 것</h3>
     <p>정적 코드 분석 결과, 도구 스키마 39종 중 대화 밖에 영향을 주는 것은 3종뿐이며 모두 코드·컨트랙트 규칙이 게이트한다. <b>LLM이 청구 지급·보험료 수납·만기환급을 직접 실행하는 경로는 없다.</b></p>
@@ -219,7 +239,7 @@
         <tr><td>가스리스 청약 개시</td><td>인자 추출</td><td>컨트랙트 언더라이팅 규칙이 승인/거절</td></tr>
         <tr><td>웰니스 보험료 조정</td><td>체크인 입력</td><td>위험점수는 코드, 컨트랙트가 ±20% 상한</td></tr>
       </tbody>
-    </table><div class="cap">표 2. LLM 행동반경(발췌). 완전 자동화로 갈수록 이 게이트들을 어디까지 열지가 핵심 설계 질문이 된다.</div></div>
+    </table><div class="cap">표 2-B. LLM 행동반경(발췌). 완전 자동화로 갈수록 이 게이트들을 어디까지 열지가 핵심 설계 질문이 된다.</div></div>
     <div class="box warn"><b>열린 간극(한계로 명시):</b> 챗봇 쪽 파이썬 코드에는 프롬프트 인젝션 방어가 없다(온체인 서비스만 injection-guard 사용). 외부 텍스트를 LLM에 넣는 <code>fetch_webpage</code>/<code>search_web</code> 경로가 인젝션 표면이다 — 5.4의 인젝션 실험이 이 위험을 직접 측정한다.</div>
   </section>
 
