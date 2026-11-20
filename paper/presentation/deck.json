@@ -1,0 +1,122 @@
+{
+  "v": 4,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-11-05T00:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "faces": {
+    "inter": {
+      "family": "Inter",
+      "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    },
+    "space-grotesk": {
+      "family": "Space Grotesk",
+      "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    }
+  },
+  "lists": "css",
+  "order": [
+    "cover",
+    "problem-solution",
+    "summary",
+    "startup-potential",
+    "intro-timing",
+    "logic-tree",
+    "pest",
+    "three-c",
+    "swot",
+    "bcg",
+    "marketing-mix-1",
+    "marketing-mix-2",
+    "five-layers",
+    "ai-classification",
+    "ai-stack",
+    "agent-architecture",
+    "agent-architecture-2",
+    "agent-architecture-3",
+    "ai-recommend",
+    "carelink",
+    "why-rebalance",
+    "ancillary",
+    "ai-engine",
+    "cross-review",
+    "new-ventures",
+    "solution",
+    "governance-uw",
+    "uw-tools",
+    "uw-example",
+    "governance-claims",
+    "self-audit",
+    "chain-processes",
+    "opex-advantage",
+    "it-infra",
+    "payment-fees",
+    "ga-fees",
+    "product-grid",
+    "competitive",
+    "dental-core",
+    "biz-model",
+    "partnership",
+    "partnership-case",
+    "db-value",
+    "acquisition-cost",
+    "profit-sim",
+    "pnl-compare",
+    "extra-revenue",
+    "recurring-revenue",
+    "tech-proof",
+    "exp-proof",
+    "exp-results",
+    "uw-scenario",
+    "bc-integrity",
+    "exp-cost",
+    "dev-plan",
+    "roadmap",
+    "adoption-reality",
+    "risk-response",
+    "funding",
+    "web-chain-loop",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "표지",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "핵심 요약",
+      "start": "problem-solution"
+    },
+    "s3": {
+      "description": "사업 분석 프레임워크",
+      "start": "intro-timing"
+    },
+    "s4": {
+      "description": "AI Agent — 상담·리밸런싱",
+      "start": "ai-classification"
+    },
+    "s5": {
+      "description": "블록체인 — 신뢰·거버넌스",
+      "start": "new-ventures"
+    },
+    "s6": {
+      "description": "비용 우위",
+      "start": "opex-advantage"
+    },
+    "s7": {
+      "description": "제품 · 비즈니스 모델",
+      "start": "product-grid"
+    },
+    "s8": {
+      "description": "수익성 · 재무",
+      "start": "profit-sim"
+    },
+    "s9": {
+      "description": "실행 · 마무리",
+      "start": "tech-proof"
+    }
+  },
+  "title": "InsureChain — Signal Edition (교수 발표용)"
+}
