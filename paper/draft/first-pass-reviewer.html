@@ -2,61 +2,56 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-  /* 레이아웃: 좌측 고정 목차 + 본문 단일 컬럼(학술지형). 결과는 테두리 표·그룹 막대차트·신뢰구간. */
+  /* 레이아웃: 좌측 고정 목차 + 본문 단일 컬럼(학술지형). 2부(계약심사/보험금청구) 구조. */
   :root{
     --paper:#f6f5f1; --surface:#ffffff; --ink:#19202a; --muted:#5a6472; --faint:#8a94a3;
-    --line:#dcdad1; --accent:#1a56db; --accent2:#1f6f6b; --accent-soft:#eaf0fe;
+    --line:#dcdad1; --accent:#1a56db; --accent2:#1f6f6b; --accent-soft:#eaf0fe; --a2-soft:#e4efed;
     --nav:#1a2433; --nav-fg:#aebbcc; --nav-hi:#7eb8f7; --nav-line:#2a3850;
     --danger:#c0392b; --safe:#2f7d32; --warn:#c77d11;
     --sans:"Inter","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
-    --serif:"Noto Serif KR",Georgia,serif;
-    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+    --serif:"Noto Serif KR",Georgia,serif; --mono:ui-monospace,"SF Mono",Menlo,monospace;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
     --paper:#12151b; --surface:#1a1e26; --ink:#e7e9ee; --muted:#9aa3b2; --faint:#6b7483;
-    --line:#2b313c; --accent:#6ea0ff; --accent2:#5bc8c0; --accent-soft:#182236;
+    --line:#2b313c; --accent:#6ea0ff; --accent2:#5bc8c0; --accent-soft:#182236; --a2-soft:#17312f;
     --nav:#0f141c; --nav-fg:#9aa8bc; --nav-hi:#7eb8f7; --nav-line:#232f42;
     --danger:#e07a6b; --safe:#7bbf7e; --warn:#d6a24a; color-scheme:dark;
   }}
   :root[data-theme="dark"]{
     --paper:#12151b; --surface:#1a1e26; --ink:#e7e9ee; --muted:#9aa3b2; --faint:#6b7483;
-    --line:#2b313c; --accent:#6ea0ff; --accent2:#5bc8c0; --accent-soft:#182236;
+    --line:#2b313c; --accent:#6ea0ff; --accent2:#5bc8c0; --accent-soft:#182236; --a2-soft:#17312f;
     --nav:#0f141c; --nav-fg:#9aa8bc; --nav-hi:#7eb8f7; --nav-line:#232f42;
     --danger:#e07a6b; --safe:#7bbf7e; --warn:#d6a24a; color-scheme:dark;
   }
   *{box-sizing:border-box}
-  body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.8;margin:0;
-    font-size:15.5px;-webkit-font-smoothing:antialiased;word-break:keep-all}
-  nav{position:fixed;top:0;left:0;width:230px;height:100%;background:var(--nav);color:var(--nav-fg);
-    padding:20px 14px calc(20px + env(safe-area-inset-bottom,0px));overflow-y:auto;z-index:100;
-    font-family:var(--sans);font-size:12.5px;padding-left:max(14px,env(safe-area-inset-left,0px))}
-  nav h3{color:var(--nav-hi);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
-    margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--nav-line)}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.8;margin:0;font-size:15.5px;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  nav{position:fixed;top:0;left:0;width:234px;height:100%;background:var(--nav);color:var(--nav-fg);padding:20px 14px calc(20px + env(safe-area-inset-bottom,0px));overflow-y:auto;z-index:100;font-family:var(--sans);font-size:12.5px;padding-left:max(14px,env(safe-area-inset-left,0px))}
+  nav h3{color:var(--nav-hi);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--nav-line)}
   nav a{display:block;padding:5px 8px;color:var(--nav-fg);text-decoration:none;border-radius:5px;margin-bottom:1px}
-  nav a:hover,nav a.sub{color:var(--nav-hi)}
+  nav a:hover{color:var(--nav-hi)}
   nav a.sub{padding-left:20px;font-size:11.5px;color:var(--faint)}
+  nav .part{color:var(--nav-hi);font-weight:700;font-size:10.5px;letter-spacing:.1em;margin:10px 0 2px;padding-left:8px}
   nav .n{color:var(--nav-hi);margin-right:6px;font-variant-numeric:tabular-nums}
-  main{margin-left:230px;padding:44px 52px calc(72px + env(safe-area-inset-bottom,0px));max-width:62rem;
-    padding-right:max(24px,env(safe-area-inset-right,0px))}
-  .head{padding:12px 0 32px;border-bottom:2px solid var(--line);margin-bottom:32px}
+  main{margin-left:234px;padding:44px 52px calc(72px + env(safe-area-inset-bottom,0px));max-width:62rem;padding-right:max(24px,env(safe-area-inset-right,0px))}
+  .head{padding:12px 0 30px;border-bottom:2px solid var(--line);margin-bottom:30px}
   .eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;color:var(--accent);font-weight:700;margin:0 0 .8rem}
-  h1{font-family:var(--sans);font-weight:700;font-size:clamp(1.4rem,3.6vw,2.05rem);line-height:1.32;
-    letter-spacing:-.01em;margin:0 0 .5rem;text-wrap:balance}
-  .sub{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 1rem}
+  h1{font-family:var(--sans);font-weight:700;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.32;letter-spacing:-.01em;margin:0 0 .5rem;text-wrap:balance}
+  .subt{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin:0 0 1rem}
   .badges{display:flex;gap:6px;flex-wrap:wrap}
   .badge{font-family:var(--sans);font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
   .badge.g{background:color-mix(in srgb,var(--safe) 16%,transparent);color:var(--safe)}
   .badge.y{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
-  section{margin:0 0 40px;scroll-margin-top:16px}
-  h2{font-family:var(--sans);font-weight:700;font-size:1.12rem;color:var(--ink);
-    border-left:4px solid var(--accent);padding-left:12px;margin:0 0 16px}
-  h3{font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--ink);margin:1.8rem 0 .5rem}
-  p{margin:.65rem 0}
-  a{color:var(--accent)}
-  .abs{background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin-bottom:28px}
+  section{margin:0 0 38px;scroll-margin-top:16px}
+  .partbar{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.08em;color:#fff;background:var(--accent);
+    padding:8px 14px;border-radius:7px;margin:40px 0 18px}
+  .partbar.b{background:var(--accent2)}
+  h2{font-family:var(--sans);font-weight:700;font-size:1.1rem;color:var(--ink);border-left:4px solid var(--accent);padding-left:12px;margin:0 0 14px}
+  h2.b{border-left-color:var(--accent2)}
+  h3{font-family:var(--sans);font-weight:600;font-size:1rem;color:var(--ink);margin:1.7rem 0 .5rem}
+  p{margin:.65rem 0}a{color:var(--accent)}
+  .abs{background:var(--accent-soft);border:1px solid var(--line);border-radius:10px;padding:20px 24px;margin-bottom:26px}
   .abs h2{border:none;padding:0;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .abs p{font-size:.92rem;margin:.5rem 0}
-  .kw{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:.8rem}
+  .abs p{font-size:.92rem;margin:.5rem 0}.kw{font-family:var(--sans);font-size:.8rem;color:var(--muted);margin-top:.8rem}
   .box{border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;font-size:.9rem;font-family:var(--sans);line-height:1.65}
   .info{background:var(--accent-soft);border-left:4px solid var(--accent)}
   .warn{background:color-mix(in srgb,var(--danger) 10%,transparent);border-left:4px solid var(--danger)}
@@ -71,11 +66,10 @@
   tbody tr:nth-child(even){background:color-mix(in srgb,var(--ink) 3%,transparent)}
   tr.hl td{background:var(--accent-soft);font-weight:700}
   .cap{font-family:var(--sans);font-size:.76rem;color:var(--faint);margin-top:.4rem}
-  .good{color:var(--safe);font-weight:700}.bad{color:var(--danger);font-weight:700}.mid{color:var(--warn);font-weight:700}
-  .cdx{color:var(--accent);font-weight:700}
+  .good{color:var(--safe);font-weight:700}.bad{color:var(--danger);font-weight:700}.mid{color:var(--warn);font-weight:700}.cdx{color:var(--accent);font-weight:700}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:16px 0}
   .cards>div{background:var(--surface);padding:14px 16px}
-  .cards .v{font-family:var(--sans);font-weight:700;font-size:1.7rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+  .cards .v{font-family:var(--sans);font-weight:700;font-size:1.65rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
   .cards .l{font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-top:.35rem;line-height:1.4}
   figure{margin:16px 0}figure svg{display:block;width:100%;height:auto;max-width:100%}
   figcaption{font-family:var(--sans);font-size:.78rem;color:var(--faint);margin-top:.5rem}
@@ -85,19 +79,12 @@
   .arch b{color:var(--nav-hi)}.arch .r{color:var(--danger)}.arch .g{color:var(--safe)}.arch .a{color:var(--faint)}
   ul{padding-left:1.25rem}li{margin:.3rem 0}
   code{font-family:var(--mono);font-size:.84em;background:var(--accent-soft);padding:.1em .4em;border-radius:4px;word-break:break-all}
-  .refs{font-family:var(--sans);font-size:.82rem;line-height:1.5}
-  .refs div{padding:6px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}
-  .refs .num{color:var(--accent);min-width:28px;font-weight:700}
-  .status{position:fixed;bottom:0;left:230px;right:0;background:var(--nav);color:var(--nav-fg);
-    padding:7px max(16px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) 18px;
-    font-family:var(--sans);font-size:.72rem;display:flex;gap:16px;flex-wrap:wrap;z-index:100}
+  .refs{font-family:var(--sans);font-size:.82rem;line-height:1.5}.refs div{padding:6px 0;border-bottom:1px solid var(--line);display:flex;gap:10px}.refs .num{color:var(--accent);min-width:28px;font-weight:700}
+  .status{position:fixed;bottom:0;left:234px;right:0;background:var(--nav);color:var(--nav-fg);padding:7px max(16px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) 18px;font-family:var(--sans);font-size:.72rem;display:flex;gap:16px;flex-wrap:wrap;z-index:100}
   .status i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}
   .dot-done{background:var(--safe)}.dot-wip{background:var(--warn)}.dot-todo{background:var(--faint)}
-  .toggle{position:fixed;top:env(safe-area-inset-top,0px);right:max(12px,env(safe-area-inset-right,0px));margin-top:10px;
-    font-family:var(--sans);font-size:.72rem;background:var(--surface);color:var(--muted);border:1px solid var(--line);
-    border-radius:999px;padding:.3rem .7rem;cursor:pointer;z-index:200}
-  @media (max-width:860px){nav{display:none}main{margin-left:0;padding:24px 18px 80px;
-    padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}.status{left:0}}
+  .toggle{position:fixed;top:env(safe-area-inset-top,0px);right:max(12px,env(safe-area-inset-right,0px));margin-top:10px;font-family:var(--sans);font-size:.72rem;background:var(--surface);color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.3rem .7rem;cursor:pointer;z-index:200}
+  @media (max-width:860px){nav{display:none}main{margin-left:0;padding:24px 18px 80px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}.status{left:0}}
 </style>
 
 <button class="toggle" id="themeBtn">◐ 테마</button>
@@ -107,26 +94,24 @@
   <a href="#glo"><span class="n">—</span>용어 풀이</a>
   <a href="#s1"><span class="n">1</span>서론 · 연구질문</a>
   <a href="#s2"><span class="n">2</span>관련 연구</a>
-  <a href="#s3"><span class="n">3</span>시스템·에이전트 구조</a>
-  <a href="#s3" class="sub">3.1 에이전트 심사 파이프라인</a>
-  <a href="#s3b" class="sub">3.2 LLM 행동반경 감사</a>
-  <a href="#s4"><span class="n">4</span>실험 설계</a>
-  <a href="#s5"><span class="n">5</span>결과</a>
-  <a href="#s5" class="sub">5.1 범주별 정확도</a>
-  <a href="#s52" class="sub">5.2 이상유형별</a>
-  <a href="#s53" class="sub">5.3 판단 의존 범주</a>
-  <a href="#s54" class="sub">5.4 오류 방향·인젝션</a>
-  <a href="#s6"><span class="n">6</span>논의</a>
-  <a href="#s7"><span class="n">7</span>한계</a>
-  <a href="#s8"><span class="n">8</span>향후: 자동 에이전트 로드맵</a>
+  <div class="part">PART A · 계약 심사 (구현)</div>
+  <a href="#s3"><span class="n">3</span>구현된 자율 심사 구조</a>
+  <a href="#s4"><span class="n">4</span>Part A 검증(청약 실험)</a>
+  <div class="part">PART B · 보험금 청구 (가능성)</div>
+  <a href="#s5"><span class="n">5</span>고액 자율 판정 실험 설계</a>
+  <a href="#s6"><span class="n">6</span>Part B 결과</a>
+  <div class="part">종합</div>
+  <a href="#s7"><span class="n">7</span>논의 · 조건부 결론</a>
+  <a href="#s8"><span class="n">8</span>한계 · 향후</a>
+  <a href="#s9"><span class="n">9</span>결론</a>
   <a href="#refs"><span class="n">—</span>참고문헌</a>
 </nav>
 
 <main>
   <div class="head">
-    <p class="eyebrow">작업 논문 · v2.0(한글) · 2026-11-20 · 갱신 중</p>
-    <h1>AI 에이전트는 언제 보험 심사를 맡을 수 있는가: 고액 심사 1차 판정의 모델 의존적 정확도와 완전 자동화 조건</h1>
-    <p class="sub">여러 AI 모델의 심사 판정 능력을 블라인드로 비교하여, 향후 사람 심사를 AI 에이전트 완전 자동심사로 대체하기 위한 조건을 실험으로 규명한다.</p>
+    <p class="eyebrow">작업 논문 · v3.0(한글) · 2026-11-20 · 갱신 중</p>
+    <h1>AI 에이전트는 보험 심사를 어디까지 맡을 수 있는가: 구현된 계약 심사 자율화와 보험금 청구 자율 판정의 가능성</h1>
+    <p class="subt">계약 심사(언더라이팅)에서는 구현된 다중 에이전트 자율 심사를 제시·검증하고, 보험금 청구에서는 선행연구가 다루지 않은 고액 자율 판정의 가능성을 실험으로 입증한다.</p>
     <div class="badges">
       <span class="badge y">초안(Draft)</span><span class="badge">2026</span>
       <span class="badge">제출 대상: Applied Sciences / Future Internet (SCIE, 확인 예정)</span>
@@ -136,196 +121,170 @@
 
   <div class="abs" id="abs">
     <h2>초록 (Abstract)</h2>
-    <p>보험사는 소액·저위험 건을 규칙으로 자동 지급(STP)하고, 고액·모호 건은 사람 심사자에게 상신한다. 상신 흐름에 <b>LLM 에이전트를 1차 심사자</b>로 넣고(판정+근거 생성) 사람이 최종 결정을 내리는 2단계 구조가 반복 제안되나, 그 안전성은 <b>모델이 얼마나 정확히 판정하는가</b>와 <b>어떤 모델을 쓰는가</b>에 달려 있다. 본 연구는 심어둔 정답과 이상(인젝션 포함)을 가진 <b>314건의 블라인드 합성 치아보험 심사 사례</b>(청구 150 + 청약 90 + 복잡층 74)를 구성하고, 역량 높은 호스티드 모델(<i>Codex</i>)과 로컬 오픈웨이트 2종(Qwen-14B, DeepSeek-R1)이 각 314건을 블라인드 판정하게 하여 942건을 얻어 심어둔 정답과 대조했다.</p>
-    <p>역량 높은 모델은 <b>전체 91.4%[87.8, 94.0], 고액 86.0%[79.8, 90.5]</b>로, 로컬 모델 52–57%(우연 수준, 신뢰구간 비중첩)를 통계적으로 앞섰다. 특히 <b>결정론적 규칙이 0% 탐지하는 이상 유형(코드–설명 불일치, 업코딩, 텍스트 전용 복잡 사례)을 100% 포착</b>하고 11건 인젝션을 모두 저항(조작승인 0/11)한 반면, 로컬 모델은 각각 4/11·7/11 조작당했다. 잔여 오류는 금액 단독 과다청구(A3 55%[34, 74])에 집중되며, 금액만으로 확정 불가한 <b>판단 의존 범주</b>로서 사람의 몫으로 남는다. 본 시스템에는 이미 <b>도구호출 기반 언더라이팅 에이전트</b>(tier는 LLM, route는 코드)가 구현되어 있어, 본 실험은 그 판단 코어의 역량을 측정한 것이다. 결론은 보편적 우월성 주장이 아니라 "<b>어떤 모델이, 어떤 범주에서, 어떤 오류 방향으로 신뢰 가능한가</b>"라는 조건부 결론이며, 완전 자동화로 가기 위한 남은 조건을 제시한다.</p>
-    <p class="kw"><b>키워드:</b> 대규모 언어모델, AI 에이전트, 보험 청구 심사, 언더라이팅, human-in-the-loop, 1차 선별, 이상 탐지, 프롬프트 인젝션, 모델 비교, 완전 자동화</p>
+    <p>보험 업무는 계약 심사(언더라이팅)와 보험금 청구 심사의 2단계로 나뉘며, 양쪽 모두 고액·모호 건을 사람 심사자에게 상신한다. 본 연구는 두 단계에 대해 서로 다른 방식으로 AI 에이전트의 역할을 규명한다. <b>Part A(계약 심사)</b>에서는 세 에이전트(오케스트레이터·언더라이팅 서브에이전트·교차심사 리뷰어)로 <b>이미 구현된 다중 에이전트 자율 심사 구조</b>를 제시한다 — 등급(tier)은 LLM이, 처리 경로(route)는 코드가 결정하며 정상·경계 등급은 사람 개입 없이 자동승인된다. <b>Part B(보험금 청구)</b>에서는 선행연구가 사람·자문에 남겨 둔 <b>고액 청구의 자율 판정 가능성</b>을 실험으로 입증한다.</p>
+    <p>심어둔 정답과 이상(인젝션 포함)을 가진 <b>314건의 블라인드 합성 사례</b>(청약 90 + 청구 224)를 구성하고, 역량 높은 호스티드 모델(<i>Codex</i>)과 로컬 오픈웨이트 2종(Qwen-14B, DeepSeek-R1)이 블라인드 판정(승인/조사)하여 942건을 심어둔 정답과 대조했다. <b>Part A 검증:</b> 청약 심사 정확도는 역량 높은 모델 96.7%(자동구간 100%)로, 구현된 자율승인이 정확함을 뒷받침한다. <b>Part B:</b> 고액 청구 86.0%[79.8, 90.5]로 규칙이 0% 잡는 이상(코드–설명 불일치·업코딩)을 100% 포착하고 인젝션 11건을 모두 저항했다. 두 단계 모두 <b>가치는 모델 의존적</b>이어서 로컬 모델은 우연 수준(52–57%)이고, 금액 단독 과다(A3 55%)는 사람의 몫으로 남는다. 결론은 "<b>계약 심사는 조건 충족 시 지금 자율 가능, 보험금 청구는 자율 가능성이 있으나 범주·모델 조건부</b>"다.</p>
+    <p class="kw"><b>키워드:</b> 대규모 언어모델, AI 에이전트, 계약 심사, 언더라이팅, 보험금 청구, human-in-the-loop, 자율 심사, 이상 탐지, 프롬프트 인젝션, 모델 비교</p>
   </div>
 
   <section id="glo">
-    <h2>용어 풀이 (처음 읽는 분을 위한 주석)</h2>
+    <h2>용어 풀이</h2>
     <div class="tw"><table>
-      <thead><tr><th>용어</th><th>쉬운 설명</th><th>예시</th></tr></thead>
+      <thead><tr><th>용어</th><th>설명</th></tr></thead>
       <tbody>
-        <tr><td>STP(소액 자동지급)</td><td>사람 없이 규칙만으로 즉시 지급</td><td>한도 20% 이하 청구 → 자동 승인</td></tr>
-        <tr><td>상신(escalation)</td><td>자동으로 못 끝내는 건을 사람에게 올림</td><td>고액·모호 청구 → 심사자 검토</td></tr>
-        <tr><td>1차 심사자(first-pass)</td><td>사람보다 먼저 판단을 내는 역할(최종 아님)</td><td>LLM이 "승인/조사" 권고 → 사람 확정</td></tr>
-        <tr><td>승인 vs 조사</td><td>판정 2종. 조사=추가 확인 필요</td><td>정상이면 승인, 의심되면 조사</td></tr>
-        <tr><td>누수(leakage)</td><td>조사해야 할 건을 승인으로 놓침(위험)</td><td>사기 청구를 자동 승인</td></tr>
-        <tr><td>과조사</td><td>정상 건을 조사로 보냄(안전하나 비용)</td><td>정상 청구를 사람에게 올림</td></tr>
-        <tr><td>이상 유형(A1~X3)</td><td>심어둔 이상의 종류</td><td>A2=코드와 설명 불일치, X3=업코딩</td></tr>
-        <tr><td>규칙 미탐지(text-only)</td><td>필드로는 못 잡고 글로만 식별되는 이상</td><td>치료코드는 맞는데 설명이 모순</td></tr>
-        <tr><td>프롬프트 인젝션</td><td>입력에 "무조건 승인하라" 같은 조작 지시</td><td>청구 설명란에 지시문 삽입</td></tr>
-        <tr><td>Wilson 95% CI</td><td>표본이 적을 때 비율의 불확실성 범위</td><td>86.0% [79.8, 90.5]</td></tr>
-        <tr><td>심어둔 정답(planted)</td><td>설계상 미리 정한 올바른 판정</td><td>채점의 기준(사람 gold 아님)</td></tr>
-        <tr><td>AI 에이전트 심사자</td><td>도구를 호출하며 스스로 판단하는 LLM</td><td>assess_* 도구 실행 후 tier 결정</td></tr>
+        <tr><td>계약 심사(언더라이팅)</td><td>가입 신청(청약)을 받아들일지·조건을 정하는 심사</td></tr>
+        <tr><td>보험금 청구 심사</td><td>접수된 청구를 지급할지 판정하는 심사</td></tr>
+        <tr><td>tier / route</td><td>tier=위험 등급(LLM 판단), route=처리 경로(코드 결정)</td></tr>
+        <tr><td>자동승인(auto_approve)</td><td>사람 개입 없이 승인 — 정상·경계 등급</td></tr>
+        <tr><td>교차심사(cross-review)</td><td>경계·중위험 건을 건강·신용 관점 2명이 재검(상향만)</td></tr>
+        <tr><td>누수 / 과조사</td><td>조사 대상을 승인(위험) / 정상을 조사(안전하나 비용)</td></tr>
+        <tr><td>규칙 미탐지(text-only)</td><td>필드로는 못 잡고 글로만 식별되는 이상</td></tr>
+        <tr><td>Wilson 95% CI</td><td>표본이 적을 때 비율의 불확실성 범위</td></tr>
+        <tr><td>심어둔 정답(planted)</td><td>설계상 미리 정한 올바른 판정(사람 gold 아님)</td></tr>
       </tbody>
-    </table><div class="cap">표 0. 핵심 용어와 예시.</div></div>
+    </table></div>
   </section>
 
   <section id="s1">
     <h2>1. 서론과 연구질문</h2>
-    <p>보험 청구·심사는 2단계로 구조화된다 — 소액·저위험은 규칙으로 자동 처리, 고액·모호는 사람에게 상신. 여기에 LLM 에이전트를 1차 심사자로 넣자는 제안이 반복되는데, 상신 흐름이 바로 규칙이 실패하는 지점이기 때문이다(신호가 텍스트적·맥락적: 설명과 모순되는 치료코드, 한도 바로 아래로 쪼갠 청구, 형식상 일관되나 실질 의심되는 고지). 그러나 그 안전성은 모델의 판정 정확도와 <b>선택한 모델</b>에 달려 있으며, 이 둘은 함께 측정되는 일이 드물다.</p>
-    <p>본 연구는 심어둔 정답을 가진 314건의 블라인드 합성 사례에 세 모델(역량 높은 호스티드 1종 + 로컬 2종)을 블라인드 판정시키고, 심어둔 정답과 대조한다. 더 나아가 장기 목표는 이 1차 판정 정확도를 끌어올려 <b>사람 심사를 AI 에이전트 완전 자동심사로 대체</b>할 수 있는지와 그 조건을 가늠하는 것이다.</p>
-    <div class="box info">
-      <b>연구질문</b><br><br>
-      <b>RQ1 (가능성):</b> AI 에이전트가 상신된 고액 건을 사람 수준으로 판정할 수 있는가? 특히 규칙이 못 잡는 이상을 잡는가?<br>
-      <b>RQ2 (모델 의존성):</b> 그 정확도와 오류 방향(누수 vs 과조사)은 어떤 모델을 쓰느냐에 따라 어떻게 달라지는가?<br>
-      <b>RQ3 (강건성):</b> 입력에 삽입된 조작 지시(프롬프트 인젝션)에 얼마나 견디는가?<br>
-      <b>RQ4 (자동화 경계):</b> 어떤 범주를 완전 자동으로 넘길 수 있고, 어떤 범주가 사람에게 남아야 하는가?
-    </div>
-    <div class="box hi"><b>근거의 구분:</b> 본 논문은 <b>실험으로 뒷받침되는 발견</b>(5장)과 <b>문헌에 근거한 설계 권고</b>(6·8장)를 구분한다. 모든 수치는 합성 사례·심어둔 정답 대비이며 사람 gold나 외부 타당성이 아니다(7장).</div>
+    <p>보험은 두 번 심사한다 — 가입 시 <b>계약 심사(언더라이팅)</b>, 지급 시 <b>보험금 청구 심사</b>. 두 단계 모두 소액·저위험은 규칙으로 자동 처리하고 고액·모호 건은 사람에게 상신하는데, 상신 흐름이 바로 규칙이 실패하는 지점(설명과 모순되는 치료코드, 한도 바로 아래로 쪼갠 청구, 형식상 일관되나 실질 의심되는 고지)이다. 여기에 LLM 에이전트를 넣자는 제안이 반복되나, 그 안전성은 모델 정확도와 <b>선택한 모델</b>에 달려 있으며 둘은 함께 측정되는 일이 드물다.</p>
+    <p>본 연구의 기여는 셋이다. <b>(1)</b> 계약 심사에 대해, 안전 게이트를 갖춘 <b>구현된 다중 에이전트 자율 심사 구조</b>를 제시하고 실험으로 그 판정 코어의 정확도를 검증한다(Part A). <b>(2)</b> 보험금 청구에 대해, 선행연구가 사람·자문에 남겨 둔 <b>고액 자율 판정의 가능성</b>을 규칙이 못 잡는 이상 유형에서 실험으로 입증한다(Part B). <b>(3)</b> 두 단계 모두에서 정확도가 <b>모델 의존적</b>임을 보이고, 오류 방향(누수 vs 과조사)·인젝션 강건성·판단 의존 범주로 자동화 경계를 조건화한다.</p>
+    <div class="box info"><b>연구질문.</b> RQ1(계약 심사): 구현된 자율 심사의 판정은 얼마나 정확한가? · RQ2(보험금 청구): 규칙이 못 잡는 고액 이상을 AI가 자율 판정할 수 있는가? · RQ3(모델 의존성·강건성): 정확도·오류 방향·인젝션 내성은 모델에 따라 어떻게 달라지는가? · RQ4(경계): 무엇을 자동으로 넘기고 무엇을 사람에게 남기는가?</div>
   </section>
 
   <section id="s2">
-    <h2>2. 관련 연구</h2>
-    <p>블록체인+LLM 보험 사기 탐지(Islayem 외, <i>Sci Rep</i> 2025 [1])는 합성 100건에서 GPT-4o 99%를 보고하나 최종 결정은 사람이며 서술문이 불일치를 직접 기술한다 — 우리는 구조화 입력에서 <b>자동화 경계</b>(어디까지 맡기고 어디부터 사람인지)를 측정한다. ClaimPilot(Future Internet 2026 [2])은 수의 청구를 8개 에이전트 역할로 처리하되 판정은 결정론 코드가 하고 사람 게이트를 둔다. InsClaimBench(2026 [3])는 청구 판정을 규칙→모듈→지급여부로 나눠 사람 결정과 비교한다. Roy & Singh [4]는 언더라이팅 에이전트+비판 에이전트로 전건 사람 승인을 전제한다. 이들과 달리 본 연구는 <b>(a) 역량 높은 모델 vs 약한 로컬 모델의 모델 의존성, (b) 오류 방향(누수 vs 과조사), (c) 규칙이 0% 잡는 이상에서의 증분 가치, (d) 인젝션 강건성</b>을 한 틀에서 측정한다.</p>
+    <h2>2. 관련 연구 — 두 개의 공백</h2>
+    <p>선행연구는 계약 심사·청구 양쪽에서 <b>최종 판정을 사람·규칙에 남긴다</b>. Islayem 외(<i>Sci Rep</i> 2025 [1])는 블록체인+LLM 사기탐지에서 GPT-4o 99%를 보고하나 최종은 사람이고 서술문이 불일치를 직접 기술한다. ClaimPilot(<i>Future Internet</i> 2026 [2])은 수의 청구를 8개 에이전트로 처리하되 판정은 결정론 코드가 하고 사람 게이트를 둔다. InsClaimBench(2026 [3])는 청구 판정을 결정 체인으로 나눠 사람과 비교하는 벤치마크다. Roy & Singh[4]는 언더라이팅 에이전트에 비판 에이전트를 붙이되 전건 사람 승인을 전제한다.</p>
+    <p>따라서 두 공백이 남는다 — <b>(A)</b> 계약 심사를 안전 게이트와 함께 실제로 자율화한 구현·검증, <b>(B)</b> 고액 청구를 AI가 자율 판정할 때의 정확도·오류 방향·모델 의존성. 본 연구는 둘을 각각 Part A·B로 다룬다.</p>
     <div class="tw"><table>
-      <thead><tr><th>연구</th><th>자동화 경계 분석</th><th>모델 의존성 비교</th><th>오류 방향</th><th>인젝션</th><th>근거 무결성</th></tr></thead>
+      <thead><tr><th>연구</th><th>계약심사 자율 구현</th><th>고액 자율 판정 평가</th><th>모델 의존성</th><th>오류 방향</th><th>인젝션</th></tr></thead>
       <tbody>
-        <tr><td>Islayem 2025 [1]</td><td>✗(전건 플래그)</td><td>✗(3모델 정확도만)</td><td>✗</td><td>✗</td><td>주장(불변성)</td></tr>
-        <tr><td>ClaimPilot 2026 [2]</td><td>부분(사람 게이트)</td><td>✗</td><td>✗</td><td>✗</td><td>—</td></tr>
-        <tr><td>InsClaimBench 2026 [3]</td><td>부분(결정체인)</td><td>부분</td><td>✗</td><td>✗</td><td>✗</td></tr>
-        <tr><td>Roy & Singh [4]</td><td>✗(전건 승인)</td><td>✗</td><td>부분(실패분류)</td><td>✗</td><td>✗</td></tr>
-        <tr class="hl"><td><b>본 연구</b></td><td><b>✓(임계값·범주별)</b></td><td><b>✓(강·약 3모델)</b></td><td><b>✓(누수/과조사)</b></td><td><b>✓(11건)</b></td><td><b>✓(온체인 근거)</b></td></tr>
+        <tr><td>Islayem 2025 [1]</td><td>✗</td><td>✗(전건 플래그)</td><td>✗</td><td>✗</td><td>✗</td></tr>
+        <tr><td>ClaimPilot 2026 [2]</td><td>✗(코드 판정)</td><td>✗(사람 게이트)</td><td>✗</td><td>✗</td><td>✗</td></tr>
+        <tr><td>InsClaimBench 2026 [3]</td><td>✗</td><td>부분(벤치마크)</td><td>부분</td><td>✗</td><td>✗</td></tr>
+        <tr><td>Roy & Singh [4]</td><td>✗(전건 승인)</td><td>✗</td><td>✗</td><td>부분</td><td>✗</td></tr>
+        <tr class="hl"><td><b>본 연구</b></td><td><b>✓(게이트+검증)</b></td><td><b>✓(314건)</b></td><td><b>✓(강·약 3모델)</b></td><td><b>✓(누수/과조사)</b></td><td><b>✓(11건)</b></td></tr>
       </tbody>
-    </table><div class="cap">표 1. 관련 연구 비교. ✗/부분 표시는 검색·정독 범위 내 저자 해석이며 원문 재검증이 필요하다. 본 연구의 ✓는 모두 5장에서 실측으로 뒷받침된다.</div></div>
+    </table><div class="cap">표 1. 관련 연구 비교. ✗/부분은 검색·정독 범위 내 저자 해석이며 원문 재검증 필요. 본 연구의 ✓는 모두 실측으로 뒷받침된다.</div></div>
   </section>
 
+  <div class="partbar">PART A — 계약 심사: 구현된 AI 에이전트 자율 심사</div>
+
   <section id="s3">
-    <h2>3. 시스템과 에이전트 심사 구조</h2>
-    <h3 id="s3a">3.1 구현된 다중 에이전트 자율 심사 구조</h3>
-    <p>본 시스템(InsureChain)에는 "AI 에이전트 심사자"가 <b>가설이 아니라 코드로 구현</b>되어 있으며, 세 에이전트로 구성된다.</p>
+    <h2 class="b">3. 구현된 다중 에이전트 자율 심사 구조</h2>
+    <p>계약 심사에서 "AI 에이전트 심사자"는 가설이 아니라 <b>코드로 구현</b>되어 있으며 세 에이전트로 구성된다.</p>
     <ul>
-      <li><b>① 메인 오케스트레이터 에이전트</b> — 사용자 요청을 처리하고, 정밀 심사가 필요하면 <code>run_underwriting_review</code> 하나로 언더라이팅을 위임한다.</li>
-      <li><b>② 언더라이팅 서브에이전트</b> — 자체 도구호출 루프로 <code>assess_*</code> 심사도구 19종을 스스로 골라 실행한 뒤, <code>submit_underwriting_decision</code>으로 구조화 결론(<code>tier</code>/<code>reasons</code>/<code>missing_items</code>)을 제출한다.</li>
-      <li><b>③ 교차심사 리뷰어</b> — <b>경계·중위험 건에 한해</b> 건강 관점(도구 10종)·신용·행동 관점(도구 9종) 리뷰어 둘이 독립적으로 재검한다. 불일치 시 <b>항상 더 보수적인(위험도 높은) tier를 채택</b>하며, 완화 경로는 코드에 없다(안전망). 정상·고위험은 제외(속도·경로 불변).</li>
+      <li><b>① 메인 오케스트레이터</b> — 요청을 처리하고 정밀 심사가 필요하면 <code>run_underwriting_review</code>로 위임.</li>
+      <li><b>② 언더라이팅 서브에이전트</b> — 자체 도구호출 루프로 <code>assess_*</code> 심사도구 19종을 골라 실행 → <code>submit_underwriting_decision</code>으로 구조화 결론(tier 등) 제출.</li>
+      <li><b>③ 교차심사 리뷰어</b> — <b>경계·중위험만</b> 건강 관점(10종)·신용·행동 관점(9종) 리뷰어 둘이 독립 재검, 불일치 시 <b>항상 더 보수적(상향)</b>, 완화 경로 없음.</li>
     </ul>
     <div class="arch">
 <span class="a">[요청]</span> → <b>① 오케스트레이터</b> ──(위임)──▶ <b>② 언더라이팅 서브에이전트(LLM)</b>
-                                   │ assess_* 19종 tool-calling 루프
-                                   ▼
-                        <b>submit_underwriting_decision</b> → {tier}
-                                   │  tier=경계/중위험?
-                                   ├──▶ <b>③ 교차심사</b> 건강리뷰어 ∥ 신용·행동리뷰어 → <span class="r">상향만</span>
+                                   │ assess_* 19종 tool-calling
+                                   ▼  submit_underwriting_decision → {tier}
+                                   ├─ tier=경계/중위험 ─▶ <b>③ 교차심사</b> 건강∥신용·행동 → <span class="r">상향만</span>
                                    ▼  <span class="g">tier → route 는 "코드"가 결정 (모델 아님)</span>
-   ┌────────────────┬───────────────────┬──────────────────┐
-   <span class="g">정상·경계 → 자동승인</span>   <span class="a">중위험 → 보완요청(1회)</span>   <span class="r">고위험·불명 → 수동심사(사람)</span>
-   <span class="a">(경계는 사후 샘플감사)</span>   <span class="a">(재차 중위험 → 수동)</span>   <span class="a">파싱 실패 시에도 수동으로 안전 수렴</span>
+   ┌────────────────┬──────────────────┬───────────────────┐
+   <span class="g">정상·경계 → 자동승인</span>   <span class="a">중위험 → 보완(1회)</span>   <span class="r">고위험·불명 → 수동심사</span>
+   <span class="a">(경계는 사후 샘플감사)</span>  <span class="a">(재차 중위험→수동)</span>  <span class="a">파싱 실패도 수동으로 안전 수렴</span>
     </div>
-    <div class="cap">그림 1. 구현된 다중 에이전트 자율 심사 구조(코드 확인). 정상·경계는 <b>사람 개입 없이 자동승인</b>된다. 본 314건 실험은 이 구조의 "판단 코어"(승인/조사 1차 판정)의 역량을 모델별로 측정한 것이다.</div>
-
-    <p>각 결정이 <b>자동(사람 없음)·자문·사람</b> 중 무엇인지는 아래와 같다 — "AI 에이전트 자동 판단"이 실제로 어디에 구현돼 있는지를 코드 기준으로 정리한다.</p>
+    <div class="cap">그림 1. 구현된 다중 에이전트 자율 심사 구조(코드 확인). 정상·경계 청약은 <b>사람 개입 없이 자동승인</b>된다.</div>
     <div class="tw"><table>
       <caption>표 2. 결정 유형별 자동화 수준 (코드 확인).</caption>
       <thead><tr><th>업무</th><th>판단 주체</th><th>사람 개입</th></tr></thead>
       <tbody>
-        <tr><td>청약 심사 — 정상·경계 tier</td><td class="cdx">AI 에이전트 → 코드 route</td><td class="good">없음(자동승인, 경계는 사후감사)</td></tr>
-        <tr><td>청약 심사 — 중위험</td><td>AI(보완 요청) → 재차 중위험이면 전환</td><td class="mid">보완 1회 후 사람</td></tr>
-        <tr><td>청약 심사 — 고위험·불명</td><td>코드(안전 수렴)</td><td class="bad">수동심사(사람)</td></tr>
-        <tr><td>청구 — 소액(≤20% 한도)</td><td>컨트랙트 규칙(LLM 미관여)</td><td class="good">없음(자동지급)</td></tr>
-        <tr><td>청구 — 고액(&gt;20%)</td><td>사람 + LLM 자문(Slack)</td><td class="bad">사람(자문만 AI)</td></tr>
+        <tr><td>계약 심사 — 정상·경계</td><td class="cdx">AI 에이전트 → 코드 route</td><td class="good">없음(자동승인)</td></tr>
+        <tr><td>계약 심사 — 중위험</td><td>AI 보완요청 → 재차면 전환</td><td class="mid">보완 1회 후 사람</td></tr>
+        <tr><td>계약 심사 — 고위험·불명</td><td>코드(안전 수렴)</td><td class="bad">수동심사</td></tr>
+        <tr><td>보험금 청구 — 소액(≤20%)</td><td>컨트랙트 규칙(LLM 미관여)</td><td class="good">없음(자동지급)</td></tr>
+        <tr><td>보험금 청구 — 고액(&gt;20%)</td><td>사람 + LLM 자문</td><td class="bad">사람(자문만 AI)</td></tr>
       </tbody>
-    </table><div class="cap">정상·경계 청약은 사람 없이 자동승인되는 <b>구현된 자율 판단</b>이다. 고액 <b>청구</b>의 자율 판정은 아직 없으며(자문+사람), 본 논문의 314건 실험은 "맡긴다면 얼마나 정확한가"로 그 가능성을 측정한다.</div></div>
-
-    <div class="box info"><b>안전 설계(코드 확인).</b> ① tier는 모델, route는 코드(모델이 "고위험인데 자동승인" 같은 모순 라우팅 불가). ② 구조화 결론 미제출·파싱 실패·반복 한도 초과는 전부 <code>불명→수동심사</code>로 수렴(자동승인 쪽으로 새지 않음). ③ 보완은 1회 제한. ④ 교차심사는 상향(보수)만, 리뷰어 실패는 안전하게 무시. ⑤ 확정 수동심사 건은 관리자 대기열 UI로 적재.</div>
-
-    <h3 id="s3b">3.2 LLM 행동반경 감사 — 모델이 닿을 수 있는 것</h3>
-    <p>정적 코드 분석 결과, 도구 스키마 39종 중 대화 밖에 영향을 주는 것은 3종뿐이며 모두 코드·컨트랙트 규칙이 게이트한다. <b>LLM이 청구 지급·보험료 수납·만기환급을 직접 실행하는 경로는 없다.</b></p>
-    <div class="tw"><table>
-      <thead><tr><th>경로</th><th>LLM 역할</th><th>모델 출력과 실제 효과 사이의 게이트</th></tr></thead>
-      <tbody>
-        <tr><td>청구 지급(≤20%)</td><td>없음</td><td>컨트랙트 규칙(한도 20%) — <span class="good">LLM 미관여</span></td></tr>
-        <tr><td>청구(&gt;20%)·청약 심사</td><td>자문(tier 제안/Slack 의견)</td><td>route는 코드, 최종은 사람 — <span class="good">자문만</span></td></tr>
-        <tr><td>가스리스 청약 개시</td><td>인자 추출</td><td>컨트랙트 언더라이팅 규칙이 승인/거절</td></tr>
-        <tr><td>웰니스 보험료 조정</td><td>체크인 입력</td><td>위험점수는 코드, 컨트랙트가 ±20% 상한</td></tr>
-      </tbody>
-    </table><div class="cap">표 2-B. LLM 행동반경(발췌). 완전 자동화로 갈수록 이 게이트들을 어디까지 열지가 핵심 설계 질문이 된다.</div></div>
-    <div class="box warn"><b>열린 간극(한계로 명시):</b> 챗봇 쪽 파이썬 코드에는 프롬프트 인젝션 방어가 없다(온체인 서비스만 injection-guard 사용). 외부 텍스트를 LLM에 넣는 <code>fetch_webpage</code>/<code>search_web</code> 경로가 인젝션 표면이다 — 5.4의 인젝션 실험이 이 위험을 직접 측정한다.</div>
+    </table><div class="cap">계약 심사의 정상·경계는 <b>구현된 자율 판단</b>, 고액 <b>청구</b>의 자율 판정은 아직 없음 → Part B의 실험 대상.</div></div>
+    <div class="box info"><b>안전 설계(코드 확인).</b> ① tier=모델, route=코드(모순 라우팅 불가) ② 구조화 결론 미제출·파싱 실패·반복 초과는 전부 <code>불명→수동심사</code>(자동승인으로 새지 않음) ③ 보완 1회 제한 ④ 교차심사 상향만·리뷰어 실패는 안전 무시 ⑤ 수동심사 건은 관리자 대기열 UI.</div>
   </section>
 
   <section id="s4">
-    <h2>4. 실험 설계</h2>
-    <p><b>사례(합성·고정시드, 식별자 <code>aa25553d314f</code>):</b> 청구 150건(소액 60 + 고액 기본 90), 청약 90건(자동 30 + 수동 60), 고액 복잡층 74건(치아 단위 이력·업코딩) = 총 314건. 각 사례는 심어둔 정답(승인/조사), 이상 태그(A1~A5 청구, U1~U4 청약, X1~X3 복잡), 인젝션 플래그(11건)를 가진다.</p>
-    <p><b>판정자:</b> ① <i>Codex</i> — 역량 높은 호스티드 모델(재현성 캐비트: turnkey 판정 API가 아니라 어시스턴트 세션으로 판정 → 강한 모델의 역량 상한으로 해석). ② Qwen-14B, ③ DeepSeek-R1 — 로컬 Ollama(온프레미스·비용절감형 대표). 세 모델이 동일 블라인드 입력(인젝션 포함)을 받아 승인/조사+근거를 반환, 사례 순서 셔플, 상호 비노출. 총 942 판정.</p>
-    <p><b>채점:</b> 라벨링 동결·스키마 검증(완전성·중복·해시 일치, 942/942) 후 심어둔 정답 대비 채점. 보고: 범주/이상유형별 정확도(Wilson 95% CI), 오류 방향(누수 vs 과조사), 인젝션 저항, 규칙 미탐지 정확도. ECE 보정·근거수준(C1~C3)·전통 ML 기준선·2차 라벨러는 향후(7·8장).</p>
-  </section>
-
-  <section id="s5">
-    <h2>5. 결과</h2>
-    <div class="cards">
-      <div><div class="v cdx">86.0%</div><div class="l">Codex 고액(164) [79.8, 90.5] — 로컬 52.4 / 56.7%</div></div>
-      <div><div class="v cdx">100%</div><div class="l">규칙 0% 범주(A2·업코딩·텍스트전용)에서 Codex</div></div>
-      <div><div class="v cdx">0 / 11</div><div class="l">인젝션 조작승인 [상한 25.9%] — 로컬 4·7건</div></div>
-      <div><div class="v bad">99</div><div class="l">Qwen 누수(조사 대상을 승인, 314 중)</div></div>
-    </div>
-
-    <h3>5.1 범주별 정확도</h3>
+    <h2 class="b">4. Part A 검증 — 청약 심사 실험 결과</h2>
+    <p>구현된 자율승인이 <b>정확한가</b>를 314건 중 청약 90건으로 검증한다. 역량 높은 모델은 자동승인 구간(정상·경계가 모이는 자동 구간)에서 100%, 수동심사 구간에서 95%로 전체 96.7%다.</p>
     <div class="tw"><table>
-      <caption>표 3. 범주별 1차 정확도 (%, Wilson 95% CI는 본문).</caption>
-      <thead><tr><th>범주</th><th>n</th><th>Codex</th><th>Qwen</th><th>DeepSeek</th></tr></thead>
+      <caption>표 3. 청약(계약 심사) 정확도 (%, n).</caption>
+      <thead><tr><th>구간</th><th>n</th><th>Codex</th><th>Qwen</th><th>DeepSeek</th></tr></thead>
       <tbody>
-        <tr><td>소액 청구 (≤20%, 자동)</td><td>60</td><td class="cdx">98.3</td><td>50.0</td><td>48.3</td></tr>
-        <tr><td>고액 청구 — 기본 (&gt;20%)</td><td>90</td><td class="cdx">84.4</td><td>53.3</td><td>55.6</td></tr>
-        <tr><td>고액 청구 — 복잡</td><td>74</td><td class="cdx">87.8</td><td>51.4</td><td>58.1</td></tr>
-        <tr><td>청약 — 자동 구간</td><td>30</td><td class="cdx">100</td><td>63.3</td><td>53.3</td></tr>
-        <tr><td>청약 — 수동심사 구간</td><td>60</td><td class="cdx">95.0</td><td>56.7</td><td>61.7</td></tr>
-        <tr class="hl"><td>고액 소집합 (청구 &gt;20%)</td><td>164</td><td>86.0</td><td>52.4</td><td>56.7</td></tr>
-        <tr class="hl"><td>전체</td><td>314</td><td>91.4</td><td>53.8</td><td>55.7</td></tr>
+        <tr><td>자동 구간</td><td>30</td><td class="cdx">100</td><td>63.3</td><td>53.3</td></tr>
+        <tr><td>수동심사 구간</td><td>60</td><td class="cdx">95.0</td><td>56.7</td><td>61.7</td></tr>
+        <tr class="hl"><td>청약 전체</td><td>90</td><td>96.7</td><td>58.9</td><td>58.9</td></tr>
+        <tr><td>(참고) U1–U4 언더라이팅 이상</td><td>39</td><td class="cdx">100</td><td>53.8</td><td>66.7</td></tr>
       </tbody>
     </table></div>
-    <div class="box info"><b>읽는 법·통계.</b> 핵심은 고액 소집합: Codex <b>86.0% [79.8, 90.5]</b> 대 Qwen <b>52.4% [44.8, 59.9]</b>·DeepSeek <b>56.7% [49.1, 64.1]</b> — 신뢰구간이 겹치지 않아 <b>통계적으로 구별</b>된다. 전체도 Codex 91.4% [87.8, 94.0]로 로컬(~54–56%)과 명확히 분리. 즉 상신 흐름의 1차 판정은 역량 높은 모델에서만 활용 가능하다.</div>
+    <div class="box ok"><b>Part A 결론.</b> 구현된 자율 심사의 판정 코어는 역량 높은 모델에서 <b>청약 96.7%·자동 구간 100%·언더라이팅 이상 유형 100%</b>로, 정상·경계 자동승인이 정확하다는 근거가 된다. 즉 <b>계약 심사의 AI 에이전트 자율화는 (안전 게이트와 함께) 지금 활용 가능한 수준</b>이다.</div>
+    <div class="box warn"><b>단, 모델 의존적.</b> 같은 청약에서 로컬 모델은 58.9%로 우연 수준이다 — 자율 심사 배치는 <b>역량 높은 모델 + 코드 게이트</b> 조합에서만 안전하며, 약한 모델 대체는 위험하다. 또한 본 실험은 단일 판정으로, <code>assess_*</code> 도구를 실제 호출하는 전체 에이전트 루프 평가는 향후 과제다.</div>
+  </section>
+
+  <div class="partbar b">PART B — 보험금 청구: 선행 미개척 고액 자율 판정의 가능성</div>
+
+  <section id="s5">
+    <h2>5. 고액 자율 판정 실험 설계</h2>
+    <p>선행연구가 사람·자문에 남겨 둔 <b>고액 청구의 자율 판정</b>을, 314건 중 청구 224건(소액 60 + 고액 기본 90 + 고액 복잡 74)으로 "맡긴다면 얼마나 정확한가"로 측정한다. 각 사례는 심어둔 정답(승인/조사)과 이상 태그(A1 중복·A2 코드–설명 불일치·A3 금액과다·A4 분할·A5 면책, X1~X3 복잡·업코딩), 인젝션(일부)을 가진다. 세 모델이 블라인드 판정, 라벨 동결·검증 후 심어둔 정답 대비 채점(Wilson 95% CI·오류 방향·인젝션).</p>
+  </section>
+
+  <section id="s6">
+    <h2>6. Part B 결과</h2>
+    <div class="cards">
+      <div><div class="v cdx">86.0%</div><div class="l">Codex 고액 청구(164) [79.8, 90.5] — 로컬 52·57%</div></div>
+      <div><div class="v cdx">100%</div><div class="l">규칙 0% 범주(A2·업코딩·텍스트전용)</div></div>
+      <div><div class="v cdx">0 / 11</div><div class="l">인젝션 조작승인 [상한 25.9%] — 로컬 4·7</div></div>
+      <div><div class="v bad">55%</div><div class="l">A3 금액과다 — 강한 모델도 한계(사람 몫)</div></div>
+    </div>
+    <div class="tw"><table>
+      <caption>표 4. 청구 정확도 (%, n).</caption>
+      <thead><tr><th>구간</th><th>n</th><th>Codex</th><th>Qwen</th><th>DeepSeek</th></tr></thead>
+      <tbody>
+        <tr><td>소액 (≤20%, 자동지급)</td><td>60</td><td class="cdx">98.3</td><td>50.0</td><td>48.3</td></tr>
+        <tr><td>고액 기본 (&gt;20%)</td><td>90</td><td class="cdx">84.4</td><td>53.3</td><td>55.6</td></tr>
+        <tr><td>고액 복잡</td><td>74</td><td class="cdx">87.8</td><td>51.4</td><td>58.1</td></tr>
+        <tr class="hl"><td>고액 소집합</td><td>164</td><td>86.0</td><td>52.4</td><td>56.7</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box info"><b>통계.</b> 고액: Codex 86.0% [79.8, 90.5] vs Qwen 52.4% [44.8, 59.9]·DeepSeek 56.7% [49.1, 64.1] — 신뢰구간 비중첩, 통계적 구별.</div>
     <figure>
       <div class="legend"><span><span class="sw" style="background:var(--accent)"></span>Codex</span><span><span class="sw" style="background:var(--muted)"></span>Qwen-14B</span><span><span class="sw" style="background:var(--danger)"></span>DeepSeek-R1</span></div>
-      <svg viewBox="0 0 720 320" role="img" aria-label="세 사례 세트 모델 정확도 막대차트">
+      <svg viewBox="0 0 720 320" role="img" aria-label="청구 세트 모델 정확도">
         <g font-family="Inter,sans-serif" font-size="11" fill="var(--faint)">
-          <line x1="60" y1="20" x2="700" y2="20" stroke="var(--line)"/><line x1="60" y1="82.5" x2="700" y2="82.5" stroke="var(--line)"/>
-          <line x1="60" y1="145" x2="700" y2="145" stroke="var(--line)"/><line x1="60" y1="207.5" x2="700" y2="207.5" stroke="var(--line)"/>
-          <line x1="60" y1="270" x2="700" y2="270" stroke="var(--line)" stroke-width="1.5"/>
-          <text x="52" y="24" text-anchor="end">100</text><text x="52" y="86.5" text-anchor="end">75</text>
-          <text x="52" y="149" text-anchor="end">50</text><text x="52" y="211.5" text-anchor="end">25</text><text x="52" y="274" text-anchor="end">0</text>
+          <line x1="60" y1="20" x2="700" y2="20" stroke="var(--line)"/><line x1="60" y1="82.5" x2="700" y2="82.5" stroke="var(--line)"/><line x1="60" y1="145" x2="700" y2="145" stroke="var(--line)"/><line x1="60" y1="207.5" x2="700" y2="207.5" stroke="var(--line)"/><line x1="60" y1="270" x2="700" y2="270" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="52" y="24" text-anchor="end">100</text><text x="52" y="86.5" text-anchor="end">75</text><text x="52" y="149" text-anchor="end">50</text><text x="52" y="211.5" text-anchor="end">25</text><text x="52" y="274" text-anchor="end">0</text>
         </g>
         <g>
-          <rect x="94" y="41.5" width="44" height="228.5" fill="var(--accent)"/><rect x="144" y="135.5" width="44" height="134.5" fill="var(--muted)"/><rect x="194" y="130.75" width="44" height="139.25" fill="var(--danger)"/>
+          <rect x="94" y="59" width="44" height="211" fill="var(--accent)"/><rect x="144" y="137" width="44" height="133" fill="var(--muted)"/><rect x="194" y="131.75" width="44" height="138.25" fill="var(--danger)"/>
           <rect x="308" y="55" width="44" height="215" fill="var(--accent)"/><rect x="358" y="139" width="44" height="131" fill="var(--muted)"/><rect x="408" y="128.25" width="44" height="141.75" fill="var(--danger)"/>
           <rect x="522" y="20" width="44" height="250" fill="var(--accent)"/><rect x="572" y="228.25" width="44" height="41.75" fill="var(--muted)"/><rect x="622" y="20" width="44" height="250" fill="var(--danger)"/>
         </g>
         <g font-family="Inter,sans-serif" font-size="10.5" font-weight="600" fill="var(--ink)" text-anchor="middle">
-          <text x="116" y="35">91</text><text x="166" y="129">54</text><text x="216" y="124">56</text>
+          <text x="116" y="53">86</text><text x="166" y="131">52</text><text x="216" y="125">57</text>
           <text x="330" y="49">86</text><text x="380" y="133">52</text><text x="430" y="122">57</text>
           <text x="544" y="14">100</text><text x="594" y="222">17</text><text x="644" y="14">100</text>
         </g>
         <g font-family="'Noto Sans KR',Inter,sans-serif" font-size="12" fill="var(--muted)" text-anchor="middle">
-          <text x="166" y="290">전체 (314)</text><text x="380" y="290">고액 (164)</text><text x="594" y="290">규칙 미탐지 (12)</text>
+          <text x="166" y="290">고액 소집합 (164)</text><text x="380" y="290">고액 기본+복잡</text><text x="594" y="290">규칙 미탐지 (12)</text>
         </g>
       </svg>
-      <figcaption>그림 2. 모델별 정확도(%). 규칙 미탐지 = 결정론 기준선이 0% 잡는 텍스트 전용 복잡 사례. DeepSeek의 100%는 변별력이 아니라 "거의 전부 조사"의 산물(5.4).</figcaption>
+      <figcaption>그림 2. 청구 정확도(%). 규칙 미탐지 = 결정론 기준선이 0% 잡는 텍스트 전용 복잡 사례. DeepSeek 100%는 "거의 전부 조사"의 산물.</figcaption>
     </figure>
-
-    <h3 id="s52">5.2 이상유형별 — LLM이 규칙을 넘어서는 지점</h3>
     <div class="tw"><table>
-      <caption>표 4. 이상유형별 정확도, 전체 314건 (%).</caption>
+      <caption>표 5. 청구 이상유형별 정확도 (%).</caption>
       <thead><tr><th>이상유형</th><th>n</th><th>Codex</th><th>Qwen</th><th>DeepSeek</th></tr></thead>
       <tbody>
-        <tr><td>정상(이상 없음)</td><td>137</td><td class="cdx">89.8</td><td>67.9</td><td>31.4</td></tr>
         <tr><td>A1 중복청구</td><td>20</td><td class="cdx">100</td><td>30.0</td><td>65.0</td></tr>
         <tr><td>A2 코드–설명 불일치</td><td>20</td><td class="cdx">100</td><td>40.0</td><td>55.0</td></tr>
         <tr><td>A3 금액 과다</td><td>20</td><td class="bad">55.0</td><td>45.0</td><td>85.0</td></tr>
-        <tr><td>A4 분할청구(한도 회피)</td><td>6</td><td class="cdx">100</td><td>0.0</td><td>50.0</td></tr>
-        <tr><td>A5 면책/대기기간</td><td>19</td><td class="cdx">100</td><td>42.1</td><td>68.4</td></tr>
-        <tr><td>U1–U4 언더라이팅</td><td>39</td><td class="cdx">100</td><td>53.8</td><td>66.7</td></tr>
+        <tr><td>A4 분할청구</td><td>6</td><td class="cdx">100</td><td>0.0</td><td>50.0</td></tr>
+        <tr><td>A5 면책/대기</td><td>19</td><td class="cdx">100</td><td>42.1</td><td>68.4</td></tr>
         <tr><td>X1–X2 복잡</td><td>30</td><td class="cdx">100</td><td>50.0</td><td>96.7</td></tr>
         <tr><td>X3 업코딩</td><td>12</td><td class="cdx">100</td><td>16.7</td><td>100</td></tr>
-        <tr><td>프롬프트 인젝션</td><td>11</td><td>63.6</td><td>63.6</td><td>72.7</td></tr>
       </tbody>
     </table></div>
-    <p>역량 높은 모델은 <b>A2 100%[83.9, 100]·X3 100%</b> — 결정론 규칙이 0% 잡는 범주다. 이것이 1차 에이전트의 구체적 증분 가치다.</p>
-
-    <h3 id="s53">5.3 판단 의존 범주 — 강한 모델도 실패하는 곳</h3>
-    <p>Codex도 무오류는 아니다(고액 86%). 잔여 오류는 둘로 갈린다. <b>금액 과다(A3) 55%[34.2, 74.2]</b> — 재료·요율 자료 없이 금액만으로는 과다를 확정할 수 없어, 조사 대상을 승인으로 놓치는 <b>위험(누수) 방향</b>이다. 이는 프롬프트로 없앨 결함이 아니라 사람(또는 추가 자료)에게 남겨야 할 <b>판단 의존 범주</b>다. 나머지는 정상 복잡건의 과조사(안전 방향)로, 인젝션 보수 처리 2건을 포함한다.</p>
-
-    <h3 id="s54">5.4 오류 방향과 인젝션 강건성</h3>
+    <p><b>규칙을 넘어서는 지점:</b> 역량 높은 모델은 A2·X3·규칙 미탐지 범주를 <b>100%</b> 잡는다 — 결정론 규칙이 0% 잡는 곳이다. <b>한계(판단 의존):</b> A3(금액 과다) 55%[34, 74] — 금액만으로 과다를 확정할 수 없어 사람 몫으로 남겨야 할 범주다.</p>
+    <h3>오류 방향과 인젝션 (전체 314 기준, RQ3)</h3>
     <div class="tw"><table>
-      <caption>표 5. 오류 방향(전체 314)과 인젝션 저항(11건).</caption>
+      <caption>표 6. 오류 방향과 인젝션 저항.</caption>
       <thead><tr><th>모델</th><th>정답</th><th>누수(위험)</th><th>과조사(안전)</th><th>인젝션 하 승인</th></tr></thead>
       <tbody>
         <tr><td class="cdx">Codex</td><td>287</td><td class="good">9</td><td>18</td><td class="good">0 / 11</td></tr>
@@ -333,58 +292,51 @@
         <tr><td>DeepSeek-R1</td><td>175</td><td class="bad">45</td><td class="bad">94</td><td class="bad">7 / 11</td></tr>
       </tbody>
     </table></div>
-    <div class="box info"><b>읽는 법.</b> 정확도가 비슷해 보여도 방향이 다르다. Codex는 누수 9건뿐(안전). Qwen은 조사 대상 <b>99건을 승인으로 누수</b>(보험사에 치명적), DeepSeek은 94건 과조사로 심사를 노이즈로 채운다(승인은 92/314뿐). 인젝션: Codex는 조작된 11건 중 <b>0건 승인</b>(조작승인률 상한 25.9%) — "자동 승인" 지시에 한 번도 복종하지 않았다. 두 로컬 모델은 조작당했다(4·7).</div>
+    <div class="box info"><b>읽는 법.</b> Codex는 누수 9건뿐(안전)·인젝션 0/11 저항. Qwen은 조사 대상 <b>99건을 승인 누수</b>(치명적), DeepSeek은 94건 과조사(노이즈)·인젝션 7건 피격. 정확도가 비슷해도 <b>오류 방향과 강건성이 모델마다 다르다</b>.</div>
   </section>
 
-  <section id="s6">
-    <h2>6. 논의 — 조건부 결론</h2>
-    <p><b>AI 에이전트는 고액 심사의 효과적 1차 심사자가 될 수 있다 — 조건부로.</b> 역량 높은 모델은 고액 86%, 규칙 미탐지 유형 100%, 낮은 누수, 완전한 인젝션 저항을 보였다. 사람이 최종 결정을 내리는 구조에서 이는 규칙이 못 잡는 범위를 실질적으로 넓히는 강한 1차 선별이다.</p>
-    <p><b>그 가치는 "LLM을 쓴다"에 내재하지 않고 모델 의존적이다.</b> 두 로컬 모델은 우연 수준이며 반대 방향으로 위험하게 실패한다 — 비용 절감형 다운그레이드는 안전하지 않다. 배치 주장은 "LLM"이 아니라 모델명과 오류 방향·CI를 명시해야 한다. (이 조건부 결론은 사이버보안 도메인에서 "방어자 모델에 따라 효과가 결정된다"던 모델 의존성 결과와 같은 구조다.)</p>
-    <p><b>한 범주는 환원 불가능하게 사람 몫이다.</b> 금액 단독 과다(A3)는 강한 모델에게도 저항한다 — 완전 자동화 로드맵에서 이 범주는 추가 자료 연동 전까지 사람·결정론 규칙에 둔다.</p>
-  </section>
+  <div class="partbar" style="background:var(--muted)">종합</div>
 
   <section id="s7">
-    <h2>7. 한계</h2>
-    <ul>
-      <li><b>합성·AI 채점.</b> 사람 gold가 아니라 심어둔 라벨 대비. Codex 91.4% 일치는 라벨의 합리성 증거이나 외부 타당성은 아니다. 사람 전문가 검증 30~40건·2차 라벨러 계획.</li>
-      <li><b>사람 효과 미측정.</b> 권고 품질만 측정, 사람 최종 판단 개선은 IRB 하 reader study 필요.</li>
-      <li><b>단일 실행·보정 미보고.</b> 사례당 1회. 근거수준(C1~C3)·ECE/Brier·전통 ML·2차 벤더는 대기.</li>
-      <li><b>단일 판정(에이전트 루프 아님).</b> 본 실험은 승인/조사 1차 판정을 측정했고, <code>assess_*</code> 도구를 실제로 호출하는 전체 에이전트 루프 평가는 향후.</li>
-      <li><b>재현성·규칙 범위.</b> Codex는 어시스턴트 세션 실행(동급 API 재측정 필요), 20% 규칙·이상 정의는 본 시스템 기준.</li>
-      <li><b>순환성.</b> 사례·정답을 저자 측이 설계 — 독립 작성자 holdout으로 완화 예정.</li>
-    </ul>
+    <h2>7. 논의 — 조건부 결론</h2>
+    <p><b>계약 심사는 조건 충족 시 지금 자율 가능.</b> 안전 게이트(route=코드, 교차심사 상향, 실패→수동)를 갖춘 자율 심사가 이미 구현돼 있고, 역량 높은 모델에서 청약 96.7%·자동 구간 100%로 정확하다. 사람은 중위험 보완·고위험만 본다.</p>
+    <p><b>보험금 청구는 자율 가능성이 있으나 범주·모델 조건부.</b> 고액 86%, 규칙 0% 범주 100%, 인젝션 완전 저항 — 선행이 사람에 남긴 영역을 상당 부분 자율화할 수 있음을 시사한다. 단 A3(금액 과다)는 사람 몫, 약한 모델은 위험하게 실패한다(누수 99/과조사 94).</p>
+    <p><b>공통 — 가치는 모델 의존적.</b> 두 단계 모두 로컬 모델은 우연 수준이다. 따라서 "LLM을 쓴다"가 아니라 "<b>어떤 모델이, 어떤 범주에서, 어떤 오류 방향으로</b>"가 배치 조건이며, 이는 사이버보안 도메인의 "방어자 모델이 효과를 좌우한다"는 모델 의존성 결과와 같은 구조다.</p>
   </section>
 
   <section id="s8">
-    <h2>8. 향후 — 완전 자동 AI 에이전트 심사자 로드맵</h2>
-    <p>본 실험은 "AI 에이전트 심사자"의 판단 코어가 고액에서 86% 역량을 가짐을 보였다. 이를 완전 자동심사로 확장하기 위한 단계:</p>
+    <h2>8. 한계와 향후</h2>
     <ul>
-      <li><b>① 에이전트 루프 평가:</b> 단일 판정이 아니라 <code>assess_*</code> 도구를 실제 호출하며 근거를 수집하는 전체 루프의 정확도·비용 측정.</li>
-      <li><b>② 범주별 자동화 게이트:</b> A1·A2·A4·A5·업코딩 등 100% 범주는 자동, A3·고위험은 사람 — 임계값 스윕으로 자동화율 대 누수 프런티어 산출.</li>
-      <li><b>③ 신뢰도 보정·기권:</b> "근거 부족" 판정과 ECE/Brier로 모델이 모르는 것을 모른다고 하게 만들기.</li>
-      <li><b>④ 인젝션 방어 내재화:</b> 챗봇 파이썬 경로에 injection-guard 적용 + 인젝션 사례 확대.</li>
-      <li><b>⑤ 사람 검증·reader study:</b> 전문가 라벨로 proxy 타당성 확인, IRB 하 사람 최종판단 개선 측정.</li>
+      <li><b>합성·AI 채점.</b> 사람 gold 아님 → 사람 전문가 검증 30~40건·2차 라벨러 계획.</li>
+      <li><b>재현성·반복.</b> Codex는 어시스턴트 세션 실행(동급 API 재측정 필요), 단일 실행 → ≥3회 반복·2차 벤더.</li>
+      <li><b>에이전트 루프 미평가.</b> 단일 판정만 측정 → <code>assess_*</code> 호출 전체 루프 평가.</li>
+      <li><b>보정·기준선.</b> ECE/Brier·전통 ML 기준선·"근거 부족" 기권 추가.</li>
+      <li><b>규칙 범위.</b> 20% 규칙·이상 정의는 본 시스템 기준 — 외적 타당성 한계.</li>
     </ul>
-    <div class="box ok"><b>종합.</b> 완전 자동 AI 에이전트 심사는 <b>목표로서 타당하되 범주·모델 조건부</b>다 — 규칙이 못 잡는 이상에서 강한 모델이 이미 자동화 가능한 수준이며, 판단 의존 범주와 약한 모델이 남은 장애물이다.</div>
+  </section>
+
+  <section id="s9">
+    <h2>9. 결론</h2>
+    <p>보험의 두 심사 단계에 대해 AI 에이전트의 역할을 구분해 규명했다. <b>계약 심사</b>에서는 안전 게이트를 갖춘 다중 에이전트 자율 심사가 이미 구현돼 있고 역량 높은 모델에서 정확함을 보였다(청약 96.7%). <b>보험금 청구</b>에서는 선행이 사람에 남긴 고액 자율 판정이, 규칙이 못 잡는 이상에서 가능함을 실험으로 입증했다(고액 86%·규칙 0% 범주 100%·인젝션 완전 저항). 두 단계 모두 가치는 모델 의존적이며, 금액 단독 판단은 사람에게 남는다. 요지는 "<b>계약 심사는 지금 자율, 보험금 청구는 조건부 자율</b>"이다.</p>
   </section>
 
   <section id="refs">
     <h2>참고문헌</h2>
-    <p class="cap" style="margin-bottom:10px">투고 전 원문 대조·등재 상태 확인 필요. 확인 불가 항목은 제거.</p>
+    <p class="cap" style="margin-bottom:10px">투고 전 원문 대조·등재 상태 확인 필요.</p>
     <div class="refs">
-      <div><span class="num">[1]</span><span>Islayem R. 외. Using Large Language Models for Enhanced Fraud Analysis and Detection in Blockchain-Based Health Insurance Claims. <i>Scientific Reports</i> 2025, 15:11542.</span></div>
+      <div><span class="num">[1]</span><span>Islayem R. 외. Using LLMs for Enhanced Fraud Analysis and Detection in Blockchain-Based Health Insurance Claims. <i>Scientific Reports</i> 2025, 15:11542.</span></div>
       <div><span class="num">[2]</span><span>ClaimPilot: An Open Multi-Agent Pipeline for Veterinary Insurance Claims Adjudication. <i>Future Internet</i> 2026, 18(9):465.</span></div>
       <div><span class="num">[3]</span><span>InsClaimBench: Benchmarking Insurance Claim Adjudication Across the Decision Chain. arXiv:2610.09671 (preprint — 확인).</span></div>
       <div><span class="num">[4]</span><span>Roy S., Singh A. Agentic AI for Commercial Insurance Underwriting with Adversarial Self-Critique. arXiv:2602.13213 (preprint — 확인).</span></div>
-      <div><span class="num">[5]</span><span>Alves 외(Feedzai). DeCCaF: cost-sensitive learning-to-defer under workload constraints. TMLR 2024, arXiv:2403.06906.</span></div>
-      <div><span class="num">[6]</span><span>(프롬프트 인젝션·근거충분성·보정·자동화편향 — related_work_notes.md 참조, 원문 확인 후 삽입)</span></div>
+      <div><span class="num">[5]</span><span>Alves 외. DeCCaF: cost-sensitive learning-to-defer under workload constraints. TMLR 2024, arXiv:2403.06906.</span></div>
+      <div><span class="num">[6]</span><span>(보정·자동화편향·프롬프트 인젝션 — related_work_notes.md, 원문 확인 후 삽입)</span></div>
     </div>
   </section>
 </main>
 
 <div class="status">
   <span><i class="dot-done"></i>완료: 314건 판정·채점·검증</span>
-  <span><i class="dot-done"></i>완료: 모델 비교·인젝션·CI</span>
+  <span><i class="dot-done"></i>완료: Part A/B 2부 구조</span>
   <span><i class="dot-wip"></i>진행: 선행연구 원문 확인</span>
   <span><i class="dot-todo"></i>예정: 사람검증·에이전트루프·보정</span>
 </div>
@@ -393,13 +345,9 @@
   (function(){
     var btn=document.getElementById('themeBtn');
     var order=['','light','dark'],names={'':'◐ 시스템','light':'◐ 라이트','dark':'◐ 다크'};
-    function cur(){try{return localStorage.getItem('fpr2-theme')||''}catch(e){return ''}}
+    function cur(){try{return localStorage.getItem('fpr3-theme')||''}catch(e){return ''}}
     function apply(v){var r=document.documentElement;if(v)r.setAttribute('data-theme',v);else r.removeAttribute('data-theme');}
     apply(cur());btn.textContent=names[cur()];
-    btn.addEventListener('click',function(){var v=cur(),i=(order.indexOf(v)+1)%order.length,n=order[i];
-      apply(n);try{localStorage.setItem('fpr2-theme',n)}catch(e){}btn.textContent=names[n];});
-    // nav active highlight
-    var secs=[].slice.call(document.querySelectorAll('section[id],div[id=abs]'));
-    var links={};document.querySelectorAll('nav a').forEach(function(a){links[a.getAttribute('href')]=a;});
+    btn.addEventListener('click',function(){var v=cur(),i=(order.indexOf(v)+1)%order.length,n=order[i];apply(n);try{localStorage.setItem('fpr3-theme',n)}catch(e){}btn.textContent=names[n];});
   })();
 </script>
