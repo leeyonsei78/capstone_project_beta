@@ -59,7 +59,8 @@ def load_blind_rows(cases_dir=CASES):
     """Read the two blind CSVs exactly as a human rater sees them. Returns a list of
     {"blind_id", "kind", "user"} where `user` is the rendered case block."""
     rows = []
-    for name, kind in (("review_claims_blind.csv", "청구"), ("review_apps_blind.csv", "청약")):
+    for name, kind in (("review_claims_blind.csv", "청구"), ("review_apps_blind.csv", "청약"),
+                       ("review_claims_complex_blind.csv", "청구")):
         with open(cases_dir / name, encoding="utf-8-sig", newline="") as f:
             for r in csv.DictReader(f):
                 bid = (r.get("blind_id") or "").strip()

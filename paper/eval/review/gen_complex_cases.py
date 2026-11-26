@@ -174,7 +174,7 @@ def write(cases, seed=SEED):
         bid = f"RX{n:03d}"
         key[bid] = c["case_id"]
         cl, p = c["claim"], c["policy"]
-        rows.append([bid, "대액(수동심사 구간)", f"{cl['treatment_code']} {cl['treatment_name']}", f"${cl['amount']}",
+        rows.append([bid, "고액(수동심사 구간)", f"{cl['treatment_code']} {cl['treatment_name']}", f"${cl['amount']}",
                      f"${p['coverage_limit']}", f"{cl['ratio_of_limit'] * 100:.1f}%", f"{p['policy_age_days']}일",
                      cl["description"], c["evidence_rich"].replace("\n", " / "), "", "", "", ""])
     with open(OUT / "review_claims_complex_blind.csv", "w", newline="", encoding="utf-8-sig") as f:

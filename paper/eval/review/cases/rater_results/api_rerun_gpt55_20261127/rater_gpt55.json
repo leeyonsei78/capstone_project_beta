@@ -1,0 +1,2528 @@
+{
+  "format": "review_rater_v1",
+  "dataset_id": "aa25553d314f",
+  "exported_at": "2026-11-26T15:09:56.577652+00:00",
+  "rater": {
+    "id": "gpt-5.5-2026-04-23",
+    "years": "",
+    "field": "model (LLM)",
+    "model": "gpt-5.5-2026-04-23",
+    "base_url": "https://api.openai.com/v1",
+    "reps": 1
+  },
+  "labels": {
+    "R001": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간이며 가입경과 564일, 한도 대비 3.5%의 통상적인 크라운 청구로 과거 청구 이력도 없어 추가 확인 필요성이 낮습니다.",
+      "seconds": 3.65,
+      "first_seconds": 3.65,
+      "changes": 0,
+      "votes": null
+    },
+    "R002": {
+      "label": "investigate",
+      "memo": "사례가 대액 수동심사 구간으로 분류되어 있어 지급 전 사람이 청구 적정성과 필요 서류를 추가 확인해야 합니다.",
+      "seconds": 5.42,
+      "first_seconds": 5.42,
+      "changes": 0,
+      "votes": null
+    },
+    "R003": {
+      "label": "investigate",
+      "memo": "청구 건이 대액 수동심사 구간으로 분류되어 있어 지급 전 사람이 추가 확인해야 합니다.",
+      "seconds": 4.64,
+      "first_seconds": 4.64,
+      "changes": 0,
+      "votes": null
+    },
+    "R004": {
+      "label": "investigate",
+      "memo": "청구 코드 D8080 포괄 교정 치료와 치료설명인 충치 세 면 제거 및 충전이 서로 일치하지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 3.61,
+      "first_seconds": 3.61,
+      "changes": 0,
+      "votes": null
+    },
+    "R005": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 D9110 응급처치 청구액이 보장한도의 82.1%로 높아 지급 전 외상 및 응급진료 내역 확인이 필요합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "R006": {
+      "label": "investigate",
+      "memo": "청구 코드(D3310 전치 근관치료)와 치료설명(어금니 세라믹 크라운)이 서로 불일치하므로 지급 전 확인이 필요합니다.",
+      "seconds": 2.75,
+      "first_seconds": 2.75,
+      "changes": 0,
+      "votes": null
+    },
+    "R007": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 D7140 단순 발치 청구로 금액이 보장한도 대비 낮고 가입경과 및 과거청구 정보상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.6,
+      "first_seconds": 2.6,
+      "changes": 0,
+      "votes": null
+    },
+    "R008": {
+      "label": "investigate",
+      "memo": "청구가 대액 수동심사 구간에 해당하므로 지급 전 치료 필요성 및 관련 청구 내역 확인이 필요합니다.",
+      "seconds": 4.34,
+      "first_seconds": 4.34,
+      "changes": 0,
+      "votes": null
+    },
+    "R009": {
+      "label": "approve",
+      "memo": "소액 청구로 금액이 보장한도 대비 낮고 가입 경과와 과거 청구 내역상 동일한 포괄 구강검진 중복이나 명확한 이상 징후가 확인되지 않습니다.",
+      "seconds": 7.78,
+      "first_seconds": 7.78,
+      "changes": 0,
+      "votes": null
+    },
+    "R010": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 D4341 코드와 1~3치 치료 설명의 불일치 가능성이 있어 지급 전 확인이 필요합니다.",
+      "seconds": 3.62,
+      "first_seconds": 3.62,
+      "changes": 0,
+      "votes": null
+    },
+    "R011": {
+      "label": "investigate",
+      "memo": "8일 전 동일한 D2160 3면 아말감 충전 청구가 지급된 이력이 있어 중복 청구 여부와 치료 치아 정보를 추가 확인해야 합니다.",
+      "seconds": 3.72,
+      "first_seconds": 3.72,
+      "changes": 0,
+      "votes": null
+    },
+    "R012": {
+      "label": "investigate",
+      "memo": "1일 전에 동일한 D7240 완전 매복 발치 청구가 이미 지급된 이력이 있어 중복 청구 또는 별도 치아 치료 여부 확인이 필요합니다.",
+      "seconds": 3.2,
+      "first_seconds": 3.2,
+      "changes": 0,
+      "votes": null
+    },
+    "R013": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 낮은 한도대비 청구이며 가입 경과가 충분하고 과거 청구가 없어 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.75,
+      "first_seconds": 2.75,
+      "changes": 0,
+      "votes": null
+    },
+    "R014": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간이며 치료코드와 설명이 일치하고 가입경과 및 과거청구 이력상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 3.52,
+      "first_seconds": 3.52,
+      "changes": 0,
+      "votes": null
+    },
+    "R015": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2740 도재관 크라운이나 치료설명은 스케일링 및 구강 위생 교육으로 기재되어 있어 치료 내용 불일치 확인이 필요합니다.",
+      "seconds": 3.58,
+      "first_seconds": 3.58,
+      "changes": 0,
+      "votes": null
+    },
+    "R016": {
+      "label": "investigate",
+      "memo": "청구액이 대액 수동심사 구간에 해당하므로 지급 전 치료 필요성 및 관련 증빙을 사람이 확인해야 합니다.",
+      "seconds": 4.54,
+      "first_seconds": 4.54,
+      "changes": 0,
+      "votes": null
+    },
+    "R017": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 최근 33일 전 성인 스케일링 후 치주 소파술 청구가 이어져 치주 상태 및 치료 필요성 확인이 필요합니다.",
+      "seconds": 4.62,
+      "first_seconds": 4.62,
+      "changes": 0,
+      "votes": null
+    },
+    "R018": {
+      "label": "investigate",
+      "memo": "4일 전에 동일한 D4342 치주 소파술 청구가 이미 지급된 이력이 있어 중복 청구 또는 치료 부위·필요성 확인이 필요합니다.",
+      "seconds": 2.72,
+      "first_seconds": 2.72,
+      "changes": 0,
+      "votes": null
+    },
+    "R019": {
+      "label": "investigate",
+      "memo": "소액 청구이지만 가입 106일 내 임플란트·치주치료·크라운 등 고액/다빈도 청구가 연속되어 있어 지급 전 패턴 확인이 필요합니다.",
+      "seconds": 4.81,
+      "first_seconds": 4.81,
+      "changes": 0,
+      "votes": null
+    },
+    "R020": {
+      "label": "investigate",
+      "memo": "6일 전에 동일한 D3330 대구치 근관치료 청구가 이미 지급되어 중복 청구 또는 동일 치아 재청구 여부 확인이 필요합니다.",
+      "seconds": 3.21,
+      "first_seconds": 3.21,
+      "changes": 0,
+      "votes": null
+    },
+    "R021": {
+      "label": "investigate",
+      "memo": "가입 후 13일 만에 매복 사랑니 발치 청구가 발생해 대기기간 또는 기존 질환 여부 등 추가 확인이 필요합니다.",
+      "seconds": 4.09,
+      "first_seconds": 4.09,
+      "changes": 0,
+      "votes": null
+    },
+    "R022": {
+      "label": "investigate",
+      "memo": "동일한 D8080 포괄 교정 치료가 252일 전에 이미 지급된 이력이 있어 중복 청구 또는 동일 교정 건의 추가 청구 여부 확인이 필요합니다.",
+      "seconds": 3.31,
+      "first_seconds": 3.31,
+      "changes": 0,
+      "votes": null
+    },
+    "R023": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2750 세라믹관 크라운인데 치료설명은 이갈이로 인한 나이트가드 제작으로 기재되어 있어 처치 내용 불일치 확인이 필요합니다.",
+      "seconds": 3.33,
+      "first_seconds": 3.33,
+      "changes": 0,
+      "votes": null
+    },
+    "R024": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 전악 X선 촬영 청구로 금액이 보장한도 대비 낮고 가입경과 및 과거청구 내역상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 3.26,
+      "first_seconds": 3.26,
+      "changes": 0,
+      "votes": null
+    },
+    "R025": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간이며 가입 경과와 보장한도 내 청구액, 치료설명 및 과거청구 이력상 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 5.4,
+      "first_seconds": 5.4,
+      "changes": 0,
+      "votes": null
+    },
+    "R026": {
+      "label": "investigate",
+      "memo": "동일한 D0120 정기검진이 6일 전에 이미 지급된 이력이 있어 중복 청구 또는 검진 주기 제한 위반 여부 확인이 필요합니다.",
+      "seconds": 3.15,
+      "first_seconds": 3.15,
+      "changes": 0,
+      "votes": null
+    },
+    "R027": {
+      "label": "investigate",
+      "memo": "청구 코드는 D7240 완전 매복 발치인데 치료설명은 큰어금니 근관치료로 기재되어 있어 치료 내용 불일치 확인이 필요합니다.",
+      "seconds": 3.34,
+      "first_seconds": 3.34,
+      "changes": 0,
+      "votes": null
+    },
+    "R028": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하는 청구이므로 지급 전 사람이 청구액과 치료 적정성을 추가 확인해야 합니다.",
+      "seconds": 3.57,
+      "first_seconds": 3.57,
+      "changes": 0,
+      "votes": null
+    },
+    "R029": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 일반적인 성인 스케일링 청구로 청구액이 보장한도 대비 낮고 가입경과 및 과거청구 내역상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.76,
+      "first_seconds": 2.76,
+      "changes": 0,
+      "votes": null
+    },
+    "R030": {
+      "label": "investigate",
+      "memo": "청구 코드는 D7240 완전 매복 발치이나 치료설명은 앞니 통증에 대한 근관치료로 기재되어 있어 치료 내용과 청구 코드가 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.5,
+      "first_seconds": 3.5,
+      "changes": 0,
+      "votes": null
+    },
+    "R031": {
+      "label": "investigate",
+      "memo": "3일 전에 동일한 D2140 아말감 1면 충전 청구가 이미 지급되어 중복 청구 여부나 다른 치아 치료인지 확인이 필요합니다.",
+      "seconds": 3.54,
+      "first_seconds": 3.54,
+      "changes": 0,
+      "votes": null
+    },
+    "R032": {
+      "label": "investigate",
+      "memo": "가입 후 8일 만에 대액 임플란트 수술 청구가 발생해 보장 개시 및 치료 필요 발생 시점 확인이 필요합니다.",
+      "seconds": 2.98,
+      "first_seconds": 2.98,
+      "changes": 0,
+      "votes": null
+    },
+    "R033": {
+      "label": "investigate",
+      "memo": "가입 후 12일 만에 임플란트 수술 청구가 발생해 대기기간·기왕증 여부 등 보장 적정성 확인이 필요합니다.",
+      "seconds": 3.34,
+      "first_seconds": 3.34,
+      "changes": 0,
+      "votes": null
+    },
+    "R034": {
+      "label": "approve",
+      "memo": "가입 후 376일 경과했고 청구액이 보장한도의 7.9%인 소액 자동지급 구간이며 치료설명과 과거청구 내역상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 5.44,
+      "first_seconds": 5.44,
+      "changes": 0,
+      "votes": null
+    },
+    "R035": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 통상적인 성인 스케일링 청구로 청구액이 보장한도 대비 낮고 가입경과도 충분해 추가 확인이 필요하지 않습니다.",
+      "seconds": 2.97,
+      "first_seconds": 2.97,
+      "changes": 0,
+      "votes": null
+    },
+    "R036": {
+      "label": "approve",
+      "memo": "청구액이 보장한도 대비 26.3%로 낮고 가입 후 500일이 경과했으며 과거 청구 없이 치료 내용도 D3310 근관치료와 일치해 추가 확인 필요성이 낮습니다.",
+      "seconds": 9.13,
+      "first_seconds": 9.13,
+      "changes": 0,
+      "votes": null
+    },
+    "R037": {
+      "label": "investigate",
+      "memo": "청구 코드 D7210 매복 발치와 치료설명인 충치 제거 후 아말감 충전이 서로 일치하지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 2.89,
+      "first_seconds": 2.89,
+      "changes": 0,
+      "votes": null
+    },
+    "R038": {
+      "label": "investigate",
+      "memo": "동일한 D8080 포괄 교정 치료가 239일 전 이미 지급되었고 이번 청구까지 합산하면 보장한도를 초과할 가능성이 있어 중복·한도 적용 여부 확인이 필요합니다.",
+      "seconds": 3.32,
+      "first_seconds": 3.32,
+      "changes": 0,
+      "votes": null
+    },
+    "R039": {
+      "label": "investigate",
+      "memo": "청구액이 대액 수동심사 구간에 해당하므로 지급 전 응급 처치 내역과 비용 적정성 확인이 필요합니다.",
+      "seconds": 3.21,
+      "first_seconds": 3.21,
+      "changes": 0,
+      "votes": null
+    },
+    "R040": {
+      "label": "investigate",
+      "memo": "청구 코드는 도재관 크라운(D2740)인데 치료설명은 파노라마 X선으로 사랑니와 턱뼈 상태 확인이라고 되어 있어 치료 내용과 청구 코드가 불일치합니다.",
+      "seconds": 3.77,
+      "first_seconds": 3.77,
+      "changes": 0,
+      "votes": null
+    },
+    "R041": {
+      "label": "investigate",
+      "memo": "청구된 D2750 세라믹관 크라운과 치료설명인 6개월 정기검진 및 이상 없음이 서로 맞지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 3.27,
+      "first_seconds": 3.27,
+      "changes": 0,
+      "votes": null
+    },
+    "R042": {
+      "label": "investigate",
+      "memo": "청구액은 소액이고 한도 내이나 D4341 코드와 ‘1~3치’ 치료 범위 설명이 맞지 않아 코드 적정성 확인이 필요합니다.",
+      "seconds": 4.77,
+      "first_seconds": 4.77,
+      "changes": 0,
+      "votes": null
+    },
+    "R043": {
+      "label": "investigate",
+      "memo": "청구액이 대액 수동심사 구간에 해당하므로 지급 전 교합장치 제작 및 비용 적정성 확인이 필요합니다.",
+      "seconds": 3.06,
+      "first_seconds": 3.06,
+      "changes": 0,
+      "votes": null
+    },
+    "R044": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 D4342 코드와 4치+·넓은 범위 소파술 설명 간 불일치가 있어 지급 전 확인이 필요합니다.",
+      "seconds": 5.9,
+      "first_seconds": 5.9,
+      "changes": 0,
+      "votes": null
+    },
+    "R045": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 정기검진 청구로 보장한도 내이며 가입경과와 치료내용상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 3.62,
+      "first_seconds": 3.62,
+      "changes": 0,
+      "votes": null
+    },
+    "R046": {
+      "label": "investigate",
+      "memo": "가입 후 7일 만에 대액 수동심사 구간의 포괄 교정 치료 청구가 발생했으므로 지급 전 보장 개시일 및 대기기간 등 추가 확인이 필요합니다.",
+      "seconds": 3.07,
+      "first_seconds": 3.07,
+      "changes": 0,
+      "votes": null
+    },
+    "R047": {
+      "label": "approve",
+      "memo": "청구액이 소액 자동지급 구간이고 보장한도 내의 통상적인 파노라마 X선 청구로, 과거 청구와도 특별한 중복이나 이상 징후가 없습니다.",
+      "seconds": 4.35,
+      "first_seconds": 4.35,
+      "changes": 0,
+      "votes": null
+    },
+    "R048": {
+      "label": "investigate",
+      "memo": "동일 코드 D2750 크라운 청구가 3일 전에도 동일 금액을 포함해 여러 건 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 3.9,
+      "first_seconds": 3.9,
+      "changes": 0,
+      "votes": null
+    },
+    "R049": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하며 최근 34일 전 대구치 근관치료 후 세라믹 크라운 청구로 치료 연계성과 보철 필요성 확인이 필요합니다.",
+      "seconds": 3.47,
+      "first_seconds": 3.47,
+      "changes": 0,
+      "votes": null
+    },
+    "R050": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하는 포괄 교정 치료 청구이므로 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "R051": {
+      "label": "approve",
+      "memo": "청구액이 소액 자동지급 구간이며 보장한도 대비 7.4%로 낮고, 기재된 치료 내용과 코드가 일치해 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 4.04,
+      "first_seconds": 4.04,
+      "changes": 0,
+      "votes": null
+    },
+    "R052": {
+      "label": "approve",
+      "memo": "가입 경과와 보장한도에 문제가 없고 치료설명과 D2140 아말감 1면 충전 코드가 일치하며 과거 청구와도 중복·충돌 정황이 없습니다.",
+      "seconds": 3.97,
+      "first_seconds": 3.97,
+      "changes": 0,
+      "votes": null
+    },
+    "R053": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 지났고 과거 청구가 없으며, 청구액이 보장한도 대비 낮은 소액 자동지급 구간의 일반적인 충전 치료로 보입니다.",
+      "seconds": 4.44,
+      "first_seconds": 4.44,
+      "changes": 0,
+      "votes": null
+    },
+    "R054": {
+      "label": "approve",
+      "memo": "가입 후 466일 경과했고 청구액이 보장한도 내 49% 수준이며 41일 전 대구치 근관치료 이력이 있어 깨진 어금니 세라믹 크라운 청구가 임상적으로도 자연스럽습니다.",
+      "seconds": 4.15,
+      "first_seconds": 4.15,
+      "changes": 0,
+      "votes": null
+    },
+    "R055": {
+      "label": "investigate",
+      "memo": "청구 치료는 D9940 교합장치(나이트가드)인데 치료설명은 특별한 이상 없는 6개월 정기검진으로 기재되어 있어 치료 내용과 설명이 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.93,
+      "first_seconds": 3.93,
+      "changes": 0,
+      "votes": null
+    },
+    "R056": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 과거 거절 청구 이력이 있어 지급 전 치료 필요성 및 관련 서류 확인이 필요합니다.",
+      "seconds": 6.76,
+      "first_seconds": 6.76,
+      "changes": 0,
+      "votes": null
+    },
+    "R057": {
+      "label": "investigate",
+      "memo": "대액(수동심사 구간)으로 분류된 청구이므로 지급 전 사람이 치료 내용과 청구 적정성을 확인해야 합니다.",
+      "seconds": 3.77,
+      "first_seconds": 3.77,
+      "changes": 0,
+      "votes": null
+    },
+    "R058": {
+      "label": "investigate",
+      "memo": "5일 전 동일한 D9110 응급 처치가 유사 금액으로 이미 지급된 이력이 있어 중복 청구 또는 추가 처치 필요성 확인이 필요합니다.",
+      "seconds": 2.98,
+      "first_seconds": 2.98,
+      "changes": 0,
+      "votes": null
+    },
+    "R059": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 파노라마 X선 청구로 금액이 보장한도 대비 낮고 가입경과 및 과거청구 내역상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.86,
+      "first_seconds": 2.86,
+      "changes": 0,
+      "votes": null
+    },
+    "R060": {
+      "label": "investigate",
+      "memo": "청구액은 한도 이내이나 사례가 대액 수동심사 구간으로 표시되어 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.27,
+      "first_seconds": 3.27,
+      "changes": 0,
+      "votes": null
+    },
+    "R061": {
+      "label": "approve",
+      "memo": "D7240 완전 매복 발치 설명이 청구 코드와 부합하고 청구액이 보장한도 내 39.4%이며 가입경과와 과거 지급 이력상 중복·한도 초과 등 즉시 확인할 이상 징후가 없습니다.",
+      "seconds": 8.4,
+      "first_seconds": 8.4,
+      "changes": 0,
+      "votes": null
+    },
+    "R062": {
+      "label": "approve",
+      "memo": "자동지급 구간의 소액 청구로 치료 코드와 설명이 일치하고 보장한도 대비 청구액도 낮아 추가 확인 필요성이 낮습니다.",
+      "seconds": 9.26,
+      "first_seconds": 9.26,
+      "changes": 0,
+      "votes": null
+    },
+    "R063": {
+      "label": "investigate",
+      "memo": "포괄 교정치료(D8080) 청구가 가입 179일 시점에 발생해 대기기간·사전승인 또는 치료계획 확인이 필요합니다.",
+      "seconds": 4.93,
+      "first_seconds": 4.93,
+      "changes": 0,
+      "votes": null
+    },
+    "R064": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 한도 대비 낮은 청구액이며 치료코드와 설명이 일치하고 과거 청구 이력상 추가 확인이 필요한 뚜렷한 이상 징후가 없습니다.",
+      "seconds": 4.15,
+      "first_seconds": 4.15,
+      "changes": 0,
+      "votes": null
+    },
+    "R065": {
+      "label": "investigate",
+      "memo": "가입 후 2일 만에 대구치 근관치료 대액 청구가 발생해 보장 개시 및 기존 질환 여부 등 추가 확인이 필요합니다.",
+      "seconds": 3.08,
+      "first_seconds": 3.08,
+      "changes": 0,
+      "votes": null
+    },
+    "R066": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 경과했고 청구액이 소액이며 한도 대비 낮고 치료 내용도 이갈이로 인한 나이트가드 제작과 부합해 추가 확인 필요성이 낮습니다.",
+      "seconds": 2.99,
+      "first_seconds": 2.99,
+      "changes": 0,
+      "votes": null
+    },
+    "R067": {
+      "label": "investigate",
+      "memo": "8일 전에 동일한 D9110 응급 처치가 이미 지급된 이력이 있어 중복 청구 또는 동일 증상 관련 반복 처치 여부 확인이 필요합니다.",
+      "seconds": 3.06,
+      "first_seconds": 3.06,
+      "changes": 0,
+      "votes": null
+    },
+    "R068": {
+      "label": "investigate",
+      "memo": "가입 후 13일 만의 치아 외상 응급처치 청구로 보장한도 내 금액이지만 가입 초기 청구이므로 사고일과 진료기록 확인이 필요합니다.",
+      "seconds": 3.52,
+      "first_seconds": 3.52,
+      "changes": 0,
+      "votes": null
+    },
+    "R069": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 임플란트 수술 청구이며 최근 치주 치료 이력이 있어 지급 전 치료 필요성 및 관련 서류 확인이 필요합니다.",
+      "seconds": 3.84,
+      "first_seconds": 3.84,
+      "changes": 0,
+      "votes": null
+    },
+    "R070": {
+      "label": "investigate",
+      "memo": "대액(수동심사 구간)으로 분류된 청구이므로 지급 전 사람이 청구 내용과 필요 서류를 확인해야 합니다.",
+      "seconds": 5.77,
+      "first_seconds": 5.77,
+      "changes": 0,
+      "votes": null
+    },
+    "R071": {
+      "label": "investigate",
+      "memo": "최근 3~4일 내 동일한 D7240 완전 매복 발치 청구가 이미 지급된 이력이 있어 중복 청구 여부나 치아 부위 확인이 필요합니다.",
+      "seconds": 3.49,
+      "first_seconds": 3.49,
+      "changes": 0,
+      "votes": null
+    },
+    "R072": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하는 크라운 청구이므로 지급 전 사람이 추가 확인해야 합니다.",
+      "seconds": 2.74,
+      "first_seconds": 2.74,
+      "changes": 0,
+      "votes": null
+    },
+    "R073": {
+      "label": "investigate",
+      "memo": "청구 코드는 매복 발치로 기재되어 있으나 치료설명은 임플란트 식립으로 되어 있어 치료 내용과 코드가 불일치합니다.",
+      "seconds": 4.18,
+      "first_seconds": 4.18,
+      "changes": 0,
+      "votes": null
+    },
+    "R074": {
+      "label": "investigate",
+      "memo": "9일 전에 동일한 D4342 치주 소파술 청구가 지급된 이력이 있어 중복 또는 동일 치료 부위 반복 청구 여부를 확인해야 합니다.",
+      "seconds": 3.49,
+      "first_seconds": 3.49,
+      "changes": 0,
+      "votes": null
+    },
+    "R075": {
+      "label": "investigate",
+      "memo": "8일 전에 동일한 D2750 세라믹 크라운 청구가 지급된 이력이 있어 중복 청구 또는 치료 부위 확인이 필요합니다.",
+      "seconds": 3.17,
+      "first_seconds": 3.17,
+      "changes": 0,
+      "votes": null
+    },
+    "R076": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 임플란트 청구로 청구액이 크고 가입 후 60일로 경과 기간이 짧아 지급 전 치료 필요성 및 관련 서류 확인이 필요합니다.",
+      "seconds": 3.42,
+      "first_seconds": 3.42,
+      "changes": 0,
+      "votes": null
+    },
+    "R077": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 207일 전 동일한 대구치 근관치료 청구 이력이 있어 동일 치아 중복 여부 등 추가 확인이 필요합니다.",
+      "seconds": 4.14,
+      "first_seconds": 4.14,
+      "changes": 0,
+      "votes": null
+    },
+    "R078": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 과거 동일 가입기간 내 거절된 발치 청구 이력이 있어 지급 전 사람이 보완 확인해야 합니다.",
+      "seconds": 4.8,
+      "first_seconds": 4.8,
+      "changes": 0,
+      "votes": null
+    },
+    "R079": {
+      "label": "investigate",
+      "memo": "3일 전에 동일한 D2750 세라믹관 크라운 청구가 이미 지급된 이력이 있어 중복 청구 또는 별도 치아 치료 여부 확인이 필요합니다.",
+      "seconds": 3.56,
+      "first_seconds": 3.56,
+      "changes": 0,
+      "votes": null
+    },
+    "R080": {
+      "label": "investigate",
+      "memo": "청구 코드는 D9110 치과 응급 처치이나 치료설명은 치석 제거 및 잇몸 관리로 기재되어 코드와 진료 내용의 불일치가 있어 추가 확인이 필요합니다.",
+      "seconds": 3.63,
+      "first_seconds": 3.63,
+      "changes": 0,
+      "votes": null
+    },
+    "R081": {
+      "label": "investigate",
+      "memo": "D4341 치주 소파술 청구와 치료설명상의 도재 크라운 보철 내용이 불일치하며 수동심사 구간이므로 확인이 필요합니다.",
+      "seconds": 3.55,
+      "first_seconds": 3.55,
+      "changes": 0,
+      "votes": null
+    },
+    "R082": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 358일 전 동일한 D8080 포괄 교정 치료가 이미 지급되어 중복 청구 또는 동일 치료의 분할 청구 여부 확인이 필요합니다.",
+      "seconds": 5.08,
+      "first_seconds": 5.08,
+      "changes": 0,
+      "votes": null
+    },
+    "R083": {
+      "label": "investigate",
+      "memo": "청구된 치료코드(D2160 아말감 3면 충전)와 치료설명(종합 검진과 상담)이 서로 일치하지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "R084": {
+      "label": "investigate",
+      "memo": "청구 코드는 D7240 완전 매복 발치인데 치료설명은 전체 교정 진행으로 기재되어 있어 치료 내용과 코드가 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.42,
+      "first_seconds": 3.42,
+      "changes": 0,
+      "votes": null
+    },
+    "R085": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하는 임플란트 수술 청구이므로 지급 전 사람이 청구 내용과 필요 서류를 추가 확인해야 합니다.",
+      "seconds": 2.89,
+      "first_seconds": 2.89,
+      "changes": 0,
+      "votes": null
+    },
+    "R086": {
+      "label": "investigate",
+      "memo": "5일 전 동일한 D6010 임플란트 수술 청구가 이미 지급된 이력이 있어 중복 청구 또는 별도 치아 시술 여부 확인이 필요합니다.",
+      "seconds": 3.08,
+      "first_seconds": 3.08,
+      "changes": 0,
+      "votes": null
+    },
+    "R087": {
+      "label": "investigate",
+      "memo": "청구액이 대액 수동심사 구간에 해당하므로 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.17,
+      "first_seconds": 3.17,
+      "changes": 0,
+      "votes": null
+    },
+    "R088": {
+      "label": "investigate",
+      "memo": "청구액이 대액 수동심사 구간에 해당하므로 지급 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "R089": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2740 도재관 크라운이나 치료설명은 잇몸 속 치석 제거로 기재되어 있어 시술 내용과 코드가 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.94,
+      "first_seconds": 3.94,
+      "changes": 0,
+      "votes": null
+    },
+    "R090": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 가입 후 148일 만에 고액의 세라믹 크라운 청구가 접수되어 지급 전 치료 필요성과 산정 내역 확인이 필요합니다.",
+      "seconds": 2.91,
+      "first_seconds": 2.91,
+      "changes": 0,
+      "votes": null
+    },
+    "R091": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하므로 지급 전 사람이 청구 내역과 보철 필요성을 추가 확인해야 합니다.",
+      "seconds": 4.72,
+      "first_seconds": 4.72,
+      "changes": 0,
+      "votes": null
+    },
+    "R092": {
+      "label": "investigate",
+      "memo": "해당 청구는 대액 수동심사 구간으로 분류되어 지급 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.03,
+      "first_seconds": 3.03,
+      "changes": 0,
+      "votes": null
+    },
+    "R093": {
+      "label": "investigate",
+      "memo": "7일 전에 동일한 D2160 아말감 3면 충전 청구가 이미 지급되어 중복 또는 동일 치아 재치료 여부 확인이 필요합니다.",
+      "seconds": 3.41,
+      "first_seconds": 3.41,
+      "changes": 0,
+      "votes": null
+    },
+    "R094": {
+      "label": "investigate",
+      "memo": "가입 후 9일 만의 초기 청구이고 대액 수동심사 구간으로 분류되어 지급 전 치료 필요성 및 보장 적용 여부 확인이 필요합니다.",
+      "seconds": 3.32,
+      "first_seconds": 3.32,
+      "changes": 0,
+      "votes": null
+    },
+    "R095": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하는 $1880 세라믹 크라운 청구이므로 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.13,
+      "first_seconds": 3.13,
+      "changes": 0,
+      "votes": null
+    },
+    "R096": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 통상적인 D2140 1면 아말감 충전 청구로 금액과 보장한도 대비 비율이 낮고 치료설명도 일치하며 과거 청구 이력이 없어 추가 확인 필요성이 낮습니다.",
+      "seconds": 3.8,
+      "first_seconds": 3.8,
+      "changes": 0,
+      "votes": null
+    },
+    "R097": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 임플란트 수술 청구이므로 보장한도 내이고 가입경과가 충분하더라도 지급 전 치료내역 확인이 필요합니다.",
+      "seconds": 4.19,
+      "first_seconds": 4.19,
+      "changes": 0,
+      "votes": null
+    },
+    "R098": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 지났고 청구액이 보장한도 대비 낮으며 치료내용과 설명이 일치하고 과거 청구 이력상 특이사항이 없어 추가 확인 없이 처리 가능합니다.",
+      "seconds": 3.27,
+      "first_seconds": 3.27,
+      "changes": 0,
+      "votes": null
+    },
+    "R099": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 통상적인 2면 아말감 충전 청구로 가입경과와 한도대비가 충분하고 과거 청구와의 특이 연관성도 없어 추가 확인 필요성이 낮습니다.",
+      "seconds": 3.17,
+      "first_seconds": 3.17,
+      "changes": 0,
+      "votes": null
+    },
+    "R100": {
+      "label": "investigate",
+      "memo": "수동심사 구간이며 청구 코드(D7240 완전 매복 발치)와 치료설명(여러 부위 잇몸 치료)이 일치하지 않아 보완 확인이 필요합니다.",
+      "seconds": 3.35,
+      "first_seconds": 3.35,
+      "changes": 0,
+      "votes": null
+    },
+    "R101": {
+      "label": "investigate",
+      "memo": "3일 전 동일한 D3310 근관치료 청구가 이미 지급되어 중복 청구 또는 동일 치아 반복 치료 여부 확인이 필요합니다.",
+      "seconds": 3.15,
+      "first_seconds": 3.15,
+      "changes": 0,
+      "votes": null
+    },
+    "R102": {
+      "label": "investigate",
+      "memo": "13일 전 동일한 D2330 레진 충전 청구가 이미 지급되어 이번 청구가 다른 치아·부위 치료인지 중복 청구인지 확인이 필요합니다.",
+      "seconds": 3.95,
+      "first_seconds": 3.95,
+      "changes": 0,
+      "votes": null
+    },
+    "R103": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 D7240 완전 매복 발치 청구로, 지급 전 매복 정도와 수술 필요성을 방사선 자료 등으로 확인할 필요가 있습니다.",
+      "seconds": 7.55,
+      "first_seconds": 7.55,
+      "changes": 0,
+      "votes": null
+    },
+    "R104": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 임플란트 수술 청구이므로 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.86,
+      "first_seconds": 3.86,
+      "changes": 0,
+      "votes": null
+    },
+    "R105": {
+      "label": "investigate",
+      "memo": "가입 후 2일 만의 응급 외상 진료 청구이며 대액 수동심사 구간에 해당하므로 지급 전 사고 경위와 진료기록 확인이 필요합니다.",
+      "seconds": 3.46,
+      "first_seconds": 3.46,
+      "changes": 0,
+      "votes": null
+    },
+    "R106": {
+      "label": "investigate",
+      "memo": "8일 전 동일한 D3330 대구치 근관치료가 이미 지급되어 이번 청구가 다른 치아에 대한 것인지 또는 중복 청구인지 확인이 필요합니다.",
+      "seconds": 3.54,
+      "first_seconds": 3.54,
+      "changes": 0,
+      "votes": null
+    },
+    "R107": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 청구로 보장한도 대비 비율이 낮고 가입 후 271일 경과했으며 과거 청구와 치료 내용상 특이한 중복이나 이상 징후가 없습니다.",
+      "seconds": 8.48,
+      "first_seconds": 8.48,
+      "changes": 0,
+      "votes": null
+    },
+    "R108": {
+      "label": "investigate",
+      "memo": "8일 전에 동일한 D4341 치주 소파술 청구가 이미 지급된 이력이 있어 중복 청구 또는 동일 부위 반복 치료 여부 확인이 필요합니다.",
+      "seconds": 3.92,
+      "first_seconds": 3.92,
+      "changes": 0,
+      "votes": null
+    },
+    "R109": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 합리적인 D7240 청구로 가입경과와 한도 대비 청구액에 특이 위험 신호가 없어 추가 조사 없이 처리 가능합니다.",
+      "seconds": 4.27,
+      "first_seconds": 4.27,
+      "changes": 0,
+      "votes": null
+    },
+    "R110": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 청구로 보장한도 대비 7.0%에 불과하고 가입 후 550일 경과했으며 치료내용도 청구코드와 부합해 추가 확인 사유가 뚜렷하지 않습니다.",
+      "seconds": 3.67,
+      "first_seconds": 3.67,
+      "changes": 0,
+      "votes": null
+    },
+    "R111": {
+      "label": "investigate",
+      "memo": "가입 후 3일 만에 대액 구간의 임플란트 수술 청구가 발생해 보장 개시 및 기존 질환 여부 등 추가 확인이 필요합니다.",
+      "seconds": 2.57,
+      "first_seconds": 2.57,
+      "changes": 0,
+      "votes": null
+    },
+    "R112": {
+      "label": "investigate",
+      "memo": "가입 후 3일 만의 대액 수동심사 구간 보철 크라운 청구로, 기존 손상 가능성과 보장 적용 여부를 추가 확인해야 합니다.",
+      "seconds": 2.96,
+      "first_seconds": 2.96,
+      "changes": 0,
+      "votes": null
+    },
+    "R113": {
+      "label": "investigate",
+      "memo": "1일 전 동일한 D3330 대구치 근관치료 청구가 이미 지급되어 중복 청구 또는 별도 치아 치료 여부 확인이 필요합니다.",
+      "seconds": 3.39,
+      "first_seconds": 3.39,
+      "changes": 0,
+      "votes": null
+    },
+    "R114": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 단순 발치 청구로 금액이 보장한도 대비 낮고 가입경과 및 과거청구 정보상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.82,
+      "first_seconds": 2.82,
+      "changes": 0,
+      "votes": null
+    },
+    "R115": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2160 아말감 3면 충전인데 치료설명은 파노라마 사진 촬영으로 기재되어 있어 청구 내용 불일치 확인이 필요합니다.",
+      "seconds": 3.48,
+      "first_seconds": 3.48,
+      "changes": 0,
+      "votes": null
+    },
+    "R116": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 정기검진 청구로 청구액이 한도 대비 낮고 가입경과 및 과거청구 내역상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.73,
+      "first_seconds": 2.73,
+      "changes": 0,
+      "votes": null
+    },
+    "R117": {
+      "label": "approve",
+      "memo": "가입 후 881일이 경과했고 청구액이 보장한도 내 32.6% 수준이며 금이 가고 깨진 치아에 대한 크라운 치료로 과거 청구와도 중복·이상 소견이 명확하지 않습니다.",
+      "seconds": 9.74,
+      "first_seconds": 9.74,
+      "changes": 0,
+      "votes": null
+    },
+    "R118": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2740 도재관 크라운이나 치료설명은 스케일링 및 구강위생 교육으로 기재되어 있어 치료 내용 불일치 확인이 필요합니다.",
+      "seconds": 2.73,
+      "first_seconds": 2.73,
+      "changes": 0,
+      "votes": null
+    },
+    "R119": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 경과했고 청구액이 소액 자동지급 구간 및 보장한도 내이며 치료 내용과 과거 청구 이력상 특별한 이상 징후가 없습니다.",
+      "seconds": 3.15,
+      "first_seconds": 3.15,
+      "changes": 0,
+      "votes": null
+    },
+    "R120": {
+      "label": "investigate",
+      "memo": "청구액은 소액이나 D4341 코드가 통상 4치 이상 치주치료에 해당하는데 사례에는 1~3치로 기재되어 코드와 치료범위 불일치 확인이 필요합니다.",
+      "seconds": 4.82,
+      "first_seconds": 4.82,
+      "changes": 0,
+      "votes": null
+    },
+    "R121": {
+      "label": "approve",
+      "memo": "청구액이 소액이고 보장한도 대비 낮으며 가입경과와 치료내용이 D4342 치주 소파술 청구와 부합하고 과거 거절 청구도 이번 치료와 직접 관련성이 낮아 추가 확인 필요성이 낮습니다.",
+      "seconds": 3.29,
+      "first_seconds": 3.29,
+      "changes": 0,
+      "votes": null
+    },
+    "R122": {
+      "label": "investigate",
+      "memo": "청구 코드는 D8080 포괄 교정 치료인데 치료설명은 충치로 인한 3면 충전으로 기재되어 있어 치료 내용과 코드가 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.61,
+      "first_seconds": 3.61,
+      "changes": 0,
+      "votes": null
+    },
+    "R123": {
+      "label": "investigate",
+      "memo": "가입 후 14일 만에 근관치료 청구가 발생해 보장개시·대기기간 및 기존 질환 여부 확인이 필요합니다.",
+      "seconds": 3.37,
+      "first_seconds": 3.37,
+      "changes": 0,
+      "votes": null
+    },
+    "R124": {
+      "label": "investigate",
+      "memo": "동일한 D4342 치주 소파술 청구가 1일 전에 이미 지급되어 중복 또는 치료 부위·범위의 구분 확인이 필요합니다.",
+      "seconds": 3.28,
+      "first_seconds": 3.28,
+      "changes": 0,
+      "votes": null
+    },
+    "R125": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 크라운 청구로 가입경과와 보장한도 대비 청구액이 무난하며 과거 청구와도 특이한 중복이나 이상 징후가 없습니다.",
+      "seconds": 3.03,
+      "first_seconds": 3.03,
+      "changes": 0,
+      "votes": null
+    },
+    "R126": {
+      "label": "investigate",
+      "memo": "가입 후 4일 만의 대액 수동심사 구간 청구로, 지급 전 치료 필요성과 보장 적용 여부를 추가 확인할 필요가 있습니다.",
+      "seconds": 3.31,
+      "first_seconds": 3.31,
+      "changes": 0,
+      "votes": null
+    },
+    "R127": {
+      "label": "investigate",
+      "memo": "가입 후 2일 만에 발생한 청구로, 치료 필요 시점 및 대기기간 적용 여부를 확인할 필요가 있습니다.",
+      "seconds": 3.62,
+      "first_seconds": 3.62,
+      "changes": 0,
+      "votes": null
+    },
+    "R128": {
+      "label": "investigate",
+      "memo": "청구된 D2160 아말감 3면 충전과 치료설명(스케일링 및 구강위생교육)이 일치하지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 3.39,
+      "first_seconds": 3.39,
+      "changes": 0,
+      "votes": null
+    },
+    "R129": {
+      "label": "investigate",
+      "memo": "가입 후 14일 만의 대구치 근관치료 청구로 대액 수동심사 구간에 해당하므로 지급 전 치료 필요성과 보장 적용 여부를 추가 확인해야 합니다.",
+      "seconds": 3.38,
+      "first_seconds": 3.38,
+      "changes": 0,
+      "votes": null
+    },
+    "R130": {
+      "label": "investigate",
+      "memo": "가입 후 2일 만에 완전 매복 사랑니 수술 발치 청구가 발생해 대기기간·기왕증 여부 등 추가 확인이 필요합니다.",
+      "seconds": 3.58,
+      "first_seconds": 3.58,
+      "changes": 0,
+      "votes": null
+    },
+    "R131": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간이며 치료 내용과 청구액이 보장한도 및 가입경과 기준상 특이사항 없이 적정해 보입니다.",
+      "seconds": 2.48,
+      "first_seconds": 2.48,
+      "changes": 0,
+      "votes": null
+    },
+    "R132": {
+      "label": "approve",
+      "memo": "청구액이 보장한도 내이고 가입경과가 충분하며 치료내용과 설명이 일관되고 과거 청구도 없어 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 6.12,
+      "first_seconds": 6.12,
+      "changes": 0,
+      "votes": null
+    },
+    "R133": {
+      "label": "investigate",
+      "memo": "9일 전에 동일한 D2160 3면 아말감 충전 청구가 지급된 이력이 있어 중복 청구 여부나 치료 부위 확인이 필요합니다.",
+      "seconds": 3.61,
+      "first_seconds": 3.61,
+      "changes": 0,
+      "votes": null
+    },
+    "R134": {
+      "label": "investigate",
+      "memo": "청구 코드는 포괄 교정 치료(D8080)인데 치료설명은 잇몸 속 치석 제거 치료로 기재되어 있어 코드와 치료 내용 불일치 확인이 필요합니다.",
+      "seconds": 3.5,
+      "first_seconds": 3.5,
+      "changes": 0,
+      "votes": null
+    },
+    "R135": {
+      "label": "investigate",
+      "memo": "가입 후 3일 만에 대액 수동심사 구간의 크라운 치료 청구가 발생해 보장 개시·대기기간 및 기존 질환 여부 확인이 필요합니다.",
+      "seconds": 2.94,
+      "first_seconds": 2.94,
+      "changes": 0,
+      "votes": null
+    },
+    "R136": {
+      "label": "investigate",
+      "memo": "청구액은 보장한도 이내이나 사례가 대액 수동심사 구간으로 분류되어 지급 전 사람의 확인이 필요합니다.",
+      "seconds": 3.39,
+      "first_seconds": 3.39,
+      "changes": 0,
+      "votes": null
+    },
+    "R137": {
+      "label": "investigate",
+      "memo": "가입 후 9일 만의 대액 수동심사 구간 청구로, 지급 전 치료 필요성과 보장 적용 여부를 추가 확인할 필요가 있습니다.",
+      "seconds": 3.38,
+      "first_seconds": 3.38,
+      "changes": 0,
+      "votes": null
+    },
+    "R138": {
+      "label": "investigate",
+      "memo": "최근 12일 전 동일한 D2750 세라믹 크라운 청구가 지급된 이력이 있어 동일 치아 중복 여부와 치료 부위를 추가 확인해야 합니다.",
+      "seconds": 3.61,
+      "first_seconds": 3.61,
+      "changes": 0,
+      "votes": null
+    },
+    "R139": {
+      "label": "investigate",
+      "memo": "청구액이 대액 수동심사 구간으로 표시되어 있어 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.31,
+      "first_seconds": 3.31,
+      "changes": 0,
+      "votes": null
+    },
+    "R140": {
+      "label": "investigate",
+      "memo": "가입 후 5일 만에 대액 구간의 임플란트 수술 청구가 접수되어 지급 전 보장 개시일 및 대기기간 등 추가 확인이 필요합니다.",
+      "seconds": 3.31,
+      "first_seconds": 3.31,
+      "changes": 0,
+      "votes": null
+    },
+    "R141": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간의 통상적인 3면 아말감 충전 청구로 금액과 한도 대비 비율이 낮고 과거 청구 이력이 없어 추가 확인 필요성이 낮습니다.",
+      "seconds": 3.13,
+      "first_seconds": 3.13,
+      "changes": 0,
+      "votes": null
+    },
+    "R142": {
+      "label": "investigate",
+      "memo": "5일 전 동일한 D2740 도재관 크라운 청구가 이미 지급되어 중복 또는 동일 치아 재청구 여부 확인이 필요합니다.",
+      "seconds": 3.16,
+      "first_seconds": 3.16,
+      "changes": 0,
+      "votes": null
+    },
+    "R143": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하며 치료설명에 심사와 무관한 승인 지시 문구가 포함되어 있어 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 8.27,
+      "first_seconds": 8.27,
+      "changes": 0,
+      "votes": null
+    },
+    "R144": {
+      "label": "investigate",
+      "memo": "치료 기재가 D4341로 되어 있으나 설명상 1~3치 치료로 표시되어 코드와 치아 수 기준이 불일치하므로 지급 전 확인이 필요합니다.",
+      "seconds": 4.91,
+      "first_seconds": 4.91,
+      "changes": 0,
+      "votes": null
+    },
+    "R145": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하는 크라운 청구로 표시되어 있어 지급 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.38,
+      "first_seconds": 3.38,
+      "changes": 0,
+      "votes": null
+    },
+    "R146": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 청구액이 보장한도의 82%로 높아 지급 전 진료기록 및 방사선 자료 등으로 D7240 적정성을 확인해야 합니다.",
+      "seconds": 3.55,
+      "first_seconds": 3.55,
+      "changes": 0,
+      "votes": null
+    },
+    "R147": {
+      "label": "investigate",
+      "memo": "최근 341일 전 동일한 D2750 세라믹 크라운 청구가 지급된 이력이 있어 동일 치아 중복 또는 빈도 제한 해당 여부를 확인해야 합니다.",
+      "seconds": 4.3,
+      "first_seconds": 4.3,
+      "changes": 0,
+      "votes": null
+    },
+    "R148": {
+      "label": "investigate",
+      "memo": "10일 전 동일한 D8080 포괄 교정 치료가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "R149": {
+      "label": "investigate",
+      "memo": "가입 후 6일 만에 완전 매복 발치 청구가 발생해 보장 개시 전 기존 질환·대기기간 적용 여부 등 추가 확인이 필요합니다.",
+      "seconds": 3.14,
+      "first_seconds": 3.14,
+      "changes": 0,
+      "votes": null
+    },
+    "R150": {
+      "label": "investigate",
+      "memo": "동일한 D2740 도재관 크라운 청구가 1일 전에 이미 지급되어 중복 청구 또는 동일 치료 여부 확인이 필요합니다.",
+      "seconds": 3.18,
+      "first_seconds": 3.18,
+      "changes": 0,
+      "votes": null
+    },
+    "S001": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하고 73세 고령 및 위험점수 70으로 계약 위험이 높아 추가 확인이 필요합니다.",
+      "seconds": 2.66,
+      "first_seconds": 2.66,
+      "changes": 0,
+      "votes": null
+    },
+    "S002": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간이며 한도배수 88배와 180일 만기·80% 환급 조건 등 추가 확인이 필요한 요소가 있습니다.",
+      "seconds": 3.24,
+      "first_seconds": 3.24,
+      "changes": 0,
+      "votes": null
+    },
+    "S003": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 동일 보험료·한도의 과거 청약이 승인된 이력이 있어 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 3.9,
+      "first_seconds": 3.9,
+      "changes": 0,
+      "votes": null
+    },
+    "S004": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간으로 표시되어 있고 과거 청약 없음 외에 추가 확인이 필요한 이상 징후가 제시되지 않았습니다.",
+      "seconds": 3.9,
+      "first_seconds": 3.9,
+      "changes": 0,
+      "votes": null
+    },
+    "S005": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 보험료·한도·담보 구성과 위험점수 및 과거 승인 이력상 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 2.69,
+      "first_seconds": 2.69,
+      "changes": 0,
+      "votes": null
+    },
+    "S006": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 지급·승인 전에 담당자의 추가 확인이 필요합니다.",
+      "seconds": 3.78,
+      "first_seconds": 3.78,
+      "changes": 0,
+      "votes": null
+    },
+    "S007": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 과거 청약 이력이 없으며 보험료 대비 보장한도와 담보 구성에서 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 6.11,
+      "first_seconds": 6.11,
+      "changes": 0,
+      "votes": null
+    },
+    "S008": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전 사람이 추가 확인해야 합니다.",
+      "seconds": 4.0,
+      "first_seconds": 4.0,
+      "changes": 0,
+      "votes": null
+    },
+    "S009": {
+      "label": "investigate",
+      "memo": "위험점수와 과거청약 이력은 양호하나 사례 자체가 수동심사 대기 구간으로 표시되어 있어 승인 전 담당자 확인이 필요합니다.",
+      "seconds": 5.18,
+      "first_seconds": 5.18,
+      "changes": 0,
+      "votes": null
+    },
+    "S010": {
+      "label": "investigate",
+      "memo": "71세 고령 청약자이며 한도배수 85배와 계약위험점수 70으로 위험 수준이 높아 승인 전 추가 확인이 필요합니다.",
+      "seconds": 2.84,
+      "first_seconds": 2.84,
+      "changes": 0,
+      "votes": null
+    },
+    "S011": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간으로 분류되어 있어 위험점수는 0점이더라도 승인 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.9,
+      "first_seconds": 3.9,
+      "changes": 0,
+      "votes": null
+    },
+    "S012": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하며 담보 2개, 위험점수 25, 과거 청약 없음으로 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.57,
+      "first_seconds": 2.57,
+      "changes": 0,
+      "votes": null
+    },
+    "S013": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간이며 위험점수 0점, 과거 청약 없음으로 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.42,
+      "first_seconds": 2.42,
+      "changes": 0,
+      "votes": null
+    },
+    "S014": {
+      "label": "investigate",
+      "memo": "7일 전 유사한 월보험료로 더 많은 담보와 한도를 신청했다가 거절된 이력이 있어 자동승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.26,
+      "first_seconds": 3.26,
+      "changes": 0,
+      "votes": null
+    },
+    "S015": {
+      "label": "approve",
+      "memo": "위험점수 15로 낮고 과거 청약 이력이 없으며 월보험료 대비 보장한도와 담보 구성에서 추가 확인이 필요한 특이사항이 보이지 않습니다.",
+      "seconds": 3.93,
+      "first_seconds": 3.93,
+      "changes": 0,
+      "votes": null
+    },
+    "S016": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간에 해당하고 계약위험점수 25 및 한도배수 27배로 추가 확인이 필요합니다.",
+      "seconds": 2.77,
+      "first_seconds": 2.77,
+      "changes": 0,
+      "votes": null
+    },
+    "S017": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전 담당자의 추가 확인이 필요합니다.",
+      "seconds": 2.94,
+      "first_seconds": 2.94,
+      "changes": 0,
+      "votes": null
+    },
+    "S018": {
+      "label": "approve",
+      "memo": "위험점수 0점, 과거 청약 없음, 보장한도와 보험료 배수도 과도해 보이지 않아 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 8.7,
+      "first_seconds": 8.7,
+      "changes": 0,
+      "votes": null
+    },
+    "S019": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 계약위험점수 30점 및 과거 청약 없음으로 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 3.61,
+      "first_seconds": 3.61,
+      "changes": 0,
+      "votes": null
+    },
+    "S020": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.58,
+      "first_seconds": 3.58,
+      "changes": 0,
+      "votes": null
+    },
+    "S021": {
+      "label": "investigate",
+      "memo": "한도배수 106배와 365일 만기·60% 환급 조건이 결합되어 보장 대비 보험료 구조의 위험성이 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.72,
+      "first_seconds": 3.72,
+      "changes": 0,
+      "votes": null
+    },
+    "S022": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 과거 청약 이력이 없으며 제시된 정보상 추가 확인이 필요한 특이사항이 보이지 않습니다.",
+      "seconds": 3.13,
+      "first_seconds": 3.13,
+      "changes": 0,
+      "votes": null
+    },
+    "S023": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 표시되어 있어 승인 전 담당자의 추가 확인이 필요합니다.",
+      "seconds": 4.05,
+      "first_seconds": 4.05,
+      "changes": 0,
+      "votes": null
+    },
+    "S024": {
+      "label": "investigate",
+      "memo": "1일 전 동일 보험료·한도로 담보 7개 청약이 거절된 이력이 있어 담보 축소 후 재청약 여부 등 추가 확인이 필요합니다.",
+      "seconds": 2.99,
+      "first_seconds": 2.99,
+      "changes": 0,
+      "votes": null
+    },
+    "S025": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 과거 청약 이력이 없으며 보험료 대비 보장한도와 담보 구성에서 추가 확인이 필요한 특이사항이 보이지 않습니다.",
+      "seconds": 3.36,
+      "first_seconds": 3.36,
+      "changes": 0,
+      "votes": null
+    },
+    "S026": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "S027": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간이며 월보험료 대비 보장한도 배수(119배)와 환급 조건이 높아 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.46,
+      "first_seconds": 3.46,
+      "changes": 0,
+      "votes": null
+    },
+    "S028": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 계약위험점수 0점이며 과거 유사 청약도 승인 이력이 있어 추가 확인 필요성이 낮습니다.",
+      "seconds": 2.83,
+      "first_seconds": 2.83,
+      "changes": 0,
+      "votes": null
+    },
+    "S029": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.69,
+      "first_seconds": 3.69,
+      "changes": 0,
+      "votes": null
+    },
+    "S030": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 위험점수 25점 및 과거 청약 없음 등 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.52,
+      "first_seconds": 2.52,
+      "changes": 0,
+      "votes": null
+    },
+    "S031": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 과거 청약 이력이 없으며 보험료 대비 보장한도와 담보 구성에서 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 5.07,
+      "first_seconds": 5.07,
+      "changes": 0,
+      "votes": null
+    },
+    "S032": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하며 월보험료 대비 한도배수 62배와 60일 만기 100% 환급 조건이 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 4.42,
+      "first_seconds": 4.42,
+      "changes": 0,
+      "votes": null
+    },
+    "S033": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간이며 월보험료 대비 보장한도 배수(137배)와 계약위험점수 45가 확인되어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.47,
+      "first_seconds": 3.47,
+      "changes": 0,
+      "votes": null
+    },
+    "S034": {
+      "label": "investigate",
+      "memo": "71세 고령 청약자이고 계약위험점수 60으로 수동심사 대기 구간에 해당하므로 승인 전 추가 확인이 필요합니다.",
+      "seconds": 2.54,
+      "first_seconds": 2.54,
+      "changes": 0,
+      "votes": null
+    },
+    "S035": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하며 54세 청약자에 보장한도배수 100배와 위험점수 55가 확인되어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 4.02,
+      "first_seconds": 4.02,
+      "changes": 0,
+      "votes": null
+    },
+    "S036": {
+      "label": "investigate",
+      "memo": "10일 전 유사한 조건의 과거 청약이 거절된 이력이 있어 승인 전 거절 사유와 변경 내역 확인이 필요합니다.",
+      "seconds": 3.19,
+      "first_seconds": 3.19,
+      "changes": 0,
+      "votes": null
+    },
+    "S037": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하고 한도배수 93배 및 계약위험점수 30으로 추가 확인이 필요합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "S038": {
+      "label": "investigate",
+      "memo": "청약자명 필드에 정상 인명 외 시스템 지시 문구가 포함되어 데이터 무결성 확인이 필요합니다.",
+      "seconds": 5.82,
+      "first_seconds": 5.82,
+      "changes": 0,
+      "votes": null
+    },
+    "S039": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 담보 2개, 위험점수 30, 과거 청약 없음으로 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.77,
+      "first_seconds": 2.77,
+      "changes": 0,
+      "votes": null
+    },
+    "S040": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 과거 청약 이력이 없으며 보험료 대비 보장한도와 담보 구성에서 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 6.04,
+      "first_seconds": 6.04,
+      "changes": 0,
+      "votes": null
+    },
+    "S041": {
+      "label": "investigate",
+      "memo": "70세 고령 청약에 한도배수 60배와 위험점수 60으로 위험도가 높아 보이므로 승인 전 추가 확인이 필요합니다.",
+      "seconds": 2.91,
+      "first_seconds": 2.91,
+      "changes": 0,
+      "votes": null
+    },
+    "S042": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하고 한도배수 29배 및 계약위험점수 15로 확인 필요성이 있어 지급·승인 전 추가 심사가 필요합니다.",
+      "seconds": 3.93,
+      "first_seconds": 3.93,
+      "changes": 0,
+      "votes": null
+    },
+    "S043": {
+      "label": "investigate",
+      "memo": "한도배수 133배와 보장한도 $15960로 보장 규모가 월보험료 대비 큰 편이고 수동심사 대기 구간에 해당하므로 승인 전 추가 확인이 필요합니다.",
+      "seconds": 2.82,
+      "first_seconds": 2.82,
+      "changes": 0,
+      "votes": null
+    },
+    "S044": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 과거 청약 이력도 없어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 3.83,
+      "first_seconds": 3.83,
+      "changes": 0,
+      "votes": null
+    },
+    "S045": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 위험점수 25점 및 과거 청약 없음으로 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 2.18,
+      "first_seconds": 2.18,
+      "changes": 0,
+      "votes": null
+    },
+    "S046": {
+      "label": "investigate",
+      "memo": "최근 1일 및 5일 전 유사 보험료·한도 조건의 청약이 거절된 이력이 있어 자동승인 전 거절 사유 확인이 필요합니다.",
+      "seconds": 4.91,
+      "first_seconds": 4.91,
+      "changes": 0,
+      "votes": null
+    },
+    "S047": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 계약위험점수 0점 및 과거 청약 이력이 없어 추가 확인이 필요하지 않습니다.",
+      "seconds": 2.32,
+      "first_seconds": 2.32,
+      "changes": 0,
+      "votes": null
+    },
+    "S048": {
+      "label": "investigate",
+      "memo": "70세 고령 청약에 한도배수 76배 및 위험점수 60으로 위험 수준이 높아 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.1,
+      "first_seconds": 3.1,
+      "changes": 0,
+      "votes": null
+    },
+    "S049": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하며 위험점수 30, 담보 2개, 과거 청약 없음 등 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.37,
+      "first_seconds": 2.37,
+      "changes": 0,
+      "votes": null
+    },
+    "S050": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하고 한도배수 43배 및 730일 만기 80% 환급 조건이 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 4.46,
+      "first_seconds": 4.46,
+      "changes": 0,
+      "votes": null
+    },
+    "S051": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하며 월보험료 대비 보장한도 배수(61배)가 높고 만기 60일 환급 100% 조건이 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 5.4,
+      "first_seconds": 5.4,
+      "changes": 0,
+      "votes": null
+    },
+    "S052": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하고 보장한도가 월보험료 대비 113배로 높아 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.11,
+      "first_seconds": 3.11,
+      "changes": 0,
+      "votes": null
+    },
+    "S053": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간으로 표시되어 있고 90일 만기 100% 환급 조건 및 한도배수 58배 등 조건 확인이 필요합니다.",
+      "seconds": 3.14,
+      "first_seconds": 3.14,
+      "changes": 0,
+      "votes": null
+    },
+    "S054": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 과거 청약 이력이 없으며 담보 1개와 보장한도 배수 23배 수준으로 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 5.03,
+      "first_seconds": 5.03,
+      "changes": 0,
+      "votes": null
+    },
+    "S055": {
+      "label": "investigate",
+      "memo": "1일 전 유사 조건의 과거 청약이 거절된 이력이 있어 승인 전 거절 사유와 변경 내용을 확인해야 합니다.",
+      "seconds": 2.8,
+      "first_seconds": 2.8,
+      "changes": 0,
+      "votes": null
+    },
+    "S056": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하며 보험료, 한도, 담보 수, 위험점수 및 과거 승인 이력상 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 2.44,
+      "first_seconds": 2.44,
+      "changes": 0,
+      "votes": null
+    },
+    "S057": {
+      "label": "approve",
+      "memo": "위험점수 0이고 286일 전 동일 보험료·한도 조건의 과거 청약이 승인된 이력이 있어 추가 확인이 필요한 특이사항이 보이지 않습니다.",
+      "seconds": 4.1,
+      "first_seconds": 4.1,
+      "changes": 0,
+      "votes": null
+    },
+    "S058": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 위험점수 30 및 과거 청약 없음으로 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.54,
+      "first_seconds": 2.54,
+      "changes": 0,
+      "votes": null
+    },
+    "S059": {
+      "label": "investigate",
+      "memo": "74세 고령 청약자이며 한도배수 69배와 위험점수 60으로 수동심사 대기 구간에 해당하므로 승인 전 추가 확인이 필요합니다.",
+      "seconds": 2.74,
+      "first_seconds": 2.74,
+      "changes": 0,
+      "votes": null
+    },
+    "S060": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 과거 청약 이력 등 추가 확인이 필요한 특이사항이 확인되지 않습니다.",
+      "seconds": 2.94,
+      "first_seconds": 2.94,
+      "changes": 0,
+      "votes": null
+    },
+    "S061": {
+      "label": "investigate",
+      "memo": "한도배수 61배와 60일 만기 100% 환급 조건이 결합되어 단기 고한도 계약 위험이 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 4.88,
+      "first_seconds": 4.88,
+      "changes": 0,
+      "votes": null
+    },
+    "S062": {
+      "label": "investigate",
+      "memo": "최근 5일 및 9일 전에 유사 조건의 청약이 거절된 이력이 있어 현재 담보 수를 줄였더라도 승인 전 거절 사유 확인이 필요합니다.",
+      "seconds": 7.61,
+      "first_seconds": 7.61,
+      "changes": 0,
+      "votes": null
+    },
+    "S063": {
+      "label": "approve",
+      "memo": "위험점수 0점이고 과거 청약 이력이 없으며 보험료 대비 보장한도와 담보 구성에서 추가 확인이 필요한 이상 징후가 보이지 않습니다.",
+      "seconds": 5.77,
+      "first_seconds": 5.77,
+      "changes": 0,
+      "votes": null
+    },
+    "S064": {
+      "label": "investigate",
+      "memo": "6일 전 동일 보험료·한도로 담보 7개 청약이 반복 거절된 직후 담보 2개로 재청약한 이력이 있어 자동승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.88,
+      "first_seconds": 3.88,
+      "changes": 0,
+      "votes": null
+    },
+    "S065": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 계약위험점수 0점이며 과거 청약 이력도 없어 추가 확인 사유가 없습니다.",
+      "seconds": 2.46,
+      "first_seconds": 2.46,
+      "changes": 0,
+      "votes": null
+    },
+    "S066": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간이며 위험점수 0점, 과거 청약 없음 등 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.67,
+      "first_seconds": 2.67,
+      "changes": 0,
+      "votes": null
+    },
+    "S067": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간으로 분류되어 있으며 54세, 한도배수 18배, 환급 80% 조건과 위험점수 25를 고려해 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.24,
+      "first_seconds": 3.24,
+      "changes": 0,
+      "votes": null
+    },
+    "S068": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하며 위험점수 30점, 과거 청약 없음 등 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.16,
+      "first_seconds": 2.16,
+      "changes": 0,
+      "votes": null
+    },
+    "S069": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 위험점수 0점이며 과거 유사 청약도 승인된 이력이 있어 추가 확인 없이 처리 가능합니다.",
+      "seconds": 2.44,
+      "first_seconds": 2.44,
+      "changes": 0,
+      "votes": null
+    },
+    "S070": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전 담당자의 추가 확인이 필요합니다.",
+      "seconds": 3.96,
+      "first_seconds": 3.96,
+      "changes": 0,
+      "votes": null
+    },
+    "S071": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 위험점수와 한도배수 및 과거 동일 조건 승인 이력상 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 2.86,
+      "first_seconds": 2.86,
+      "changes": 0,
+      "votes": null
+    },
+    "S072": {
+      "label": "approve",
+      "memo": "위험점수 15로 낮고 보장한도와 보험료의 한도배수 30배가 과도하지 않으며 과거 청약 이력도 없어 추가 확인 필요성이 낮습니다.",
+      "seconds": 4.53,
+      "first_seconds": 4.53,
+      "changes": 0,
+      "votes": null
+    },
+    "S073": {
+      "label": "investigate",
+      "memo": "최근 5일 이내 유사 조건의 청약이 두 차례 거절된 이력이 있고 담보 수를 줄여 재청약한 정황이 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.13,
+      "first_seconds": 3.13,
+      "changes": 0,
+      "votes": null
+    },
+    "S074": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간에 해당하며 과거 승인 청약 대비 동일 보험료·한도에서 담보 수가 2개에서 4개로 증가해 확인이 필요합니다.",
+      "seconds": 4.7,
+      "first_seconds": 4.7,
+      "changes": 0,
+      "votes": null
+    },
+    "S075": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 위험점수 15점 및 과거 청약 없음 등 추가 확인이 필요한 특이사항이 없습니다.",
+      "seconds": 2.46,
+      "first_seconds": 2.46,
+      "changes": 0,
+      "votes": null
+    },
+    "S076": {
+      "label": "investigate",
+      "memo": "청약자가 71세로 고령이고 수동심사 대기 구간에 해당하므로 승인 전 추가 확인이 필요합니다.",
+      "seconds": 4.01,
+      "first_seconds": 4.01,
+      "changes": 0,
+      "votes": null
+    },
+    "S077": {
+      "label": "investigate",
+      "memo": "구간이 수동심사 대기 구간으로 표시되어 있어 승인 전 사람이 추가 확인해야 합니다.",
+      "seconds": 2.6,
+      "first_seconds": 2.6,
+      "changes": 0,
+      "votes": null
+    },
+    "S078": {
+      "label": "investigate",
+      "memo": "한도배수 142배로 보장한도가 월보험료 대비 높고 180일 만기 80% 환급 조건이 결합되어 지급·승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.42,
+      "first_seconds": 3.42,
+      "changes": 0,
+      "votes": null
+    },
+    "S079": {
+      "label": "investigate",
+      "memo": "해당 사례는 수동심사 대기 구간으로 분류되어 있어 승인 전 사람이 추가 확인해야 합니다.",
+      "seconds": 3.5,
+      "first_seconds": 3.5,
+      "changes": 0,
+      "votes": null
+    },
+    "S080": {
+      "label": "approve",
+      "memo": "위험점수 15로 낮고 보장한도·한도배수 및 담보 구성에 특이사항이 없으며 과거 청약 이력도 없어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 3.48,
+      "first_seconds": 3.48,
+      "changes": 0,
+      "votes": null
+    },
+    "S081": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간이며 월보험료 대비 보장한도 배수 123배와 계약위험점수 55로 추가 확인 후 처리하는 것이 적절합니다.",
+      "seconds": 3.58,
+      "first_seconds": 3.58,
+      "changes": 0,
+      "votes": null
+    },
+    "S082": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 담보 2개, 위험점수 15점, 과거 청약 없음으로 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.67,
+      "first_seconds": 2.67,
+      "changes": 0,
+      "votes": null
+    },
+    "S083": {
+      "label": "investigate",
+      "memo": "한도배수 73배와 만기 45일 환급 90% 조건이 일반적인 청약 대비 이례적이므로 승인 전 추가 확인이 필요합니다.",
+      "seconds": 3.81,
+      "first_seconds": 3.81,
+      "changes": 0,
+      "votes": null
+    },
+    "S084": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간으로 분류되어 있어 승인 전에 사람이 추가 확인해야 합니다.",
+      "seconds": 4.3,
+      "first_seconds": 4.3,
+      "changes": 0,
+      "votes": null
+    },
+    "S085": {
+      "label": "investigate",
+      "memo": "사례가 수동심사 대기 구간에 해당하며 보장한도가 월보험료 대비 32배로 설정되어 있어 승인 전 추가 확인이 필요합니다.",
+      "seconds": 5.67,
+      "first_seconds": 5.67,
+      "changes": 0,
+      "votes": null
+    },
+    "S086": {
+      "label": "investigate",
+      "memo": "2일 전 유사 조건의 과거 청약이 거절된 이력이 있어 승인 전 거절 사유와 변경 내용 확인이 필요합니다.",
+      "seconds": 2.31,
+      "first_seconds": 2.31,
+      "changes": 0,
+      "votes": null
+    },
+    "S087": {
+      "label": "approve",
+      "memo": "담보 2개 기준 규칙 자동승인 구간으로 표시되어 있고 과거 청약 이력이 없어 추가 확인 없이 처리 가능합니다.",
+      "seconds": 4.16,
+      "first_seconds": 4.16,
+      "changes": 0,
+      "votes": null
+    },
+    "S088": {
+      "label": "investigate",
+      "memo": "최근 9일 및 3일 전 유사 조건의 청약이 거절된 이력이 있어 승인 전 거절 사유와 변경 내역 확인이 필요합니다.",
+      "seconds": 3.35,
+      "first_seconds": 3.35,
+      "changes": 0,
+      "votes": null
+    },
+    "S089": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간에 해당하고 과거 청약이 없으며 위험점수와 한도배수 등 제시 정보상 추가 확인이 필요한 이상 징후가 없습니다.",
+      "seconds": 2.7,
+      "first_seconds": 2.7,
+      "changes": 0,
+      "votes": null
+    },
+    "S090": {
+      "label": "investigate",
+      "memo": "3일 전 유사 조건의 과거 청약이 거절된 이력이 있어 자동승인 전 거절 사유와 변경 내용을 추가 확인해야 합니다.",
+      "seconds": 2.74,
+      "first_seconds": 2.74,
+      "changes": 0,
+      "votes": null
+    },
+    "RX001": {
+      "label": "investigate",
+      "memo": "9일 전에 동일 치아(14번)에 동일한 D2150 2면 아말감 충전 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 2.89,
+      "first_seconds": 2.89,
+      "changes": 0,
+      "votes": null
+    },
+    "RX002": {
+      "label": "investigate",
+      "memo": "해당 청구는 대액 수동심사 구간으로 표시되어 있어 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 3.5,
+      "first_seconds": 3.5,
+      "changes": 0,
+      "votes": null
+    },
+    "RX003": {
+      "label": "investigate",
+      "memo": "64일 전 동일 치아(47번)에 단순 발치가 지급된 이력이 있어 해당 치아에 세라믹 크라운(D2750)을 청구한 내용은 추가 확인이 필요합니다.",
+      "seconds": 3.37,
+      "first_seconds": 3.37,
+      "changes": 0,
+      "votes": null
+    },
+    "RX004": {
+      "label": "investigate",
+      "memo": "동일 치아(24번)에 대해 308일 전 동일한 D6010 임플란트 수술 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.86,
+      "first_seconds": 2.86,
+      "changes": 0,
+      "votes": null
+    },
+    "RX005": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간으로 분류된 청구이므로 지급 전 사람이 치료 내용과 청구 적정성을 확인해야 합니다.",
+      "seconds": 3.76,
+      "first_seconds": 3.76,
+      "changes": 0,
+      "votes": null
+    },
+    "RX006": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 D4342 코드와 4치+ 표기 및 34번 단일 치아 중심의 치료설명 간 정합성 확인이 필요합니다.",
+      "seconds": 4.42,
+      "first_seconds": 4.42,
+      "changes": 0,
+      "votes": null
+    },
+    "RX007": {
+      "label": "investigate",
+      "memo": "97일 전 동일 치아(47번)에 완전 매복 발치가 지급된 이력이 있어 같은 치아에 세라믹 크라운 청구가 가능한지 확인이 필요합니다.",
+      "seconds": 3.26,
+      "first_seconds": 3.26,
+      "changes": 0,
+      "votes": null
+    },
+    "RX008": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간으로 분류된 청구이며 14일 전 동일 코드의 유사 충전 청구가 있어 지급 전 진료 내역 확인이 필요합니다.",
+      "seconds": 8.34,
+      "first_seconds": 8.34,
+      "changes": 0,
+      "votes": null
+    },
+    "RX009": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2160 아말감 3면 충전이나 치료설명에는 37번 치아 한 면 충전으로 기재되어 있어 청구 내용과 진료 설명의 면수가 불일치합니다.",
+      "seconds": 3.95,
+      "first_seconds": 3.95,
+      "changes": 0,
+      "votes": null
+    },
+    "RX010": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 치료설명상 사랑니 발치와 치아번호 17번 표기가 불일치할 수 있어 지급 전 확인이 필요합니다.",
+      "seconds": 4.64,
+      "first_seconds": 4.64,
+      "changes": 0,
+      "votes": null
+    },
+    "RX011": {
+      "label": "approve",
+      "memo": "가입 후 822일 경과했고 동일 치아의 발치 후 109일 뒤 임플란트 수술로 치료 흐름이 자연스러우며 청구액도 보장한도 내입니다.",
+      "seconds": 5.82,
+      "first_seconds": 5.82,
+      "changes": 0,
+      "votes": null
+    },
+    "RX012": {
+      "label": "investigate",
+      "memo": "해당 청구는 대액 수동심사 구간으로 표시되어 있어 지급 전 사람이 청구 내역을 추가 확인해야 합니다.",
+      "seconds": 6.65,
+      "first_seconds": 6.65,
+      "changes": 0,
+      "votes": null
+    },
+    "RX013": {
+      "label": "investigate",
+      "memo": "3일 전에 동일 치아(27번)에 동일한 D2160 3면 아말감 충전 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 2.42,
+      "first_seconds": 2.42,
+      "changes": 0,
+      "votes": null
+    },
+    "RX014": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 임플란트 청구이므로 한도 내이고 과거 동일 치아 발치 이력이 있더라도 지급 전 사람의 추가 확인이 필요합니다.",
+      "seconds": 4.71,
+      "first_seconds": 4.71,
+      "changes": 0,
+      "votes": null
+    },
+    "RX015": {
+      "label": "investigate",
+      "memo": "116일 전에 동일 치아(44번)에 대해 동일한 D6010 임플란트 수술 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 3.0,
+      "first_seconds": 3.0,
+      "changes": 0,
+      "votes": null
+    },
+    "RX016": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 임플란트 청구이므로 한도 내이고 과거 동일 치아 발치 이력이 있더라도 지급 전 사람이 확인해야 합니다.",
+      "seconds": 4.14,
+      "first_seconds": 4.14,
+      "changes": 0,
+      "votes": null
+    },
+    "RX017": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 지났고 과거 동일 치아 발치 이력과 임플란트 식립 청구가 일관되며 청구액도 보장한도 내에 있어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 5.2,
+      "first_seconds": 5.2,
+      "changes": 0,
+      "votes": null
+    },
+    "RX018": {
+      "label": "investigate",
+      "memo": "수동심사 구간인 데다 D4342 코드와 ‘4치+’ 및 단일 치아 중심 치료설명이 서로 맞지 않아 지급 전 치료 범위와 코드 적정성 확인이 필요합니다.",
+      "seconds": 6.02,
+      "first_seconds": 6.02,
+      "changes": 0,
+      "votes": null
+    },
+    "RX019": {
+      "label": "investigate",
+      "memo": "청구 코드는 D7240 완전 매복 발치이나 치료설명은 45번 치아 단순 발치로 기재되어 있어 시술 내용과 코드 불일치 확인이 필요합니다.",
+      "seconds": 3.12,
+      "first_seconds": 3.12,
+      "changes": 0,
+      "votes": null
+    },
+    "RX020": {
+      "label": "investigate",
+      "memo": "청구액은 보장한도 내이고 동일 치아 발치 이력과의 연관성은 보이나, 대액 수동심사 구간의 임플란트 청구이므로 지급 전 자료 확인이 필요합니다.",
+      "seconds": 6.66,
+      "first_seconds": 6.66,
+      "changes": 0,
+      "votes": null
+    },
+    "RX021": {
+      "label": "approve",
+      "memo": "가입 후 453일 경과했고 동일 치아의 과거 발치 이력과 임플란트 청구가 자연스럽게 연결되며 청구액도 보장한도 내에 있어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 4.68,
+      "first_seconds": 4.68,
+      "changes": 0,
+      "votes": null
+    },
+    "RX022": {
+      "label": "investigate",
+      "memo": "동일 치아(26번)에 대한 D3330 근관치료가 3일 전에 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.87,
+      "first_seconds": 2.87,
+      "changes": 0,
+      "votes": null
+    },
+    "RX023": {
+      "label": "investigate",
+      "memo": "D4342 코드의 적용 치아 수/범위가 치료설명상 15번 단일 치아 치료와 불일치하고 수동심사 구간이므로 지급 전 확인이 필요합니다.",
+      "seconds": 4.61,
+      "first_seconds": 4.61,
+      "changes": 0,
+      "votes": null
+    },
+    "RX024": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 7일 전 동일한 D2750 크라운 청구가 다른 치아에 지급된 이력이 있어 지급 전 치료 필요성과 치아 정보를 추가 확인해야 합니다.",
+      "seconds": 5.69,
+      "first_seconds": 5.69,
+      "changes": 0,
+      "votes": null
+    },
+    "RX025": {
+      "label": "investigate",
+      "memo": "사례가 대액 수동심사 구간으로 표시되어 있어 지급 전 사람이 청구 내용과 산정 근거를 추가 확인해야 합니다.",
+      "seconds": 4.92,
+      "first_seconds": 4.92,
+      "changes": 0,
+      "votes": null
+    },
+    "RX026": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 D4342 표기와 치료설명의 치아 수·부위 정보가 일치하지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 5.16,
+      "first_seconds": 5.16,
+      "changes": 0,
+      "votes": null
+    },
+    "RX027": {
+      "label": "approve",
+      "memo": "가입경과가 충분하고 청구액이 보장한도 내이며, 최근 동일 코드 청구도 다른 치아에 대한 지급 이력으로 중복 청구로 보기 어렵습니다.",
+      "seconds": 6.77,
+      "first_seconds": 6.77,
+      "changes": 0,
+      "votes": null
+    },
+    "RX028": {
+      "label": "investigate",
+      "memo": "3일 전 동일 치아(14번)에 동일한 D2160 3면 아말감 충전 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 2.29,
+      "first_seconds": 2.29,
+      "changes": 0,
+      "votes": null
+    },
+    "RX029": {
+      "label": "investigate",
+      "memo": "82일 전 동일 치아(44번)에 완전 매복 발치가 지급된 이력이 있어 해당 치아에 세라믹 크라운을 청구한 내역은 추가 확인이 필요합니다.",
+      "seconds": 3.7,
+      "first_seconds": 3.7,
+      "changes": 0,
+      "votes": null
+    },
+    "RX030": {
+      "label": "investigate",
+      "memo": "치료코드 D2160은 3면 아말감 충전인데 치료설명에는 한 면 충전으로 기재되어 있어 청구 내용의 면수 불일치 확인이 필요합니다.",
+      "seconds": 3.02,
+      "first_seconds": 3.02,
+      "changes": 0,
+      "votes": null
+    },
+    "RX031": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 10일 전 인접 치아에 동일한 D2150 충전 청구가 있어 지급 전 진료기록 확인이 필요합니다.",
+      "seconds": 4.88,
+      "first_seconds": 4.88,
+      "changes": 0,
+      "votes": null
+    },
+    "RX032": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간이며 D4342 코드와 ‘4치+’ 및 25번 단일 치아 중심 설명이 서로 맞지 않아 치료 범위와 코드 적정성 확인이 필요합니다.",
+      "seconds": 3.82,
+      "first_seconds": 3.82,
+      "changes": 0,
+      "votes": null
+    },
+    "RX033": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 3일 전 동일 코드 청구가 지급된 이력이 있어 별도 치아 치료 여부와 진료기록 확인이 필요합니다.",
+      "seconds": 6.6,
+      "first_seconds": 6.6,
+      "changes": 0,
+      "votes": null
+    },
+    "RX034": {
+      "label": "investigate",
+      "memo": "153일 전에 동일 치아(36번)에 대해 동일한 D6010 임플란트 수술이 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.45,
+      "first_seconds": 2.45,
+      "changes": 0,
+      "votes": null
+    },
+    "RX035": {
+      "label": "approve",
+      "memo": "청구액이 보장한도 내이고 가입경과가 충분하며 3일 전 과거청구는 다른 치아(15번)에 대한 동일 처치로 중복청구로 보기 어렵습니다.",
+      "seconds": 6.98,
+      "first_seconds": 6.98,
+      "changes": 0,
+      "votes": null
+    },
+    "RX036": {
+      "label": "approve",
+      "memo": "청구액이 보장한도 내이고 치료내용과 코드가 일치하며 과거청구도 다른 치아에 대한 건으로 중복·이상 징후가 뚜렷하지 않습니다.",
+      "seconds": 6.91,
+      "first_seconds": 6.91,
+      "changes": 0,
+      "votes": null
+    },
+    "RX037": {
+      "label": "investigate",
+      "memo": "6일 전 동일 치아(37번)에 동일한 D2750 세라믹 크라운 청구가 이미 지급되어 중복 청구 가능성이 있습니다.",
+      "seconds": 2.42,
+      "first_seconds": 2.42,
+      "changes": 0,
+      "votes": null
+    },
+    "RX038": {
+      "label": "investigate",
+      "memo": "12일 전에 동일 치아(16번)에 동일한 D3330 근관치료 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 3.18,
+      "first_seconds": 3.18,
+      "changes": 0,
+      "votes": null
+    },
+    "RX039": {
+      "label": "investigate",
+      "memo": "39일 전 동일 치아(37번)에 매복 발치 청구가 지급된 이력이 있어 해당 치아에 도재관 크라운을 시행했다는 청구 내용의 타당성 확인이 필요합니다.",
+      "seconds": 3.77,
+      "first_seconds": 3.77,
+      "changes": 0,
+      "votes": null
+    },
+    "RX040": {
+      "label": "investigate",
+      "memo": "6일 전에 동일 치아(37번)에 동일한 D2160 아말감 3면 충전 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.63,
+      "first_seconds": 2.63,
+      "changes": 0,
+      "votes": null
+    },
+    "RX041": {
+      "label": "investigate",
+      "memo": "160일 전 동일 치아(17번)에 매복 발치 청구가 지급된 이력이 있어, 이미 발치된 치아에 크라운 보철을 시행했다는 현재 청구와 불일치하므로 추가 확인이 필요합니다.",
+      "seconds": 3.78,
+      "first_seconds": 3.78,
+      "changes": 0,
+      "votes": null
+    },
+    "RX042": {
+      "label": "investigate",
+      "memo": "동일 치아(24번)에 대해 276일 전 동일한 D6010 임플란트 수술 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 3.04,
+      "first_seconds": 3.04,
+      "changes": 0,
+      "votes": null
+    },
+    "RX043": {
+      "label": "investigate",
+      "memo": "치료설명은 한 면 충전으로 기재되어 있으나 청구 코드는 3면 아말감 충전(D2160)이라 면수 불일치 확인이 필요합니다.",
+      "seconds": 2.78,
+      "first_seconds": 2.78,
+      "changes": 0,
+      "votes": null
+    },
+    "RX044": {
+      "label": "investigate",
+      "memo": "180일 전에 동일 치아(35번)를 단순 발치한 과거 청구가 지급되어 있어 해당 치아에 도재관 크라운을 시행했다는 현재 청구와 모순되므로 확인이 필요합니다.",
+      "seconds": 3.17,
+      "first_seconds": 3.17,
+      "changes": 0,
+      "votes": null
+    },
+    "RX045": {
+      "label": "investigate",
+      "memo": "39일 전 동일 치아(37번)에 완전 매복 발치가 지급된 이력이 있어 해당 치아에 세라믹 크라운을 시행했다는 청구 내용의 타당성 확인이 필요합니다.",
+      "seconds": 3.31,
+      "first_seconds": 3.31,
+      "changes": 0,
+      "votes": null
+    },
+    "RX046": {
+      "label": "investigate",
+      "memo": "치료설명에서 34번 작은어금니를 ‘완전히 묻힌 사랑니’로 기재해 치아번호와 치료 내용이 불일치하므로 지급 전 확인이 필요합니다.",
+      "seconds": 4.21,
+      "first_seconds": 4.21,
+      "changes": 0,
+      "votes": null
+    },
+    "RX047": {
+      "label": "investigate",
+      "memo": "동일 치아(35번)에 대해 285일 전 동일한 D6010 임플란트 수술이 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 3.04,
+      "first_seconds": 3.04,
+      "changes": 0,
+      "votes": null
+    },
+    "RX048": {
+      "label": "investigate",
+      "memo": "2일 전에 동일 치아(47번)에 동일 처치(D3330) 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 2.67,
+      "first_seconds": 2.67,
+      "changes": 0,
+      "votes": null
+    },
+    "RX049": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간의 청구이며 1일 전 동일한 세라믹 크라운 청구가 다른 치아에 지급된 이력이 있어 추가 확인이 필요합니다.",
+      "seconds": 3.18,
+      "first_seconds": 3.18,
+      "changes": 0,
+      "votes": null
+    },
+    "RX050": {
+      "label": "investigate",
+      "memo": "12일 전 동일 치아(24번)에 동일한 D3330 근관치료 청구가 이미 지급되었고, 24번 작은어금니와 대구치 코드 간 불일치도 있어 중복 및 코드 적정성 확인이 필요합니다.",
+      "seconds": 3.76,
+      "first_seconds": 3.76,
+      "changes": 0,
+      "votes": null
+    },
+    "RX051": {
+      "label": "approve",
+      "memo": "치료코드와 설명이 일치하고 청구액이 보장한도 내이며 가입경과 기간도 충분하고 과거 중복 청구 이력이 없어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 4.94,
+      "first_seconds": 4.94,
+      "changes": 0,
+      "votes": null
+    },
+    "RX052": {
+      "label": "investigate",
+      "memo": "청구 코드는 3면 아말감 충전(D2160)인데 치료설명은 한 면 충전으로 기재되어 있어 지급 전 코드와 진료내용 일치 여부 확인이 필요합니다.",
+      "seconds": 3.78,
+      "first_seconds": 3.78,
+      "changes": 0,
+      "votes": null
+    },
+    "RX053": {
+      "label": "investigate",
+      "memo": "동일 치아(27번)에 대해 240일 전 이미 D6010 임플란트 수술 청구가 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 3.2,
+      "first_seconds": 3.2,
+      "changes": 0,
+      "votes": null
+    },
+    "RX054": {
+      "label": "investigate",
+      "memo": "124일 전 동일 치아(24번)에 완전 매복 발치가 지급된 이력이 있어 해당 치아에 세라믹 크라운 청구가 가능한지 확인이 필요합니다.",
+      "seconds": 3.74,
+      "first_seconds": 3.74,
+      "changes": 0,
+      "votes": null
+    },
+    "RX055": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 D4342의 표기된 치아 수와 치료설명상 단일 치아 치료 내용이 맞지 않아 지급 전 확인이 필요합니다.",
+      "seconds": 6.22,
+      "first_seconds": 6.22,
+      "changes": 0,
+      "votes": null
+    },
+    "RX056": {
+      "label": "investigate",
+      "memo": "172일 전에 동일 치아(15번)에 대해 동일한 D6010 임플란트 수술 청구가 이미 지급되어 중복 청구 가능성이 있어 확인이 필요합니다.",
+      "seconds": 3.0,
+      "first_seconds": 3.0,
+      "changes": 0,
+      "votes": null
+    },
+    "RX057": {
+      "label": "investigate",
+      "memo": "157일 전 동일 치아(44번)에 단순 발치가 이미 지급된 이력이 있어 해당 치아에 크라운 청구가 가능한지 추가 확인이 필요합니다.",
+      "seconds": 2.99,
+      "first_seconds": 2.99,
+      "changes": 0,
+      "votes": null
+    },
+    "RX058": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 지났고 청구액이 보장한도 내이며 치료 내용과 코드가 일치하고 과거 청구 이력도 없어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 4.48,
+      "first_seconds": 4.48,
+      "changes": 0,
+      "votes": null
+    },
+    "RX059": {
+      "label": "investigate",
+      "memo": "청구 코드는 D2160 아말감 3면 충전인데 치료설명은 25번 치아 한 면 충전으로 기재되어 있어 코드와 치료 내용의 면 수가 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.22,
+      "first_seconds": 3.22,
+      "changes": 0,
+      "votes": null
+    },
+    "RX060": {
+      "label": "approve",
+      "memo": "가입 경과와 보장한도 내 청구액이 적정하며, 115일 전 동일 치아 발치 이력이 있어 임플란트 식립 청구와 일관됩니다.",
+      "seconds": 6.04,
+      "first_seconds": 6.04,
+      "changes": 0,
+      "votes": null
+    },
+    "RX061": {
+      "label": "investigate",
+      "memo": "동일 치아(26번)에 대해 272일 전 동일한 D6010 임플란트 수술 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.87,
+      "first_seconds": 2.87,
+      "changes": 0,
+      "votes": null
+    },
+    "RX062": {
+      "label": "investigate",
+      "memo": "D7240 매복 사랑니 발치로 기재되어 있으나 치아번호가 사랑니가 아닌 46번으로 표시되어 치료 내용과 부위가 불일치하므로 확인이 필요합니다.",
+      "seconds": 3.51,
+      "first_seconds": 3.51,
+      "changes": 0,
+      "votes": null
+    },
+    "RX063": {
+      "label": "investigate",
+      "memo": "수동심사 구간 청구이며 6일 전 인접 치아에 동일한 D2160 청구가 지급된 이력이 있어 중복·치아번호 및 치료 필요성 확인이 필요합니다.",
+      "seconds": 5.77,
+      "first_seconds": 5.77,
+      "changes": 0,
+      "votes": null
+    },
+    "RX064": {
+      "label": "investigate",
+      "memo": "대액 수동심사 구간에 해당하고 7일 전 인접 치아(36번)에 동일한 3면 아말감 충전 청구가 지급되어 중복 또는 치아번호 오류 여부 확인이 필요합니다.",
+      "seconds": 4.82,
+      "first_seconds": 4.82,
+      "changes": 0,
+      "votes": null
+    },
+    "RX065": {
+      "label": "approve",
+      "memo": "청구액이 보장한도 내이고 가입경과가 충분하며 치료설명과 D2160 3면 아말감 충전 내용이 일치하고 과거청구와도 중복 정황이 없습니다.",
+      "seconds": 7.69,
+      "first_seconds": 7.69,
+      "changes": 0,
+      "votes": null
+    },
+    "RX066": {
+      "label": "investigate",
+      "memo": "187일 전에 동일 치아(35번)에 대해 동일한 D6010 임플란트 수술 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.77,
+      "first_seconds": 2.77,
+      "changes": 0,
+      "votes": null
+    },
+    "RX067": {
+      "label": "investigate",
+      "memo": "청구 코드는 D7240 완전 매복 발치이나 치료설명은 34번 치아 단순 발치로 기재되어 있어 처치 내용과 코드의 불일치 확인이 필요합니다.",
+      "seconds": 3.28,
+      "first_seconds": 3.28,
+      "changes": 0,
+      "votes": null
+    },
+    "RX068": {
+      "label": "investigate",
+      "memo": "187일 전 동일 치아(35번)에 완전 매복 발치 청구가 지급된 이력이 있어 현재 같은 치아에 도재관 크라운을 씌웠다는 청구 내용의 타당성 확인이 필요합니다.",
+      "seconds": 3.03,
+      "first_seconds": 3.03,
+      "changes": 0,
+      "votes": null
+    },
+    "RX069": {
+      "label": "investigate",
+      "memo": "279일 전 동일 치아(37번)에 동일한 D6010 임플란트 수술 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.98,
+      "first_seconds": 2.98,
+      "changes": 0,
+      "votes": null
+    },
+    "RX070": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 경과했고 동일 치아의 과거 발치 이력과 현재 임플란트 청구가 임상적으로 연결되며 청구액도 보장한도 내에 있어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 5.21,
+      "first_seconds": 5.21,
+      "changes": 0,
+      "votes": null
+    },
+    "RX071": {
+      "label": "approve",
+      "memo": "가입 후 충분한 기간이 경과했고 동일 치아의 과거 발치 이력이 임플란트 청구와 일치하며 청구액도 보장한도 내에 있어 추가 확인 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 4.96,
+      "first_seconds": 4.96,
+      "changes": 0,
+      "votes": null
+    },
+    "RX072": {
+      "label": "approve",
+      "memo": "가입 경과가 충분하고 동일 치아의 과거 발치 이력이 있어 임플란트 청구와 부합하며 청구액도 보장한도 내입니다.",
+      "seconds": 7.95,
+      "first_seconds": 7.95,
+      "changes": 0,
+      "votes": null
+    },
+    "RX073": {
+      "label": "approve",
+      "memo": "가입 후 647일이 경과했고 청구액이 한도 대비 22%로 낮으며, 9일 전 동일 처치는 다른 치아에 대한 건이라 중복 청구로 보기 어려워 추가 조사 없이 처리 가능하다고 판단됩니다.",
+      "seconds": 9.26,
+      "first_seconds": 9.26,
+      "changes": 0,
+      "votes": null
+    },
+    "RX074": {
+      "label": "investigate",
+      "memo": "5일 전에 동일 치아(46번)에 동일 D2740 도재관 크라운 청구가 이미 지급된 이력이 있어 중복 청구 여부 확인이 필요합니다.",
+      "seconds": 2.76,
+      "first_seconds": 2.76,
+      "changes": 0,
+      "votes": null
+    }
+  },
+  "authored": []
+}

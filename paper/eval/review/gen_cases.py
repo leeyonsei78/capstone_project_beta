@@ -403,7 +403,7 @@ def generate(seed: int):
 
 def claim_row(c):
     cl, p = c["claim"], c["policy"]
-    return [c["case_id"], "소액(자동지급 구간)" if c["group"] == "small" else "대액(수동심사 구간)",
+    return [c["case_id"], "소액(자동지급 구간)" if c["group"] == "small" else "고액(수동심사 구간)",
             f"{cl['treatment_code']} {cl['treatment_name']}", f"${cl['amount']}", f"${p['coverage_limit']}",
             f"{cl['ratio_of_limit'] * 100:.1f}%", f"{p['policy_age_days']}일", cl["description"],
             c["evidence_rich"].replace("\n", " / "), c["anomaly"], c["label"], "", "", ""]

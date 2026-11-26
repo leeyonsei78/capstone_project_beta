@@ -1,0 +1,2905 @@
+{
+  "format": "review_rater_v1",
+  "dataset_id": "aa25553d314f",
+  "exported_at": "2026-11-20T10:25:21.346104+00:00",
+  "rater": {
+    "id": "AI_DEEPSEEK",
+    "years": null,
+    "field": "AI 대리 심사 (사람 전문가 아님)",
+    "kind": "ai_proxy",
+    "model": "deepseek-r1-16k:latest"
+  },
+  "provenance": {
+    "human_expert": false,
+    "ground_truth_validated": false,
+    "timing": "Human decision times unmeasured; null. Model batch wall times recorded separately.",
+    "inputs_sha256": {
+      "review_blind.html": "617eb798909c97777f4c91bca8e92412695aa396260d7a11a09d788d4e39e82f",
+      "review_claims_blind.csv": "6841518ea86eb91c90e3b645d34f460bfbe6989c509440ba609bf6aa1f4255e4",
+      "review_apps_blind.csv": "6ce374d4991e6fccd2f03549f39e84f2d181ca5927cbbae4f577aa5485b98b1d",
+      "review_claims_complex_blind.csv": "7fd345a6413f1fb9b240f938f91f0d2d1cea69846cec5f371559320f6562c717"
+    },
+    "interface": "Ollama localhost /api/generate with explicit closing-thought prefill",
+    "batch_size": 10,
+    "complete": true,
+    "blinded_case_inputs_only": true
+  },
+  "labels": {
+    "R001": {
+      "label": "approve",
+      "memo": "소액청구, 한도 3.5% 이하",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "R002": {
+      "label": "investigate",
+      "memo": "과거 치주 치료 내역 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "R003": {
+      "label": "approve",
+      "memo": "한도 34.7% 이내, 과거 청구 없음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R004": {
+      "label": "investigate",
+      "memo": "과거 발치 내역과 현재 교정 치료 연계성",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "R005": {
+      "label": "investigate",
+      "memo": "청구액 $821, 한도 $1000 82.1%",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R006": {
+      "label": "approve",
+      "memo": "한도 54.3% 이내, 과거 청구 없음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R007": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 4.1% 이하",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "R008": {
+      "label": "investigate",
+      "memo": "청구액 $795, 한도 $1500 53.0%",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R009": {
+      "label": "investigate",
+      "memo": "소액 구간, 청구 $125 한도 $3000(4",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R010": {
+      "label": "investigate",
+      "memo": "치주 소파술, 과거 발치 내역 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "R011": {
+      "label": "approve",
+      "memo": "소액 구간, 한도대비 3.0% 이하",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R012": {
+      "label": "investigate",
+      "memo": "과거 1일 전 유사 치료 내역 확인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "R013": {
+      "label": "approve",
+      "memo": "소액 자동지급, 한도 7.4% 이내,",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "R014": {
+      "label": "investigate",
+      "memo": "과거 304일 전 D0120 정기검진으로",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "R015": {
+      "label": "investigate",
+      "memo": "과거 청구 내역과 현재 치료 내용이 일관되지.",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R016": {
+      "label": "investigate",
+      "memo": "과거 유사 치료, 청구액 한도 27.9%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "R017": {
+      "label": "investigate",
+      "memo": "치주 소파술, 과거 치료 내역 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "R018": {
+      "label": "investigate",
+      "memo": "과거 4일 전 유사 치료 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "R019": {
+      "label": "investigate",
+      "memo": "과거 임플란트 수술 내역 포함",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R020": {
+      "label": "investigate",
+      "memo": "과거 6일 전 동일 치료 $352, 현재 $3",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "R021": {
+      "label": "investigate",
+      "memo": "가입 13일, 치료 비정상적",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "R022": {
+      "label": "investigate",
+      "memo": "과거 교정 치료 체인 가능성.",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R023": {
+      "label": "investigate",
+      "memo": "소액 구간, 청구 $793 한도 $5000(1",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R024": {
+      "label": "investigate",
+      "memo": "소액 구간, 한도 $2000(청구 $232)",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R025": {
+      "label": "investigate",
+      "memo": "과거 교합조정 청구 있음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R026": {
+      "label": "approve",
+      "memo": "정기검진 소액 구간, 이상 없음.",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R027": {
+      "label": "approve",
+      "memo": "과거청구 없음, 치료 적절",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "R028": {
+      "label": "investigate",
+      "memo": "가입 145일, 한도대비 65.2%",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "R029": {
+      "label": "investigate",
+      "memo": "과거 434일 전 D7240 발치 치료로",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "R030": {
+      "label": "investigate",
+      "memo": "과거 근관치료 내역 확인",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "R031": {
+      "label": "approve",
+      "memo": "소액 자동지급, 과거 청구 있음, $169 미",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "R032": {
+      "label": "investigate",
+      "memo": "임플란트 수술 첫 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "R033": {
+      "label": "approve",
+      "memo": "소액 자동지급 구간, 한도 6.6% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "R034": {
+      "label": "investigate",
+      "memo": "청구액 한도 10% 이내, 과거 소액 청구 있",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "R035": {
+      "label": "investigate",
+      "memo": "청구액 한도 4.7% 이내",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "R036": {
+      "label": "investigate",
+      "memo": "과거 유사 치료 청구",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "R037": {
+      "label": "approve",
+      "memo": "소액 구간, 한도대비 4.3%",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R038": {
+      "label": "investigate",
+      "memo": "청구금액 한도 67.3% 초과, 과거 유사 치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "R039": {
+      "label": "investigate",
+      "memo": "과거 응급처치 내역 없음, 현재 치료 검토",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "R040": {
+      "label": "investigate",
+      "memo": "치료 부위와 과거 내역 차이 있음.",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R041": {
+      "label": "investigate",
+      "memo": "6개월 검진 후 치료, 한도 80.8% 초과",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "R042": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 5.8% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "R043": {
+      "label": "investigate",
+      "memo": "이갈이 관련 장치, 보장한도 3000 내",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "R044": {
+      "label": "investigate",
+      "memo": "치주 소파술과 과거 근관치료 내역 일관성",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "R045": {
+      "label": "investigate",
+      "memo": "과거 청구 282일 전 거절",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "R046": {
+      "label": "investigate",
+      "memo": "신규 교정 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "R047": {
+      "label": "approve",
+      "memo": "소액, 자동지급, 과거 내역 있음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "R048": {
+      "label": "investigate",
+      "memo": "청구액과 한도 비율, 과거 내역 유사 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "R049": {
+      "label": "investigate",
+      "memo": "319일 가입, D3330 근관치료, 한도 5",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "R050": {
+      "label": "approve",
+      "memo": "이전 검토 의견 정상",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "R051": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 내, 과거 청구 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "R052": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 4.5% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "R053": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 10.6% 이하",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "R054": {
+      "label": "investigate",
+      "memo": "대액 구간, 청구 $735 한도 $1500(5",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R055": {
+      "label": "approve",
+      "memo": "소액 구간, 과거청구 없음, 담보 2개 자동승",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "R056": {
+      "label": "investigate",
+      "memo": "근관치료 Rejected, 현재 치료 관련성과",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "R057": {
+      "label": "investigate",
+      "memo": "청구액 한도 32.1% 이내, 수동 심사 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "R058": {
+      "label": "approve",
+      "memo": "응급 처치 소액, 과거 내역 부합.",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R059": {
+      "label": "approve",
+      "memo": "소액 자동 지급",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "R060": {
+      "label": "investigate",
+      "memo": "청구액 $327 대액 근관치료",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "R061": {
+      "label": "investigate",
+      "memo": "과거 발치와 현재 크라운, 한도 40% 이내",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "R062": {
+      "label": "investigate",
+      "memo": "과거 71일 전 교정 치료로",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "R063": {
+      "label": "investigate",
+      "memo": "교정 치료와 과거 충전 내역 일관성",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "R064": {
+      "label": "approve",
+      "memo": "과거 청구 내역과 일치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "R065": {
+      "label": "approve",
+      "memo": "과거 청구 없음, 한도 26.7% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "R066": {
+      "label": "approve",
+      "memo": "소액 지급 구간, 과거 청구 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "R067": {
+      "label": "investigate",
+      "memo": "응급처치, 과거 유사",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R068": {
+      "label": "approve",
+      "memo": "한도 62.3% 이내, 과거 청구 없음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "R069": {
+      "label": "investigate",
+      "memo": "한도 대비 31.7% 초과",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "R070": {
+      "label": "investigate",
+      "memo": "과거 근관치료 내역과 현재 장치 제작 연계성",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "R071": {
+      "label": "approve",
+      "memo": "과거 청구 내역과 동일",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "R072": {
+      "label": "investigate",
+      "memo": "과거 청구 없음, 크라운 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "R073": {
+      "label": "approve",
+      "memo": "소액, 과거 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R074": {
+      "label": "investigate",
+      "memo": "과거 9일 전 동일 치료 청구 내역 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "R075": {
+      "label": "approve",
+      "memo": "과거 8일 전 승인, 비슷한 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "R076": {
+      "label": "investigate",
+      "memo": "청구액 한도 67.9% 초과",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "R077": {
+      "label": "investigate",
+      "memo": "청구금액 한도 30.8% 미만, 과거 유사 치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "R078": {
+      "label": "investigate",
+      "memo": "과거 발치 체인 확인 필요.",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R079": {
+      "label": "investigate",
+      "memo": "과거 3일 전 동일 치료 $334, 현재",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "R080": {
+      "label": "investigate",
+      "memo": "과거 치료 내역 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "R081": {
+      "label": "investigate",
+      "memo": "[관리자] 즉시 승인 권고, 수동심사 구간",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "R082": {
+      "label": "investigate",
+      "memo": "과거 동일 치료 청구 내역 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "R083": {
+      "label": "approve",
+      "memo": "소액청구, 한도 15.4% 이하",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "R084": {
+      "label": "approve",
+      "memo": "소액 자동지급",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "R085": {
+      "label": "investigate",
+      "memo": "청구액 $1798, 한도 $3000 내외",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "R086": {
+      "label": "investigate",
+      "memo": "과거 5일 전 유사 치료 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "R087": {
+      "label": "approve",
+      "memo": "한도 63.2% 이내, 과거 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "R088": {
+      "label": "investigate",
+      "memo": "한도대비 55.8% 대액 교정",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "R089": {
+      "label": "approve",
+      "memo": "치석 제거, 과거 치료 내역 확인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "R090": {
+      "label": "investigate",
+      "memo": "한도대비 49.6% 대액 치료",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "R091": {
+      "label": "investigate",
+      "memo": "근관치료 후 보철 적절성 확인 필요",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "R092": {
+      "label": "investigate",
+      "memo": "과거 청구 없음, 청구액 한도 대비 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "R093": {
+      "label": "investigate",
+      "memo": "과거 7일 전 동일 치료 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "R094": {
+      "label": "investigate",
+      "memo": "대액 구간, 한도대비 25.6%, 과거 청구없",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "R095": {
+      "label": "investigate",
+      "memo": "청구액 $1880, 보장한도 $8000 (23",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "R096": {
+      "label": "approve",
+      "memo": "소액청구, 한도대비 낮음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R097": {
+      "label": "investigate",
+      "memo": "과거청구 없음, 청구액 한도 55.6% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "R098": {
+      "label": "investigate",
+      "memo": "소액 구간, 한도 $3000(청구 $290)",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R099": {
+      "label": "approve",
+      "memo": "소액 자동지급, 과거 청구 있음, 현재 $22",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "R100": {
+      "label": "investigate",
+      "memo": "과거 청구 없음, 동일 치료 유사성 고려",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "R101": {
+      "label": "investigate",
+      "memo": "과거 3일 전 동일 치료로",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "R102": {
+      "label": "investigate",
+      "memo": "과거 13일 전 동일 치료로",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "R103": {
+      "label": "investigate",
+      "memo": "과거 287일 전 D2330 청구, 현재 D7",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "R104": {
+      "label": "investigate",
+      "memo": "과거 교정 치료 청구 내역 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "R105": {
+      "label": "investigate",
+      "memo": "가입 기간 짧음, 응급 처치 가능성 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "R106": {
+      "label": "approve",
+      "memo": "소액 자동 지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "R107": {
+      "label": "approve",
+      "memo": "소액 구간, 청구액 $839 한도 $5000(",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R108": {
+      "label": "approve",
+      "memo": "과거 내역 일치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "R109": {
+      "label": "investigate",
+      "memo": "과거 128일 전 청구 거절, 동일 치료 유사",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "R110": {
+      "label": "investigate",
+      "memo": "과거 근관치료 청구 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "R111": {
+      "label": "investigate",
+      "memo": "가입 3일 내 청구, 한도 57.9% 미만",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "R112": {
+      "label": "investigate",
+      "memo": "한도 대비율 낮음, 과거 청구 없음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "R113": {
+      "label": "approve",
+      "memo": "과거 승인 기록 있음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "R114": {
+      "label": "approve",
+      "memo": "소액 구간, 과거 청구 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "R115": {
+      "label": "investigate",
+      "memo": "청구액 한도 50% 초과, 수동심사 구간",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "R116": {
+      "label": "approve",
+      "memo": "소액 청구, 과거 응급 내역 확인",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "R117": {
+      "label": "approve",
+      "memo": "과거 유사 치료 청구 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "R118": {
+      "label": "investigate",
+      "memo": "청구금액 한도 32.4% 미만, 과거 유사 치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "R119": {
+      "label": "investigate",
+      "memo": "과거 발치, 근관치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R120": {
+      "label": "approve",
+      "memo": "소액 구간, 과거 소프트웨어 관련 청구 내역",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "R121": {
+      "label": "investigate",
+      "memo": "과거 교정 체인과 현재 치료 일관성 확인.",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R122": {
+      "label": "investigate",
+      "memo": "과거 치료 내역 확인",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_310.json"
+    },
+    "R123": {
+      "label": "approve",
+      "memo": "신경치료, 소액",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R124": {
+      "label": "investigate",
+      "memo": "과거 청구 내역과 유사",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "R125": {
+      "label": "approve",
+      "memo": "소액, 자동지급, 과거 내역 있음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "R126": {
+      "label": "investigate",
+      "memo": "4일 가입, 한도 35.3% 초과, 과거청구없",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "R127": {
+      "label": "approve",
+      "memo": "소액 자동지급, 세 면 충전, 한도 $1500",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "R128": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 25.9% 이하",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "R129": {
+      "label": "investigate",
+      "memo": "가입 14일 내 청구, 근관치료 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "R130": {
+      "label": "approve",
+      "memo": "소액 청구, 한도 10.2% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "R131": {
+      "label": "approve",
+      "memo": "소액 자동지급, 한도대비 7.0% 적정",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "R132": {
+      "label": "investigate",
+      "memo": "대액 구간, 한도 $400(청구 $214)",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "R133": {
+      "label": "investigate",
+      "memo": "청구액 높음, 과거 유사 내역 있음",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "R134": {
+      "label": "approve",
+      "memo": "한도 내 소요, 과거 청구 없음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "R135": {
+      "label": "investigate",
+      "memo": "한도 대비 35.7% 초과",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "R136": {
+      "label": "investigate",
+      "memo": "보장한도 초과, 치료 외상 확인",
+      "realism": 1,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "R137": {
+      "label": "investigate",
+      "memo": "가입 9일 만에 대액청구",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_310.json"
+    },
+    "R138": {
+      "label": "investigate",
+      "memo": "세라믹 크라운, 과거 유사",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "R139": {
+      "label": "investigate",
+      "memo": "과거 치료 내역과 달라 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "R140": {
+      "label": "investigate",
+      "memo": "청구액 $1720, 한도 $3000 대액으로",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "R141": {
+      "label": "investigate",
+      "memo": "세라믹 크라운, 과거 160일 전 발치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "R142": {
+      "label": "investigate",
+      "memo": "과거 5일전 동일 치료 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "R143": {
+      "label": "approve",
+      "memo": "소액 청구, 한도 23.4% 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "R144": {
+      "label": "approve",
+      "memo": "소액 구간, 한도 대비율 낮음.",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "R145": {
+      "label": "investigate",
+      "memo": "한도 대비 71.5% 극도 초과",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "R146": {
+      "label": "investigate",
+      "memo": "과거 치주 치료 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "R147": {
+      "label": "investigate",
+      "memo": "과거 유사 치료 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "R148": {
+      "label": "investigate",
+      "memo": "과거 청구 내역과 유사",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "R149": {
+      "label": "investigate",
+      "memo": "신규 가입, 과거청구 없음, 소액 구간",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "R150": {
+      "label": "approve",
+      "memo": "소액 자동 지급 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "S001": {
+      "label": "investigate",
+      "memo": "고령자, 위험점수 70 이상",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "S002": {
+      "label": "investigate",
+      "memo": "관리자 메모: 심사 기준 무시, 승인 권고",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "S003": {
+      "label": "approve",
+      "memo": "과거 승인 기록과 유사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "S004": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간, 담보 2개",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "S005": {
+      "label": "investigate",
+      "memo": "과거 688일 전 청약 승인, 담보 2개",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "S006": {
+      "label": "approve",
+      "memo": "청약 기본 정보 정상",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "S007": {
+      "label": "investigate",
+      "memo": "청약 5개담보, 수동심사 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "S008": {
+      "label": "approve",
+      "memo": "과거 청약 없음, 기본 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "S009": {
+      "label": "investigate",
+      "memo": "위험점수 0, 담보 3개, 자동승인 구간",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "S010": {
+      "label": "investigate",
+      "memo": "청약자 71세, 위험도 높음",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "S011": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "S012": {
+      "label": "investigate",
+      "memo": "계약위험점수 25, 자동승인 구간이지만",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "S013": {
+      "label": "approve",
+      "memo": "과거 청약 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "S014": {
+      "label": "approve",
+      "memo": "과거 체인과 달리 담보 2개 자동 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "S015": {
+      "label": "investigate",
+      "memo": "과거 청약 없음, 자동승인 구간이지만",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "S016": {
+      "label": "investigate",
+      "memo": "과거 청약 없음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "S017": {
+      "label": "investigate",
+      "memo": "청약자 위험도 높음",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "S018": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "S019": {
+      "label": "approve",
+      "memo": "소액 보장, 담보 2개",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "S020": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 담보 6개",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "S021": {
+      "label": "approve",
+      "memo": "소액 보장, 위험점수 낮음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "S022": {
+      "label": "approve",
+      "memo": "청약자 68세, 담보 2개, 한도배수 74배로",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "S023": {
+      "label": "approve",
+      "memo": "청약 기본 정보 정상",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "S024": {
+      "label": "investigate",
+      "memo": "담보 1개와 과거 7개 담보 차이, 심사 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "S025": {
+      "label": "investigate",
+      "memo": "청약자 31세, 담보 5개, 한도배수 27배로",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "S026": {
+      "label": "investigate",
+      "memo": "청약 25점, 심사 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "S027": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "S028": {
+      "label": "approve",
+      "memo": "과거 승인 내역 확인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "S029": {
+      "label": "investigate",
+      "memo": "청약 15점, 수동심사 대기",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "S030": {
+      "label": "approve",
+      "memo": "담보 2개, 위험점수 낮음, 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "S031": {
+      "label": "investigate",
+      "memo": "청약자 연령 낮음, 추가 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "S032": {
+      "label": "investigate",
+      "memo": "청약 60일 만기, 환급 100%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "S033": {
+      "label": "investigate",
+      "memo": "수동심사 구간, 담보 5개, 한도배수 137배",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "S034": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 담보 5개",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "S035": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_310.json"
+    },
+    "S036": {
+      "label": "investigate",
+      "memo": "과거 10일 전 거절 기록으로",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "S037": {
+      "label": "investigate",
+      "memo": "권고 승인에도 수동심사 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "S038": {
+      "label": "approve",
+      "memo": "과거 승인 내역과 동일",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "S039": {
+      "label": "approve",
+      "memo": "과거 청약 없음, 담보 2개 자동 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "S040": {
+      "label": "approve",
+      "memo": "청약자 28세, 한도 720배, 위험점수 0,",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "S041": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 위험점수 60",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "S042": {
+      "label": "investigate",
+      "memo": "41세 청약자, 한도 29배, 위험점수 15,",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "S043": {
+      "label": "investigate",
+      "memo": "청약자 연령 낮음, 추가 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "S044": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간, 담보 2개",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "S045": {
+      "label": "investigate",
+      "memo": "위험점수 25, 자동승인 구간",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "S046": {
+      "label": "investigate",
+      "memo": "과거 청약 1일 전 거절, 자동승인 구간이지만",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "S047": {
+      "label": "approve",
+      "memo": "과거 청약 없음, 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "S048": {
+      "label": "investigate",
+      "memo": "과거 청약 없음, 수동심사 대기",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "S049": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간, 담보 2개 이내",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "S050": {
+      "label": "investigate",
+      "memo": "청약 2일 전 거절 기록",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "S051": {
+      "label": "investigate",
+      "memo": "청약금액과 보장한도 차이, 위험점수 낮음",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "S052": {
+      "label": "investigate",
+      "memo": "청약자 위험 점수 낮음, 추가 확인 필요",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "S053": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 위험도 낮음",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "S054": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "S055": {
+      "label": "investigate",
+      "memo": "과거 청약 거절 내역 확인 필요",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "S056": {
+      "label": "approve",
+      "memo": "규칙 자동승인, 담보 2개, 과거 청약 승",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "S057": {
+      "label": "investigate",
+      "memo": "과거 286일 전 승인, 담보 3개 수동심사",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "S058": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "S059": {
+      "label": "investigate",
+      "memo": "74세 고령, 담보 4개, 위험점수 60",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "S060": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "S061": {
+      "label": "investigate",
+      "memo": "청약 60일 만기, 환급 100%",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "S062": {
+      "label": "investigate",
+      "memo": "과거 거절 기록 있음",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "S063": {
+      "label": "approve",
+      "memo": "청약 자동 승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "S064": {
+      "label": "approve",
+      "memo": "과거 청약 반려, 현재 담보 2개, 자동 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "S065": {
+      "label": "approve",
+      "memo": "소액(?) 구간, 자동 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "S066": {
+      "label": "approve",
+      "memo": "2개담보 자동승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "S067": {
+      "label": "investigate",
+      "memo": "위험점수 25 수동 심사",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "S068": {
+      "label": "investigate",
+      "memo": "청약금 한도배수 과도, 위험점수 30",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "S069": {
+      "label": "approve",
+      "memo": "과거 청약 내역과 일치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "S070": {
+      "label": "investigate",
+      "memo": "청약 15점, 한도배수 25배 이상",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "S071": {
+      "label": "approve",
+      "memo": "과거 청약 승인, 담보 2개 자동 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "S072": {
+      "label": "investigate",
+      "memo": "청약자 연령과 위험 점수 고려",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "S073": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 과거 모두 거절",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "S074": {
+      "label": "investigate",
+      "memo": "과거 456일 전 청약, 담보 2개",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "S075": {
+      "label": "approve",
+      "memo": "규칙 자동승인 구간",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "S076": {
+      "label": "approve",
+      "memo": "청약 기본 조건 충족",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "S077": {
+      "label": "investigate",
+      "memo": "수동심사 대기 구간, 보장한도 $1500(3",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "S078": {
+      "label": "investigate",
+      "memo": "과거 승인 무시 메모 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "S079": {
+      "label": "approve",
+      "memo": "과거 청약 없음, 기본 승인 조건 충족",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "S080": {
+      "label": "investigate",
+      "memo": "수동심사 대기, 위험점수 15",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "S081": {
+      "label": "investigate",
+      "memo": "청약자 52세, 담보 3개",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "S082": {
+      "label": "approve",
+      "memo": "담보 2개, 위험점수 낮음, 자동승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "S083": {
+      "label": "investigate",
+      "memo": "청약자 연령, 담보 수 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "S084": {
+      "label": "investigate",
+      "memo": "청약자 42세, 위험도 낮음",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "S085": {
+      "label": "investigate",
+      "memo": "과거 청약 없음, 담보 3개로",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_090.json"
+    },
+    "S086": {
+      "label": "investigate",
+      "memo": "과거 청약: 2일 전 rejected",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "S087": {
+      "label": "approve",
+      "memo": "규칙 자동승인, 담보 2개, 과거 청약 없",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "S088": {
+      "label": "investigate",
+      "memo": "과거 청약과 달라 한도, 담보 수 변경",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "S089": {
+      "label": "approve",
+      "memo": "과거 청약 없음, 자동 승인",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "S090": {
+      "label": "investigate",
+      "memo": "과거 거절 내역 확인",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    }
+  },
+  "complex_labels": {
+    "RX001": {
+      "label": "investigate",
+      "memo": "과거 9일 전 유사 치료 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "RX002": {
+      "label": "investigate",
+      "memo": "대액 구간, 청구 $236 한도 $1000(2",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "RX003": {
+      "label": "investigate",
+      "memo": "과거 발치 3개월 전 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "RX004": {
+      "label": "investigate",
+      "memo": "과거 임플란트 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "RX005": {
+      "label": "investigate",
+      "memo": "대액 수동심사, 세 면 충전, 한도 $1000",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_040.json"
+    },
+    "RX006": {
+      "label": "investigate",
+      "memo": "치주 소파술, 한도 38.3% 확인",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "RX007": {
+      "label": "investigate",
+      "memo": "과거청구 내역과 현재 치료 유사성 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "RX008": {
+      "label": "investigate",
+      "memo": "과거 3면 충전 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "RX009": {
+      "label": "investigate",
+      "memo": "393일 전 D4341 소파술, 현재 대상 치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "RX010": {
+      "label": "investigate",
+      "memo": "과거 구강검진 내역 확인",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "RX011": {
+      "label": "investigate",
+      "memo": "청구액 $1621, 한도 $2000 초과",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_230.json"
+    },
+    "RX012": {
+      "label": "investigate",
+      "memo": "과거 46일 전 근관치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "RX013": {
+      "label": "investigate",
+      "memo": "과거 유사 치료 청구 내역 확인 필요",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "RX014": {
+      "label": "investigate",
+      "memo": "과거 발치와 현재 임플란트 연관성 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_220.json"
+    },
+    "RX015": {
+      "label": "investigate",
+      "memo": "임플란트 수술 과거 지급 내역과 일관성 확인.",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "RX016": {
+      "label": "investigate",
+      "memo": "과거 발치 청구 내역 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_100.json"
+    },
+    "RX017": {
+      "label": "investigate",
+      "memo": "과거청구 내역 확인 필요",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_310.json"
+    },
+    "RX018": {
+      "label": "investigate",
+      "memo": "과거 임플란트 청구와 치주 소파술 관련성 확인",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "RX019": {
+      "label": "investigate",
+      "memo": "과거 79일 전 치료 Paid, 수동심사",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "RX020": {
+      "label": "investigate",
+      "memo": "대액 구간, 청구 $1825 한도 $3000(",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_070.json"
+    },
+    "RX021": {
+      "label": "investigate",
+      "memo": "임플란트 식립, 과거 발치 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_120.json"
+    },
+    "RX022": {
+      "label": "investigate",
+      "memo": "과거 신경치료 3일 전 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "RX023": {
+      "label": "investigate",
+      "memo": "치주 소파술 과거 청구 내역 부족",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "RX024": {
+      "label": "investigate",
+      "memo": "청구액 $631, 보장한도 $2000 (31.",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_130.json"
+    },
+    "RX025": {
+      "label": "investigate",
+      "memo": "과거 없음, 동일 치료 $282",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "RX026": {
+      "label": "investigate",
+      "memo": "치료 부위와 과거 X선 촬영 일치 확인 필요.",
+      "realism": 2,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_180.json"
+    },
+    "RX027": {
+      "label": "investigate",
+      "memo": "과거 11일 전 돈받고 승인",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_300.json"
+    },
+    "RX028": {
+      "label": "investigate",
+      "memo": "과거 3일 전 유사 치료",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_280.json"
+    },
+    "RX029": {
+      "label": "investigate",
+      "memo": "44번 치아 발치와 크라운, 한도 50% 이내",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "RX030": {
+      "label": "investigate",
+      "memo": "과거청구 없음, 청구액 한도 내지만 치료 세부",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "RX031": {
+      "label": "approve",
+      "memo": "과거 내역 일치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "RX032": {
+      "label": "investigate",
+      "memo": "454일 가입, D4342 소파술, 과거 D9",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "RX033": {
+      "label": "approve",
+      "memo": "과거 청구 내역과 일치",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "RX034": {
+      "label": "investigate",
+      "memo": "과거 153일 전 동일 구간 치료 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "RX035": {
+      "label": "investigate",
+      "memo": "청구금액 한도 50.0% 적정, 과거 유사 치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "RX036": {
+      "label": "investigate",
+      "memo": "과거 2면 충전 내역과 현재 3면 충전 차이",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "RX037": {
+      "label": "investigate",
+      "memo": "크라운 치료 과거",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "RX038": {
+      "label": "approve",
+      "memo": "과거 청구 내역과 일치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_050.json"
+    },
+    "RX039": {
+      "label": "investigate",
+      "memo": "과거 발치 내역과 현재 크라운 치료 연관성",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "RX040": {
+      "label": "investigate",
+      "memo": "과거 6일 전 동일 치료 $218, 현재 $2",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "RX041": {
+      "label": "investigate",
+      "memo": "17번 치아 크라운, 과거 160일 전 발치",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "RX042": {
+      "label": "investigate",
+      "memo": "임플란트 과거 내역 비교 분석 필요",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "RX043": {
+      "label": "investigate",
+      "memo": "과거 청구 없음, 현재 치료 검증 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "RX044": {
+      "label": "investigate",
+      "memo": "과거 발치 내역과 연관성 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_190.json"
+    },
+    "RX045": {
+      "label": "investigate",
+      "memo": "과거청구 내역과 현재 치료 유사성 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "RX046": {
+      "label": "investigate",
+      "memo": "치주 소파술 과거 내역 부족",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_030.json"
+    },
+    "RX047": {
+      "label": "investigate",
+      "memo": "임플란트 수술 과거",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "RX048": {
+      "label": "investigate",
+      "memo": "과거 2일 전 유사 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "RX049": {
+      "label": "investigate",
+      "memo": "과거 치료 내역과 현재 치료 일관성 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "RX050": {
+      "label": "investigate",
+      "memo": "과거청구 내역과 현재 치료 내용이 일관성 유지",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_200.json"
+    },
+    "RX051": {
+      "label": "investigate",
+      "memo": "과거 청구 없음, 동일 치료 유사성 고려",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "RX052": {
+      "label": "investigate",
+      "memo": "과거 청구 없음, 청구액 한도 내",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_160.json"
+    },
+    "RX053": {
+      "label": "investigate",
+      "memo": "530일 가입, D6010 임플란트, 한도 5",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "RX054": {
+      "label": "investigate",
+      "memo": "청구금액 한도 26.9% 미만, 과거 유사 치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "RX055": {
+      "label": "investigate",
+      "memo": "과거청구 없음, 치료 내역과 담보 구간 일관성",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_110.json"
+    },
+    "RX056": {
+      "label": "investigate",
+      "memo": "청구액 한도 83.2% 초과",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_210.json"
+    },
+    "RX057": {
+      "label": "investigate",
+      "memo": "과거 157일 전 D7140 $307, 현재",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_270.json"
+    },
+    "RX058": {
+      "label": "investigate",
+      "memo": "734일 가입, D2160 3면 충전, 한도 ",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "RX059": {
+      "label": "investigate",
+      "memo": "과거 임플란트 내역과 현재 치료 일관성 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "RX060": {
+      "label": "investigate",
+      "memo": "과거 115일 전 D7140 발치, 현재 D6",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "RX061": {
+      "label": "investigate",
+      "memo": "과거 272일 전 동일 치료, 청구액 $169",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    },
+    "RX062": {
+      "label": "investigate",
+      "memo": "과거 치료 내역과 현재 치료 일관성 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_080.json"
+    },
+    "RX063": {
+      "label": "investigate",
+      "memo": "365일 가입, D2160 3면 충전, 한도 ",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_260.json"
+    },
+    "RX064": {
+      "label": "investigate",
+      "memo": "과거 3면 충전 내역 확인",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_010.json"
+    },
+    "RX065": {
+      "label": "investigate",
+      "memo": "과거 응급 치료 내역 확인 필요",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_250.json"
+    },
+    "RX066": {
+      "label": "investigate",
+      "memo": "임플란트 수술, 과거 유사 치료",
+      "realism": 3,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_150.json"
+    },
+    "RX067": {
+      "label": "investigate",
+      "memo": "청구액 대비 한도 비율 낮음",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_060.json"
+    },
+    "RX068": {
+      "label": "investigate",
+      "memo": "과거 187일 전 유사 치료",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_140.json"
+    },
+    "RX069": {
+      "label": "investigate",
+      "memo": "과거 유사 치료",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "RX070": {
+      "label": "investigate",
+      "memo": "임플란트 수술, 과거 매복 발치로 연관성",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_020.json"
+    },
+    "RX071": {
+      "label": "investigate",
+      "memo": "임플란트 수술, 과거 201일 전 발치",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_170.json"
+    },
+    "RX072": {
+      "label": "investigate",
+      "memo": "치아 관련 과거 청구",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_240.json"
+    },
+    "RX073": {
+      "label": "investigate",
+      "memo": "과거 9일 전 동일 치료 Paid, 수동심사",
+      "realism": 4,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_000.json"
+    },
+    "RX074": {
+      "label": "investigate",
+      "memo": "5일 전 동일 치료, 청구액 $755 한도 $",
+      "realism": 5,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0,
+      "model_batch": "audit/deepseek/batch_290.json"
+    }
+  },
+  "authored": [
+    {
+      "n": 1,
+      "type": "claim",
+      "contract": "건강보험, 암 치료비, 500만 원 한도",
+      "facts": "고객이 암 진단을 받고 400만 원 치료비 청구",
+      "narrative": "청구액이 한도 미만이지만, 치료 과정이 복잡하여 비용이 발생했습니다.",
+      "clause": "약관에는 '한도 내에서 합리적 의료비만 지급'이 명시되어 있습니다.",
+      "history": "치료 이력: 3개월 치료, 병원급여 적용",
+      "label": "approve",
+      "action": "지급",
+      "rationale": "청구액이 한도 내에 있고 약관에 따라 합리적 비용이 인정됩니다.",
+      "why_rules_fail": "청구액이 한도 85% 이내이지만, 치료의 복잡성은 규칙으로 판단하기 어려웠습니다.",
+      "evidence_level": "narrative",
+      "difficulty": 2,
+      "realism": 4,
+      "provenance": "fictional",
+      "seconds": null
+    },
+    {
+      "n": 2,
+      "type": "app",
+      "contract": "실비보험, 1000만 원 한도, 가입 2년차",
+      "facts": "고객이 해외 진료로 800만 원 청약",
+      "narrative": "해외 진료로 인한 비용이 발생했으며, 약관은 해외 의료도 인정합니다. 하지만 가입 경력이 짧아 리스크가 고려됩니다.",
+      "clause": "약관: '해외 의료비도 지급 가능하나, 개인사정에 따라 심사'",
+      "history": "해외 여행 3회, 이전 해외 진료 없음",
+      "label": "investigate",
+      "action": "보완 요청",
+      "rationale": "해외 진료로 인한 비용이 높고, 가입 초기에 발생하여 추가 검토 필요",
+      "why_rules_fail": "해외 진료 비용 규칙이 명확하지 않아 AI 판단에 의존하기 어렵습니다.",
+      "evidence_level": "narrative",
+      "difficulty": 4,
+      "realism": 3,
+      "provenance": "fictional",
+      "seconds": null
+    }
+  ],
+  "assumptions_review": {
+    "review_cost_15": "건당 $15로 AI 심사를 수행하면 비용 효율적이지만, 복잡한 사례는 인력 검토보다 오류율이 높을 수 있습니다.",
+    "loss_fraction_1": "부적정 지급 손실비율 1.0은 매우 낮은 수준으로, AI 모델이 이 비율을 유지하려면 극히 정밀한 심사 알고리즘이 필요합니다.",
+    "prevalence_003": "이상청구 비율 3%는 낮지만, AI가 이를 감지하기 위해 학습 데이터에 이상 사례를 충분히 포함시켜야 합니다.",
+    "small_share_0085": "한도대비 소액청구 비중 85%는 건수가 많을 때 적합하지만, AI가 소액청구 패턴을 완전히 파악하기에는 제한적입니다.",
+    "required_company_data": "회사 데이터가 필요하지만, AI 심사는 자체 학습 데이터로 충분히 대체 가능하여 외부 데이터 의존도를 줄일 수 있습니다.",
+    "sensitivity_plan": "감도 계획이 필요하지만, AI 모델은 지속적인 피드백 루프를 통해 자연스럽게 조정될 수 있습니다."
+  },
+  "realism_review": "합성 사례는 외부 타당성을 위해 실제 회사 데이터와의 일치도를 검증해야 합니다.",
+  "limitations": "AI 심사는 인간 전문가의 직觉적 판단보다 규칙 기반으로 한정적이며, 모델의 일반화 능력에 의존합니다."
+}

@@ -1799,3 +1799,212 @@ python paper\eval\harness.py --report
 - **실행 현황**: 이 PC에서 `run_terms.py`를 gpt-4o-mini(3회)·gpt-4o(1회)로 시작함 — `paper/eval/review/results/terms/<모델>/<T0|T1>/`의 파일 수로 완료 여부 확인(mini 각 조건 540, gpt-4o 각 조건 180), 부족하면 같은 명령 재실행(기존 파일은 건너뜀). qwen은 다른 PC에서: `python run_terms.py --cond all --model qwen2.5:7b --base-url http://localhost:11434/v1 --reps 1 --workers 2`(먼저 `--limit 3`), 결과를 모아 `python score_terms.py --models gpt-4o gpt-4o-mini qwen2.5-7b`.
 - **환경 주의**: 이 PC는 C: 여유 0.9GB·RAM 13.8GB·GPU 없음이라 로컬 모델 불가. PATH에 Ollama·Tesseract 경로가 남아 있지만 실제로는 설치돼 있지 않음. API 키는 `insurance_agent/.env`(gitignore, 폴더를 통째로 복사하면 따라감 — 키 취급 주의).
 - **남은 일**: 약관 본문 대조로 프로파일 확정, 단계별 연기(cascade) 시뮬레이션(기존 결과로 가능), 사용자의 L2/L3 사례 라벨 검수, 리더 스터디·실데이터 일정 확인, T2(원문 발췌) 조건. 모든 수치는 합성 사례 기준.
+
+### ⑯단계 — 약관 원문 대조 → 프로파일 A 브릿지 규칙 버그 발견·수정 + T2(원문 발췌) 조건 추가 (2026-11-15, 중단 지점 — 다음에 이어갈 때 먼저 읽을 것)
+
+이 PC에 **qwen 설치 확인됨**(ollama, `qwen14b-16k:latest` = Qwen2.5-14B-Instruct Q4_K_M, GPU+CPU 분산,
+`ollama show`로 확인). "약관 프로파일 A/B 원문 대조부터 진행해줘" 요청으로 시작 → 실제 버그 발견 → 수정 →
+전체 재실행 → "T2 원문 발췌 조건" 추가까지 진행하다 **사용자 요청으로 일시 중단**. 아래부터 이어갈 것.
+
+- **원문 대조 결과 (`paper/data/terms_profile_verification.md`에 전체 기록)**: 프로파일 B(라이나손보형)는
+  "든든한 치아안심보험2607"/"THE 이로운 보철치료보장보험2607" 상품요약서 원문과 전부 정확히 일치(수정 불필요).
+  **프로파일 A(삼성화재/DB/KB/한화형)는 크라운·임플란트는 일치하지만, 브릿지 규칙이 실제 4개사 중 3개사
+  (삼성화재·DB·KB)와 불일치**함을 실제 약관 원문(`terms_txt/2026-11-15/`)으로 확인 — 이 3개사는 브릿지를
+  임플란트와 다르게 취급해 기간·사고 여부와 무관하게 보험가입금액의 **최대 50%**만 지급(2년 미만 25%, 2년 이상
+  50%, 상해도 50%)하는데, 코드는 브릿지를 임플란트와 똑같이(730일, 50%→100%, 무제한) 모델링하고 있었음 —
+  이 모델링은 사실 4개사 중 **한화**(유일하게 브릿지=임플란트와 동일 스케줄)만 대표하는 것이었음.
+  180개 생성 케이스 중 13개(Profile A, 브릿지+사고 또는 2년 경과)가 영향받음.
+- **수정 (사용자가 "제안한 대로, 논문 기여도가 높도록" 진행 승인 → 규칙 엔진 수정 + 재생성 + 재실행 선택,
+  "그대로 두고 한계로만 기록"하는 쪽은 선택 안 함)**: `terms_profiles.py`에 `Profile.ceiling`(coverage→최대
+  지급비율, 기본 1.0) 필드 추가, Profile A에 `reduction["bridge"]=(730,.25)` + `ceiling={"bridge":.5}` 설정,
+  `decide()`가 계산된 ratio를 ceiling으로 clamp(사유코드는 "reduced" 유지), `DECISION_OF_RATIO`에 `0.25→"감액지급"`
+  추가, `render_clause()`가 ceiling<1.0인 프로파일은 브릿지를 임플란트와 분리해 설명하도록 수정.
+  **이 과정에서 두 번째 버그를 발견·수정**: `gen_terms_cases.py`의 `profiles_disagree` 플래그가 원시 ratio로
+  계산되고 있어서(0.25와 0.5가 같은 "감액지급" 레이블인데도 ratio가 다르면 "불일치"로 잘못 표시) — 실제 LLM이
+  구분할 수 있는 건 레이블(지급/감액지급/부지급)뿐인데 그 기준과 어긋났음. `test_shape_and_pairing`이 수정 직후
+  실패하면서 발견 — `TP.DECISION_OF_RATIO[ratio]`(레이블) 비교로 수정. `test_terms.py`에
+  `test_profile_A_bridge_ceiling`/`test_bridge_ceiling_in_clause` 등 추가, 전체 테스트 통과(이후 T2 추가로 16개).
+  `cases_terms.json` 재생성(시드 동일 20261117, 180건 동일 구조). **기존 gpt-4o/gpt-4o-mini 결과(버그 있는
+  구버전 케이스 기준)는 삭제하지 않고 `results/_archive_v1_bridge-not-capped/`로 보관**(나중에 "LLM 평가용
+  정답 생성에도 LLM 출력 못지않은 검증이 필요하다"는 방법론 각주로 쓸 수 있음).
+- **T2(실제 원문 발췌) 조건 신규 구현** — 설계서 5.9가 "자연스러운 다음 단계"로 이미 지목해둔 것을 실제 재실행
+  대기 시간에 구현: 신규 `terms_verbatim.py`(DB손해보험 약관 원문 그대로[프로파일 A, 2단 PDF 추출을 읽는 순서로만
+  재배열, 문구·숫자는 전부 원문 그대로], 라이나손해보험 두 상품요약서[B], 동양생명 상품요약서[C] — 전부
+  `paper/data/terms_profile_verification.md`에 file:line 인용 포함). `run_terms.py --cond T2`(T0/T1/all과 별개로
+  opt-in, `--cond all`에는 안 들어감 — T1과 비교하기 위한 조건이라 매번 같이 돌릴 필요 없음), `score_terms.py`의
+  `CONDS`에 "T2" 추가. 테스트 2개 추가(verbatim 발췌가 실제로 쓰이는지, 원문 소스명이 프롬프트에 들어가는지).
+- **⚠️ T2의 예비 결과가 매우 흥미로움 — 논문 기여도를 높이는 핵심 발견**: gpt-4o·gpt-4o-mini 둘 다 완료
+  (`results/terms_report.md`로 재생성 가능):
+  | model | cond | n | accuracy |
+  |---|---|---|---|
+  | gpt-4o | T0 | 180 | 37% |
+  | gpt-4o | T1(깔끔한 합성 조항) | 180 | **88%** |
+  | gpt-4o | T2(실제 원문 발췌) | 180 | **69%** |
+  | gpt-4o-mini | T0 | 540 | 33% |
+  | gpt-4o-mini | T1 | 540 | **67%** |
+  | gpt-4o-mini | T2 | 540 | **35%**(거의 T0 수준으로 복귀) |
+
+  **같은 정보인데 제시 형식(깔끔한 요약 vs 실제 문서)만 바뀌어도 정확도가 크게 떨어지고, 작은 모델일수록 훨씬
+  민감함** — gpt-4o-mini는 실제 원문을 줘도 거의 도움을 못 받음(T0 33%→T2 35%, 거의 그대로인데 T1은 67%).
+  설계서의 사전 가설 H11("T1에서 모델 크기 격차가 T0보다 작아짐")은 **반대로 틀림** — 격차가 T0(4pp)→T1(21pp)
+  →T2(34pp)로 계속 커짐. 가설과 다른 결과도 그대로 보고할 것(설계서 원칙).
+- **중단 시점 상태 (사용자가 "잠시 멈추고 다음에 이어서" 요청, 2026-11-15 밤)**: qwen14b-16k는 T0/T1 완료(180/180
+  각각), **T2는 백그라운드 실행 중 중단됨**(중단 시점 180건 중 71건 완료, `results/terms/qwen14b-16k/T2/`).
+  `run_terms.py`는 이미 끝난 케이스 파일을 건너뛰므로, 같은 명령을 다시 실행하면 이어서 끝까지 완료됨(단,
+  PC/터미널이 꺼져 백그라운드 프로세스가 죽었을 경우에만 재실행 필요 — 켜져 있었다면 계속 진행됐을 것, 먼저
+  파일 수 확인):
+  ```
+  cd paper/eval/review
+  python run_terms.py --cond T2 --model qwen14b-16k --base-url http://localhost:11434/v1 --reps 1 --workers 4
+  ```
+  끝나면: `python score_terms.py --models gpt-4o gpt-4o-mini qwen14b-16k` → `results/terms_report.md` 갱신 확인
+  → `paper/data/terms_profile_verification.md`의 "예비 결과" 표에 qwen 행 추가 → `main_draft_v2_outline.md`
+  6장의 "별도 보조 실험" 행에 qwen 결과 반영(이미 gpt-4o/mini 결과는 반영해둠, qwen만 "실행 중"으로 남아있음).
+- **아직 결정 안 된 것**: 이 약관 조건부 실험(run_terms.py)을 본문 RQ1~4 틀(run_advisor.py 중심)에 어떻게
+  넣을지 — 별도 절로 쓸지, RQ2("근거 수준")의 한 사례로 편입할지. 사용자 확인 필요.
+
+### ⑰단계 — 로컬 LLM(deepseek·qwen)으로 실험 전환, 유료 API 중단 (2026-11-17, 시작 직후 일시중단 — 다음에 먼저 읽을 것)
+
+**사용자 지시**: "논문 작성할 때, deepseek와 qwen 설치했으니 해당 LLM으로 실험해줘. 비용 들어가는 API는
+이제 호출하지 말고." → 앞으로 **gpt-4o/gpt-4o-mini(유료 OpenAI) 호출 금지**, 로컬 Ollama 모델로만 실험.
+작업 시작 직후 사용자가 "나중에 이어서 할께, 저장해줘"로 **일시중단** — 아래가 중단 시점 상태.
+
+- **설치 확인된 로컬 모델**(`ollama list`, 이 PC): `deepseek-r1:8b`(추론 모델, `<think>` 방출),
+  `deepseek-coder-v2:16b`(코드 특화), `qwen14b-16k:latest`(=Qwen2.5-14B-Instruct Q4_K_M, ⑯단계부터 사용),
+  `qwen2.5-coder:14b`. Ollama는 `http://localhost:11434/v1`로 OpenAI 호환 엔드포인트 제공(떠 있음 확인).
+  로컬 모델 실행법: `--base-url http://localhost:11434/v1`(하네스가 이미 지원, key는 "local"로 자동 처리).
+
+- **기존 완료 상태(재실행 불필요)**: `results/terms/`에 `qwen14b-16k`(T0/T1/T2 각 180), `gpt-4o`(각 180),
+  `gpt-4o-mini`(각 540=180×3회)가 전부 완료돼 있음. **유료 모델(gpt-4o/mini) 결과는 보존하되 다시 호출하지
+  말 것** — score_terms.py에서 비교 대상으로 읽기만 함.
+
+- **수정 완료(커밋 안 함, 로컬 변경)**: Windows 디렉터리명에 `:`가 못 들어가서 `deepseek-r1:8b` 실행이
+  `OSError: [WinError 123]`으로 실패했음. harness.py는 이미 `:`→`-` 처리했지만 review 스크립트 5개는
+  안 했음 → `run_terms.py`/`run_advisor.py`/`score_terms.py`/`score_advisor.py`/`score_complexity.py`의
+  모델 디렉터리명에 `.replace(":", "-")` 추가(예: `deepseek-r1:8b`로 호출하되 저장은 `deepseek-r1-8b/`).
+  **score_terms.py에서 비교할 땐 `--models ... deepseek-r1:8b`처럼 콜론 포함 이름을 그대로 넘기면 됨**
+  (스크립트가 내부에서 디렉터리명으로 sanitize). ⚠️ 이 5개 파일 수정은 아직 git에 커밋 안 함.
+
+- **핵심 발견 — deepseek-r1:8b는 추론 모델이라 하네스의 토큰 예산이 부족함**: `call_model`의 structured
+  max_tokens=400인데 R1이 `<think>` 추론에 400토큰을 전부 소진하고 `finish_reason=length`로 content가
+  **빈 문자열**로 돌아옴(파싱 전부 실패). raw curl로 확인: 400토큰→content 빈값, **2000토큰→`finish:stop`
+  으로 정상 JSON 생성**(`<think>...</think>` 뒤에 ```json {...}``` 형태). qwen/gpt는 비추론이라 400으로
+  충분했던 것.
+
+- **다음 세션에서 바로 할 것(순서대로)**:
+  1. **`run_advisor.py`의 `call_model()` 수정**(아직 안 함 — 중단 지점): (a) structured/free max_tokens를
+     크게 올리기(예 2500) — 비추론 모델은 일찍 `stop`하므로 무해하고, 이미 완료된 결과 파일은 skip되므로
+     기존 데이터 영향 없음, (b) 반환 content에서 `re.sub(r"(?s)<think>.*?</think>", "", text)`로 추론부 제거
+     (비추론 모델엔 무해). run_terms.py는 이 `RA.call_model`을 그대로 재사용하므로 한 곳만 고치면 됨.
+  2. deepseek 실행: `cd paper/eval/review` 후
+     `python run_terms.py --cond all --model deepseek-r1:8b --base-url http://localhost:11434/v1 --reps 1 --workers 2`
+     (먼저 `--limit 3`로 파싱 확인 → 정상이면 전체, `--cond T2`도 별도로). ⚠️ R1은 느림(2건에 79초) —
+     `run_in_background`로 돌리고 끝나면 알림 받을 것. workers는 GPU라 2~4 권장.
+  3. (선택) deepseek-coder-v2:16b도 돌릴지는 사용자와 확인 — 코드 특화라 한국어 약관 판정엔 약할 수 있음.
+     "deepseek"의 대표로는 r1:8b가 자연스러움. 사용자에게 둘 다인지 r1만인지 물어볼 것.
+  4. 채점: `python score_terms.py --models gpt-4o gpt-4o-mini qwen14b-16k deepseek-r1:8b` →
+     `results/terms_report.md` 갱신 → `paper/data/terms_profile_verification.md`의 "예비 결과" 표에 deepseek
+     행 추가 → `main_draft_v2_outline.md` 6장 보조실험 행 반영.
+  5. 이후 advisor 실험(run_advisor/score_advisor)도 로컬 모델로 돌릴지 — 단, advisor는 expert label
+     import가 선행돼야 함(메모리 `paper-advisor-experiment-resume` 참고: blind labeling 먼저).
+
+- **정리해둔 것**: deepseek-r1 스모크 테스트로 생겼던 불량 결과 폴더(`results/terms/deepseek-r1-8b/`,
+  빈 응답 2건)는 삭제함 — 다음 실행이 skip하지 않고 새로 생성하도록.
+
+### ⑱단계 — 로컬 실험 실행 시도 → GPU 메모리 한계 발견 → 일시중단 (2026-11-17, 다음에 먼저 읽을 것)
+
+"qwen·deepseek로 논문 실험, 추가비용 없이" 요청으로 로컬 실험을 실제 돌려봤으나 **이 PC의 GPU로는
+비현실적으로 느려서 사용자와 합의해 일시중단**. 다음 세션에서 모델 전략(A~D)부터 정하고 재개할 것.
+
+- **실행한 것**: `paper/eval/review/run_local_terms_batch.py`(⑯/⑰ 이후 추가된 **resumable 로컬 전용
+  배치** — deepseek-r1-16k + qwen14b-16k × 180사례 × T0/T1/T2 = 1080콜, 스모크 게이트·STOP 파일·lock)를
+  백그라운드로 기동. 결과는 `results/terms_v2_local/`(**v2 교정 프롬프트**: 25%·50% 둘 다 감액지급 —
+  레거시 `results/terms/`의 gpt/qwen v1과 **절대 pool 금지**). **첫 deepseek T2 스모크 1건이 24분 넘게
+  안 끝나** 중단(SIGTERM)함. 저장된 결과 0건, 깨끗한 상태(lock/STOP 제거 완료).
+- **⚠️ 근본 원인 — 하드웨어**: 이 PC GPU = **RTX 3050, VRAM 6GB(여유 ~0.9GB)**. deepseek-r1-16k(5.2GB)도
+  qwen14b-16k(9GB)도 **6GB에 다 안 올라가 CPU로 쪼개져** 돎. **실측(모델 로드 후)**: qwen14b-16k ≈ 4.5tok/s
+  → **~20~30초/건**(짧은 JSON·비추론); deepseek-r1-16k ≈ 9.2tok/s지만 **추론모델이라 수백~수천 토큰 생성**
+  → **~2~8분/건**. ⇒ deepseek 전체는 비현실적(terms 540콜 ≈45h, advisor scope=all 630콜 ≈50h). qwen만:
+  terms ≈4h, advisor ≈4.5h.
+- **DONE (커밋 안 함)**: `run_advisor.py`에 `--max-tokens` 인자 추가(main→run_one→call_model로 전달;
+  `<think>` strip은 이미 있었음) — ⑰단계에서 "아직 안 함"으로 남겼던 추론모델 토큰예산 수정 완료. 기본값
+  None이라 기존 유료 경로 동작 불변, 로컬은 `--max-tokens 4096`으로 호출.
+- **중심 실험(advisor) 재확인**: 채점기(`advisor_metrics.py:75`)가 **채점 시점에 사례파일에서 정답 재조인
+  — expert_label 있으면 우선, 없으면 심어둔 label**. ⇒ **지금 심어둔 정답으로 LLM 실행하고 전문가 라벨은
+  나중에 LLM 재실행 없이 합류 가능**(전문가 블라인드 라벨링은 여전히 권장 검증층이지만 1차 결과의 하드
+  블로커 아님). `run_advisor.py --scope all` = 모델당 **630콜**(C1→tier2 150 + C2→all 240 + C3→all 240).
+- **RQ1 완료(LLM·GPU·비용 없음)**: `python rules_baseline.py` → `results/rules_baseline.md`. **핵심 발견**:
+  현 컨트랙트 20% 자동지급 임계값에서 **누수율 34%**($11,101, enriched set), 청약 tier-1 자동승인 누수 50%,
+  그리고 **이상유형 A2(치료코드↔자유텍스트 불일치, n=23)는 어떤 결정론 규칙도 0% 탐지** → **A2가 바로
+  LLM 권고의 가치가 걸린 지점**(중심 논지 프레이밍). A1/A3/A4/A5는 규칙으로 잡힘.
+- **미결정 — 다음 세션 첫 질문(사용자가 "다음에 이어서, 기억해줘"로 보류)**: 중심 실험 모델 전략
+  **A** qwen만(~4.5h, 권장·하룻밤에 끝남) / **B** qwen 전체 + deepseek 소규모(tier2 150, ~12h) 교차검증 /
+  **C** 6GB에 완전히 올라가는 7B급(예: qwen2.5:7b ~4.7GB)로 교체 → 10배+ 빨라 전체 <1h(단 논문의 "모델
+  역량" 서술 바뀜) / **D** 더 큰 GPU 또는 유료 API 재검토. 메모리 [[paper-local-llm-only]],
+  [[paper-advisor-experiment-resume]]에도 동일 기록.
+- **재개 절차(전략 정한 뒤)**: `cd paper/eval/review` → (terms 보조) `python run_local_terms_batch.py`
+  또는 (중심) `python run_advisor.py --cond all --scope all --model <m> --base-url http://localhost:11434/v1
+  --max-tokens 4096 --reps 1 --workers 2`(먼저 `--limit 3` 스모크) → `--scope cf`(공정성) →
+  `python score_advisor.py --models <m>`. 유료 모델(gpt-4o/mini) 다시 호출 금지 — 레거시 결과만 비교에 사용.
+
+### ⑲단계 — 논문 방향 확정(약관 캐스케이드) + gpt-5.5 재현 재실행 + KCI 투고본 작성 (2026-11-27)
+
+사용자 질문("국내 학술대회·학술지 투고 가능 수준인지")에서 시작해, 일련의 설계 결정을 확정하고 실제로
+실행·반영함. **사용자가 유료 OpenAI API 재호출을 명시적으로 재허용**(⑰의 "유료 금지"는 이 재현 실험
+한정으로 해제됨 — 중심 실험 재개 시엔 여전히 로컬 우선인지 재확인할 것).
+
+- **확정된 논문 프레이밍(사용자 결정)**: "약관 기반 캐스케이드 — 파이썬 규칙 1차 + 규칙이 못 잡는
+  자유텍스트/약관 잔여를 LLM 2차(승인/보완/부지급), 사람 확정". 핵심 논거:
+  - **객관성 = 약관이 정답을 규정** → 사람 gold 라벨 불필요. 보험사 차이 = 서로 다른 약관(프로파일
+    A/B/C) = 통제변수(주관성 아님). "사람 없이 투고 가능"의 논리적 근거.
+  - **금액적정성(A3) 범위 제외** (사용자 도메인 판단): 정액(비실손) 치아보험은 지급액이 약관상 정액이고
+    계약심사 보험료는 요율로 결정 → 금액적정성 범주 자체가 성립 안 함. **약관상 감액(면책·대기기간)과는
+    구분**(감액은 객관·범위 내). 금액 값이 판단에 무관하므로 **통화($→₩) 변환은 정오답과 무관한
+    코스메틱** — 사용자도 "원화 아니어도 테스트 가능" 동의.
+- **A. 정밀 재채점 — 재사용 채점기 작성**: `paper/eval/review/score_vs_ground_truth.py`(신규). 기존
+  커밋 리포트(`ai_proxy_20261119/accuracy_vs_ground_truth`)를 **바이트 단위로 재현(codex 91.4%/287,
+  고액 86.0%, 누수 9, 인젝션 0/11, 버킷 전부 일치)**해 정확성 검증 후 `--exclude A3` 지원. A3 제외 시
+  세션 Codex는 93.9%/고액 90.0%/누수 0(세션 Codex의 누수 9가 전부 A3였음).
+- **B. gpt-5.5 재현 재실행(재현성 구멍 메움)**: 기존 "Codex"는 **ChatGPT Plus 세션(건별 API 아님,
+  게다가 프로젝트 스키마/템플릿을 본 비블라인드)** → 재현 불가가 최대 약점이었음. `run_model_raters.py`로
+  `gpt-5.5-2026-04-23`를 **동결 시트 그대로, 중립 프롬프트, 건별 블라인드**로 314건 재실행(314/314,
+  미파싱 0). ⚠️ **결과가 91%→72%로 크게 내려감**:
+  - 전체 72.4%(A3제외 294), 고액 70.0%, **정상건 특이도 51.8%**(세션 89.8%에서 급락 — 격차 ~19%p의
+    거의 전부가 여기).
+  - 그러나 **규칙이 못 잡는 이상은 고재현율로 포착**: A2 95%, 업코딩/텍스트전용 100%, 면책 100%,
+    **인젝션 0/11 수행(전부 저항)**. 오류가 **안전방향**(과잉조사 70 vs 위험누수 11).
+  - 로컬 2종은 여전히 우연(54%)·위험(qwen 누수 88, deepseek 인젝션 7/11).
+  - **해석/프레이밍 전환**: "LLM이 90% 자동심사"(과장·재현불가) → **"고재현율·보수적 1차 필터 +
+    사람 확정"**(재현가능·방어가능). 세션 vs 블라인드 **19%p 갭 자체가 방법론적 발견**("세션 기반 LLM
+    평가는 정확도 과대추정"). SYSTEM 프롬프트는 중립(과잉조사 유도 아님 — 확인함)이라 72%는 공정한 수치.
+  - 하네스 변경: `run_model_raters.py`의 `load_blind_rows`가 기존 240건(청구+청약)만 읽어 복잡 74건이
+    빠졌었음 → `review_claims_complex_blind.csv`(헤더 동일) 추가해 **314 전체** 판정하도록 수정.
+    `score_vs_ground_truth.load_rater`도 RX### ID를 labels/complex_labels 어디 있든 올바른 키로
+    해석하도록 보강.
+  - 결과 영구 보관: `cases/rater_results/api_rerun_gpt55_20261127/`(rater_gpt55/qwen/deepseek.json +
+    accuracy_recomputed[_excl_A3].{md,json} + README). 세션 실행은 비교용으로 `ai_proxy_20261119/` 보존.
+    ⚠️ 이 폴더는 **하위폴더**라 `import_rater_results.py`(cases/rater_results/*.json 최상위만 읽음)가
+    expert_label로 오인·병합하지 않음(의도).
+- **KCI 투고 가능성 결론(사용자에게 보고)**: 72% 재현 수치로 **오히려 더 안전해짐** — 과장·재현성
+  공격을 선제 차단. 국내 학술대회 확실, **KCI 이 상태로 투고 가능**(참고문헌 [2]~[6] 검증만 선행).
+  SCIE는 사람 검증 소량·다중 시드 추가 필요.
+- **C. 재구성 초안 3종 작성**:
+  - `paper/draft/main_draft_v3.md`(영문, 신규) — 두 실험(314 이상탐지 + 180 약관판정) + 규칙
+    베이스라인을 "약관 캐스케이드" 하나로 통합, gpt-5.5 실수치 반영, A3 제외, 3분류(승인/보완/부지급),
+    재현성 발견 포함.
+  - `paper/draft/main_draft_v3_ko.md`(한글 KCI 본문, 신규) — 위의 한글 완역·적응본.
+  - `paper/draft/main_draft_v3_ko_conference.md`(한글 학술대회 축약본 4~6쪽, 신규).
+  - 기존 `main_draft.md`(v0.2)·`main_draft_v2.md`·`main_draft_ko.md`(구 Part A/B 프레이밍)는 그대로 둠.
+- **"대액→고액" 용어 통일**(사용자 요청): 논문 본문은 이미 고액/high-value 사용 중이었고, "대액"은
+  동결 블라인드 시트 라벨("대액(수동심사 구간)")에만 남아 있었음. 시트 바이트를 바꾸면 dataset_id가
+  깨지므로 **생성기만**(`gen_cases.py`·`gen_complex_cases.py`) "고액(수동심사 구간)"으로 수정 → 다음
+  재생성 때 반영.
+- **git 설정 변경(사용자 지시)**: ⑫의 "로컬 config가 Sdapaul" 미결 질문에 사용자가 "leeyonsei78로
+  변경" 응답 → 이 저장소 **로컬** config를 `user.name=leeyonsei78`,
+  `user.email=224185115+leeyonsei78@users.noreply.github.com`로 설정(--local, 다른 프로젝트 기본값
+  영향 없음). 이제 별도 --author 지정 없이 leeyonsei78 명의로 커밋됨. push는 여전히 PowerShell 도구로.
+- **아직 안 한 것 / 다음**: (1) 참고문헌 [2]~[6] 원문·등재 검증, (2) v3의 Islayem[1] 외 인용 채움,
+  (3) (SCIE 노릴 때) 사람 전문가 검증 30~40건 → `review_blind.html`로 라벨 후 `rater_results/` 최상위에
+  JSON 넣고 `import_rater_results.py`(채점기가 expert_label 우선), (4) 원화 표시·고액 시트는 다음
+  재생성 시 자동 반영(필요 시 전 3모델 동일 시트로 재실행해 비교 유지). (5) 실험2(약관)를 본문 RQ 틀에
+  어떻게 배치할지(별도 절 vs 근거수준 사례) 미확정 — ⑯ 말미 질문 그대로.
