@@ -1,0 +1,367 @@
+{
+  "format": "LINA",
+  "dataset_id": "ba8fa95bcf83",
+  "exported_at": "2026-11-27T04:15:04.126270+00:00",
+  "rater": {
+    "id": "LINA",
+    "years": "",
+    "field": "기타"
+  },
+  "labels": {
+    "R002": {
+      "label": "reject",
+      "memo": "나이트가드 제작 건으로 해당 보장 담보 없음.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R006": {
+      "label": "reject",
+      "memo": "전치 신경치료로 청구했으나 실제 치료는 어금니 크라운임. 정정 청구 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R015": {
+      "label": "reject",
+      "memo": "스케일링 및 위생교육만 확인됨. 크라운 지급 대상 아님.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R027": {
+      "label": "reject",
+      "memo": "발치 청구이나 치료 내용은 어금니 신경치료임.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R036": {
+      "label": "approve",
+      "memo": "앞니 신경치료 확인. 면책기간 경과, 해당 특약 가입 및 정상 서류 전제 지급 가능.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R040": {
+      "label": "reject",
+      "memo": "크라운 치료 내역 없이 파노라마 촬영만 확인됨.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R041": {
+      "label": "reject",
+      "memo": "정기검진만 실시. 크라운 지급사유 없음.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R055": {
+      "label": "reject",
+      "memo": "정기검진 건이며 교합장치 보장 담보도 확인되지 않음.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R060": {
+      "label": "approve",
+      "memo": "앞니 신경치료 확인. 면책기간 경과, 해당 특약 및 정상 서류 전제 지급 가능.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R068": {
+      "label": "supplement",
+      "memo": "외상 응급진료의 세부 처치 및 가입 특약 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R080": {
+      "label": "reject",
+      "memo": "응급처치 청구이나 실제 치석제거 시행. 스케일링 담보 별도 검토.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R092": {
+      "label": "supplement",
+      "memo": "외상 관련 실제 처치 내용 및 가입 특약 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R100": {
+      "label": "reject",
+      "memo": "매복 발치 청구이나 실제 잇몸치료 시행.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R105": {
+      "label": "supplement",
+      "memo": "가입 2일 경과. 재해 발생일 및 실제 처치 확인 후 판단.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R111": {
+      "label": "supplement",
+      "memo": "가입 3일 경과. 발거일, 진단일, 발거 원인 및 재해 여부 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R112": {
+      "label": "supplement",
+      "memo": "가입 3일 경과. 치아 파절 원인 및 사고일, 진단일 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R118": {
+      "label": "reject",
+      "memo": "크라운 청구이나 실제 스케일링 시행.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R129": {
+      "label": "supplement",
+      "memo": "가입 14일 경과. 질병 면책 가능성 있어 치료 원인 및 진단일 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R132": {
+      "label": "supplement",
+      "memo": "치주치료 범위와 코드 표기 상이. 실제 처치 및 급여 여부 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R134": {
+      "label": "reject",
+      "memo": "교정 청구이나 실제 치주치료 시행. 교정 자체도 확인된 기본 담보 대상 아님.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R136": {
+      "label": "supplement",
+      "memo": "외상 응급진료만으로 지급사유 확인 어려움. 세부 처치 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "R140": {
+      "label": "supplement",
+      "memo": "가입 5일 경과. 발거 원인 및 일자, 재해 여부 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX002": {
+      "label": "approve",
+      "memo": "47번 아말감 충전 확인. 기존 44번 청구와 다른 치아로 중복 아님. 기존 코드 오류는 별도 검토.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX003": {
+      "label": "supplement",
+      "memo": "47번 발치 이력 있음. 자연치 크라운인지 임플란트 보철인지, 치아번호 오류 여부 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX008": {
+      "label": "supplement",
+      "memo": "기존 청구와 다른 치아임. 이번 충전 재료 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX015": {
+      "label": "reject",
+      "memo": "44번 식립 지급 후 116일 경과. 중복 또는 재식립 1년 요건 미충족. 기록 오류 등 별도 지급사유 확인 시 재심사.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX023": {
+      "label": "supplement",
+      "memo": "15번 치료 및 치주치료 범위, 코드 표기 불일치. 실제 급여 처치 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX029": {
+      "label": "supplement",
+      "memo": "44번 발치 이력 있음. 자연치 크라운 여부 및 치아번호 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX031": {
+      "label": "supplement",
+      "memo": "기존 47번과 이번 46번은 다른 치아임. 충전 재료 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX034": {
+      "label": "reject",
+      "memo": "36번 식립 지급 후 153일 경과. 중복 또는 재식립 1년 요건 미충족. 기록 오류 입증 시 재심사.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX038": {
+      "label": "supplement",
+      "memo": "16번 신경치료 12일 전 지급 이력 있음. 동일 치료 과정인지 별도 질환 등에 따른 치료인지 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX043": {
+      "label": "supplement",
+      "memo": "3면 청구이나 메모는 1면 충전임. 정액 담보이므로 면수만으로 부지급하지 않고 실제 재료 및 처치 확인.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX047": {
+      "label": "reject",
+      "memo": "35번 식립 지급 후 285일 경과. 중복 또는 재식립 1년 요건 미충족. 기록 오류 입증 시 재심사.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX050": {
+      "label": "supplement",
+      "memo": "24번은 소구치이나 대구치 신경치료로 청구됨. 12일 전 지급 이력도 있어 치아번호 및 별도 치료 여부 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX054": {
+      "label": "supplement",
+      "memo": "24번 발치 이력 있음. 자연치 여부 및 치아번호 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX055": {
+      "label": "supplement",
+      "memo": "치주치료 범위 표기 및 급여 여부 확인 필요. 기존 42번 치료와는 별개.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX057": {
+      "label": "supplement",
+      "memo": "44번 발치 이력 있음. 자연치 여부 확인 필요. 질병 치료 시 가입 247일로 감액 가능.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX063": {
+      "label": "supplement",
+      "memo": "기존 45번과 이번 44번은 다른 치아임. 충전 재료 및 1년 계약해당일 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX069": {
+      "label": "reject",
+      "memo": "37번 식립 지급 후 279일 경과. 중복 또는 재식립 1년 요건 미충족. 최초 식립 당시 가입 약 82일로 재해 여부도 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    },
+    "RX073": {
+      "label": "supplement",
+      "memo": "기존 37번과 이번 26번은 다른 치아임. 충전 재료 확인 필요.",
+      "realism": null,
+      "seconds": null,
+      "first_seconds": null,
+      "changes": 0
+    }
+  },
+  "authored": [],
+  "review_metadata": {
+    "reviewer_type": "LINA",
+    "status": "provisional_research_labels",
+    "summary": {
+      "reject": 15,
+      "approve": 3,
+      "supplement": 22
+    },
+    "assumptions": "성인 신규계약 및 해당 치료 특약 가입, 정상 기본 제출서류를 가정. 사례 경과일은 치료 시점으로 가정하되 별도 진단·발거일이 중요한 경우 확인 요청. 표본의 과거청구 상대일은 현재 치료 기준으로 가정. 금액 제외. 부지급은 제시된 청구 항목에 한정하며 정정 또는 새로운 증빙에 따른 재심사 가능.",
+    "limitations": "",
+    "sources": [
+      {
+        "id": "S1",
+        "title": "THE건강한치아보험V 공시 약관",
+        "url": "https://www.lina.co.kr/cms/upload/upload/docs/disclosure/B00197011_8_P.pdf"
+      },
+      {
+        "id": "S2",
+        "title": "공식 상품 보장 안내 (주계약 및 특약)",
+        "url": "https://m.lina.co.kr/nmall/P00197.htm?t=S1_2212_A_01"
+      },
+      {
+        "id": "S3",
+        "title": "치아보험 청구서류 안내",
+        "url": "https://www.lina.co.kr/cms/upload/upload/docs/claim/A0293.pdf"
+      },
+      {
+        "id": "S4",
+        "title": "보철치료 공시 약관 참고",
+        "url": "https://www.lina.co.kr/cms/upload/upload/docs/disclosure/R00255002_0_P.pdf"
+      }
+    ],
+    "revision_note": "일부 약관과 상이한 부분이 있으나, 실무 심사 메모로만 수정했음."
+  }
+}

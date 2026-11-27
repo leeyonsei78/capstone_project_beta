@@ -1,0 +1,333 @@
+{
+ "format": "review_rater_v1",
+ "dataset_id": "ba8fa95bcf83",
+ "exported_at": "2026-11-27T06:28:19.418Z",
+ "rater": {
+  "id": "R02",
+  "years": "7",
+  "field": "보험금 심사(청구)"
+ },
+ "labels": {
+  "RX069": {
+   "label": "reject",
+   "memo": "279일 전 동일 치아(37번) 임플란트 식립(D6010) 기지급 건으로 동일 부위 1회 한도 초과 및 중복청구.",
+   "realism": 2,
+   "seconds": 42.4,
+   "first_seconds": 26.0,
+   "changes": 0
+  },
+  "R036": {
+   "label": "approve",
+   "memo": "가입 500일 경과(면책·감액 종료), 전치 근관치료 코드와 앞니 신경치료 설명 일치하여 소액치과치료특약 지급 대상.",
+   "realism": 5,
+   "seconds": 48.9,
+   "first_seconds": 28.7,
+   "changes": 0
+  },
+  "R118": {
+   "label": "reject",
+   "memo": "도재관 크라운(D2740) 청구 대비 실제는 스케일링·구강위생교육으로 코드 불일치(업코딩).",
+   "realism": 2,
+   "seconds": 47.6,
+   "first_seconds": 29.5,
+   "changes": 0
+  },
+  "RX050": {
+   "label": "reject",
+   "memo": "12일 전 동일 24번 치아 근관치료(D3330) 기지급 중복청구이며, 소구치(24번)에 대구치 코드를 적용한 부위 오류도 동반.",
+   "realism": 2,
+   "seconds": 67.2,
+   "first_seconds": 50.7,
+   "changes": 0
+  },
+  "RX023": {
+   "label": "approve",
+   "memo": "가입 308일 경과, 15번 부위 치주 소파술(D4342) 내역 일치하며 과거 22번 파노라마 촬영과 중복 없음.",
+   "realism": 4,
+   "seconds": 36.7,
+   "first_seconds": 23.9,
+   "changes": 0
+  },
+  "RX043": {
+   "label": "supplement",
+   "memo": "청구코드는 아말감 3면(D2160)이나 치료설명은 1면 충전으로 상이함. 진료기록부상 실제 충전 면수 및 코드 정정 확인 필요.",
+   "realism": 3,
+   "seconds": 73.5,
+   "first_seconds": 36.8,
+   "changes": 1
+  },
+  "RX054": {
+   "label": "reject",
+   "memo": "124일 전 이미 발치(D7240)된 24번 치아에 세라믹 크라운(D2750)을 청구한 모순 건.",
+   "realism": 1,
+   "seconds": 58.6,
+   "first_seconds": 45.1,
+   "changes": 0
+  },
+  "R129": {
+   "label": "reject",
+   "memo": "가입 14일차 대구치 근관치료로 재해 사유 없는 질병 치료이므로 소액치과치료 면책기간(90일) 내 부지급.",
+   "realism": 3,
+   "seconds": 73.2,
+   "first_seconds": 51.8,
+   "changes": 0
+  },
+  "RX031": {
+   "label": "approve",
+   "memo": "46번 아말감 2면 충전. 10일 전 청구된 47번과는 인접하나 별개 치아이며 충전 개수 제한 없으므로 승인.",
+   "realism": 5,
+   "seconds": 44.1,
+   "first_seconds": 25.3,
+   "changes": 0
+  },
+  "RX038": {
+   "label": "reject",
+   "memo": "12일 전 동일 치아(16번) 대구치 근관치료(D3330)로 이미 지급된 건의 내원별 중복·분할청구.",
+   "realism": 3,
+   "seconds": 61.6,
+   "first_seconds": 47.9,
+   "changes": 0
+  },
+  "RX057": {
+   "label": "reject",
+   "memo": "157일 전 이미 단순 발치(D7140) 처리된 44번 치아에 세라믹 크라운(D2750)을 청구한 모순 건.",
+   "realism": 1,
+   "seconds": 68.1,
+   "first_seconds": 48.4,
+   "changes": 0
+  },
+  "RX029": {
+   "label": "reject",
+   "memo": "82일 전 이미 매복 발치(D7240) 완료된 44번 치아에 크라운(D2750) 수복을 청구한 모순 건.",
+   "realism": 1,
+   "seconds": 62.0,
+   "first_seconds": 40.6,
+   "changes": 0
+  },
+  "R134": {
+   "label": "reject",
+   "memo": "약관상 면책 항목인 포괄 교정치료(D8080) 코드 청구이며 실제 치료(잇몸 속 치석제거)와도 완전히 모순.",
+   "realism": 2,
+   "seconds": 66.0,
+   "first_seconds": 43.3,
+   "changes": 0
+  },
+  "R132": {
+   "label": "approve",
+   "memo": "가입 405일 경과, 4치 이상 치주 소파술(D4342) 코드와 광범위 잇몸염증 치료설명 일치.",
+   "realism": 5,
+   "seconds": 43.8,
+   "first_seconds": 32.4,
+   "changes": 0
+  },
+  "R002": {
+   "label": "reject",
+   "memo": "교합장치(나이트가드) 제작은 약관상 보장하는 치아우식·치주질환·재해 치료 및 턱관절 입원·수술 담보에 해당하지 않아 부지급.",
+   "realism": 4,
+   "seconds": 49.0,
+   "first_seconds": 25.8,
+   "changes": 0
+  },
+  "R041": {
+   "label": "reject",
+   "memo": "세라믹 크라운(D2750)으로 청구했으나 질병·재해 소견 없는 단순 정기검진 건으로 코드 불일치 및 면책 대상.",
+   "realism": 2,
+   "seconds": 61.4,
+   "first_seconds": 46.2,
+   "changes": 0
+  },
+  "RX047": {
+   "label": "reject",
+   "memo": "285일 전 동일 치아(35번) 임플란트 식립(D6010) 기지급 이력 확인됨. 동일 부위 최초 1회 한도 초과로 부지급.",
+   "realism": 2,
+   "seconds": 74.0,
+   "first_seconds": 50.3,
+   "changes": 0
+  },
+  "R080": {
+   "label": "reject",
+   "memo": "치과 응급처치(D9110)로 청구했으나 실제는 단순 치석제거 및 잇몸관리로 코드-치료설명 불일치.",
+   "realism": 2,
+   "seconds": 51.5,
+   "first_seconds": 29.2,
+   "changes": 0
+  },
+  "RX015": {
+   "label": "reject",
+   "memo": "116일 전 동일 부위(44번) 임플란트 식립(D6010) 기지급 이력 존재. 약관상 동일 부위 최초 1회 한도 및 중복·분할청구로 부지급.",
+   "realism": 2,
+   "seconds": 76.6,
+   "first_seconds": 47.3,
+   "changes": 1
+  },
+  "RX003": {
+   "label": "reject",
+   "memo": "64일 전 이미 단순 발치(D7140) 지급된 47번 치아에 자연치 세라믹 크라운(D2750)을 청구한 임상적 모순 건.",
+   "realism": 1,
+   "seconds": 65.8,
+   "first_seconds": 49.1,
+   "changes": 0
+  },
+  "RX055": {
+   "label": "approve",
+   "memo": "가입 743일 경과, 45번 부위 치주 소파술 코드·설명 일치. 과거 42번 근관치료와는 별개 건.",
+   "realism": null,
+   "seconds": 60.5,
+   "first_seconds": 43.7,
+   "changes": 0
+  },
+  "RX008": {
+   "label": "approve",
+   "memo": "45번 아말감 3면 충전. 14일 전 청구 건은 34번으로 다른 치아이며 약관상 충전치료 개수 제한 없어 지급.",
+   "realism": 5,
+   "seconds": 57.4,
+   "first_seconds": 36.7,
+   "changes": 0
+  },
+  "R111": {
+   "label": "reject",
+   "memo": "가입 3일차 임플란트 식립 수술로 재해 사유 없이 면책기간(90일) 내 시행된 치료이므로 부지급.",
+   "realism": 3,
+   "seconds": 56.4,
+   "first_seconds": 32.2,
+   "changes": 0
+  },
+  "RX002": {
+   "label": "approve",
+   "memo": "가입 640일 경과, 47번 아말감 3면 충전 코드·설명 일치. 과거 44번 근관치료와는 별개 치아로 정상 지급.",
+   "realism": 5,
+   "seconds": 40.8,
+   "first_seconds": 28.9,
+   "changes": 0
+  },
+  "R006": {
+   "label": "reject",
+   "memo": "청구코드는 전치 근관치료(D3310)이나 실제 치료설명은 어금니 세라믹 크라운으로 치료행위와 치아부위 모두 불일치.",
+   "realism": 2,
+   "seconds": 43.6,
+   "first_seconds": 29.5,
+   "changes": 0
+  },
+  "RX034": {
+   "label": "reject",
+   "memo": "153일 전 동일 치아(36번) 임플란트 식립(D6010) 기지급 건으로 동일 부위 1회 한도 초과 및 중복청구.",
+   "realism": 2,
+   "seconds": 47.4,
+   "first_seconds": 25.7,
+   "changes": 0
+  },
+  "R092": {
+   "label": "approve",
+   "memo": "가입 539일 경과 및 치아 외상 응급처치 내역 일치.",
+   "realism": null,
+   "seconds": 46.6,
+   "first_seconds": 35.2,
+   "changes": 0
+  },
+  "R027": {
+   "label": "reject",
+   "memo": "완전 매복 발치(D7240) 코드 청구 대비 실제 치료는 대구치 근관치료로 치료내용 정면 모순.",
+   "realism": 2,
+   "seconds": 49.6,
+   "first_seconds": 33.0,
+   "changes": 0
+  },
+  "R040": {
+   "label": "reject",
+   "memo": "도재관 크라운(D2740) 청구이나 실제는 단순 파노라마 X선 촬영으로 업코딩에 해당.",
+   "realism": 2,
+   "seconds": 53.3,
+   "first_seconds": 37.0,
+   "changes": 0
+  },
+  "R055": {
+   "label": "reject",
+   "memo": "교합장치(D9940) 청구 대비 실제는 이상 소견 없는 정기검진으로 코드 불일치 및 비보장 검진.",
+   "realism": 2,
+   "seconds": 46.2,
+   "first_seconds": 25.3,
+   "changes": 0
+  },
+  "R060": {
+   "label": "approve",
+   "memo": "가입 434일 경과, 전치 근관치료 코드·설명 일치 및 중복 이력 없어 정상 지급.",
+   "realism": 5,
+   "seconds": 44.0,
+   "first_seconds": 24.5,
+   "changes": 0
+  },
+  "R100": {
+   "label": "reject",
+   "memo": "완전 매복 발치(D7240) 청구이나 실제 치료설명은 다수 부위 잇몸 염증 치료로 코드 모순.",
+   "realism": 2,
+   "seconds": 74.2,
+   "first_seconds": 51.1,
+   "changes": 0
+  },
+  "R136": {
+   "label": "approve",
+   "memo": "가입 843일 경과, 치아 외상 응급처치 내역 일치 및 중복청구 없음.",
+   "realism": 5,
+   "seconds": 53.0,
+   "first_seconds": 33.3,
+   "changes": 0
+  },
+  "RX063": {
+   "label": "approve",
+   "memo": "44번 아말감 3면 충전. 6일 전 청구 건은 인접 45번으로 별개 치아이며 충전치료 개수 제한 없어 정상 지급.",
+   "realism": 5,
+   "seconds": 44.2,
+   "first_seconds": 28.5,
+   "changes": 0
+  },
+  "RX073": {
+   "label": "approve",
+   "memo": "26번 아말감 3면 충전. 9일 전 청구된 37번과는 상·하악 별개 치아이며 코드·설명 일치하여 승인.",
+   "realism": 5,
+   "seconds": 55.1,
+   "first_seconds": 41.3,
+   "changes": 0
+  },
+  "R015": {
+   "label": "reject",
+   "memo": "도재관 크라운(D2740)으로 청구했으나 실제는 스케일링 및 구강위생교육으로 명백한 업코딩·코드 불일치.",
+   "realism": 2,
+   "seconds": 41.2,
+   "first_seconds": 27.7,
+   "changes": 0
+  },
+  "R068": {
+   "label": "approve",
+   "memo": "가입 13일차이나 치아 외상(재해)으로 인한 응급처치로 약관상 면책기간 미적용(계약일부터 보장).",
+   "realism": 4,
+   "seconds": 54.9,
+   "first_seconds": 37.2,
+   "changes": 0
+  },
+  "R112": {
+   "label": "supplement",
+   "memo": "가입 3일차 치아 파절 크라운 청구. 재해(외상) 파절이면 계약일부터 보장되나 저작·기존 균열은 질병(90일 면책)이므로 재해입증서류 및 초진기록 보완 필요.",
+   "realism": 4,
+   "seconds": 60.1,
+   "first_seconds": 36.9,
+   "changes": 1
+  },
+  "R140": {
+   "label": "reject",
+   "memo": "가입 5일차 임플란트 식립 수술로 재해 사유 없이 면책기간(90일) 내 시술에 해당하여 부지급.",
+   "realism": 3,
+   "seconds": 65.3,
+   "first_seconds": 42.7,
+   "changes": 0
+  },
+  "R105": {
+   "label": "approve",
+   "memo": "가입 2일차이나 재해(치아 외상)로 인한 응급진료 건으로 약관상 면책기간 적용 제외 대상.",
+   "realism": 4,
+   "seconds": 60.7,
+   "first_seconds": 43.4,
+   "changes": 0
+  }
+ },
+ "authored": []
+}

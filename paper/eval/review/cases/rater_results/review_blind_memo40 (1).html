@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>보험 심사 라벨링 시트</title>
+<style>
+:root{--bg:#f5f6f8;--fg:#1c2330;--muted:#596579;--card:#fff;--line:#d8dde6;--accent:#2457c5;--okc:#1d7a46;--invc:#b4531a;--rejc:#b42318;--soft:#eef1f6}
+@media (prefers-color-scheme:dark){:root{--bg:#12161d;--fg:#e6e9ef;--muted:#9aa5b8;--card:#1b212b;--line:#2d3644;--accent:#7aa2ff;--okc:#5ec98b;--invc:#f0a066;--rejc:#f0675a;--soft:#232b37}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif}
+header{padding:12px 20px;border-bottom:1px solid var(--line);background:var(--card);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header h1{font-size:17px;margin:0}
+header .sp{flex:1}
+main{max-width:1180px;margin:0 auto;padding:16px 20px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+button{font:inherit;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:7px 14px;border-radius:8px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.sel-ok{background:var(--okc);border-color:var(--okc);color:#fff}
+button.sel-inv{background:var(--invc);border-color:var(--invc);color:#fff}
+button.sel-rej{background:var(--rejc);border-color:var(--rejc);color:#fff}
+input,select,textarea{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px;width:100%}
+textarea{min-height:70px;resize:vertical}
+label{display:block;font-size:13px;color:var(--muted);margin:10px 0 4px}
+.tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.tabs button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.layout{display:grid;grid-template-columns:200px 1fr;gap:14px}
+@media (max-width:820px){.layout{grid-template-columns:1fr}}
+.list{display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start;max-height:70vh;overflow:auto}
+.list button{padding:3px 0;width:44px;font-size:12px}
+.list button.done-ok{border-color:var(--okc);color:var(--okc)}
+.list button.done-inv{border-color:var(--invc);color:var(--invc)}
+.list button.done-rej{border-color:var(--rejc);color:var(--rejc)}
+.list button.cur{outline:2px solid var(--accent)}
+table.f{border-collapse:collapse;width:100%}
+table.f td{border-top:1px solid var(--line);padding:8px 10px;vertical-align:top}
+table.f td:first-child{width:130px;color:var(--muted);white-space:nowrap}
+.muted{color:var(--muted);font-size:13px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.timer{font-variant-numeric:tabular-nums;background:var(--soft);padding:4px 10px;border-radius:8px}
+.warn{background:var(--soft);border-left:4px solid var(--invc);padding:10px 12px;border-radius:6px;font-size:13px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+.hide{display:none}
+.ac{border-top:1px solid var(--line);padding:8px 0;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <h1>보험 심사 라벨링 시트</h1>
+  <span class="muted" id="hdrInfo"></span>
+  <span class="sp"></span>
+  <span id="hdrProg" class="muted"></span>
+  <button id="btnExport" class="primary hide">결과 내보내기 (JSON)</button>
+</header>
+<main>
+
+<section id="start" class="card">
+  <h2 style="margin-top:0">시작하기</h2>
+  <div class="warn">
+    <b>이 시트는 블라인드입니다.</b> 사례가 어떻게 만들어졌는지(정답)는 들어 있지 않습니다. 사례에 적힌 정보만으로 실무 판단을 내려 주세요.
+    판단하는 동안 다른 자료·AI 도구·다른 심사자와 상의하지 마세요(독립 판단이 필요합니다).
+  </div>
+  <div class="grid2">
+    <div><label>심사자 코드 (실명 금지, 예: R01)</label><input id="raterId" maxlength="20" placeholder="R01"></div>
+    <div><label>보험 심사 경력 (년)</label><input id="raterYears" type="number" min="0" max="60"></div>
+    <div><label>주 담당 분야</label>
+      <select id="raterField"><option value="">선택</option><option>보험금 심사(청구)</option><option>계약 심사(언더라이팅)</option><option>둘 다</option><option>기타</option></select></div>
+  </div>
+  <div class="warn" style="margin:8px 0;padding:8px 12px"><b>검증용 표본 40건</b> (청구 40 · 청약 0) — 메모(치료설명)가 판단의 핵심인 사례만 추렸습니다. 데이터 ID는 전체 세트와 동일하므로 결과는 그대로 합류됩니다.</div>
+  <h3>판단 기준 — 라이나생명 치아보험 약관 기준으로 판정하세요</h3>
+  <p class="muted" style="margin:4px 0 8px">심사자의 판단도 특정 보험사 약관에 근거해야 객관적입니다. 아래 <b>라이나생명 치아보험 약관</b>을 기준으로 세 가지 중 하나를 고르세요. 약관에 없는 쟁점은 라이나 실무 기준으로 판단하고 사유를 메모에 적어 주세요.</p>
+  <ul>
+    <li><b>승인 (approve)</b>: 약관상 그대로 지급·처리해도 되는 정상 건.</li>
+    <li><b>보완 (supplement)</b>: 지급 전에 추가 확인·자료 보완·조사가 필요한 건(판단 보류).</li>
+    <li><b>부지급 (reject)</b>: 약관상 면책·제외·중복·불일치 등으로 지급할 수 없다고 판단되는 건.</li>
+    <li>사례가 비현실적이면 현실성 점수를 낮게 주세요. <b>시간은 자동 측정</b>되며(다른 창/3분 무입력 시 자동 일시정지), 중간에 닫아도 자동 저장되지만 <b>수시로 "결과 내보내기"</b>로 파일을 저장하세요.</li>
+  </ul>
+  <details style="margin:6px 0 10px"><summary style="cursor:pointer;color:var(--accent)">📋 라이나생명 치아보험 약관 요약 (판정 기준 — 펼치기)</summary>
+  <ul style="margin-top:8px">
+    <li><b>면책(대기기간)</b>: 질병으로 인한 치료는 크라운 계약일로부터 90일, 임플란트·브릿지 180일이 지나야 보장(그 전 치료는 부지급). 상해는 계약일부터 보장.</li>
+    <li><b>감액</b>: 질병 크라운은 계약 후 270일 미만 치료 시 50% 감액. 임플란트·브릿지는 2년(730일) 미만 치료 시 50% 감액(부분지급), 2년 이상이면 100%.</li>
+    <li><b>개수 한도</b>: 임플란트·브릿지는 가입 2년 미만 계약연도당 3개까지, 2년 이후 제한 없음(한도 초과분은 부지급).</li>
+    <li><b>지급 불가(보험사 공통)</b>: 치료코드와 실제 치료 설명이 모순, 업코딩(실제보다 비싼 코드 청구), 동일 건 중복청구, 한도회피용 분할청구 — 명백하면 부지급, 추가확인이 필요하면 보완.</li>
+    <li><b>금액 적정성은 판단 대상 아님</b>(정액 상품): 통화·금액 수치가 아니라 위 약관 조건으로만 판정.</li>
+  </ul></details>
+  <div class="row">
+    <button id="btnStart" class="primary">시작</button>
+    <label style="margin:0">이전에 내보낸 결과 이어서 하기:</label>
+    <input id="fileLoad" type="file" accept=".json" style="width:auto">
+  </div>
+  <p id="startMsg" class="muted"></p>
+</section>
+
+<section id="work" class="hide">
+  <div class="tabs" id="tabs">
+    <button data-tab="claims">보험금 청구 (<span id="nClaims"></span>)</button>
+    <button data-tab="apps">청약 (<span id="nApps"></span>)</button>
+    <button data-tab="author">비정형 사례 작성</button>
+  </div>
+
+  <div id="reviewPane" class="layout">
+    <div class="card"><div class="list" id="caseList"></div></div>
+    <div>
+      <div class="card">
+        <div class="row" style="justify-content:space-between">
+          <b id="caseTitle"></b>
+          <span class="row"><span class="timer" id="timer">00:00</span><button id="btnPause">일시정지</button></span>
+        </div>
+        <div id="pausedMsg" class="warn hide" style="margin-top:8px"></div>
+        <table class="f" id="caseTable"></table>
+      </div>
+      <div class="card">
+        <div class="row">
+          <button id="bOk">승인</button>
+          <button id="bSup">보완</button>
+          <button id="bRej">부지급</button>
+          <span class="muted" id="labelState"></span>
+        </div>
+        <div class="grid2">
+          <div><label>현실성 (1~5, 선택)</label>
+            <select id="realism"><option value="">-</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+        </div>
+        <label>메모 (판단 이유, 선택)</label>
+        <textarea id="memo"></textarea>
+        <div class="row" style="margin-top:12px">
+          <button id="bPrev">이전</button><button id="bNext" class="primary">다음</button>
+          <button id="bNextTodo">다음 미완료</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="authorPane" class="hide">
+    <div class="card">
+      <div class="warn">
+        규칙(금액·건수)으로는 결정하기 어렵고 <b>사람이 읽고 판단해야 하는 사례</b>를 직접 써 주세요. 청약 사례에는 <b>기존 치료이력과 고지 답변</b>을 함께 쓰면 좋습니다.
+        <b>실제 고객 정보(이름·주민번호·병원명·사내 건 번호)는 절대 넣지 마세요.</b> 실제 건을 바탕으로 했다면 사내 규정을 확인한 뒤 완전히 익명화·변형해서 쓰세요.
+        작성한 정답은 다른 심사자에게 배포되는 이 파일에는 들어가지 않고, 본인 내보내기 파일에만 들어갑니다.
+      </div>
+      <form id="authForm"></form>
+      <div class="row" style="margin-top:12px"><button id="btnAddAuth" class="primary" type="button">사례 추가</button><span class="muted" id="authMsg"></span></div>
+    </div>
+    <div class="card"><b>작성한 사례</b><div id="authList" class="muted">아직 없음</div></div>
+  </div>
+</section>
+</main>
+
+<script>
+const DATA = {"dataset_id": "ba8fa95bcf83", "claims": {"cols": ["구간", "치료", "청구액", "보장한도", "한도대비", "가입경과", "치료설명", "과거청구"], "rows": [{"id": "R002", "cells": ["대액(수동심사 구간)", "D9940 교합장치 (나이트가드)", "$243", "$1000", "24.3%", "720일", "교합 장치(마우스피스) 제작 받음", "과거 청구 상세: / - 223일 전 | D4342 치주 소파술 (4치+) | $349.00 | Paid"]}, {"id": "R006", "cells": ["대액(수동심사 구간)", "D3310 근관치료 (전치)", "$163", "$300", "54.3%", "541일", "어금니에 세라믹 크라운을 씌우는 치료", "과거 청구 없음."]}, {"id": "R015", "cells": ["대액(수동심사 구간)", "D2740 도재관 크라운", "$713", "$2000", "35.6%", "292일", "스케일링 받고 구강 위생 교육 들음", "과거 청구 상세: / - 95일 전 | D2330 레진 충전 (1면) | $165.00 | Paid / - 156일 전 | D9940 교합장치 (나이트가드) | $242.00 | Paid / - 232일 전 | D4341 치주 소파술 (1~3치) | $195.00 | Paid"]}, {"id": "R027", "cells": ["대액(수동심사 구간)", "D7240 완전 매복 발치", "$254", "$1000", "25.4%", "269일", "큰어금니 근관치료 진행", "과거 청구 없음."]}, {"id": "R036", "cells": ["대액(수동심사 구간)", "D3310 근관치료 (전치)", "$263", "$1000", "26.3%", "500일", "앞니 신경이 감염되어 신경치료 진행", "과거 청구 없음."]}, {"id": "R040", "cells": ["대액(수동심사 구간)", "D2740 도재관 크라운", "$508", "$1500", "33.9%", "537일", "파노라마 X선으로 사랑니와 턱뼈 상태 확인", "과거 청구 없음."]}, {"id": "R041", "cells": ["대액(수동심사 구간)", "D2750 세라믹관 크라운", "$808", "$1000", "80.8%", "527일", "6개월 정기검진 받음, 특별한 이상 없음", "과거 청구 없음."]}, {"id": "R055", "cells": ["대액(수동심사 구간)", "D9940 교합장치 (나이트가드)", "$152", "$300", "50.7%", "710일", "6개월 정기검진 받음, 특별한 이상 없음", "과거 청구 없음."]}, {"id": "R060", "cells": ["대액(수동심사 구간)", "D3310 근관치료 (전치)", "$327", "$1000", "32.7%", "434일", "앞니 통증으로 근관치료 받음", "과거 청구 없음."]}, {"id": "R068", "cells": ["대액(수동심사 구간)", "D9110 치과 응급 처치", "$187", "$300", "62.3%", "13일", "치아 외상으로 응급 진료 받음", "과거 청구 없음."]}, {"id": "R080", "cells": ["대액(수동심사 구간)", "D9110 치과 응급 처치", "$207", "$400", "51.7%", "843일", "치석 제거하고 잇몸 관리 받음", "과거 청구 없음."]}, {"id": "R092", "cells": ["대액(수동심사 구간)", "D9110 치과 응급 처치", "$157", "$300", "52.3%", "539일", "치아 외상으로 응급 진료 받음", "과거 청구 없음."]}, {"id": "R100", "cells": ["대액(수동심사 구간)", "D7240 완전 매복 발치", "$282", "$1000", "28.2%", "229일", "잇몸 염증이 넓어 여러 부위 잇몸 치료", "과거 청구 없음."]}, {"id": "R105", "cells": ["대액(수동심사 구간)", "D9110 치과 응급 처치", "$237", "$1000", "23.7%", "2일", "치아 외상으로 응급 진료 받음", "과거 청구 없음."]}, {"id": "R111", "cells": ["대액(수동심사 구간)", "D6010 임플란트 수술", "$1737", "$3000", "57.9%", "3일", "임플란트 식립 수술 받음", "과거 청구 없음."]}, {"id": "R112", "cells": ["대액(수동심사 구간)", "D2740 도재관 크라운", "$538", "$2000", "26.9%", "3일", "금이 가고 깨진 치아에 도재 크라운 씌움", "과거 청구 없음."]}, {"id": "R118", "cells": ["대액(수동심사 구간)", "D2740 도재관 크라운", "$647", "$2000", "32.4%", "410일", "스케일링 받고 구강 위생 교육 들음", "과거 청구 상세: / - 150일 전 | D7140 단순 발치 | $67.00 | Paid / - 286일 전 | D9940 교합장치 (나이트가드) | $204.00 | Paid"]}, {"id": "R129", "cells": ["대액(수동심사 구간)", "D3330 근관치료 (대구치)", "$475", "$1000", "47.5%", "14일", "큰어금니 근관치료 진행", "과거 청구 없음."]}, {"id": "R132", "cells": ["대액(수동심사 구간)", "D4342 치주 소파술 (4치+)", "$214", "$400", "53.5%", "405일", "잇몸 염증이 넓어 여러 부위 잇몸 치료", "과거 청구 없음."]}, {"id": "R134", "cells": ["대액(수동심사 구간)", "D8080 포괄 교정 치료", "$739", "$2000", "37.0%", "577일", "잇몸이 붓고 피가 나서 잇몸 속 치석 제거 치료", "과거 청구 없음."]}, {"id": "R136", "cells": ["대액(수동심사 구간)", "D9110 치과 응급 처치", "$187", "$300", "62.3%", "843일", "치아 외상으로 응급 진료 받음", "과거 청구 없음."]}, {"id": "R140", "cells": ["대액(수동심사 구간)", "D6010 임플란트 수술", "$1720", "$3000", "57.3%", "5일", "임플란트 식립 수술 받음", "과거 청구 없음."]}, {"id": "RX002", "cells": ["대액(수동심사 구간)", "D2160 아말감 충전 (3면)", "$236", "$1000", "23.6%", "640일", "아래 오른쪽 큰어금니(47번) - 어금니 충치 부위를 제거하고 아말감으로 메움", "과거 청구 상세: / - 88일 전 | D3310 근관치료 (전치) | 아래 오른쪽 작은어금니(44번) | $215.00 | Paid"]}, {"id": "RX003", "cells": ["대액(수동심사 구간)", "D2750 세라믹관 크라운", "$776", "$2000", "38.8%", "545일", "아래 오른쪽 큰어금니(47번) - 어금니에 세라믹 크라운을 씌우는 치료", "과거 청구 상세: / - 64일 전 | D7140 단순 발치 | 아래 오른쪽 큰어금니(47번) | $282.00 | Paid"]}, {"id": "RX008", "cells": ["대액(수동심사 구간)", "D2160 아말감 충전 (3면)", "$237", "$1000", "23.7%", "664일", "아래 오른쪽 작은어금니(45번) - 큰 충치로 세 면 충전 치료 진행", "과거 청구 상세: / - 14일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 작은어금니(34번) | $231.00 | Paid"]}, {"id": "RX015", "cells": ["대액(수동심사 구간)", "D6010 임플란트 수술", "$1882", "$3000", "62.7%", "855일", "아래 오른쪽 작은어금니(44번) - 임플란트 식립 수술 받음", "과거 청구 상세: / - 116일 전 | D6010 임플란트 수술 | 아래 오른쪽 작은어금니(44번) | $1945.00 | Paid"]}, {"id": "RX023", "cells": ["대액(수동심사 구간)", "D4342 치주 소파술 (4치+)", "$447", "$2000", "22.4%", "308일", "위 오른쪽 작은어금니(15번) - 치주 소파술로 한쪽 잇몸 치료", "과거 청구 상세: / - 121일 전 | D0330 파노라마 X선 | 위 왼쪽 앞니(22번) | $84.00 | Paid"]}, {"id": "RX029", "cells": ["대액(수동심사 구간)", "D2750 세라믹관 크라운", "$770", "$1500", "51.3%", "753일", "아래 오른쪽 작은어금니(44번) - 어금니에 세라믹 크라운을 씌우는 치료", "과거 청구 상세: / - 82일 전 | D7240 완전 매복 발치 | 아래 오른쪽 작은어금니(44번) | $144.00 | Paid"]}, {"id": "RX031", "cells": ["대액(수동심사 구간)", "D2150 아말감 충전 (2면)", "$188", "$400", "47.0%", "618일", "아래 오른쪽 큰어금니(46번) - 어금니 두 면 충전 치료", "과거 청구 상세: / - 10일 전 | D2150 아말감 충전 (2면) | 아래 오른쪽 큰어금니(47번) | $183.00 | Paid"]}, {"id": "RX034", "cells": ["대액(수동심사 구간)", "D6010 임플란트 수술", "$1775", "$5000", "35.5%", "431일", "아래 왼쪽 큰어금니(36번) - 빠진 치아 자리에 임플란트를 심는 수술", "과거 청구 상세: / - 153일 전 | D6010 임플란트 수술 | 아래 왼쪽 큰어금니(36번) | $1665.00 | Paid"]}, {"id": "RX038", "cells": ["대액(수동심사 구간)", "D3330 근관치료 (대구치)", "$516", "$2000", "25.8%", "677일", "위 오른쪽 큰어금니(16번) - 큰어금니 근관치료 진행", "과거 청구 상세: / - 12일 전 | D3330 근관치료 (대구치) | 위 오른쪽 큰어금니(16번) | $538.00 | Paid"]}, {"id": "RX043", "cells": ["대액(수동심사 구간)", "D2160 아말감 충전 (3면)", "$227", "$1000", "22.7%", "539일", "아래 오른쪽 큰어금니(46번) - 충치 치료 후 한 면 충전", "과거 청구 없음."]}, {"id": "RX047", "cells": ["대액(수동심사 구간)", "D6010 임플란트 수술", "$1750", "$3000", "58.3%", "562일", "아래 왼쪽 작은어금니(35번) - 빠진 치아 자리에 임플란트를 심는 수술", "과거 청구 상세: / - 285일 전 | D6010 임플란트 수술 | 아래 왼쪽 작은어금니(35번) | $1617.00 | Paid"]}, {"id": "RX050", "cells": ["대액(수동심사 구간)", "D3330 근관치료 (대구치)", "$563", "$2000", "28.1%", "380일", "위 왼쪽 작은어금니(24번) - 큰어금니 근관치료 진행", "과거 청구 상세: / - 12일 전 | D3330 근관치료 (대구치) | 위 왼쪽 작은어금니(24번) | $546.00 | Paid"]}, {"id": "RX054", "cells": ["대액(수동심사 구간)", "D2750 세라믹관 크라운", "$806", "$3000", "26.9%", "568일", "위 왼쪽 작은어금니(24번) - 어금니에 세라믹 크라운을 씌우는 치료", "과거 청구 상세: / - 124일 전 | D7240 완전 매복 발치 | 위 왼쪽 작은어금니(24번) | $235.00 | Paid"]}, {"id": "RX055", "cells": ["대액(수동심사 구간)", "D4342 치주 소파술 (4치+)", "$449", "$1000", "44.9%", "743일", "아래 오른쪽 작은어금니(45번) - 잇몸이 붓고 피가 나서 잇몸 속 치석 제거 치료", "과거 청구 상세: / - 460일 전 | D3330 근관치료 (대구치) | 아래 오른쪽 앞니(42번) | $328.00 | Paid"]}, {"id": "RX057", "cells": ["대액(수동심사 구간)", "D2750 세라믹관 크라운", "$657", "$2000", "32.9%", "247일", "아래 오른쪽 작은어금니(44번) - 어금니에 세라믹 크라운을 씌우는 치료", "과거 청구 상세: / - 157일 전 | D7140 단순 발치 | 아래 오른쪽 작은어금니(44번) | $307.00 | Paid"]}, {"id": "RX063", "cells": ["대액(수동심사 구간)", "D2160 아말감 충전 (3면)", "$280", "$1000", "28.0%", "365일", "아래 오른쪽 작은어금니(44번) - 큰 충치로 세 면 충전 치료 진행", "과거 청구 상세: / - 6일 전 | D2160 아말감 충전 (3면) | 아래 오른쪽 작은어금니(45번) | $280.00 | Paid"]}, {"id": "RX069", "cells": ["대액(수동심사 구간)", "D6010 임플란트 수술", "$1667", "$5000", "33.3%", "361일", "아래 왼쪽 큰어금니(37번) - 임플란트 식립 수술 받음", "과거 청구 상세: / - 279일 전 | D6010 임플란트 수술 | 아래 왼쪽 큰어금니(37번) | $1509.00 | Paid"]}, {"id": "RX073", "cells": ["대액(수동심사 구간)", "D2160 아말감 충전 (3면)", "$220", "$1000", "22.0%", "647일", "위 왼쪽 큰어금니(26번) - 충치가 크게 번져 세 면을 제거하고 충전", "과거 청구 상세: / - 9일 전 | D2160 아말감 충전 (3면) | 아래 왼쪽 큰어금니(37번) | $225.00 | Paid"]}]}, "apps": {"cols": ["구간", "청약자", "월보험료", "보장한도", "한도배수", "담보", "만기/환급", "계약위험점수", "과거청약"], "rows": []}};
+const LS_PREFIX = 'review_state_v1:';
+const IDLE_MS = 180000;
+const $ = id => document.getElementById(id);
+
+let S = null;                 // state: {rater, rec:{id:{label,memo,realism,seconds,first_seconds,changes}}, authored:[]}
+let tab = 'claims';
+let order = {claims: [], apps: []};
+let cur = null;               // current case id
+let manualPause = false, idlePaused = false, lastInput = Date.now(), lastTick = performance.now();
+
+/* ---------- storage ---------- */
+function save() {
+  if (!S) return;
+  try { localStorage.setItem(LS_PREFIX + S.rater.id, JSON.stringify(S)); } catch (e) { /* storage may be blocked */ }
+}
+function loadSaved(id) {
+  try { const t = localStorage.getItem(LS_PREFIX + id); return t ? JSON.parse(t) : null; } catch (e) { return null; }
+}
+
+/* ---------- per-rater shuffle ---------- */
+function hash32(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shuffled(ids, key) { const a = ids.slice(), r = rng(hash32(key)); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+/* ---------- helpers ---------- */
+const sheetOf = t => DATA[t];
+const rowById = {}; ['claims', 'apps'].forEach(t => DATA[t].rows.forEach(r => rowById[r.id] = {t, r}));
+function rec(id) { return S.rec[id] || (S.rec[id] = {label: null, memo: '', realism: null, seconds: 0, first_seconds: null, changes: 0}); }
+function fmt(sec) { sec = Math.floor(sec); const m = Math.floor(sec / 60), s = sec % 60; return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0'); }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c])); }
+function counts() {
+  const out = {};
+  ['claims', 'apps'].forEach(t => { out[t] = sheetOf(t).rows.filter(r => S.rec[r.id] && S.rec[r.id].label).length; });
+  return out;
+}
+
+/* ---------- timer ---------- */
+['mousemove', 'keydown', 'click', 'scroll', 'touchstart'].forEach(ev => document.addEventListener(ev, () => {
+  lastInput = Date.now();
+  if (idlePaused) { idlePaused = false; showPaused(); }
+}, true));
+document.addEventListener('visibilitychange', () => { lastTick = performance.now(); });
+setInterval(() => {
+  const now = performance.now(), dt = (now - lastTick) / 1000; lastTick = now;
+  if (!S || !cur || tab === 'author') return;
+  if (!idlePaused && Date.now() - lastInput > IDLE_MS) { idlePaused = true; showPaused(); }
+  if (document.hidden || manualPause || idlePaused) return;
+  rec(cur).seconds += Math.min(dt, 2);          // cap one tick so a sleeping laptop cannot add hours
+  $('timer').textContent = fmt(rec(cur).seconds);
+}, 500);
+function showPaused() {
+  const m = $('pausedMsg');
+  if (manualPause) { m.textContent = '일시정지 중입니다. 재개하려면 "재개"를 누르세요.'; m.classList.remove('hide'); }
+  else if (idlePaused) { m.textContent = '3분간 입력이 없어 시간 측정이 자동으로 멈췄습니다. 아무 키나 누르면 재개됩니다.'; m.classList.remove('hide'); }
+  else m.classList.add('hide');
+  $('btnPause').textContent = manualPause ? '재개' : '일시정지';
+}
+
+/* ---------- review pane ---------- */
+function buildList() {
+  const box = $('caseList'); box.innerHTML = '';
+  order[tab].forEach((id, i) => {
+    const b = document.createElement('button'); b.textContent = i + 1; b.dataset.id = id;
+    const r = S.rec[id];
+    if (r && r.label === 'approve') b.classList.add('done-ok');
+    if (r && r.label === 'supplement') b.classList.add('done-inv');
+    if (r && r.label === 'reject') b.classList.add('done-rej');
+    if (id === cur) b.classList.add('cur');
+    b.onclick = () => openCase(id);
+    box.appendChild(b);
+  });
+}
+function openCase(id) {
+  cur = id; const {t, r} = rowById[id]; const sh = sheetOf(t);
+  const idx = order[t].indexOf(id) + 1;
+  $('caseTitle').textContent = (t === 'claims' ? '청구 사례 ' : '청약 사례 ') + idx + ' / ' + order[t].length;
+  const tb = $('caseTable'); tb.innerHTML = '';
+  sh.cols.forEach((c, i) => {
+    let v = r.cells[i];
+    const tr = document.createElement('tr');
+    const td1 = document.createElement('td'); td1.textContent = c;
+    const td2 = document.createElement('td');
+    if ((c === '과거청구' || c === '과거청약') && v.includes(' / ')) td2.innerHTML = v.split(' / ').map(esc).join('<br>');
+    else td2.textContent = v;
+    tr.appendChild(td1); tr.appendChild(td2); tb.appendChild(tr);
+  });
+  const x = rec(id);
+  $('memo').value = x.memo || ''; $('realism').value = x.realism || '';
+  paintLabel(); $('timer').textContent = fmt(x.seconds);
+  buildList(); lastTick = performance.now(); lastInput = Date.now(); idlePaused = false; showPaused();
+  updateProg(); save();
+}
+function paintLabel() {
+  const x = rec(cur);
+  const KO = {approve: '승인', supplement: '보완', reject: '부지급'};
+  $('bOk').className = x.label === 'approve' ? 'sel-ok' : '';
+  $('bSup').className = x.label === 'supplement' ? 'sel-inv' : '';
+  $('bRej').className = x.label === 'reject' ? 'sel-rej' : '';
+  $('labelState').textContent = x.label ? '선택됨: ' + (KO[x.label] || x.label) : '아직 선택하지 않음';
+}
+function setLabel(l) {
+  const x = rec(cur);
+  if (x.label && x.label !== l) x.changes += 1;
+  if (!x.label) x.first_seconds = Math.round(x.seconds * 10) / 10;
+  x.label = l; paintLabel(); buildList(); updateProg(); save();
+}
+function move(d) {
+  const ids = order[tab], i = ids.indexOf(cur), j = Math.min(ids.length - 1, Math.max(0, i + d));
+  openCase(ids[j]);
+}
+function nextTodo() {
+  const ids = order[tab], i = ids.indexOf(cur);
+  for (let k = 1; k <= ids.length; k++) { const id = ids[(i + k) % ids.length]; if (!(S.rec[id] && S.rec[id].label)) return openCase(id); }
+  $('labelState').textContent = '이 탭은 모두 완료했습니다.';
+}
+function updateProg() {
+  const c = counts();
+  $('hdrProg').textContent = '완료: 청구 ' + c.claims + '/' + DATA.claims.rows.length + ' · 청약 ' + c.apps + '/' + DATA.apps.rows.length + ' · 작성 ' + S.authored.length + '건';
+}
+
+/* ---------- authoring pane ---------- */
+const AUTH_FIELDS = [
+  ['type', '유형', 'select', ['claim', 'app'], true],
+  ['contract', '상품·담보 요약', 'textarea', null, true, '담보명, 보장한도, 가입 경과일, 면책/감액 기간 등 판단에 필요한 계약 사실'],
+  ['facts', '이번 건 사실', 'textarea', null, true, '청구: 치료코드·명, 청구액 / 청약: 연령, 월보험료, 담보 수'],
+  ['narrative', '서술(비정형)', 'textarea', null, true, '진단서 요지, 치료 경위, 고지사항 답변, 청구 사유 등 자유 서술 (3~8문장)'],
+  ['clause', '관련 약관 발췌', 'textarea', null, false, '판단에 쓰이는 약관 조항을 짧게 (없으면 공란). 가상 약관 권장'],
+  ['history', '과거 이력 (기존 치료이력 포함)', 'textarea', null, true, '날짜(며칠 전)·코드·금액·처리상태 / 청약이면 기존 치료이력과 고지 답변도 여기에. 없으면 "없음"'],
+  ['label', '정답', 'select', ['approve', 'supplement', 'reject'], true],
+  ['action', '세부처리 (참고)', 'select', ['', '지급', '부분지급', '부지급', '보완요청', '계약인수', '조건부인수', '거절'], false],
+  ['rationale', '판단근거', 'textarea', null, true, '정답을 낸 핵심 이유 한두 문장'],
+  ['why_rules_fail', '규칙으로 못 잡는 이유', 'textarea', null, true, '예: 서술-코드 의미 불일치, 고지의무 해석, 면책 요건 해당 여부'],
+  ['evidence_level', '필요한 근거 수준', 'select', ['summary', 'detail', 'narrative'], true, 'summary=이력 요약만으로 판단 가능 / detail=이력 상세 필요 / narrative=서술 해석 필요'],
+  ['difficulty', '난이도 (1~5)', 'select', ['1', '2', '3', '4', '5'], true],
+  ['realism', '현실성 (1~5)', 'select', ['1', '2', '3', '4', '5'], true],
+  ['provenance', '출처', 'select', ['fictional', 'adapted'], true, 'fictional=완전 가상 / adapted=실제 건을 익명화·변형(사내 규정 확인함)'],
+  ['seconds', '소요시간(초, 정답을 내리기까지)', 'number', null, false],
+];
+function buildAuthForm() {
+  const f = $('authForm'); f.innerHTML = '';
+  AUTH_FIELDS.forEach(([k, label, kind, opts, req, hint]) => {
+    const wrap = document.createElement('div');
+    const lb = document.createElement('label'); lb.textContent = label + (req ? ' *' : '') + (hint ? '  — ' + hint : ''); wrap.appendChild(lb);
+    let inp;
+    if (kind === 'textarea') inp = document.createElement('textarea');
+    else if (kind === 'select') { inp = document.createElement('select'); (opts || []).forEach(o => { const op = document.createElement('option'); op.value = o; op.textContent = o || '-'; inp.appendChild(op); }); if (req) inp.insertAdjacentHTML('afterbegin', '<option value="">선택</option>'); inp.value = ''; }
+    else { inp = document.createElement('input'); inp.type = kind; }
+    inp.id = 'au_' + k; wrap.appendChild(inp); f.appendChild(wrap);
+  });
+}
+function addAuthored() {
+  const o = {}, miss = [];
+  AUTH_FIELDS.forEach(([k, label, , , req]) => { const v = $('au_' + k).value.trim(); o[k] = v; if (req && !v) miss.push(label); });
+  if (miss.length) { $('authMsg').textContent = '필수 항목을 채워 주세요: ' + miss.join(', '); return; }
+  o.created_at = new Date().toISOString(); o.n = S.authored.length + 1;
+  S.authored.push(o); save(); buildAuthForm(); renderAuthList(); updateProg();
+  $('authMsg').textContent = '추가되었습니다. (총 ' + S.authored.length + '건) 내보내기 파일에 포함됩니다.';
+}
+function renderAuthList() {
+  const box = $('authList');
+  if (!S.authored.length) { box.textContent = '아직 없음'; return; }
+  box.innerHTML = '';
+  S.authored.forEach((a, i) => {
+    const d = document.createElement('div'); d.className = 'ac';
+    d.innerHTML = '<b>' + (i + 1) + '. [' + esc(a.type) + '] ' + esc(a.facts.slice(0, 60)) + '</b> — 정답 ' + esc(a.label) + ' / 난이도 ' + esc(a.difficulty) + ' ';
+    const b = document.createElement('button'); b.textContent = '삭제'; b.onclick = () => { S.authored.splice(i, 1); save(); renderAuthList(); updateProg(); };
+    d.appendChild(b); box.appendChild(d);
+  });
+}
+
+/* ---------- tabs / start / export ---------- */
+function setTab(t) {
+  tab = t;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === t));
+  $('reviewPane').classList.toggle('hide', t === 'author'); $('authorPane').classList.toggle('hide', t !== 'author');
+  if (t === 'author') { cur = null; renderAuthList(); return; }
+  const ids = order[t]; const first = ids.find(id => !(S.rec[id] && S.rec[id].label)) || ids[0];
+  openCase(first);
+}
+function exportJSON() {
+  const out = {
+    format: 'review_rater_v1', dataset_id: DATA.dataset_id, exported_at: new Date().toISOString(),
+    rater: S.rater, labels: {}, authored: S.authored
+  };
+  Object.keys(S.rec).forEach(id => { const x = S.rec[id]; if (x.label) out.labels[id] = {label: x.label, memo: x.memo || '', realism: x.realism ? Number(x.realism) : null, seconds: Math.round(x.seconds * 10) / 10, first_seconds: x.first_seconds, changes: x.changes}; });
+  const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '');
+  const blob = new Blob([JSON.stringify(out, null, 1)], {type: 'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'rater_' + S.rater.id + '_' + stamp + '.json';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+function begin(state) {
+  S = state;
+  order.claims = shuffled(DATA.claims.rows.map(r => r.id), S.rater.id + ':claims');
+  order.apps = shuffled(DATA.apps.rows.map(r => r.id), S.rater.id + ':apps');
+  $('start').classList.add('hide'); $('work').classList.remove('hide'); $('btnExport').classList.remove('hide');
+  $('hdrInfo').textContent = '심사자 ' + S.rater.id + ' · 데이터 ' + DATA.dataset_id;
+  $('nClaims').textContent = DATA.claims.rows.length; $('nApps').textContent = DATA.apps.rows.length;
+  buildAuthForm(); updateProg(); setTab('claims');
+}
+$('btnStart').onclick = () => {
+  const id = $('raterId').value.trim().replace(/[^A-Za-z0-9_-]/g, '');
+  if (!id) { $('startMsg').textContent = '심사자 코드를 영문/숫자로 입력해 주세요.'; return; }
+  const saved = loadSaved(id);
+  if (saved && saved.dataset_id === DATA.dataset_id) { begin(saved); return; }
+  begin({dataset_id: DATA.dataset_id, rater: {id: id, years: $('raterYears').value, field: $('raterField').value}, rec: {}, authored: []});
+};
+$('fileLoad').onchange = ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  const rd = new FileReader();
+  rd.onload = () => {
+    try {
+      const o = JSON.parse(rd.result);
+      if (o.format !== 'review_rater_v1') throw new Error('형식이 다릅니다.');
+      if (o.dataset_id !== DATA.dataset_id) throw new Error('다른 버전의 시트에서 만든 파일입니다(데이터 ID 불일치).');
+      const st = {dataset_id: DATA.dataset_id, rater: o.rater, rec: {}, authored: o.authored || []};
+      Object.keys(o.labels || {}).forEach(id => { const x = o.labels[id]; st.rec[id] = {label: x.label, memo: x.memo || '', realism: x.realism, seconds: x.seconds || 0, first_seconds: x.first_seconds, changes: x.changes || 0}; });
+      begin(st);
+    } catch (e) { $('startMsg').textContent = '불러오기 실패: ' + e.message; }
+  };
+  rd.readAsText(f, 'utf-8');
+};
+$('tabs').onclick = ev => { const t = ev.target.dataset && ev.target.dataset.tab; if (t) setTab(t); };
+$('bOk').onclick = () => cur && setLabel('approve');
+$('bSup').onclick = () => cur && setLabel('supplement');
+$('bRej').onclick = () => cur && setLabel('reject');
+$('bPrev').onclick = () => move(-1); $('bNext').onclick = () => move(1); $('bNextTodo').onclick = nextTodo;
+$('btnPause').onclick = () => { manualPause = !manualPause; lastTick = performance.now(); showPaused(); };
+$('memo').oninput = () => { if (cur) { rec(cur).memo = $('memo').value; save(); } };
+$('realism').onchange = () => { if (cur) { rec(cur).realism = $('realism').value; save(); } };
+$('btnExport').onclick = exportJSON;
+$('btnAddAuth').onclick = addAuthored;
+window.addEventListener('beforeunload', save);
+</script>
+</body>
+</html>
