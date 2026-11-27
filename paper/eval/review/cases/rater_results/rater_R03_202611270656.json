@@ -1,0 +1,333 @@
+{
+ "format": "review_rater_v1",
+ "dataset_id": "ba8fa95bcf83",
+ "exported_at": "2026-11-27T06:56:50.000Z",
+ "rater": {
+  "id": "R03",
+  "years": "7",
+  "field": "보험금 심사(청구)"
+ },
+ "labels": {
+  "R002": {
+   "label": "approve",
+   "memo": "교합장치 제작과 치료설명 일치, 과거 치주소파술과 무관.",
+   "realism": 5,
+   "seconds": 24.3,
+   "first_seconds": 22.8,
+   "changes": 0
+  },
+  "R006": {
+   "label": "reject",
+   "memo": "전치 근관치료 코드(D3310)이나 실제 설명은 어금니 세라믹 크라운. 코드-치료내용 완전 불일치.",
+   "realism": 2,
+   "seconds": 31.8,
+   "first_seconds": 30.3,
+   "changes": 0
+  },
+  "R015": {
+   "label": "reject",
+   "memo": "도재관 크라운 청구인데 실제 치료는 스케일링·위생교육. 명백한 업코딩.",
+   "realism": 2,
+   "seconds": 27.5,
+   "first_seconds": 26.0,
+   "changes": 0
+  },
+  "R027": {
+   "label": "reject",
+   "memo": "완전매복발치(D7240) 청구이나 설명은 큰어금니 근관치료. 코드 불일치.",
+   "realism": 2,
+   "seconds": 29.1,
+   "first_seconds": 27.6,
+   "changes": 0
+  },
+  "R036": {
+   "label": "approve",
+   "memo": "전치 신경감염 근관치료, 코드·설명 일치하고 경과일 충분.",
+   "realism": 5,
+   "seconds": 19.4,
+   "first_seconds": 17.9,
+   "changes": 0
+  },
+  "R040": {
+   "label": "reject",
+   "memo": "크라운 청구인데 실제는 파노라마 X선 촬영. 업코딩 부지급.",
+   "realism": 2,
+   "seconds": 23.0,
+   "first_seconds": 21.5,
+   "changes": 0
+  },
+  "R041": {
+   "label": "reject",
+   "memo": "세라믹 크라운 청구이나 정기검진(이상 없음)만 시행됨.",
+   "realism": 2,
+   "seconds": 21.6,
+   "first_seconds": 20.1,
+   "changes": 0
+  },
+  "R055": {
+   "label": "reject",
+   "memo": "교합장치(D9940) 청구이나 정기검진만 시행됨. 코드 불일치.",
+   "realism": 2,
+   "seconds": 22.8,
+   "first_seconds": 21.3,
+   "changes": 0
+  },
+  "R060": {
+   "label": "approve",
+   "memo": "앞니 통증 전치 근관치료, 정상 청구.",
+   "realism": 5,
+   "seconds": 18.7,
+   "first_seconds": 17.2,
+   "changes": 0
+  },
+  "R068": {
+   "label": "approve",
+   "memo": "가입 13일 경과이나 치아 외상 응급처치(상해)로 대기기간 미적용. 지급 가능.",
+   "realism": 5,
+   "seconds": 34.2,
+   "first_seconds": 32.7,
+   "changes": 0
+  },
+  "R080": {
+   "label": "reject",
+   "memo": "치과 응급처치 청구이나 실제 내용은 일반 치석제거·잇몸관리. 응급처치 해당 안 됨.",
+   "realism": 3,
+   "seconds": 28.4,
+   "first_seconds": 26.9,
+   "changes": 0
+  },
+  "R092": {
+   "label": "approve",
+   "memo": "외상 응급처치 정상 청구.",
+   "realism": 5,
+   "seconds": 17.9,
+   "first_seconds": 16.4,
+   "changes": 0
+  },
+  "R100": {
+   "label": "reject",
+   "memo": "완전매복발치(D7240) 청구이나 실제는 잇몸염증 잇몸치료. 코드 불일치.",
+   "realism": 2,
+   "seconds": 26.5,
+   "first_seconds": 25.0,
+   "changes": 0
+  },
+  "R105": {
+   "label": "approve",
+   "memo": "가입 2일차이나 치아 외상으로 인한 응급진료. 상해는 계약일부터 보장.",
+   "realism": 4,
+   "seconds": 32.1,
+   "first_seconds": 30.6,
+   "changes": 0
+  },
+  "R111": {
+   "label": "reject",
+   "memo": "가입 3일차 질병 임플란트 식립. 면책기간(180일) 이내 청구로 부지급.",
+   "realism": 3,
+   "seconds": 25.4,
+   "first_seconds": 23.9,
+   "changes": 0
+  },
+  "R112": {
+   "label": "supplement",
+   "memo": "가입 3일차 도재 크라운 청구. 파절·균열 원인이 상해(외상)인지 기존 질병인지 사고경위 및 초진차트 확인 필요.",
+   "realism": 4,
+   "seconds": 46.8,
+   "first_seconds": 42.6,
+   "changes": 1
+  },
+  "R118": {
+   "label": "reject",
+   "memo": "크라운 청구이나 실제 치료는 스케일링·구강위생교육. 업코딩.",
+   "realism": 2,
+   "seconds": 24.9,
+   "first_seconds": 23.4,
+   "changes": 0
+  },
+  "R129": {
+   "label": "supplement",
+   "memo": "가입 14일차 대구치 근관치료. 가입 전 기왕증(기존 우식 진행) 여부 확인 위해 초진기록 보완 요청.",
+   "realism": 4,
+   "seconds": 42.3,
+   "first_seconds": 40.8,
+   "changes": 0
+  },
+  "R132": {
+   "label": "approve",
+   "memo": "다수 치아 잇몸치료(치주소파술 4치+), 코드·설명 일치.",
+   "realism": 5,
+   "seconds": 20.5,
+   "first_seconds": 19.0,
+   "changes": 0
+  },
+  "R134": {
+   "label": "reject",
+   "memo": "포괄 교정치료(D8080) 청구이나 설명은 치석제거. 교정코드 오청구 및 치석제거와 불일치.",
+   "realism": 2,
+   "seconds": 27.2,
+   "first_seconds": 25.7,
+   "changes": 0
+  },
+  "R136": {
+   "label": "approve",
+   "memo": "치아 외상 응급처치, 경과일 충분하고 내용 일치.",
+   "realism": 5,
+   "seconds": 18.1,
+   "first_seconds": 16.6,
+   "changes": 0
+  },
+  "R140": {
+   "label": "reject",
+   "memo": "가입 5일차 임플란트 수술. 대기기간(180일) 미경과 부지급.",
+   "realism": 3,
+   "seconds": 22.6,
+   "first_seconds": 21.1,
+   "changes": 0
+  },
+  "RX002": {
+   "label": "approve",
+   "memo": "47번 아말감 3면 충전. 과거 44번 근관치료와 별개 치아로 정상.",
+   "realism": 5,
+   "seconds": 33.7,
+   "first_seconds": 32.2,
+   "changes": 0
+  },
+  "RX003": {
+   "label": "reject",
+   "memo": "64일 전 47번 발치 완료(Paid) 후 동일 47번 치아에 세라믹 크라운 청구. 발치 치아 보철 모순(임플란트 보철 여부 등 불가).",
+   "realism": 3,
+   "seconds": 51.4,
+   "first_seconds": 49.9,
+   "changes": 0
+  },
+  "RX008": {
+   "label": "approve",
+   "memo": "45번 아말감 3면 충전. 14일 전 건은 34번으로 다른 치아임.",
+   "realism": 5,
+   "seconds": 31.2,
+   "first_seconds": 29.7,
+   "changes": 0
+  },
+  "RX015": {
+   "label": "reject",
+   "memo": "116일 전 동일 44번 치아 임플란트 식립 기지급(Paid) 이력 있음. 동일 부위 중복 청구.",
+   "realism": 3,
+   "seconds": 48.9,
+   "first_seconds": 47.4,
+   "changes": 0
+  },
+  "RX023": {
+   "label": "approve",
+   "memo": "15번 치주소파술 정상 청구. 과거 22번 파노라마와 무관.",
+   "realism": 5,
+   "seconds": 29.8,
+   "first_seconds": 28.3,
+   "changes": 0
+  },
+  "RX029": {
+   "label": "reject",
+   "memo": "82일 전 44번 매복발치 기지급 후 동일 44번 치아에 자연치 크라운 청구. 치료 이력 모순.",
+   "realism": 3,
+   "seconds": 47.6,
+   "first_seconds": 46.1,
+   "changes": 0
+  },
+  "RX031": {
+   "label": "approve",
+   "memo": "46번 아말감 2면 충전. 10일 전 건은 47번 인접치로 별개 치아.",
+   "realism": 5,
+   "seconds": 35.0,
+   "first_seconds": 33.5,
+   "changes": 0
+  },
+  "RX034": {
+   "label": "reject",
+   "memo": "153일 전 동일 36번 치아 임플란트 식립 기지급(Paid). 동일 치아 중복 청구(가입 431일차로 감액기간 내이기도 함).",
+   "realism": 3,
+   "seconds": 53.2,
+   "first_seconds": 51.7,
+   "changes": 0
+  },
+  "RX038": {
+   "label": "supplement",
+   "memo": "12일 전 동일 16번 대구치 근관치료 기지급 이력 있음. 수회 내원 분할진료인지 중복청구인지 진료내역서 확인 필요.",
+   "realism": 4,
+   "seconds": 56.1,
+   "first_seconds": 51.9,
+   "changes": 1
+  },
+  "RX043": {
+   "label": "supplement",
+   "memo": "아말감 3면(D2160) 청구이나 치료설명은 '한 면 충전'으로 기재. 실제 충전 면수 확인 위해 진료기록 보완 필요.",
+   "realism": 4,
+   "seconds": 41.5,
+   "first_seconds": 40.0,
+   "changes": 0
+  },
+  "RX047": {
+   "label": "reject",
+   "memo": "285일 전 동일 35번 치아 임플란트 식립 기지급(Paid). 동일 치아 임플란트 중복 청구.",
+   "realism": 3,
+   "seconds": 49.3,
+   "first_seconds": 47.8,
+   "changes": 0
+  },
+  "RX050": {
+   "label": "supplement",
+   "memo": "24번 소구치에 대구치 근관코드(D3330) 기재 및 12일 전 동일 24번 동일 코드 기지급 이력. 치식 오기재 및 중복여부 보완 확인.",
+   "realism": 3,
+   "seconds": 59.4,
+   "first_seconds": 57.9,
+   "changes": 0
+  },
+  "RX054": {
+   "label": "reject",
+   "memo": "124일 전 24번 발치 기지급 후 동일 24번 치아에 세라믹 크라운 청구. 발치 치아 크라운 불가.",
+   "realism": 3,
+   "seconds": 46.2,
+   "first_seconds": 44.7,
+   "changes": 0
+  },
+  "RX055": {
+   "label": "approve",
+   "memo": "45번 치주소파술 정상 청구. 과거 42번 건(460일 전)과 치아 및 시점 무관.",
+   "realism": 5,
+   "seconds": 36.8,
+   "first_seconds": 35.3,
+   "changes": 0
+  },
+  "RX057": {
+   "label": "reject",
+   "memo": "157일 전 44번 발치 기지급 후 동일 44번 세라믹 크라운 청구. 발치 치아에 크라운 불가(가입 247일차 감액구간이기도 함).",
+   "realism": 3,
+   "seconds": 52.7,
+   "first_seconds": 51.2,
+   "changes": 0
+  },
+  "RX063": {
+   "label": "approve",
+   "memo": "44번 아말감 3면 충전. 6일 전 건은 45번으로 다른 치아임.",
+   "realism": 5,
+   "seconds": 34.5,
+   "first_seconds": 33.0,
+   "changes": 0
+  },
+  "RX069": {
+   "label": "reject",
+   "memo": "279일 전 동일 37번 치아 임플란트 식립 기지급(Paid). 동일 치아 중복 청구.",
+   "realism": 3,
+   "seconds": 44.1,
+   "first_seconds": 42.6,
+   "changes": 0
+  },
+  "RX073": {
+   "label": "approve",
+   "memo": "26번 아말감 3면 충전. 9일 전 건은 37번으로 다른 치아임.",
+   "realism": 5,
+   "seconds": 32.9,
+   "first_seconds": 31.4,
+   "changes": 0
+  }
+ },
+ "authored": []
+}
